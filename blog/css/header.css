@@ -1,0 +1,12 @@
+.header-logo img{
+    width: 20%;
+}
+.guanyu{
+    border-bottom: solid 3px #02a0d2;
+    padding-bottom: 5px;
+    display: inline-block;
+}
+#about{
+    background: url(../images/1.jpg) right bottom no-repeat;
+    background-size: 50% ;
+}
