@@ -1,36 +1,25 @@
 <template>
     <div>
-        <hed></hed>
-        <div class="main">
-            <fish></fish>
-            <mytext></mytext>
-        </div>
-        <foot></foot>
+        <myheader></myheader>
+        <mymain></mymain>
     </div>
 </template>
 
-
 <script>
-    import hed from './hed.vue'
-    import fish from './fish.vue'
-    import mytext from './mytext.vue'
-    import foot from './foot.vue'
-export default{
-            components:{
-                hed,
-                fish,
-                mytext,
-                foot
-            }
-}
-
+    import myheader from './myheader.vue'
+    import mymain from './mymain.vue'
+    export default{
+        components:{
+            myheader,
+            mymain
+        }
+    }
 </script>
 
-
-<style scoped>
-    .main{
-        padding-left:20px;
-        padding-right:20px;
-        background: #fff;
-    }
+<style>
+ *{
+     padding:0;
+     margin:0;
+     box-sizing: border-box;
+ }
 </style>
