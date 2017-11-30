@@ -191,7 +191,7 @@
             color: #9e9b92;
         }
         i{
-            background: url("../../images/aicon.png");
+            background: url("images/aicon.png");
             display: inline-block;
         }
         .jing{
