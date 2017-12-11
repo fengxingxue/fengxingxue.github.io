@@ -1,0 +1,241 @@
+*{
+    margin: 0px;
+    padding: 0px;
+    font-family: "宋体";
+    box-sizing: border-box;
+}
+a{
+    text-decoration: none;
+}
+ul{
+    list-style: none;
+}
+.big{
+    background-image: url(../images/shoppingbg.png);
+    background-repeat: no-repeat;
+    background-size: 100% 100%;
+    height: 1000px;
+}
+.sml{
+    width: 1200px;
+    margin: auto;
+}
+nav{
+    position: absolute;
+    top: 20px;
+    margin-left: 700px;
+}
+nav ul{
+    list-style: none;
+    padding: 0px;
+    margin: 0px;
+}
+.red{
+    color: #f3290e;
+}
+nav ul li{
+    float: left;
+}
+nav ul li a{
+    display: block;
+    width: 100px;
+    float: left;
+    text-decoration: none;
+    color: #000;
+    font-weight: bolder;
+}
+nav ul li a:hover{
+    color: #f3290e;
+}
+header{
+    height: 100px;
+    margin-bottom: 20px;
+}
+header a,header span{
+    text-align: center;
+}
+header a,#main-center,.one,.two,.three,.five,.eight,.six,.nine{
+    display: block;
+}
+header,.main,.main-top,#main-center,.main-bottom{
+    width: 100%;
+}
+.main-top,#main-center,.main-bottom{
+    background: #fff;
+}
+input,#main-center img,#main-center p,.one,.two,.three,.five,.eight,.six,.nine{
+    float: left;
+}
+header a{
+    padding: 32px 0 10px 25px;
+    width: 240px;
+}
+header span{
+    font-size: 24px;
+    color: #fff;
+}
+.main{
+    height: 560px;
+    margin-bottom: 61px;
+}
+.main-top{
+    line-height: 50px;
+    padding-left: 25px;
+    font-size: 36px;
+    color: #575050;
+}
+#main-center{
+    margin-top: 40px;
+    height: 150px;
+}
+#main-center input,.main-bottom input{
+    width: 20px;
+    height: 20px;
+}
+#main-center input{
+    margin: 55px 0 0 23px;
+}
+#main-center img{
+    margin: 12px 0 0 47px;
+}
+#main-center p{
+    padding: 35px 0 0 50px;
+    line-height: 35px;
+    font-size: 20px;
+    color: #343131;
+}
+.one{
+    font-size: 36px;
+    color: #f92222;
+    font-weight: bolder;
+    padding: 55px 0 0 74px;
+    width: 250px;
+}
+.two,.three{
+    padding-top: 58px;
+    font-size: 30px;
+    color: #d16a6a;
+}
+.three{
+    padding-left: 80px;
+}
+.main-bottom{
+    height: 100px;
+    margin-top: 217px;
+}
+.main-bottom input{
+    margin: 40px 0 0 23px;
+}
+.five{
+    font-size: 36px;
+    color: #322c2c;
+    margin: 30px 0 0 10px; 
+}
+.eight,.six{
+    font-size: 24px;
+    font-weight: bolder;
+}
+.eight{ 
+    color: #651313;
+    margin: 41px 0 0 370px;
+}
+.six{
+    margin: 40px 0 0 41px;
+    color: #594f4f;
+}
+.nine{
+    background: #e63c3c;
+    width: 180px;
+    height: 100px;
+    margin-left: 103px;
+    color: #fff;
+    font-size: 36px;
+    font-weight: bolder;
+    padding-top: 10px;
+}
+.nine span{
+    font-size: 60px;
+    font-weight: bolder;
+    margin:0 10px 0 12px;
+    position: relative;
+    top: 10px;
+}
+.footer{
+    margin-top:58px;
+    height: 260px;
+}
+.footer1{
+    background: #fff;
+    height: 260px;
+}
+.footer-left{
+    width:100%;
+    float: left;
+    height: 174px;
+}
+.user{
+    padding:51px 0 0 71px;   
+}
+.user>li{
+    float: left;
+    width: 150px;
+}
+.userText span{
+    font-size: 18px;
+    color: #000;
+    line-height: 36px;
+}
+.userText a{
+    font-size: 15px;
+    color: #636060;
+    line-height: 19px;
+}
+.text{
+    margin-left:140px; 
+    text-align: center;
+}
+.tel{
+    font-size: 24px;
+    color: #120a0a;
+}
+.time{
+    font-size: 14px;
+    color: #3c3b3b;
+}
+.footer-botton{
+    clear: both;
+    border-top: solid 2px #6a6767;
+    width: 891px;
+    margin:23px 0 0 71px;
+    padding-top: 23px;
+}
+.footer-bottonleft{
+    font-size: 14px; 
+    color: #3c3b3b;
+    float: left;
+    width: 600px;
+    margin-right: 140px;
+}
+.footer-bottonright{
+    margin-top: -5px;
+    font-size: 12px;
+}
+.footer-bottonright img{
+    margin-left: -2px;
+}
+.new-leftleft:hover,.a5-leftleft:hover,.one4-leftleft:hover{
+    background: #ff0000;
+    color: #fff
+}
+.new-leftright:hover,.a5-leftright:hover,.one4-leftright:hover{
+    background: #000;
+    color: #fff;
+    border: solid 1px #000;
+}
+.xiao{
+    background-image:url(../images/bian.gif); 
+    width: 281px;
+    height: 370px;
+    background-position: center center;
+    transition: 0.2s;
+}
