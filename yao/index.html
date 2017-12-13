@@ -1,0 +1,281 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>swiper</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1,minimum-scale=1, maximum-scale=1, user-scalable=no">
+    <!--
+        名字 viewport(显示窗口)
+        content 数据  这个数据是： 显示窗口宽度是客户端的屏幕宽度（就是满屏），显示文字和图形初始比例
+    -->
+
+    <link rel="stylesheet" href="Plug-in/swiper-animate/animate.css">
+    <link rel="stylesheet" href="Plug-in/swiper-4.0.5/dist/css/swiper.min.css">
+    <link rel="stylesheet" href="css/index.css">
+</head>
+<body>
+
+<div class="swiper-container swiper-container-vertical">
+    <div id="app">
+        <div class="bgm-btn" :class="rotate" @click="e">
+            <audio src="miuse/need.mp3" class="audio" loop="loop" class="audio"></audio>
+         </div>
+    </div>
+    <div class="swiper-wrapper">
+        <div class="swiper-slide one" >
+                <div class="shu ani" swiper-animate-effect="bounceInLeft" swiper-animate-duration="2s" swiper-animate-delay="2s">
+                    <img src="img/5.png" alt="">
+                </div>
+                <div class="yao ani" swiper-animate-effect="wobble" swiper-animate-duration="1s" swiper-animate-delay="0.3s">
+                    <img src="img/2.png" alt="">
+                </div>
+                <div class="sheng">
+                    <p class="ani" swiper-animate-effect="bounceInRight" swiper-animate-duration="1s" swiper-animate-delay="1s">
+                        盛邦升华 <span>（</span>泊职 <span>）</span>培训基地
+                    </p>
+                    <p class="ani" swiper-animate-effect="bounceInRight" swiper-animate-duration="1s" swiper-animate-delay="1.3s">
+                        <span>2</span><span>0</span><span>1</span><span>7</span><span>/</span><span>1</span><span>2</span>
+                        <span>/</span><span>2</span><span>3</span>
+                    </p>
+                    <p class="ani" swiper-animate-effect="bounceInRight" swiper-animate-duration="1s" swiper-animate-delay="1.8s"></p>
+                </div>
+                <div class="fly ani" swiper-animate-effect="shake" swiper-animate-duration="1s" swiper-animate-delay="5s">
+                    <img src="img/4.png" alt="">
+                </div>
+                <div class="shan ani" swiper-animate-effect="zoomInLeft" swiper-animate-duration="1s" swiper-animate-delay="4s">
+                    <img src="img/3.png" alt="">
+                </div>
+                <div class="mu ani" swiper-animate-effect="bounceInUp" swiper-animate-duration="2s" swiper-animate-delay="3s">
+                    <img src="img/6.png" alt="">
+                </div>
+        </div>
+
+
+
+        <div class="swiper-slide one">
+            <div class="shu ani" swiper-animate-effect="bounceInLeft" swiper-animate-duration="1s" swiper-animate-delay="0.5s">
+                <img src="img/5.png" alt="">
+            </div>
+            <div class="sheng shen">
+                <p class="ani" swiper-animate-effect="bounceInRight" swiper-animate-duration="1s" swiper-animate-delay="1.5s"><strong>诚邀</strong></p>
+                <p class="ani" swiper-animate-effect="bounceInRight" swiper-animate-duration="1s" swiper-animate-delay="2s"></p>
+                <p class="ani" swiper-animate-effect="bounceInRight" swiper-animate-duration="1s" swiper-animate-delay="3s">
+                    <strong>尊敬的先生/女士：</strong><br><br>
+                    您好！<br>
+                    感谢您百忙之中来到 <strong>盛邦升华（泊职）培训基地</strong> 举办的双选会，感谢您对盛邦升华的信任和支持。
+                </p>
+            </div>
+            <div class="fly ani" swiper-animate-effect="shake" swiper-animate-duration="1s" swiper-animate-delay="6s">
+                <img src="img/4.png" alt="">
+            </div>
+            <div class="shan ani" swiper-animate-effect="zoomInLeft" swiper-animate-duration="1s" swiper-animate-delay="5s">
+                <img src="img/3.png" alt="">
+            </div>
+            <div class="mu ani" swiper-animate-effect="bounceInUp" swiper-animate-duration="2s" swiper-animate-delay="3.5s">
+                <img src="img/6.png" alt="">
+            </div>
+        </div>
+
+
+
+        <div class="swiper-slide one">
+            <div class="shu ani" swiper-animate-effect="bounceInLeft" swiper-animate-duration="1s" swiper-animate-delay="0.5s">
+                <img src="img/5.png" alt="">
+            </div>
+            <div class="sheng shen">
+                <p class="ani" swiper-animate-effect="bounceInRight" swiper-animate-duration="1s" swiper-animate-delay="1.5s"><strong>自我介绍</strong></p>
+                <p class="ani" swiper-animate-effect="bounceInRight" swiper-animate-duration="1s" swiper-animate-delay="2s"></p>
+                <p class="ani" swiper-animate-effect="bounceInRight" swiper-animate-duration="1s" swiper-animate-delay="3s">
+                     &nbsp;&nbsp;&nbsp;&nbsp;我是就业一班的<strong>张宏梅</strong>，来自美丽富饶的沿海城市--秦皇岛市，是一个满族姑娘，目前正在学习php,
+                    在这里学习了将近两年的时间，对web前端也有了一定的了解。我的人生格言是，只有你想不到的，没有你做不到的，简单来说，就是只有想到，才能做到。
+
+                </p>
+            </div>
+            <div class="fly ani" swiper-animate-effect="shake" swiper-animate-duration="1s" swiper-animate-delay="6s">
+                <img src="img/4.png" alt="">
+            </div>
+            <div class="shan ani" swiper-animate-effect="zoomInLeft" swiper-animate-duration="1s" swiper-animate-delay="5s">
+                <img src="img/3.png" alt="">
+            </div>
+            <div class="mu ani" swiper-animate-effect="bounceInUp" swiper-animate-duration="2s" swiper-animate-delay="3.5s">
+                <img src="img/6.png" alt="">
+            </div>
+        </div>
+
+
+
+
+
+        <div class="swiper-slide one">
+            <div class="shu ani" swiper-animate-effect="bounceInLeft" swiper-animate-duration="1s" swiper-animate-delay="0.5s">
+                <img src="img/5.png" alt="">
+            </div>
+            <div class="sheng shen">
+                <p class="ani" swiper-animate-effect="bounceInRight" swiper-animate-duration="1s" swiper-animate-delay="1.5s"><strong>学习课程</strong></p>
+                <p class="ani" swiper-animate-effect="bounceInRight" swiper-animate-duration="1s" swiper-animate-delay="2s"></p>
+                <p class="ani" swiper-animate-effect="bounceInRight" swiper-animate-duration="1s" swiper-animate-delay="3s">
+                        <span>javaScript</span>
+                        <span>jquery</span><br>
+                        <span>html5+css3</span>
+                        <span>vue</span><br>
+                        <span>swiper</span>
+                        <span>PHP <span style="font-size:12px;margin: 0;padding: 0;">(正在学)</span></span>
+
+                </p>
+            </div>
+            <div class="fly ani" swiper-animate-effect="shake" swiper-animate-duration="1s" swiper-animate-delay="5s">
+                <img src="img/4.png" alt="">
+            </div>
+            <div class="shan ani" swiper-animate-effect="zoomInLeft" swiper-animate-duration="1s" swiper-animate-delay="4s">
+                <img src="img/3.png" alt="">
+            </div>
+            <div class="mu ani" swiper-animate-effect="bounceInUp" swiper-animate-duration="2s" swiper-animate-delay="2.5s">
+                <img src="img/6.png" alt="">
+            </div>
+        </div>
+
+
+
+
+
+
+        <div class="swiper-slide one">
+            <div class="shu ani" swiper-animate-effect="bounceInLeft" swiper-animate-duration="1s" swiper-animate-delay="0.5s">
+                <img src="img/5.png" alt="">
+            </div>
+            <div class="sheng shen">
+                <p class="ani" swiper-animate-effect="bounceInRight" swiper-animate-duration="1s" swiper-animate-delay="1.5s"><strong>作品展示</strong></p>
+                <p class="ani" swiper-animate-effect="bounceInRight" swiper-animate-duration="1s" swiper-animate-delay="2s"></p>
+                <p class="ani" swiper-animate-effect="bounceInRight" swiper-animate-duration="1s" swiper-animate-delay="3s">
+                    <a href="https://fengxingxue.github.io/h5c3/"><img src="img/1.gif" alt=""></a>
+                </p>
+            </div>
+            <div class="fly ani" swiper-animate-effect="shake" swiper-animate-duration="1s" swiper-animate-delay="5s">
+                <img src="img/4.png" alt="">
+            </div>
+            <div class="shan ani" swiper-animate-effect="zoomInLeft" swiper-animate-duration="1s" swiper-animate-delay="4s">
+                <img src="img/3.png" alt="">
+            </div>
+            <div class="mu ani" swiper-animate-effect="bounceInUp" swiper-animate-duration="2s" swiper-animate-delay="2.5s">
+                <img src="img/6.png" alt="">
+            </div>
+        </div>
+
+
+
+
+
+
+
+        <div class="swiper-slide one">
+            <div class="shu ani" swiper-animate-effect="bounceInLeft" swiper-animate-duration="1s" swiper-animate-delay="0.5s">
+                <img src="img/5.png" alt="">
+            </div>
+            <div class="sheng shen">
+                <p class="ani" swiper-animate-effect="bounceInRight" swiper-animate-duration="1s" swiper-animate-delay="1.5s"><strong>作品展示</strong></p>
+                <p class="ani" swiper-animate-effect="bounceInRight" swiper-animate-duration="1s" swiper-animate-delay="2s"></p>
+                <p class="ani" swiper-animate-effect="bounceInRight" swiper-animate-duration="1s" swiper-animate-delay="3s">
+                    <a href="https://fengxingxue.github.io/photo/"><img src="img/2.gif" alt=""></a>
+                </p>
+            </div>
+            <div class="fly ani" swiper-animate-effect="shake" swiper-animate-duration="1s" swiper-animate-delay="5s">
+                <img src="img/4.png" alt="">
+            </div>
+            <div class="shan ani" swiper-animate-effect="zoomInLeft" swiper-animate-duration="1s" swiper-animate-delay="4s">
+                <img src="img/3.png" alt="">
+            </div>
+            <div class="mu ani" swiper-animate-effect="bounceInUp" swiper-animate-duration="2s" swiper-animate-delay="2.5s">
+                <img src="img/6.png" alt="">
+            </div>
+        </div>
+
+
+
+
+
+        <div class="swiper-slide one">
+            <div class="shu ani" swiper-animate-effect="bounceInLeft" swiper-animate-duration="1s" swiper-animate-delay="0.5s">
+                <img src="img/5.png" alt="">
+            </div>
+            <div class="sheng shen">
+                <p class="ani" swiper-animate-effect="bounceInRight" swiper-animate-duration="1s" swiper-animate-delay="1.5s"><strong>作品展示</strong></p>
+                <p class="ani" swiper-animate-effect="bounceInRight" swiper-animate-duration="1s" swiper-animate-delay="2s"></p>
+                <p class="ani" swiper-animate-effect="bounceInRight" swiper-animate-duration="1s" swiper-animate-delay="3s">
+                    <a href="https://fengxingxue.github.io/vue/baidu/"><img src="img/3.gif" alt=""></a>
+                </p>
+            </div>
+            <div class="fly ani" swiper-animate-effect="shake" swiper-animate-duration="1s" swiper-animate-delay="5s">
+                <img src="img/4.png" alt="">
+            </div>
+            <div class="shan ani" swiper-animate-effect="zoomInLeft" swiper-animate-duration="1s" swiper-animate-delay="4s">
+                <img src="img/3.png" alt="">
+            </div>
+            <div class="mu ani" swiper-animate-effect="bounceInUp" swiper-animate-duration="2s" swiper-animate-delay="2.5s">
+                <img src="img/6.png" alt="">
+            </div>
+        </div>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+        <div class="swiper-slide one">
+            <div class="shu ani" swiper-animate-effect="bounceInLeft" swiper-animate-duration="1s" swiper-animate-delay="0.5s">
+                <img src="img/5.png" alt="">
+            </div>
+            <div class="xie ani" swiper-animate-effect="fadeInLeft" swiper-animate-duration="1s" swiper-animate-delay="3.5s">
+                <i>谢谢！！！</i>
+            </div>
+            <div class="fly ani" swiper-animate-effect="shake" swiper-animate-duration="1s" swiper-animate-delay="3s">
+                <img src="img/4.png" alt="">
+            </div>
+            <div class="shan ani" swiper-animate-effect="zoomInLeft" swiper-animate-duration="1s" swiper-animate-delay="2s">
+                <img src="img/3.png" alt="">
+            </div>
+            <div class="mu ani" swiper-animate-effect="bounceInUp" swiper-animate-duration="2s" swiper-animate-delay="1s">
+                <img src="img/6.png" alt="">
+            </div>
+        </div>
+    </div>
+
+    <!-- 如果需要分页器 -->
+    <div class="swiper-pagination"><!-- swiper-container-progressbar -->
+       <!-- <span class="swiper-pagination-progressbar-fill"
+              style="transform:translate3d(0px,0px,0px) scaleX(0.1) scaleY(1);transition-duration:300ms;"></span>-->
+
+    </div>
+
+    <!-- 如果需要导航按钮 -->
+    <!--<div class="swiper-button-prev"></div>-->
+    <div class="swiper-button-next"></div>
+
+    <!-- 如果需要滚动条 -->
+    <!--<div class="swiper-scrollbar"></div>-->
+</div>
+<!--导航等组件可以放在container之外-->
+
+
+<script src="Plug-in/vue/dist/vue.js"></script>
+<script src="Plug-in/Swiper-4.0.5/dist/js/swiper.min.js"></script>
+<script src="Plug-in/swiper-animate/swiper.animate1.0.2.min.js"></script>
+<script src="js/index.js"></script>
+
+</body>
+</body>
+</html>
