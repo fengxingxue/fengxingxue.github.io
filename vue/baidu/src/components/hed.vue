@@ -138,4 +138,29 @@
     .qiu span:nth-of-type(1){
         background: #999999;
     }
+
+
+    @media(max-width: 720px){
+        header{
+            padding-left:15px;
+            padding-right:15px;
+        }
+        header nav a{
+            padding:15px 10px;
+        }
+        .logo{
+            padding: 25px 0 40px 0;
+        }
+        .search input{
+            width:255px;
+            height:48px;
+        }
+        .search a{
+            padding:12px 9px;
+        }
+        .page li{
+            padding-left:13px;
+            padding-right:12px;
+        }
+    }
 </style>

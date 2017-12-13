@@ -52,6 +52,10 @@
     a:hover{
         color: #f00;
     }
+
+    @media(max-width: 720px){
+
+    }
 </style>
 
 

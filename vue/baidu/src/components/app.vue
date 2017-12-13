@@ -33,4 +33,10 @@ export default{
         padding-right:20px;
         background: #fff;
     }
+    @media(max-width: 720px){
+        .main{
+            padding-left:15px;
+            padding-right:15px;
+        }
+    }
 </style>

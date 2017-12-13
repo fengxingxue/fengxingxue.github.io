@@ -43,4 +43,8 @@
         color: #999999;
         padding-bottom:14px;
     }
+
+    @media(max-width: 720px){
+
+    }
 </style>

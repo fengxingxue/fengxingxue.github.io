@@ -84,6 +84,9 @@
     .top,.btn{
         border-bottom: solid 1px #f0f0f0;
     }
+    .top img,.btn img{
+        width:100%;
+    }
     .text span{
         color: #999999;
         font-size: 15px;
@@ -128,6 +131,17 @@
     }
     .text:nth-of-type(9) .btn span{
         padding-bottom:14px;
+    }
+
+    @media(max-width: 720px){
+        .text:nth-of-type(6) .btn img,.text:nth-of-type(8) .top img,.text:nth-of-type(9) .btn img{
+            width:110px;
+            height:120px;
+            margin:5px;
+        }
+        .text:nth-of-type(6) .btn a,.text:nth-of-type(8) .top a,.text:nth-of-type(9) .btn a{
+            width:220px;
+        }
     }
 </style>
 
