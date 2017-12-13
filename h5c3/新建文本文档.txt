@@ -1,0 +1,11 @@
+功能点：
+
+1、入场页面抖动
+2、css3立方体旋转
+涉及知识点：
+
+1、animation
+2、transition
+3、transitionend
+4、弹性布局
+5、transform、rotate、translate
