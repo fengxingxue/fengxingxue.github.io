@@ -66,13 +66,22 @@ html,body{
     right:0;
 }
 .yao img{
-    width:40%;
-    height:300px;
+    width:30%;
+    height:400px;
     position: absolute;
     top:15%;
     left:2%;
+    margin-top:5%;
+    margin-left:10%;
     /*animation:yao1 2s;
     animation-fill-mode:forwards;*/
+}
+.sheng{
+    width:100%;
+    height:150px;
+    position: absolute;
+    top:30%;
+    left:50%;
 }
 .sheng p{
     width:10px;
@@ -81,7 +90,7 @@ html,body{
     text-align: center;
     color:#6d6b68;
     font-size:18px;
-
+    float: left;
 }
 .sheng p:nth-of-type(1)  span{
     transform:rotate(90deg);
@@ -110,7 +119,8 @@ html,body{
 .fly img{
     width:15%;
     height:50px;
-    margin-top:80%;
+    margin-top:35%;
+    margin-left:30%;
 }
 .shan{
     position: absolute;
@@ -122,24 +132,47 @@ html,body{
     top:94%;
     width:100%;
 }
+.shen{
+    position: absolute;
+    top:30%;
+    left:20%;
+}
+.shen p{
+    padding:17px;
+}
 .shen p:nth-of-type(1) {
-    width:5%;
+    width:4%;
     font-size: 36px;
     padding-top:100px;
+
 }
 .shen p:nth-of-type(2){
-    width:5%;
+    width:4%;
 }
-.shen p:nth-of-type(2){
+.shen p:nth-of-type(3){
     background-image:none ;
+    width:20%;
+    margin-left: 20%;
+    margin-top:5%;
 }
 .xie{
+    width:50%;
     position: absolute;
-    top:40%;
+    top:10%;
     left:40%;
     font-size:48px;
     color:#6d6b68;
+    z-index: 100;
 }
+/*.xie div{
+    width:50%;
+    height:400px;
+}*/
+.shen{
+    position: absolute;
+    top:15%;
+}
+
 @media(max-width: 420px){
     .shu img{
         width:50%;
@@ -157,12 +190,13 @@ html,body{
         height:150px;
         position: absolute;
         top:55%;
+        left:0;
     }
     .sheng p{
         width:66%;
         height:40px;
         padding:10px;
-
+        float: none;
     }
     .sheng p:nth-of-type(1) span{
         transform:none;
@@ -202,7 +236,8 @@ html,body{
         width:100%;
         position: absolute;
         top:100%;
-
+        margin-top: 60%;
+        margin-left:-20%;
     }
     .shan{
         position: absolute;
@@ -242,6 +277,9 @@ html,body{
         height:200px;
         text-align: left;
         font-size:16px;
+        margin-left:0;
+        margin-top:0;
+        width:60%;
     }
     .shen p:nth-of-type(3) a{
         box-shadow: 0 0 20px #666;
@@ -262,6 +300,10 @@ html,body{
         left:5%;
         font-size:34px;
     }
+    /*.xie div{
+        width:50%;
+        height:200px;
+    }*/
 }
 
 
