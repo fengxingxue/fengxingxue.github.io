@@ -342,7 +342,7 @@ footer li img,.bnav img{
     font-size: 2rem;
     color: #999;
     width: 75%;
-    height: 70%;
+    height: 50%;
     position: absolute;
     top: 15%;
     left: 12.5%;
@@ -356,7 +356,7 @@ footer li img,.bnav img{
 .me-main input,.me-main button:nth-of-type(2){
     width: 80%;
     height: 80px;
-    margin: 40px 60px;
+    margin: 20px 60px;
     border: solid 1px #fff;
     font-size: 2rem;
     padding: 10px;
