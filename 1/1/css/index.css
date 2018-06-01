@@ -1,0 +1,472 @@
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: Arial;
+
+}
+img{
+    width: 100%;
+}
+ul{
+    list-style: none;
+}
+a{
+    text-decoration: none;
+}
+header{
+    position: fixed;
+    top: 0;
+    background: #c9cacb;
+
+}
+header,footer,.main{
+    width: 100%;
+    padding: 10px;
+}
+header .nav{
+    float: left;
+}
+header::after,header .nav::after,footer ul::after,.bnav::after,.xmain::after,.bao-btn1::after,.smain::after{
+    display: table;
+    clear: both;
+    content: '';
+}
+header .lnav b{
+    width: 80px;
+    height: 4px;
+    display: block;
+    margin: 15px;
+    background: #0ec97a;
+}
+header .lnav{
+    float: left;
+}
+header .people{
+    display: block;
+    width: 80px;
+    height: 80px;
+    float: left;
+    margin-left: 20px;
+    border-radius: 50px;
+}
+header h1{
+    margin-left: 50%;
+    padding: 15px;
+    font-size: 2rem;
+    font-weight: 100;
+}
+.main{
+    margin-top: 100px;
+    text-align: center;
+}
+.main .banner img{
+    width: 100%;
+}
+.main .banner{
+    padding: 25px 0;
+}
+.bnav li{
+    width: 25%;
+    float: left;
+}
+.bnav a,footer li a{
+    display: inline-block;
+    padding: 1rem;
+    width: 100%;
+    font-size: 2rem;
+    color: #848484;
+    text-align: center;
+}
+footer li img,.bnav img{
+    width: 40%;
+    height: 50px;
+    margin-bottom: 5px;
+    display: block;
+    margin-left: auto;
+    margin-right: auto;
+}
+.bnav img{
+    height: 80px;
+}
+.xmain{
+    border-top: solid 1px #696060;
+    border-bottom: solid 1px #696060;
+    width: 100%;
+    margin-top:10px;
+    padding: 20px;
+    background: #fff;
+    font-size: 2rem;
+    text-align: left;
+}
+.first{
+    width: 100%;
+    height: 100px;
+    overflow: hidden;
+}
+.first div{
+    width: 100%;
+    height: 50px;
+    transition: .5s;
+    overflow: hidden;
+    text-overflow:ellipsis;
+    white-space: nowrap;
+}
+
+.first div span{
+    border: solid 1px #f00;
+    border-radius: 3px;
+    padding:0 4px;
+    color: #f00;
+    margin-right: 8px;
+    display: inline-block;
+}
+#bao,#jiao,#jiao1,#jiao4,#jiao5,#jiao6,#jiao7,#jiao8,.ske1::after,.one::after,#photo ul::after{
+    display: none;
+    position: absolute;
+    top: 0;
+    left: 0;
+    background: #fff;
+    width: 100%;
+    height: 100vh;
+    z-index: 99;
+}
+
+.bao-top,.bao-top1{
+    position: fixed;
+    top: 0;
+    width: 100%;
+    padding: 10px;
+    background: #fff;
+}
+.bao-top span,.bao-top1 span,.v span,.zone2 span{
+    color: #44a277;
+    font-size: 4rem;
+    position: absolute;
+    left: 0;
+}
+.bao-top h2,.bao-top1 h2,.zone2 h2{
+    font-size: 2rem;
+    padding: 10px;
+}
+.bao-btn,.bao-btn1{
+    text-align: left;
+    margin-top: 60px;
+    padding-top: 80px;
+    font-size: 2rem;
+    background: #ccc;
+}
+.bao-btn strong{
+    display: table;
+    padding: 15px;
+}
+.bao-btn1>div{
+    display: block;
+    color: #000;
+    width: 100%;
+    height: 300px;
+    border-bottom: solid 1px #999;
+}
+.bao-btn1 span{
+    width: 35%;
+    height: 90%;
+    background: #fff;
+    border: solid 1px #fff;
+    display: inline-block;
+    float: left;
+    margin:1.5% 5% 1.5% 1%;
+}
+.bao-btn1 p{
+    padding: 15px;
+}
+.bao-btn1 img{
+    width: 100%;
+
+}
+.smain .snav li{
+    width:25%;
+    float: left;
+    font-size: 2rem;
+    padding-bottom: 10px;
+}
+.smain{
+    padding: 10px 0;
+}
+.show{
+    border-bottom: solid 3px #0ec97a;
+    color: #0ec97a;
+}
+.ske1{
+    display: none;
+    height: 100vh;
+}
+.ske1 h2{
+    font-size: 2rem;
+    font-weight: 100;
+    text-align: left;
+    padding: 20px;
+    border-bottom: solid 1px #363030;
+}
+.ske1 .shi{
+    width: 45%;
+    height:400px;
+    margin: 20px;
+    display: block;
+    float: left;
+    font-size: 2rem;
+    background:#c6e2e4;
+    box-shadow: 16px 15px 17px #5f736e;
+}
+.shi img{
+    padding: 15px;
+    text-align: center;
+}
+.v,.baox{
+    position: fixed;
+    top: 0;
+    left: 0;
+    background: #fff;
+    width: 100%;
+    height: 100vh;
+    display: none;
+    z-index: 9;
+}
+.v p{
+    text-align: center;
+    font-size: 2rem;
+    padding: 10px;
+}
+.ske1 .shi video{
+    width: 100%;
+}
+.ske1 h3{
+    text-align: left;
+    border-bottom: solid 1px #363030;
+    font-size: 2rem;
+    font-weight: 100;
+    padding: 50px 30px 30px 30px;
+    clear: both;
+}
+.ske1 .cp{
+    font-size: 2rem;
+    text-align: left;
+    padding: 15px;
+}
+.one,.zone1,.zlian div{
+    width: 100%;
+    height: 150px;
+    padding: 20px 20px 10px 20px;
+    border-bottom:solid 1px #9c8484;
+    text-align: left;
+    background: #c9cacb;
+    margin: 30px 0;
+    font-size: 2rem;
+}
+.one img,.zone1 img,.zlian img{
+    width: 10%;
+    padding-top: 15px;
+    float: left;
+}
+.one strong,.zong1 strong,.zlian strong{
+    padding:20px 0 10px 25px;
+    display: inline-block;
+}
+.one p,.zone1 p,.zlian p{
+    padding-left: 120px;
+    color: #999;
+    display: block;
+}
+.zone,.zone3,.zlian{
+    position: absolute;
+    top: 100px;
+    left: 0;
+    width: 100%;
+    height: 100vh;
+    background: #fff;
+    display: none;
+}
+.zone2,.ti,.jiaox{
+   position: fixed;
+    top: 100px;
+    left: 0;
+    background: #b8bdbd;
+    width: 100%;
+    height: 100vh;
+    display: none;
+}
+.zone2 h2{
+    text-align: center;
+}
+.zone2 p{
+    text-align: left;
+    font-size: 3rem;
+    padding: 10px;
+    color: #000;
+    margin: 20px;
+}
+.zone2 input{
+    width: 30px;
+    height: 30px;
+    margin:30px 20px 30px 100px;
+}
+.zone2 button{
+    width: 25%;
+    position: absolute;
+    top: 60%;
+    left: 55%;
+    font-size: 2rem;
+    padding: 15px;
+}
+.zone2 button:nth-of-type(1){
+    left: 20%;
+}
+.zone2 button:hover{
+    background: #0ec97a;
+    color: #fff;
+}
+.showw{
+    display: block;
+}
+.zone3{
+    top: 100px;
+}
+.zl{
+    margin-bottom:300px;
+}
+.jiaox{
+    font-size: 2rem;
+    text-align: center;
+    padding-top: 25px;
+}
+
+.me-main{
+    background: #c9cacb;
+    font-size: 2rem;
+    color: #999;
+    width: 75%;
+    height: 50%;
+    position: absolute;
+    top: 15%;
+    left: 12.5%;
+}
+.me-main h3{
+    color: #6a9583;
+    text-align: center;
+    font-size: 3rem;
+    padding: 20px;
+}
+.me-main input,.me-main button:nth-of-type(2){
+    width: 80%;
+    height: 80px;
+    margin: 20px 60px;
+    border: solid 1px #fff;
+    font-size: 2rem;
+    padding: 10px;
+}
+.me-main input:nth-of-type(5){
+    width: 50%;
+}
+.me-main button:nth-of-type(1){
+    width: 30%;
+    height: 80px;
+    font-size: 2rem;
+    margin-left: -45px;
+}
+.me-main button:nth-of-type(2){
+    background: #0ec97a;
+    color: #fff;
+}
+.bao-main{
+    margin-top: 100px;
+    background: #c9cacb;
+    padding-bottom: 20px;
+    font-size: 3rem;
+    height: 100vh;
+}
+.bao-main img{
+    width: 100%;
+}
+.bao-main>div{
+    width: 95%;
+    height: 200px;
+    background: #fff;
+    margin: 25px;
+    padding: 25px;
+}
+.bao-main>div>p{
+    color: #666;
+    font-size: 2rem;
+}
+.bao-main>div>span{
+    color: #f00;
+    display: inline-block;
+    padding-top: 10px;
+}
+.bao-main>div a{
+    position: absolute;
+    right: 8%;
+    margin-top: -5%;
+    color: #fff;
+    padding: 10px 20px;
+    background: #0ec97a;
+    border-radius: 10px;
+}
+.baox h2{
+    text-align: center;
+}
+.bao-btn h2{
+    text-align: left;
+    font-size: 2rem;
+    padding: 40px 0 20px 0;
+}
+#photo{
+    position: fixed;
+    bottom: 0;
+    z-index: 99;
+    width: 100%;
+    height: 4em;
+    padding-top: 20px;
+    background: #fff;
+}
+#photo li{
+    float: left;
+    width: 33.3333%;
+    text-align: center;
+}
+#photo a{
+    position: relative;
+    background: #Fff;
+    color: #000;
+    padding:0px;
+    width: 100%;
+    display: inline-block;
+}
+#photo li:nth-of-type(1) a{
+    background: url("../img/d.jpg") no-repeat 1em center;
+}
+#photo li:nth-of-type(2) a{
+     background: url("../img/bb.jpg") no-repeat 1em center;
+ }
+#photo li:nth-of-type(3) a{
+    background: url("../img/l.jpg") no-repeat 1em center;
+}
+
+
+
+
+
+
+
+
+
+footer{
+    position: fixed;
+    bottom: 0;
+    background: #fff;
+    padding: 8px;
+}
+footer li{
+    width: 20%;
+    float: left;
+    text-align: center;
+}
