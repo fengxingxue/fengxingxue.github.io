@@ -121,14 +121,14 @@ footer li img,.bnav img{
     margin-right: 8px;
     display: inline-block;
 }
-#bao,#jiao,#jiao1,#jiao4,#jiao5,#jiao6,#jiao7,#jiao8,.ske1::after,.one::after{
+#bao,#jiao,#jiao1,#jiao4,#jiao5,#jiao6,#jiao7,#jiao8,.ske1::after,.one::after,#photo ul::after{
     display: none;
     position: absolute;
     top: 0;
     left: 0;
     background: #fff;
     width: 100%;
-    height: 100%;
+    height: 100vh;
     z-index: 99;
 }
 
@@ -220,14 +220,15 @@ footer li img,.bnav img{
     padding: 15px;
     text-align: center;
 }
-.v{
+.v,.baox{
     position: absolute;
     top: 0;
     left: 0;
     background: #fff;
     width: 100%;
-    height: 100%;
+    height: 100vh;
     display: none;
+    z-index: 9;
 }
 .v p{
     text-align: center;
@@ -279,7 +280,7 @@ footer li img,.bnav img{
     top: 100px;
     left: 0;
     width: 100%;
-    height: 100%;
+    height: 100vh;
     background: #fff;
     display: none;
 }
@@ -289,7 +290,7 @@ footer li img,.bnav img{
     left: 0;
     background: #b8bdbd;
     width: 100%;
-    height: 100%;
+    height: 100vh;
     display: none;
 }
 .zone2 h2{
@@ -391,11 +392,11 @@ footer li img,.bnav img{
     margin: 25px;
     padding: 25px;
 }
-.bao-main>div p{
+.bao-main>div>p{
     color: #666;
     font-size: 2rem;
 }
-.bao-main>div span{
+.bao-main>div>span{
     color: #f00;
     display: inline-block;
     padding-top: 10px;
@@ -407,11 +408,46 @@ footer li img,.bnav img{
     color: #fff;
     padding: 10px 20px;
     background: #0ec97a;
-
+    border-radius: 10px;
 }
-
-
-
+.baox h2{
+    text-align: center;
+}
+.bao-btn h2{
+    text-align: left;
+    font-size: 2rem;
+    padding: 40px 0 20px 0;
+}
+#photo{
+    position: fixed;
+    bottom: 0;
+    z-index: 99;
+    width: 100%;
+    height: 4em;
+    padding-top: 20px;
+    background: #fff;
+}
+#photo li{
+    float: left;
+    width: 33.3333%;
+    text-align: center;
+}
+#photo a{
+    position: relative;
+    background: #Fff;
+    color: #000;
+    padding:0px;
+    width: 100%;
+}
+#photo li:nth-of-type(1){
+    background: url("../img/d.jpg") no-repeat left center;
+}
+#photo li:nth-of-type(2){
+     background: url("../img/bb.jpg") no-repeat left center;
+ }
+#photo li:nth-of-type(3){
+    background: url("../img/l.jpg") no-repeat left center;
+}
 
 
 
