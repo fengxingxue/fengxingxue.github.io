@@ -198,6 +198,7 @@ footer li img,.bnav img{
 }
 .ske1{
     display: none;
+    height: 100vh;
 }
 .ske1 h2{
     font-size: 2rem;
@@ -221,7 +222,7 @@ footer li img,.bnav img{
     text-align: center;
 }
 .v,.baox{
-    position: absolute;
+    position: fixed;
     top: 0;
     left: 0;
     background: #fff;
