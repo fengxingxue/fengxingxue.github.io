@@ -1,0 +1,20 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title></title>
+</head>
+<body>
+<script>
+    function hengshuping() {
+        if (window.orientation == 180 || window.orientation == 0) {
+                    alert("竖屏状态！")
+        }
+            if (window.orientation == 90 || window.orientation == -90) {
+                    alert("横屏状态！")
+                }
+        }
+    window.addEventListener("onorientationchange" in window ? "orientationchange" : "resize", hengshuping, false);
+</script>
+</body>
+</html>
