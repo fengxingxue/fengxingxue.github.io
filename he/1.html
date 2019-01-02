@@ -2,28 +2,64 @@
 <head>  
     <title>DeviceOrientationEvent</title>  
     <meta charset="UTF-8" />  
-    <meta name="viewport" 
-          content="width=device-width, initial-scale=1.0, minimum-scale=1.0, maximum-scale=1.0, user-scalable=no">  
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+  
     <script src="js/common/jquery.min.js"></script>  
 </head>  
+    <style>
+        /**竖屏 body显示红色**/
+.portrait body div{
+background: red;
+}
+/**横屏 body显示蓝色**/
+.landscape body div{
+background: blue;
+}
+
+    </style>
 <body>  
     <div id="arrow"></div>  
 </body>  
 </html>  
 <script>  
-    try {  
-        var text = "";  
-        window.addEventListener("deviceorientation", orientationHandler, false);  
-        function orientationHandler(event) {  
-            text = ""  
-            var arrow = document.getElementById("arrow");  
-            text += "左右旋转：rotate alpha{" + Math.round(event.alpha) + "deg)<br>";  
-            text += "前后旋转：rotate beta{" + Math.round(event.beta) + "deg)<br>";  
-            text += "扭转设备：rotate gamma{" + Math.round(event.gamma) + "deg)<br>";  
-            arrow.innerHTML = text;  
-        }  
-    }  
-    catch (e) {  
-        $("#arrow").html(e.message)  
-    }  
+   // Listen for orientation changes
+window.addEventListener("orientationchange", function() {
+// Announce the new orientation number
+alert(window.orientation);
+}, false);
+(function(){
+var supportOrientation = (typeof window.orientation === 'number' &&
+typeof window.onorientationchange === 'object');
+var init = function(){
+var htmlNode = document.body.parentNode,
+orientation;
+var updateOrientation = function(){
+if(supportOrientation){
+orientation = window.orientation;
+switch(orientation){
+case 90:
+case -90:
+orientation = 'landscape';
+break;
+default:
+orientation = 'portrait';
+break;
+}
+}else{
+orientation = (window.innerWidth > window.innerHeight) ? 'landscape' : 'portrait';
+}
+htmlNode.setAttribute('class',orientation);
+};
+if(supportOrientation){
+window.addEventListener('orientationchange',updateOrientation,false);
+}else{
+//监听resize事件
+window.addEventListener('resize',updateOrientation,false);
+}
+updateOrientation();
+};
+window.addEventListener('DOMContentLoaded',init,false);
+})();
+
+
 </script>  
