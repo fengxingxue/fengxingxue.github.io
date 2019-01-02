@@ -9,17 +9,25 @@
 
 <script src="jquery-3.3.1.js"></script>
 <script>
-   function rotate() {
+   function doOnOrientationChange()
+{
+switch(window.orientation) 
+{ 
+case -90:
+case 90:
+alert('heng');
+break; 
+default:
+alert('shu');
+break; 
+}
+}
 
-        if (window.orientation == 180 || window.orientation == 0) {
-            alert('竖屏')
-        }
-        if (window.orientation == 90 || window.orientation == -90) {
-            alert('横屏')
-        }
-    }
-    window.addEventListener("load", rotate, false);
-    window.addEventListener("onorientationchange" , rotate, false);
+window.addEventListener('orientationchange', doOnOrientationChange);
+
+// Initial execution if needed
+doOnOrientationChange();
+
 
 </script>
 </body>
