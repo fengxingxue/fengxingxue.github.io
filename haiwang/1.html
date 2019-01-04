@@ -42,7 +42,7 @@
         contentDOM.style.transform = 'rotate(90deg)';
     }
     function orientationHandler(event) {
-        document.getElementById("gamma").innerHTML = event.gamma.toFixed(6);
+       // document.getElementById("gamma").innerHTML = event.gamma.toFixed(6);
         var num=event.gamma.toFixed(6)
         var reg = new RegExp("^-?[0-9]*.?[0-9]*$");
         if ( reg.test(num) ) {
@@ -54,7 +54,7 @@
                 contentDOM.style.height = width + 'px';
                 contentDOM.style.top = (height - width) / 2 + 'px';
                 contentDOM.style.left = 0 - (height - width) / 2 + 'px';
-                contentDOM.style.transform = 'rotate(90deg)';
+                contentDOM.style.transform = 'rotate(-90deg)';
             }else{
                 screen_width = height; //如果 是竖屏，灵感的宽度就等于屏高
                 var contentDOM = document.getElementById('all');
@@ -62,7 +62,7 @@
                 contentDOM.style.height = width + 'px';
                 contentDOM.style.top = (height - width) / 2 + 'px';
                 contentDOM.style.left = 0 - (height - width) / 2 + 'px';
-                contentDOM.style.transform = 'rotate(-90deg)';
+                contentDOM.style.transform = 'rotate(90deg)';
             }
         }
     }
