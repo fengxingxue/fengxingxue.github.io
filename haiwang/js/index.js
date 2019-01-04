@@ -1,8 +1,7 @@
 var width = document.documentElement.clientWidth;
 var height = document.documentElement.clientHeight;
 var screen_width = width; //屏幕宽度
-window.onload=function(){
-    if (width < height) {
+if (width < height) {
         screen_width = height; //如果 是竖屏，灵感的宽度就等于屏高
         var contentDOM = document.getElementById('all');
         contentDOM.style.width = height + 'px';
@@ -11,6 +10,8 @@ window.onload=function(){
         contentDOM.style.left = 0 - (height - width) / 2 + 'px';
         contentDOM.style.transform = 'rotate(90deg)';
     }
+window.onload=function(){
+    
 
     var story = document.getElementById('word');
     var s = document.getElementById('show');
