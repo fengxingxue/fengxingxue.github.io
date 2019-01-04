@@ -55,6 +55,7 @@
                 contentDOM.style.top = (height - width) / 2 + 'px';
                 contentDOM.style.left = 0 - (height - width) / 2 + 'px';
                 contentDOM.style.transform = 'rotate(-90deg)';
+                 contentDOM.style.transition='.5s'
             }else{
                 screen_width = height; //如果 是竖屏，灵感的宽度就等于屏高
                 var contentDOM = document.getElementById('all');
@@ -63,6 +64,7 @@
                 contentDOM.style.top = (height - width) / 2 + 'px';
                 contentDOM.style.left = 0 - (height - width) / 2 + 'px';
                 contentDOM.style.transform = 'rotate(90deg)';
+                 contentDOM.style.transition='.5s'
             }
         }
     }
