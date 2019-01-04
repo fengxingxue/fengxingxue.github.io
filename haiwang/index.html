@@ -12,16 +12,71 @@
 </head>
 <body>
 <div class="all" id="all">
-    <img class="bg" src="img/2.jpg">
-    <img class="bg1" src="img/3.png">
-    <div class="tishi">
-        <p id="word" style="display:none;">大家好，我是海王，来自海里。</p>
-        <p id="show"></p>
-        <p id="word1" style="display:none;">想要去海王探险，赶快去实名一下吧</p>
-        <p id="show1"></p>
+    <div class="jia" id="all2">
+        <img class="bg" src="img/3.jpg">
+        <progress max="100" value="0" id="pg"></progress>
+    </div>
+    <div class="wan" id="all1">
+        <img class="bg" src="img/2.jpg">
+        <img class="bg1" src="img/3.png">
+        <div class="tishi">
+            <p id="word" style="display:none;">大家好，我是海王，来自海里。</p>
+            <p id="show"></p>
+            <p id="word1" style="display:none;">想要去海王探险，赶快去实名一下吧</p>
+            <p id="show1"></p>
+        </div>
     </div>
 </div>
 <script src="js/jquery-3.3.1.js"></script>
 <script src="js/index.js"></script>
+<script>
+    var _PageHeight = document.documentElement.clientHeight,
+        _PageWidth = document.documentElement.clientWidth;
+    var _LoadingTop = _PageHeight > 61 ? (_PageHeight - 61) / 2 : 0,
+        _LoadingLeft = _PageWidth > 215 ? (_PageWidth - 215) / 2 : 0;
+    document.querySelector('.jia').style.display='block'
+    document.querySelector('.wan').style.display='none'
+    var pg=document.getElementById('pg');
+    setInterval(function(e){
+        if(pg.value!=100) pg.value++;
+    },100);
+    //监听加载状态改变
+    document.onreadystatechange = completeLoading;
+    //加载状态为complete时移除loading效果
+    function completeLoading() {
+        if (document.readyState === "complete") {
+            var t=setInterval(function () {
+                if(document.getElementById('pg').value==100){
+                    document.querySelector('.jia').style.display='none'
+                    document.querySelector('.wan').style.display='block'
+                    clearInterval(t)
+                    var story = document.getElementById('word');
+                    var s = document.getElementById('show');
+                    var i = 0;
+                    timer = setInterval(function () {
+                        s.innerHTML = story.innerHTML.substring(0, i);
+                        i++;
+                        if (s.innerHTML == story.innerHTML) {
+                            clearInterval(timer);
+                            s.style.display='none'
+                            var story1 = document.getElementById('word1');
+                            var s1 = document.getElementById('show1');
+                            var ii = 0;
+                            timer1 = setInterval(function () {
+                                s1.innerHTML = story1.innerHTML.substring(0, ii);
+                                ii++;
+                                if (s1.innerHTML == story1.innerHTML) {
+                                    clearInterval(timer1);
+                                }
+                            }, 200);
+                        }
+                    }, 200);
+                }
+            },100)
+        }
+    }
+
+
+</script>
 </body>
 </html>

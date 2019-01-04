@@ -1,3 +1,38 @@
+#pg{
+    width: 60%;
+    position: absolute;
+    bottom: 25%;
+    left: 20%;
+}
+progress{
+    border:solid 1px #fff;
+    background:rgba(0,0,0,.5);
+    border-radius: 5px;
+}
+progress::-webkit-progress-bar {
+    border:solid 1px #fff;
+    background:rgba(0,0,0,.2);
+    color: #fff;
+    border-radius: 5px;
+}
+progress::-moz-progress-bar {
+    border:solid 1px #fff;
+    background:rgba(0,0,0,.2);
+    color: #fff;
+    border-radius: 5px; }
+progress::-webkit-progress-bar {
+    border:solid 1px #fff;
+    background:rgba(0,0,0,.2);
+    color: #fff;
+    border-radius: 5px;
+}
+progress::-webkit-progress-value  {
+    border:solid 1px #fff;
+    background:rgba(0,0,0,.2);
+    color: #fff;
+    border-radius: 5px;
+    background: #fff;
+}
 .all {
     position: absolute;
     top: 0;
@@ -18,10 +53,10 @@
 }
 @keyframes color {
     0% {
-        left:-10px;
+        left:-20px;
     }
     50% {
-        left:10px;
+        left:20px;
     }
     100% {
         left:0px ;
