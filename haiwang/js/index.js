@@ -20,25 +20,23 @@ window.onload=function(){
         i++;
         if (s.innerHTML == story.innerHTML) {
             clearInterval(timer);
+             s.style.display='none'
+            var story1 = document.getElementById('word1');
+            var s1 = document.getElementById('show1');
+            var ii = 0;
+            timer1 = setInterval(function () {
+                s1.innerHTML = story1.innerHTML.substring(0, ii);
+                ii++;
+                if (s1.innerHTML == story1.innerHTML) {
+                    clearInterval(timer1);
+                }
+            }, 200);
         }
     }, 200);
 
 
 }
-var show=document.querySelector('#show')
-show.onclick=function(){
-    this.style.display='none'
-    var story1 = document.getElementById('word1');
-    var s1 = document.getElementById('show1');
-    var i = 0;
-    timer1 = setInterval(function () {
-        s1.innerHTML = story1.innerHTML.substring(0, i);
-        i++;
-        if (s1.innerHTML == story1.innerHTML) {
-            clearInterval(timer1);
-        }
-    }, 200);
-}
+
 function orientationHandler(event) {
     var num=event.gamma.toFixed(6)
     var reg = new RegExp("^-?[0-9]*.?[0-9]*$");
