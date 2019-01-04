@@ -4,57 +4,124 @@
     <meta charset="UTF-8">
     <title>海王</title>
     <style>
-        .all {
-            position: absolute;
-            top: 0;
-            left: 0;
-            width: 90%;
-            height: 100%;
-        }
+        /*.all {*/
+            /*position: absolute;*/
+            /*top: 0;*/
+            /*left: 0;*/
+            /*width: 90%;*/
+            /*height: 100%;*/
+        /*}*/
         img{
             width: 100%;
             height: 100%;
         }
+
+        @media screen and (orientation: portrait) {
+            .main {
+                -webkit-transform:rotate(-90deg);
+                -moz-transform: rotate(-90deg);
+                -ms-transform: rotate(-90deg);
+                transform: rotate(-90deg);
+                width: 100vh;
+                height: 100vh;
+                /*去掉overflow 微信显示正常，但是浏览器有问题，竖屏时强制横屏缩小*/
+                overflow: hidden;
+            }
+        }
+
+
+        @media screen and (orientation: landscape) {
+            .main {
+                -webkit-transform:rotate(0);
+                -moz-transform: rotate(0);
+                -ms-transform: rotate(0);
+                transform: rotate(0)
+            }
+        }
     </style>
 </head>
 <body>
-<div class="all" id="all">
+<div class="main" id="main">
     <img src="img/2.jpg">
 </div>
 <script src="jquery-3.3.1.js"></script>
 <script>
-    var width = document.documentElement.clientWidth;
-    var height = document.documentElement.clientHeight;
-    var screen_width = width; //屏幕宽度
-    if (width < height) {
-        screen_width = height; //如果 是竖屏，灵感的宽度就等于屏高
-        var contentDOM = document.getElementById('all');
-        contentDOM.style.width = height + 'px';
-        contentDOM.style.height = width + 'px';
-        contentDOM.style.top = (height - width) / 2 + 'px';
-        contentDOM.style.left = 0 - (height - width) / 2 + 'px';
-        contentDOM.style.transform = 'rotate(90deg)';
-    }
-
-    //根据手机旋转的角度来判断
-    var evt = "onorientationchange" in window ? "orientationchange" : "resize"; //旋转事件
-    window.addEventListener(evt, function () { //事件监听
-        if (window.orientation === 90 || window.orientation === -90) { //旋转到 90 或 -90 度，即竖屏到横屏
-            screen_width = height; //横屏，灵感的宽度就等于屏高
-            contentDOM.style.width = height + 'px';
-            contentDOM.style.height = width + 'px';
-            contentDOM.style.top = '0px';
-            contentDOM.style.left = '0px';
-            contentDOM.style.transform = 'none'; //不旋转；
-        }else{ //旋转到 180 或 0 度，即横屏到竖屏
-            screen_width = height; //竖屏，灵感的宽度就等于屏高
-            contentDOM.style.width = height + 'px';
-            contentDOM.style.height = width + 'px';
-            contentDOM.style.top = (height - width) / 2 + 'px';
-            contentDOM.style.left = 0 - (height - width) / 2 + 'px';
-            contentDOM.style.transform = 'rotate(90deg)'; //旋转90度
+    // var width = document.documentElement.clientWidth;
+    // var height = document.documentElement.clientHeight;
+    // var screen_width = width; //屏幕宽度
+    // if (width < height) {
+    //     screen_width = height; //如果 是竖屏，灵感的宽度就等于屏高
+    //     var contentDOM = document.getElementById('all');
+    //     contentDOM.style.width = height + 'px';
+    //     contentDOM.style.height = width + 'px';
+    //     contentDOM.style.top = (height - width) / 2 + 'px';
+    //     contentDOM.style.left = 0 - (height - width) / 2 + 'px';
+    //     contentDOM.style.transform = 'rotate(90deg)';
+    // }
+    //
+    // //根据手机旋转的角度来判断
+    // var evt = "onorientationchange" in window ? "orientationchange" : "resize"; //旋转事件
+    // window.addEventListener(evt, function () { //事件监听
+    //     if (window.orientation === 90 || window.orientation === -90) { //旋转到 90 或 -90 度，即竖屏到横屏
+    //         screen_width = height; //横屏，灵感的宽度就等于屏高
+    //         contentDOM.style.width = height + 'px';
+    //         contentDOM.style.height = width + 'px';
+    //         contentDOM.style.top = '0px';
+    //         contentDOM.style.left = '0px';
+    //         contentDOM.style.transform = 'none'; //不旋转；
+    //     }else{ //旋转到 180 或 0 度，即横屏到竖屏
+    //         screen_width = height; //竖屏，灵感的宽度就等于屏高
+    //         contentDOM.style.width = height + 'px';
+    //         contentDOM.style.height = width + 'px';
+    //         contentDOM.style.top = (height - width) / 2 + 'px';
+    //         contentDOM.style.left = 0 - (height - width) / 2 + 'px';
+    //         contentDOM.style.transform = 'rotate(90deg)'; //旋转90度
+    //     }
+    // }, false);
+    function changeOrientation($print) {
+        var width = document.documentElement.clientWidth;
+        var height =  document.documentElement.clientHeight;
+        if(width < height) {
+            $print.width(height);
+            $print.height(width);
+            $print.css('top',  (height - width) / 2 );
+            $print.css('left',  0 - (height - width) / 2 );
+            $print.css('transform', 'rotate(90deg)');
+            $print.css('transform-origin', '50% 50%');
         }
-    }, false);
+
+        var evt = "onorientationchange" in window ? "orientationchange" : "resize";
+
+        window.addEventListener(evt, function() {
+
+
+            setTimeout(function() {
+                var width = document.documentElement.clientWidth;
+                var height =  document.documentElement.clientHeight;
+                // 刷新城市的宽度
+                initCityWidth();
+                // 初始化每个气泡和自行车碰撞的距离
+                cityCrashDistanceArr = initCityCrashDistance();
+
+                if( width > height ){
+                    $print.width(width);
+                    $print.height(height);
+                    $print.css('top',  0 );
+                    $print.css('left',  0 );
+                    $print.css('transform' , 'none');
+                    $print.css('transform-origin' , '50% 50%');
+                }
+                else {
+                    $print.width(height);
+                    $print.height(width);
+                    $print.css('top',  (height-width)/2 );
+                    $print.css('left',  0-(height-width)/2 );
+                    $print.css('transform' , 'rotate(90deg)');
+                    $print.css('transform-origin' , '50% 50%');
+                }
+            }, 300);
+        }, false);
+    }
 </script>
 </body>
 </html>
