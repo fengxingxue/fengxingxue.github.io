@@ -1,60 +1,80 @@
-<!DOCTYPE html>
-<html lang="en">
+<html>
 <head>
-    <meta charset="UTF-8">
-    <title>海王</title>
-    <style>
-        .all {
-            position: absolute;
-            top: 0;
-            left: 0;
-            width: 90%;
-            height: 100%;
-        }
-        img{
-            width: 100%;
-            height: 100%;
-        }
-    </style>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1" />
+    <title>《鬼吹灯》夜探墓穴</title>
+    <meta name="viewport" content="width=device-width,initial-scale=1, maximum-scale=1, minimum-scale=1, user-scalable=no" />
+    <meta name="apple-mobile-web-app-capable" content="yes" />
+    <meta name="format-detection" content="telephone=no">
+    <link href="css/main.css?v=0.2" rel="stylesheet" />
+    <style id="cssAnimation"></style>
+    
 </head>
+ 
 <body>
-<div class="all" id="all">
-    <img src="img/2.jpg">
-</div>
-<script src="jquery-3.3.1.js"></script>
-<script>
-    var width = document.documentElement.clientWidth;
-    var height = document.documentElement.clientHeight;
-    var screen_width = width; //屏幕宽度
-    if (width < height) {
-        screen_width = height; //如果 是竖屏，灵感的宽度就等于屏高
-        var contentDOM = document.getElementById('all');
-        contentDOM.style.width = height + 'px';
-        contentDOM.style.height = width + 'px';
-        contentDOM.style.top = (height - width) / 2 + 'px';
-        contentDOM.style.left = 0 - (height - width) / 2 + 'px';
-        contentDOM.style.transform = 'rotate(90deg)';
+<p>左右：<span id="alpha">0</span>
+</p>
+<p>前后：<span id="beta">0</span>
+</p>
+<p>扭转：<span id="gamma">0</span>
+</p>
+<p>指北针指向：<span id="heading">0</span>度</p>
+<p>指北针精度：<span id="accuracy">0</span>度</p>
+<hr />
+<p>x轴加速度：<span id="x">0</span>米每二次方秒</p>
+<p>y轴加速度：<span id="y">0</span>米每二次方秒</p>
+<p>z轴加速度：<span id="z">0</span>米每二次方秒</p>
+<hr />
+<p>x轴加速度(考虑重力加速度)：<span id="xg">0</span>米每二次方秒</p>
+<p>y轴加速度(考虑重力加速度)：<span id="yg">0</span>米每二次方秒</p>
+<p>z轴加速度(考虑重力加速度)：<span id="zg">0</span>米每二次方秒</p>
+<hr />
+<p>左右旋转速度：<span id="Ralpha">0</span>度每秒</p>
+<p>前后旋转速度：<span id="Rbeta">0</span>度每秒</p>
+<p>扭转速度：<span id="Rgamma">0</span>度每秒</p>
+<hr />
+<p>上次收到通知的间隔：<span id="interval">0</span>毫秒</p>
+ 
+ 
+<script type="text/javascript">
+    function orientationHandler(event) {
+        document.getElementById("alpha").innerHTML = event.alpha.toFixed(6);
+        document.getElementById("beta").innerHTML = event.beta.toFixed(6);
+        document.getElementById("gamma").innerHTML = event.gamma.toFixed(6);
+        document.getElementById("heading").innerHTML = event.webkitCompassHeading.toFixed(6);
+        document.getElementById("accuracy").innerHTML = event.webkitCompassAccuracy.toFixed(6);
+ 
     }
-
-    //根据手机旋转的角度来判断
-    var evt = "onorientationchange" in window ? "orientationchange" : "resize"; //旋转事件
-    window.addEventListener(evt, function () { //事件监听
-        if (window.orientation === 90 || window.orientation === -90) { //旋转到 90 或 -90 度，即竖屏到横屏
-            screen_width = height; //横屏，灵感的宽度就等于屏高
-            contentDOM.style.width = height + 'px';
-            contentDOM.style.height = width + 'px';
-            contentDOM.style.top = '0px';
-            contentDOM.style.left = '0px';
-            contentDOM.style.transform = 'none'; //不旋转；
-        }else{ //旋转到 180 或 0 度，即横屏到竖屏
-            screen_width = height; //竖屏，灵感的宽度就等于屏高
-            contentDOM.style.width = height + 'px';
-            contentDOM.style.height = width + 'px';
-            contentDOM.style.top = (height - width) / 2 + 'px';
-            contentDOM.style.left = 0 - (height - width) / 2 + 'px';
-            contentDOM.style.transform = 'rotate(90deg)'; //旋转90度
-        }
-    }, false);
+ 
+ 
+    function motionHandler(event) {
+        var accGravity = event.accelerationIncludingGravity;
+        document.getElementById("xg").innerHTML = accGravity.x.toFixed(6);
+        document.getElementById("yg").innerHTML = accGravity.y.toFixed(6);
+        document.getElementById("zg").innerHTML = accGravity.z.toFixed(6);
+        var rotationRate = event.rotationRate;
+        document.getElementById("Ralpha").innerHTML = rotationRate.alpha.toFixed(6);
+        document.getElementById("Rbeta").innerHTML = rotationRate.beta.toFixed(6);
+        document.getElementById("Rgamma").innerHTML = rotationRate.gamma.toFixed(6);
+        var acc = event.acceleration;
+        document.getElementById("x").innerHTML = acc.x.toFixed(6);
+        document.getElementById("y").innerHTML = acc.y.toFixed(6);
+        document.getElementById("z").innerHTML = acc.z.toFixed(6);
+        document.getElementById("interval").innerHTML = event.interval;
+ 
+    }
+ 
+    if (window.DeviceMotionEvent) {
+        window.addEventListener("devicemotion", motionHandler, false);
+    } else {
+        document.body.innerHTML = "设备不支持";
+    }
+ 
+    if (window.DeviceOrientationEvent) {
+        window.addEventListener("deviceorientation", orientationHandler, false);
+    } else {
+        document.body.innerHTML = "<span style="font-family: Arial, Helvetica, sans-serif;">设备不支持</span><span style="font-family: Arial, Helvetica, sans-serif;">";</span>
+    };
 </script>
 </body>
 </html>
