@@ -116,14 +116,14 @@
             var absVal = Math.abs(num);
             screen_width = height;
             var contentDOM = document.getElementById('all');
-            if(num==absVal){
+           if(num==absVal && num>10){
                 contentDOM.style.width = height + 'px';
                 contentDOM.style.height = width + 'px';
                 contentDOM.style.top = (height - width) / 2 + 'px';
                 contentDOM.style.left = 0 - (height - width) / 2 + 'px';
                 contentDOM.style.transform = 'rotate(-90deg)';
                 contentDOM.style.transition='.5s'
-            }else{
+            }else if(num!=absVal && num<-10){
                 contentDOM.style.width = height + 'px';
                 contentDOM.style.height = width + 'px';
                 contentDOM.style.top = (height - width) / 2 + 'px';
