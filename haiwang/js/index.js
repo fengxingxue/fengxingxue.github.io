@@ -39,7 +39,7 @@ function orientationHandler(event) {
         var contentDOM = document.getElementById('all');
         var contentDOM1 = document.getElementById('all1');
         var contentDOM2 = document.getElementById('all2');
-        if(num==absVal && num>10){
+        if(num==absVal && num>15){
             const evt = "onorientationchange" in window ? "orientationchange" : "resize"; //旋转事件
             //window.addEventListener(evt, function () { //事件监听
                 var contentDOM = document.getElementById('all');
@@ -72,7 +72,7 @@ function orientationHandler(event) {
            // }, false);
            
 
-        }else if(num!=absVal && num<-10){
+        }else if(num!=absVal && num<-15){
             const evt = "onorientationchange" in window ? "orientationchange" : "resize"; //旋转事件
            // window.addEventListener(evt, function () { //事件监听
                 var contentDOM = document.getElementById('all');
