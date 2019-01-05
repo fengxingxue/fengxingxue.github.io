@@ -2,11 +2,115 @@
 <html lang="en">
 <head>
     <meta charset="UTF-8">
-    <title>index</title>
+    <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1" />
+    <title>海王</title>
+    <meta name="viewport" content="width=device-width,initial-scale=1, maximum-scale=1, minimum-scale=1, user-scalable=no" />
+    <meta name="apple-mobile-web-app-capable" content="yes" />
+    <meta name="format-detection" content="telephone=no">
+    <style id="cssAnimation"></style>
+    <link rel="stylesheet" href="css/index.css">
 </head>
 <body>
-    <h1>李易峰</h1>
-	<a href='index.html'>index</a>
-	<a href='page.html'>page</a>
+<div class="all" id="all">
+    <img class="bg" id="aa" src="img/3.jpg">
+    <progress max="100" value="0" id="pg"></progress>
+    <div class="wan" id="all1" style="display:none">
+        <img class="bg" src="img/indexbg.jpg">
+        <img class="bg1" src="img/haiwang.png" alt="">
+        <img class="bg2" src="img/haitun.png" alt="">
+        <img class="bg3" src="img/renyu.png" alt="">
+        <img class="bg8" src="img/bg.png" alt="">
+        <img class="bg4" src="img/beike.png" alt="">
+        <img class="bg5" src="img/beikefaguang.png" alt="">
+        <img class="bg6" src="img/haibao.png" alt="">
+        <img class="bg7" src="img/zhenzhu.png" alt="">
+        <img class="bg9" src="img/hai.png" alt="">
+        <div class="biao">
+            <form action="">
+                <label for="">
+                    账 号：<input type="text">
+                </label>
+                <br>
+                <label for="">
+                    密 码：<input type="text">
+                </label>
+                <p>
+                    <input type="checkbox" checked="checked"><img id="tong" src="img/dui.png" class="tt" alt=""><span style="padding-left:22px">已阅读并同意《用户协议》</span>
+                </p>
+                <div class="zhu">
+                    <img src="img/zhu.png" alt="">
+                    <span>注册</span>
+                </div>
+                <div class="deng">
+                    <img src="img/zhu.png" alt="">
+                    <span>登陆</span>
+                </div>
+            </form>
+        </div>
+
+    </div>
+</div>
+<script src="js/jquery-3.3.1.js"></script>
+<script src="js/index.js"></script>
+<script>
+    var _PageHeight = document.documentElement.clientHeight,
+        _PageWidth = document.documentElement.clientWidth;
+    var _LoadingTop = _PageHeight > 61 ? (_PageHeight - 61) / 2 : 0,
+        _LoadingLeft = _PageWidth > 215 ? (_PageWidth - 215) / 2 : 0;
+    var pg=document.getElementById('pg');
+    setInterval(function(e){
+        if(pg.value!=100) pg.value++;
+    },100);
+    //监听加载状态改变
+    document.onreadystatechange = completeLoading;
+    //加载状态为complete时移除loading效果
+    function completeLoading() {
+        if (document.readyState === "complete") {
+            var t=setInterval(function () {
+                if(document.getElementById('pg').value==100){
+                    var all=document.querySelector('#all')
+                    var bg=document.querySelector('#pg')
+                    var aa=document.querySelector('#aa')
+                    all.removeChild(bg)
+                    all.removeChild(aa)
+                    document.querySelector('.wan').style.display='block'
+                    clearInterval(t)
+                    // var story = document.getElementById('word');
+                    // var s = document.getElementById('show');
+                    // var i = 0;
+                    // timer = setInterval(function () {
+                    //     s.innerHTML = story.innerHTML.substring(0, i);
+                    //     i++;
+                    //     if (s.innerHTML == story.innerHTML) {
+                    //         clearInterval(timer);
+                    //         s.style.display='none'
+                    //         var story1 = document.getElementById('word1');
+                    //         var s1 = document.getElementById('show1');
+                    //         var ii = 0;
+                    //         timer1 = setInterval(function () {
+                    //             s1.innerHTML = story1.innerHTML.substring(0, ii);
+                    //             ii++;
+                    //             if (s1.innerHTML == story1.innerHTML) {
+                    //                 clearInterval(timer1);
+                    //             }
+                    //         }, 200);
+                    //     }
+                    // }, 200);
+                }
+            },100)
+        }
+    }
+document.querySelector('#tong').onclick=function () {
+        if(this.className=='tt'){
+            this.src="img/dui1.png";
+            this.className='t1'
+        }else if(this.className=='t1'){
+            this.src="img/dui.png";
+            this.className='tt'
+        }
+
+}
+
+</script>
 </body>
 </html>
