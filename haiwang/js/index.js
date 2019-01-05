@@ -41,7 +41,7 @@ function orientationHandler(event) {
         var contentDOM2 = document.getElementById('all2');
         if(num==absVal && num>10){
             const evt = "onorientationchange" in window ? "orientationchange" : "resize"; //旋转事件
-            window.addEventListener(evt, function () { //事件监听
+            //window.addEventListener(evt, function () { //事件监听
                 var contentDOM = document.getElementById('all');
                 if (window.orientation) { //旋转到 90 或 -90 度，即竖屏到横屏
                     screen_width = height; //横屏，灵感的宽度就等于屏高
@@ -69,12 +69,12 @@ function orientationHandler(event) {
                     contentDOM2.style.top = (height - width) / 2 + 'px';
                     contentDOM2.style.left = 0 - (height - width) / 2 + 'px';
                 }
-            }, false);
+           // }, false);
            
 
         }else if(num!=absVal && num<-10){
             const evt = "onorientationchange" in window ? "orientationchange" : "resize"; //旋转事件
-            window.addEventListener(evt, function () { //事件监听
+           // window.addEventListener(evt, function () { //事件监听
                 var contentDOM = document.getElementById('all');
                 if (window.orientation) { //旋转到 90 或 -90 度，即竖屏到横屏
                     screen_width = height; //横屏，灵感的宽度就等于屏高
@@ -102,7 +102,7 @@ function orientationHandler(event) {
                     contentDOM2.style.top = (height - width) / 2 + 'px';
                     contentDOM2.style.left = 0 - (height - width) / 2 + 'px';
                 }
-            }, false);
+           // }, false);
 
         }
     }
