@@ -37,19 +37,19 @@
     //加载状态为complete时移除loading效果
     function completeLoading() {
         if (document.readyState === "complete") {
+            var wenben='<img class="bg" src="img/2.jpg">\n' +
+                '        <img class="bg1" src="img/3.png">\n' +
+                '        <div class="tishi">\n' +
+                '            <p id="word" style="display:none;">大家好，我是海王，来自海里。</p>\n' +
+                '            <p id="show"></p>\n' +
+                '            <p id="word1" style="display:none;">想要去海王探险，赶快去实名一下吧</p>\n' +
+                '            <p id="show1"></p>\n' +
+                '        </div>'
+            document.querySelector('.wan').innerHTML=wenben
             var t=setInterval(function () {
                 if(document.getElementById('pg').value==100){
                     document.querySelector('.jia').style.display='none'
                     document.querySelector('.wan').style.display='block'
-                    var wenben='<img class="bg" src="img/2.jpg">\n' +
-                        '        <img class="bg1" src="img/3.png">\n' +
-                        '        <div class="tishi">\n' +
-                        '            <p id="word" style="display:none;">大家好，我是海王，来自海里。</p>\n' +
-                        '            <p id="show"></p>\n' +
-                        '            <p id="word1" style="display:none;">想要去海王探险，赶快去实名一下吧</p>\n' +
-                        '            <p id="show1"></p>\n' +
-                        '        </div>'
-                    document.querySelector('.wan').innerHTML=wenben
                     clearInterval(t)
                     var story = document.getElementById('word');
                     var s = document.getElementById('show');
