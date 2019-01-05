@@ -9,20 +9,20 @@ window.onload=function(){
     var contentDOM2 = document.getElementById('all2');
     if (window.orientation) { //旋转到 90 或 -90 度，即竖屏到横屏
         screen_width = height; //横屏，灵感的宽度就等于屏高
-        // contentDOM.style.width = height + 'px';
-        // contentDOM.style.height = width + 'px';
+        contentDOM.style.width = height + 'px';
+        contentDOM.style.height = width + 'px';
         contentDOM1.style.top = '0';
         contentDOM1.style.left = '0';
         contentDOM.style.transform = 'none'; //不旋转；
 
-        // contentDOM1.style.width = height + 'px';
-        // contentDOM1.style.height = width + 'px';
+        contentDOM1.style.width = height + 'px';
+        contentDOM1.style.height = width + 'px';
         contentDOM1.style.top = (height - width) / 2 + 'px';
         contentDOM1.style.left = 0 - (height - width) / 2 + 'px';
 
 
-        // contentDOM2.style.width = height + 'px';
-        // contentDOM2.style.height = width + 'px';
+        contentDOM2.style.width = height + 'px';
+        contentDOM2.style.height = width + 'px';
         contentDOM2.style.top = (height - width) / 2 + 'px';
         contentDOM2.style.left = 0 - (height - width) / 2 + 'px';
     }else{ //旋转到 180 或 0 度，即横屏到竖屏
@@ -64,7 +64,7 @@ function orientationHandler(event) {
         var contentDOM = document.getElementById('all');
         var contentDOM1 = document.getElementById('all1');
         var contentDOM2 = document.getElementById('all2');
-        if(num==absVal && num>10){
+        if(num==absVal && num>15){
             const evt = "onorientationchange" in window ? "orientationchange" : "resize"; //旋转事件
             //window.addEventListener(evt, function () { //事件监听
                 var contentDOM = document.getElementById('all');
@@ -97,7 +97,7 @@ function orientationHandler(event) {
             //}, false);
 
 
-        }else if(num!=absVal && num<-10){
+        }else if(num!=absVal && num<-15){
             const evt = "onorientationchange" in window ? "orientationchange" : "resize"; //旋转事件
             //window.addEventListener(evt, function () { //事件监听
                 var contentDOM = document.getElementById('all');
