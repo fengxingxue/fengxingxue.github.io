@@ -12,10 +12,8 @@
 </head>
 <body>
 <div class="all" id="all">
-    <div class="jia" id="all2">
-        <img class="bg" src="img/3.jpg">
-        <progress max="100" value="0" id="pg"></progress>
-    </div>
+    <img class="bg" id="aa" src="img/3.jpg">
+    <progress max="100" value="0" id="pg"></progress>
     <div class="wan" id="all1" style="display:none">
         <img class="bg" src="img/2.jpg">
         <img class="bg1" src="img/3.png">
@@ -45,7 +43,11 @@
         if (document.readyState === "complete") {
             var t=setInterval(function () {
                 if(document.getElementById('pg').value==100){
-                    document.querySelector('.jia').style.display='none'
+                    var all=document.querySelector('#all')
+                    var bg=document.querySelector('#pg')
+                    var aa=document.querySelector('#aa')
+                    all.removeChild(bg)
+                    all.removeChild(aa)
                     document.querySelector('.wan').style.display='block'
                     clearInterval(t)
                     var story = document.getElementById('word');
