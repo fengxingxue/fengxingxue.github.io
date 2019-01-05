@@ -8,6 +8,9 @@ window.onload=function(){
     var contentDOM1 = document.getElementById('all1');
     var contentDOM2 = document.getElementById('all2');
     if (window.orientation) { //旋转到 90 或 -90 度，即竖屏到横屏
+        var width = document.documentElement.clientWidth || document.documentElement.offsetWidth;
+        var height = document.documentElement.clientHeight || document.documentElement.offsetHeight;
+        var screen_width = width; //屏幕宽度
         screen_width = height; //横屏，灵感的宽度就等于屏高
         contentDOM.style.width = height + 'px';
         contentDOM.style.height = width + 'px';
@@ -64,7 +67,7 @@ function orientationHandler(event) {
         var contentDOM = document.getElementById('all');
         var contentDOM1 = document.getElementById('all1');
         var contentDOM2 = document.getElementById('all2');
-        if(num==absVal && num>15){
+        if(num==absVal && num>10){
             const evt = "onorientationchange" in window ? "orientationchange" : "resize"; //旋转事件
             //window.addEventListener(evt, function () { //事件监听
                 var contentDOM = document.getElementById('all');
@@ -97,7 +100,7 @@ function orientationHandler(event) {
             //}, false);
 
 
-        }else if(num!=absVal && num<-15){
+        }else if(num!=absVal && num<-10){
             const evt = "onorientationchange" in window ? "orientationchange" : "resize"; //旋转事件
             //window.addEventListener(evt, function () { //事件监听
                 var contentDOM = document.getElementById('all');
