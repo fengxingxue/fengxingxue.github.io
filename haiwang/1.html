@@ -1,141 +1,94 @@
-<!DOCTYPE html>
-<html lang="en">
+
+
+<html>
 <head>
-    <meta charset="UTF-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1" />
-    <title>海王</title>
-    <meta name="viewport" content="width=device-width,initial-scale=1, maximum-scale=1, minimum-scale=1, user-scalable=no" />
-    <meta name="apple-mobile-web-app-capable" content="yes" />
-    <meta name="format-detection" content="telephone=no">
-    <style id="cssAnimation"></style>
-    <style>
-        .all {
-            position: absolute;
-            top: 0;
-            left: 0;
-            width: 90%;
-            height: 100%;
-        }
-        .bg{
-            width: 100%;
-            height: 100%;
-        }
-        .bg1{
-            position: absolute;
-            bottom: 0;
-            left: 0;
-            z-index: 99;
-            animation:color 5s infinite linear;
-        }
-        @keyframes color {
-            0% {
-                left:-10px;
-            }
-            50% {
-               left:10px;
-            }
-            100% {
-                left:0px ;
-            }
-        }
-        .tishi{
-            position: absolute;
-            left: 30%;
-            top: 25%;
-            width: 40%;
-            height: 30%;
-            background: rgba(255,255,255,0.5);
-            border-radius: 10px;
-        }
-        #show,#show1{
-            padding: 10px;
-            color: #fff;
-             width: 90%;
-            height: 70%;
+    <title>JS实现气泡从水中急速上升效果</title>
+    <style type="text/css">
+        body {
+            cursor:crosshair;margin:0; padding:0;
+            position:absolute; overflow:hidden;
+            background:#FFF; left:0; top:0;
+            width:100%; height:100%;
         }
     </style>
+    <script type="text/javascript">
+        var object = new Array();
+        nbfm  = 60;
+        var xm = 0;
+        var ym = 9999;
+        var nx = 0;
+        var ny = 0;
+        function movbulb(){
+            with (this) {
+                if(ec < 20){
+                    if(Math.abs(x0 - xm) < 100 && Math.abs(y0 - ym) < 100){
+                        xx = (xm - x0) / 8;
+                        yy = (ym - y0) / 8;
+                        ec++;
+                    }
+                }
+                xx *= 0.99;
+                yy *= 0.99;
+                x0 = Math.round(x0 + Math.cos(y0 / 15) * p) + xx;
+                y0+= yy - v;
+                if(y0 < -h * 2 || x0 < -w * 2 || x0 > nx + w * 2){
+                    y0 = ny + N + h * 2;
+                    x0 = nx/2-100 + Math.random() * 100;
+                    ec = 0;
+                }
+                obj.style.top = y0 - h;
+                obj.style.left = x0 - w;
+            }
+        }
+        function CObj(N,img,w,h){
+            this.obj = document.createElement("img");
+            this.obj.src = img.src;
+            this.obj.style.position = "absolute";
+            this.obj.style.left = -1000;
+            document.body.appendChild(this.obj);
+            this.N = N;
+            this.x0 = 0;
+            this.y0 = -1000;
+            this.v = 1 + Math.round((80 / h) * Math.random());
+            this.p = 1 + Math.round((w / 8) * Math.random());
+            this.xx = 0;
+            this.yy = 0;
+            this.ec = 0;
+            this.w = w;
+            this.h = h;
+            this.movbulb = movbulb;
+        }
+        function resize(){
+            nx = document.body.offsetWidth;
+            ny = document.body.offsetHeight;
+        }
+        onresize = resize;
+        document.onmousemove = function(e){
+            if (window.event) e = window.event;
+            xm = document.body.scrollLeft+(e.x || e.clientX);
+            ym = document.body.scrollTop+(e.y || e.clientY);
+        }
+        function run(){
+            for(i in object)object[i].movbulb();
+            setTimeout(run, 16);
+        }
+        onload = function() {
+            PIC = document.getElementById("bubbles").getElementsByTagName("img");
+            resize();
+            for(nbf=0;nbf<nbfm;nbf++){
+                sf = PIC[nbf%PIC.length];
+                object[nbf] = new CObj(nbf,sf,sf.width/2,sf.height/2);
+            }
+            run();
+        }
+    </script>
 </head>
 <body>
-<div class="all" id="all">
-    <img class="bg" src="img/2.jpg">
-    <img class="bg1" src="img/3.png">
-    <div class="tishi">
-        <p id="word" style="display:none;">大家好，我是海王，来自海里。</p>
-        <p id="show"></p>
-        <p id="word1" style="display:none;">想要去海王探险，赶快去实名一下吧</p>
-        <p id="show1"></p>
-    </div>
+<div id="bubbles" style="visibility:hidden">
+    <img src="http://bbs.blueidea.com/static/image/smiley/blueidea/smile.gif">
+    <img src="http://bbs.blueidea.com/static/image/smiley/blueidea/biggrin.gif">
+    <img src="http://bbs.blueidea.com/static/image/smiley/blueidea/eek.gif">
+    <img src="http://bbs.blueidea.com/static/image/smiley/blueidea/rolleyes.gif">
 </div>
-<script src="jquery-3.3.1.js"></script>
-<script>
-    var width = document.documentElement.clientWidth;
-    var height = document.documentElement.clientHeight;
-    var screen_width = width; //屏幕宽度
-    window.onload=function(){
-        if (width < height) {
-            screen_width = height; //如果 是竖屏，灵感的宽度就等于屏高
-            var contentDOM = document.getElementById('all');
-            contentDOM.style.width = height + 'px';
-            contentDOM.style.height = width + 'px';
-            contentDOM.style.top = (height - width) / 2 + 'px';
-            contentDOM.style.left = 0 - (height - width) / 2 + 'px';
-            contentDOM.style.transform = 'rotate(90deg)';
-        }
-
-            var story = document.getElementById('word');
-            var s = document.getElementById('show');
-            var i = 0;
-            timer = setInterval(function () {
-                s.innerHTML = story.innerHTML.substring(0, i);
-                i++;
-                if (s.innerHTML == story.innerHTML) {
-                    clearInterval(timer);
-                }
-            }, 200);
-
-
-    }
-    var show=document.querySelector('#show')
-    show.onclick=function(){
-        this.style.display='none'
-        var story1 = document.getElementById('word1');
-        var s1 = document.getElementById('show1');
-        var i = 0;
-        timer1 = setInterval(function () {
-            s1.innerHTML = story1.innerHTML.substring(0, i);
-            i++;
-            if (s1.innerHTML == story1.innerHTML) {
-                clearInterval(timer1);
-            }
-        }, 200);
-    }
-    function orientationHandler(event) {
-        var num=event.gamma.toFixed(6)
-        var reg = new RegExp("^-?[0-9]*.?[0-9]*$");
-        if ( reg.test(num) ) {
-            var absVal = Math.abs(num);
-            screen_width = height;
-            var contentDOM = document.getElementById('all');
-           if(num==absVal && num>10){
-                contentDOM.style.width = height + 'px';
-                contentDOM.style.height = width + 'px';
-                contentDOM.style.top = (height - width) / 2 + 'px';
-                contentDOM.style.left = 0 - (height - width) / 2 + 'px';
-                contentDOM.style.transform = 'rotate(-90deg)';
-                contentDOM.style.transition='.5s'
-            }else if(num!=absVal && num<-10){
-                contentDOM.style.width = height + 'px';
-                contentDOM.style.height = width + 'px';
-                contentDOM.style.top = (height - width) / 2 + 'px';
-                contentDOM.style.left = 0 - (height - width) / 2 + 'px';
-                contentDOM.style.transform = 'rotate(90deg)';
-                contentDOM.style.transition='.5s'
-            }
-        }
-    }
-    if (window.DeviceOrientationEvent) {
-        window.addEventListener("deviceorientation", orientationHandler, false);
-    }
-</script>
 </body>
 </html>

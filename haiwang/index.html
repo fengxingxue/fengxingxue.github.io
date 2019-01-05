@@ -9,24 +9,49 @@
     <meta name="format-detection" content="telephone=no">
     <style id="cssAnimation"></style>
     <link rel="stylesheet" href="css/index.css">
-    <script src="js/jquery-3.3.1.js"></script>
-    <script src="js/index.js"></script>
 </head>
 <body>
 <div class="all" id="all">
     <img class="bg" id="aa" src="img/3.jpg">
     <progress max="100" value="0" id="pg"></progress>
     <div class="wan" id="all1" style="display:none">
-        <img class="bg" src="img/2.jpg">
-        <img class="bg1" src="img/3.png">
-        <div class="tishi">
-            <p id="word" style="display:none;">大家好，我是海王，来自海里。</p>
-            <p id="show"></p>
-            <p id="word1" style="display:none;">想要去海王探险，赶快去实名一下吧</p>
-            <p id="show1"></p>
+        <img class="bg" src="img/indexbg.jpg">
+        <img class="bg1" src="img/haiwang.png" alt="">
+        <img class="bg2" src="img/haitun.png" alt="">
+        <img class="bg3" src="img/renyu.png" alt="">
+        <img class="bg8" src="img/bg.png" alt="">
+        <img class="bg4" src="img/beike.png" alt="">
+        <img class="bg5" src="img/beikefaguang.png" alt="">
+        <img class="bg6" src="img/haibao.png" alt="">
+        <img class="bg7" src="img/zhenzhu.png" alt="">
+        <img class="bg9" src="img/hai.png" alt="">
+        <div class="biao">
+            <form action="">
+                <label for="">
+                    账 号：<input type="text">
+                </label>
+                <br>
+                <label for="">
+                    密 码：<input type="text">
+                </label>
+                <p>
+                    <input type="checkbox" checked="checked"><img id="tong" src="img/dui.png" class="tt" alt=""><span style="padding-left:22px">已阅读并同意《用户协议》</span>
+                </p>
+                <div class="zhu">
+                    <img src="img/zhu.png" alt="">
+                    <span>注册</span>
+                </div>
+                <div class="deng">
+                    <img src="img/zhu.png" alt="">
+                    <span>登陆</span>
+                </div>
+            </form>
         </div>
+
     </div>
 </div>
+<script src="js/jquery-3.3.1.js"></script>
+<script src="js/index.js"></script>
 <script>
     var _PageHeight = document.documentElement.clientHeight,
         _PageWidth = document.documentElement.clientWidth;
@@ -50,32 +75,41 @@
                     all.removeChild(aa)
                     document.querySelector('.wan').style.display='block'
                     clearInterval(t)
-                    var story = document.getElementById('word');
-                    var s = document.getElementById('show');
-                    var i = 0;
-                    timer = setInterval(function () {
-                        s.innerHTML = story.innerHTML.substring(0, i);
-                        i++;
-                        if (s.innerHTML == story.innerHTML) {
-                            clearInterval(timer);
-                            s.style.display='none'
-                            var story1 = document.getElementById('word1');
-                            var s1 = document.getElementById('show1');
-                            var ii = 0;
-                            timer1 = setInterval(function () {
-                                s1.innerHTML = story1.innerHTML.substring(0, ii);
-                                ii++;
-                                if (s1.innerHTML == story1.innerHTML) {
-                                    clearInterval(timer1);
-                                }
-                            }, 200);
-                        }
-                    }, 200);
+                    // var story = document.getElementById('word');
+                    // var s = document.getElementById('show');
+                    // var i = 0;
+                    // timer = setInterval(function () {
+                    //     s.innerHTML = story.innerHTML.substring(0, i);
+                    //     i++;
+                    //     if (s.innerHTML == story.innerHTML) {
+                    //         clearInterval(timer);
+                    //         s.style.display='none'
+                    //         var story1 = document.getElementById('word1');
+                    //         var s1 = document.getElementById('show1');
+                    //         var ii = 0;
+                    //         timer1 = setInterval(function () {
+                    //             s1.innerHTML = story1.innerHTML.substring(0, ii);
+                    //             ii++;
+                    //             if (s1.innerHTML == story1.innerHTML) {
+                    //                 clearInterval(timer1);
+                    //             }
+                    //         }, 200);
+                    //     }
+                    // }, 200);
                 }
             },100)
         }
     }
+document.querySelector('#tong').onclick=function () {
+        if(this.className=='tt'){
+            this.src="img/dui1.png";
+            this.className='t1'
+        }else if(this.className=='t1'){
+            this.src="img/dui.png";
+            this.className='tt'
+        }
 
+}
 
 </script>
 </body>

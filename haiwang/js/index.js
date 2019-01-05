@@ -11,20 +11,20 @@ window.onload=function(){
         screen_width = window.screen.height; //横屏，灵感的宽度就等于屏高
         contentDOM.style.width = window.screen.height + 'px';
         contentDOM.style.height = window.screen.width + 'px';
-        contentDOM1.style.top = '0';
-        contentDOM1.style.left = '0';
+        contentDOM.style.top = (height - width) / 2 + 'px';
+        contentDOM.style.left = 0 - (height - width) / 2 + 'px';
         contentDOM.style.transform = 'none'; //不旋转；
 
         contentDOM1.style.width = window.screen.height + 'px';
         contentDOM1.style.height = window.screen.width + 'px';
-        contentDOM1.style.top = '0px';
-        contentDOM1.style.left =  '0px';
+        contentDOM1.style.top = (height - width) / 2 + 'px';
+        contentDOM1.style.left = 0 - (height - width) / 2 + 'px';
 
 
         contentDOM2.style.width = window.screen.height + 'px';
         contentDOM2.style.height = window.screen.width + 'px';
-        contentDOM2.style.top = '0px';
-        contentDOM2.style.left = '0px';
+        contentDOM2.style.top = (height - width) / 2 + 'px';
+        contentDOM2.style.left = 0 - (height - width) / 2 + 'px';
     }else{ //旋转到 180 或 0 度，即横屏到竖屏
         if (width < height) {
             screen_width = height; //如果 是竖屏，灵感的宽度就等于屏高
