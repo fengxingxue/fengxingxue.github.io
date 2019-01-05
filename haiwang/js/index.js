@@ -9,10 +9,10 @@ window.onload=function(){
     var contentDOM2 = document.getElementById('all2');
     if (window.orientation) { //旋转到 90 或 -90 度，即竖屏到横屏
         screen_width = height; //横屏，灵感的宽度就等于屏高
-        contentDOM.style.width = height + 'px';
-        contentDOM.style.height = width + 'px';
-        contentDOM.style.top = '0px';
-        contentDOM.style.left = '0px';
+        contentDOM.style.width = '100%';
+        contentDOM.style.height = '100%';
+        contentDOM1.style.top = '0px';
+        contentDOM1.style.left = '0px';
         contentDOM.style.transform = 'none'; //不旋转；
         
          contentDOM1.style.width = height + 'px';
