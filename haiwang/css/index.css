@@ -246,7 +246,7 @@ opacity: 1;
     color: #2a5fa1;
     display: inline-block;
 }
-@media screen and (max-width: 800px) {
+@media screen and (max-width: 750px) {
     .biao{
         width: 26%;
         position: absolute;
