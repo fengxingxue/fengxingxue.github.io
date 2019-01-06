@@ -1,8 +1,7 @@
 var width = window.screen.width;
 var height =window.screen.height;
 var screen_width = width; //屏幕宽度
-window.onload=function(){
-   
+//window.onload=function(){
     var contentDOM = document.getElementById('all');
     var contentDOM1 = document.getElementById('all1');
     var contentDOM2 = document.getElementById('all2');
@@ -31,7 +30,7 @@ window.onload=function(){
 
 
 
-}
+//}
 
 
 // function orientationHandler(event) {
