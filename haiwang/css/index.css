@@ -114,6 +114,7 @@ progress::-webkit-progress-value  {
     position: absolute;
     bottom: 4%;
     left: 23%;
+    z-index: 99999;
 }
 .bg7{
     width: 7%;
@@ -141,6 +142,7 @@ progress::-webkit-progress-value  {
     position: absolute;
     bottom: 9%;
     left: 63%;
+    z-index: 99999;
 }
 .bg10,.bg11,.bg12,.bg13{
     width: 90%;
@@ -203,11 +205,94 @@ opacity: 1;
     font-size: 1rem;
     z-index: 9999;
 }
+.biao1 {
+    width: 33%;
+    position: absolute;
+    left: 33.1%;
+    top: -100%;
+    color: #fff;
+    font-size: 1rem;
+    z-index: 9999;
+    transition: .5s;
+}
+.biao1 form{
+    position: absolute;
+    top: 32%;
+    left: 10%;
+    display: block;
+    width: 100%;
+}
+.biao1 label{
+    display: block;
+    margin-bottom: 5vh;
+    width: 100%;
+    position: relative;
+}
+.biao1 input{
+    border: none;
+    color: #fff;
+    width: 80%;
+    padding-left: 15%;
+    background-size: cover;
+    height: 9vh;
+    outline: none;
+    position: relative;
+    border-radius: 6px;
+    background: #448aca;
+    border-top-color: #316492;
+}
+.biao1 .one{
+    display: inline-block;
+    position: absolute;
+    left: 10px;
+    top: 8px;
+    background: url(../img/phone.png) no-repeat;
+    width: 5vh;
+    height: 30px;
+    background-size: contain;
+    z-index: 9;
+}
+.two{
+    display: inline-block;
+    position: absolute;
+    left: 10px;
+    top: 6px;
+    background: url(../img/pass.png) no-repeat;
+    width: 5vh;
+    height: 30px;
+    background-size: contain;
+    z-index: 9;
+}
+.three{
+    display: inline-block;
+    position: absolute;
+    left: 10px;
+    top: 6px;
+    background: url(../img/yzm.png) no-repeat;
+    width: 5vh;
+    height: 30px;
+    background-size: contain;
+    z-index: 9;
+}
+.biao1 p{
+    text-align: right;
+    padding-right: 15%;
+    font-size: 10px;
+}
+input::-webkit-input-placeholder {
+    color: #fff;
+}
+.zh{
+    width: 100%;
+    height: 100%;
+}
 .biao input{
     display: inline-block;
     width: 64%;
     border-radius: 30px;
     border: solid 1px #00479d;
+    padding-left: 8px;
+    outline:none;
 }
 .biao label{
     margin-bottom: 5px;
@@ -224,6 +309,7 @@ opacity: 1;
     width: auto;
     border: solid 1px #00479d;
     display: none;
+    outline:none;
 }
 
 .biao p img{
@@ -243,11 +329,25 @@ opacity: 1;
     position: absolute;
     font-size: 12px;
     left: 37%;
-    top: 24%;
+    top: 27%;
     color: #2a5fa1;
     display: inline-block;
 }
-@media screen and (max-width: 750px) {
+.zhu1{
+    margin: auto;
+    width: 40%;
+    margin-left: 20%;
+}
+.zhu1 span{
+    top: 28%;
+    font-size: 14px;
+}
+.biao1 p span{
+    color: #ffe954;
+    border-bottom: 1px solid #ffe954;
+    cursor: pointer;
+}
+@media screen and (max-width:750px) {
     .biao{
         width: 26%;
         position: absolute;
@@ -276,6 +376,19 @@ opacity: 1;
         /* opacity: .6; */
         z-index: 9;
     }
+    .biao1 {
+        width: 37%;
+        position: absolute;
+        left: 31.1%;
+        top: -100%;
+        color: #fff;
+        font-size: 1rem;
+        z-index: 9999;
+        transition: .5s;
+    }
+    .biao1 label{
+        margin-bottom: 3vh;
+    }
 }
 @media screen and (max-width:570px) {
     .biao {
@@ -294,6 +407,29 @@ opacity: 1;
         top: 5rem;
         left: 33%;
         z-index: 99;
+    }
+    .biao1 {
+        width: 39%;
+        position: absolute;
+        left: 29.1%;
+        top: -100%;
+        color: #fff;
+        font-size: 1rem;
+        z-index: 9999;
+        transition: .5s;
+    }
+    .biao1 input{
+        height: 30px;
+        padding-left: 13%;
+    }
+    .biao1 input{
+        top: 6px;
+    }
+    .biao1 label:nth-of-type(3){
+        margin-bottom: 5px;
+    }
+    .one,.two,.three{
+        top: 11px;
     }
 }
 

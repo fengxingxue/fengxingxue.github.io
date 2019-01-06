@@ -2,7 +2,7 @@ var width = window.screen.width
 var height =window.screen.height
 var screen_width = width; //屏幕宽度
 window.onload=function(){
-    var contentDOM = document.getElementById('all');
+    var contentDOM = document.getElementById('all');//最大那个层转换
     var contentDOM1 = document.getElementById('all1');
         if (width < height) {
             screen_width = height; //如果 是竖屏，灵感的宽度就等于屏高
@@ -25,6 +25,7 @@ window.onload=function(){
 
 }
 
+//判断手机重力和是否开启竖屏锁定
 
 // function orientationHandler(event) {
 //     var num=event.gamma.toFixed(6)

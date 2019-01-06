@@ -25,13 +25,13 @@
         <img class="bg7" src="img/zhenzhu.png" alt="">
         <img class="bg9" src="img/hai.png" alt="">
         <div class="biao">
-            <form action="">
+            <form action="" method="post" id="myform">
                 <label for="">
-                    账 号：<input type="text">
+                    账 号：<input type="text" name="username" id="user">
                 </label>
                 <br>
                 <label for="">
-                    密 码：<input type="password">
+                    密 码：<input type="password" name="password" id="pass">
                 </label>
                 <p>
                     <input type="checkbox" checked="checked"><img id="tong" src="img/dui.png" class="tt" alt=""><span style="padding-left:22px">已阅读并同意《用户协议》</span>
@@ -48,7 +48,28 @@
         </div>
         <img class="bg10" src="img/pao.png" alt="">
         <img class="bg11" src="img/pao.png" alt="">
-
+        <div class="biao1">
+            <img class="zh" src="img/zhuce.png" alt="">
+            <form action="" method="post">
+                <label for="">
+                    <i class="one"></i>
+                    <input type="number" placeholder="请输入手机号">
+                </label>
+                <label for="">
+                    <i class="two"></i>
+                    <input type="password" placeholder="请输入密码">
+                </label>
+                <label for="">
+                    <i class="three"></i>
+                    <input style="width: 52%;" type="text" placeholder="请输入验证码">
+                </label>
+                <p>已有账号？<span class="liji">立即登录</span></p>
+                <div class="zhu zhu1">
+                    <img src="img/zhu.png" alt="">
+                    <span>注册</span>
+                </div>
+            </form>
+        </div>
 
     </div>
 </div>
@@ -77,27 +98,6 @@
                     all.removeChild(aa)
                     document.querySelector('.wan').style.display='block'
                     clearInterval(t)
-                    // var story = document.getElementById('word');
-                    // var s = document.getElementById('show');
-                    // var i = 0;
-                    // timer = setInterval(function () {
-                    //     s.innerHTML = story.innerHTML.substring(0, i);
-                    //     i++;
-                    //     if (s.innerHTML == story.innerHTML) {
-                    //         clearInterval(timer);
-                    //         s.style.display='none'
-                    //         var story1 = document.getElementById('word1');
-                    //         var s1 = document.getElementById('show1');
-                    //         var ii = 0;
-                    //         timer1 = setInterval(function () {
-                    //             s1.innerHTML = story1.innerHTML.substring(0, ii);
-                    //             ii++;
-                    //             if (s1.innerHTML == story1.innerHTML) {
-                    //                 clearInterval(timer1);
-                    //             }
-                    //         }, 200);
-                    //     }
-                    // }, 200);
                 }
             },100)
         }
@@ -112,7 +112,28 @@ document.querySelector('#tong').onclick=function () {
         }
 
 }
+document.querySelector('.deng').onclick=function(){
+        if(document.querySelector('#user').value==''){
+            alert('请正确填写用户名')
 
+        }else if(document.querySelector('#pass').value==''){
+            alert('请正确填写密码')
+        }else if(document.querySelector('#tong').className == 't1'){
+            alert('请勾选用户协议')
+        }else{
+            document.querySelector('#myform').submit();
+        }
+}
+document.querySelector('.zhu').onclick=function(){
+        if(window.width>750){
+            document.querySelector('.biao1').style.top='1%';
+        }else if(window.width<750){
+            document.querySelector('.biao1').style.top='7%';
+        }
+}
+    document.querySelector('.liji').onclick=function(){
+        document.querySelector('.biao1').style.top='-100%';
+    }
 </script>
 </body>
 </html>
