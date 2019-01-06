@@ -1,5 +1,5 @@
-var width = document.documentElement.clientWidth || document.documentElement.offsetWidth;
-var height = document.documentElement.clientHeight || document.documentElement.offsetHeight;
+var width = document.body.clientWidth
+var height =document.body.clientHeight
 var screen_width = width; //屏幕宽度
 window.onload=function(){
     const evt = "onorientationchange" in window ? "orientationchange" : "resize"; //旋转事件
