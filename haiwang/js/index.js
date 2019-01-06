@@ -24,9 +24,6 @@ window.onload=function(){
 
 
 }
-$(window).resize(function() {
-    $('#all').height(height);
-});
 //判断手机重力和是否开启竖屏锁定
 
 // function orientationHandler(event) {
