@@ -10,7 +10,7 @@ window.onload=function(){
             contentDOM.style.height = width + 'px';
             contentDOM.style.top = (height - width) / 2 + 'px';
             contentDOM.style.left = 0 - (height - width) / 2 + 'px';
-            contentDOM.style.transform = 'rotate(90deg)';
+           // contentDOM.style.transform = 'rotate(90deg)';
 
 
             contentDOM1.style.width = height + 'px';
