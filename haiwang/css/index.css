@@ -201,6 +201,7 @@ opacity: 1;
     bottom: 15%;
     color: #fff;
     font-size: 1rem;
+    z-index: 9999;
 }
 .biao input{
     display: inline-block;
