@@ -34,7 +34,7 @@ var originalHeight=document.documentElement.clientHeight || document.body.client
           　});
         }
     } 
-复制代码
+
 plus.webview.currentWebview().setStyle({
 　　softinputMode: "adjustResize"  // 弹出软键盘时自动改变webview的高度
 });
