@@ -11,21 +11,21 @@ window.onload=function(){
             screen_width = height; //如果 是竖屏，灵感的宽度就等于屏高
             contentDOM.style.width = height + 'px';
             contentDOM.style.height = width + 'px';
-            contentDOM.style.top = (height - width) / 2 + 'px';
-            contentDOM.style.left = 0 - (height - width) / 2 + 'px';
+            contentDOM.style.top ='0px';
+            contentDOM.style.left = '0px';
           //  contentDOM.style.transform = 'rotate(90deg)';
 
 
             contentDOM1.style.width = height + 'px';
             contentDOM1.style.height = width + 'px';
-            contentDOM1.style.top = (height - width) / 2 + 'px';
-            contentDOM1.style.left = 0 - (height - width) / 2 + 'px';
+             contentDOM1.style.top ='0px';
+            contentDOM1.style.left = '0px';
 
 
             contentDOM2.style.width = height + 'px';
             contentDOM2.style.height = width + 'px';
-            contentDOM2.style.top = (height - width) / 2 + 'px';
-            contentDOM2.style.left = 0 - (height - width) / 2 + 'px';
+            contentDOM2.style.top ='0px';
+            contentDOM2.style.left = '0px';
         }
  
 
