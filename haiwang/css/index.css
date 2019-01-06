@@ -40,6 +40,15 @@ progress::-webkit-progress-value  {
     width: 100%;
     height: 100%;
 }
+.wan{
+    background: url(../img/indexbg.jpg) no-repeat left bottom;
+    background-size: cover;
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+}
 .bg{
     width: 100%;
     height: 100%;
@@ -50,9 +59,8 @@ progress::-webkit-progress-value  {
     text-align: center;
     margin: auto;
     position: absolute;
-    top: 22%;
+    top: 7%;
     left: 33%;
-     z-index: 99;
 }
 .bg2{
     width: 11%;
@@ -60,7 +68,7 @@ progress::-webkit-progress-value  {
     text-align: center;
     margin: auto;
     position: absolute;
-    top: 43%;
+    top: 34%;
     left: 60%;
     /* opacity: .6; */
     z-index: 9;
@@ -181,18 +189,17 @@ opacity: 1;
         bottom:80%;
     }
 }
-
 .biao{
     width: 26%;
     position: absolute;
     left: 37%;
-    bottom: 12%;
+    bottom: 15%;
     color: #fff;
-    font-size: 16px;
+    font-size: 1rem;
 }
 .biao input{
     display: inline-block;
-    width: 65%;
+    width: 64%;
     border-radius: 30px;
     border: solid 1px #00479d;
 }
@@ -234,7 +241,55 @@ opacity: 1;
     color: #2a5fa1;
     display: inline-block;
 }
-
+@media screen and (max-width: 800px) {
+    .biao{
+        width: 26%;
+        position: absolute;
+        left: 37%;
+        bottom: 13%;
+        color: #fff;
+        font-size: 1rem;
+    }
+    .bg1 {
+        width: 33%;
+        text-align: center;
+        margin: auto;
+        position: absolute;
+        top: 6rem;
+        left: 33%;
+        z-index: 99;
+    }
+    .bg2 {
+        width: 11%;
+        /* height: 207px; */
+        text-align: center;
+        margin: auto;
+        position: absolute;
+        top: 43%;
+        left: 60%;
+        /* opacity: .6; */
+        z-index: 9;
+    }
+}
+@media screen and (max-width:570px) {
+    .biao {
+        width: 30%;
+        position: absolute;
+        left: 35%;
+        bottom: 11%;
+        color: #fff;
+        font-size: 0.9rem;
+    }
+    .bg1 {
+        width: 33%;
+        text-align: center;
+        margin: auto;
+        position: absolute;
+        top: 5rem;
+        left: 33%;
+        z-index: 99;
+    }
+}
 
 /*.bg1{*/
     /*position: absolute;*/

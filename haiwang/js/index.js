@@ -1,18 +1,16 @@
-var width = window.screen.width;
-var height =window.screen.height;
+var width = window.screen.width
+var height =window.screen.height
 var screen_width = width; //屏幕宽度
-//window.onload=function(){
+window.onload=function(){
     var contentDOM = document.getElementById('all');
     var contentDOM1 = document.getElementById('all1');
-    var contentDOM2 = document.getElementById('all2');
-   
         if (width < height) {
             screen_width = height; //如果 是竖屏，灵感的宽度就等于屏高
             contentDOM.style.width = height + 'px';
             contentDOM.style.height = width + 'px';
             contentDOM.style.top = (height - width) / 2 + 'px';
             contentDOM.style.left = 0 - (height - width) / 2 + 'px';
-          //  contentDOM.style.transform = 'rotate(90deg)';
+           // contentDOM.style.transform = 'rotate(90deg)';
 
 
             contentDOM1.style.width = height + 'px';
@@ -21,16 +19,11 @@ var screen_width = width; //屏幕宽度
             contentDOM1.style.left = 0 - (height - width) / 2 + 'px';
 
 
-            contentDOM2.style.width = height + 'px';
-            contentDOM2.style.height = width + 'px';
-            contentDOM2.style.top = (height - width) / 2 + 'px';
-            contentDOM2.style.left = 0 - (height - width) / 2 + 'px';
         }
- 
 
 
 
-//}
+}
 
 
 // function orientationHandler(event) {
@@ -60,21 +53,21 @@ var screen_width = width; //屏幕宽度
 //                     contentDOM.style.left = 0 - (height - width) / 2 + 'px';
 //                     contentDOM.style.transform = 'rotate(-90deg)';
 //                     contentDOM.style.transition='.5s'
-
+//
 //                     contentDOM1.style.width = height + 'px';
 //                     contentDOM1.style.height = width + 'px';
 //                     contentDOM1.style.top = (height - width) / 2 + 'px';
 //                     contentDOM1.style.left = 0 - (height - width) / 2 + 'px';
-
-
+//
+//
 //                     contentDOM2.style.width = height + 'px';
 //                     contentDOM2.style.height = width + 'px';
 //                     contentDOM2.style.top = (height - width) / 2 + 'px';
 //                     contentDOM2.style.left = 0 - (height - width) / 2 + 'px';
 //                 }
 //             //}, false);
-
-
+//
+//
 //         }else if(num!=absVal && num<-10){
 //             const evt = "onorientationchange" in window ? "orientationchange" : "resize"; //旋转事件
 //             //window.addEventListener(evt, function () { //事件监听
@@ -93,20 +86,20 @@ var screen_width = width; //屏幕宽度
 //                     contentDOM.style.left = 0 - (height - width) / 2 + 'px';
 //                     contentDOM.style.transform = 'rotate(90deg)';
 //                     contentDOM.style.transition='.5s'
-
+//
 //                     contentDOM1.style.width = height + 'px';
 //                     contentDOM1.style.height = width + 'px';
 //                     contentDOM1.style.top = (height - width) / 2 + 'px';
 //                     contentDOM1.style.left = 0 - (height - width) / 2 + 'px';
-
-
+//
+//
 //                     contentDOM2.style.width = height + 'px';
 //                     contentDOM2.style.height = width + 'px';
 //                     contentDOM2.style.top = (height - width) / 2 + 'px';
 //                     contentDOM2.style.left = 0 - (height - width) / 2 + 'px';
 //                 }
 //            // }, false);
-
+//
 //         }
 //     }
 // }
