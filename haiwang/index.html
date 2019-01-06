@@ -134,6 +134,10 @@ document.querySelector('.zhu').onclick=function(){
     document.querySelector('.liji').onclick=function(){
         document.querySelector('.biao1').style.top='-100%';
     }
+     let Height = $('body').width();
+    $(window).resize(function() {
+        $('body').height(Height);
+    });
 </script>
 </body>
 </html>
