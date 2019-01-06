@@ -25,7 +25,7 @@ window.onload=function(){
 
 }
 $(document).ready(function () {
-　　$('body').height($('body')[0].clientHeight);
+　　$('body').height($('body').clientHeight);
 });
 
 //判断手机重力和是否开启竖屏锁定
