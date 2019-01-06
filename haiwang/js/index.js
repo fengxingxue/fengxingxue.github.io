@@ -24,10 +24,7 @@ window.onload=function(){
 
 
 }
-let Height = $('body').width();
-$(window).resize(function() {
-    $('body').height(Height);
-});
+$('body').height($('body')[0].clientHeight);
 //判断手机重力和是否开启竖屏锁定
 
 // function orientationHandler(event) {
