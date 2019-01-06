@@ -24,7 +24,20 @@ window.onload=function(){
 
 
 }
-$('body').height(height);
+var originalHeight=document.documentElement.clientHeight || document.body.clientHeight;
+    window.onresize=function(){
+        var  resizeHeight=document.documentElement.clientHeight || document.body.clientHeight;
+        //软键盘弹起与隐藏  都会引起窗口的高度发生变化
+        if(resizeHeight*1<originalHeight*1&&isfocus==true){ //resizeHeight<originalHeight证明窗口被挤压了
+       　　  plus.webview.currentWebview().setStyle({
+             　　 height:originalHeight
+          　});
+        }
+    } 
+复制代码
+plus.webview.currentWebview().setStyle({
+　　softinputMode: "adjustResize"  // 弹出软键盘时自动改变webview的高度
+});
 
 //判断手机重力和是否开启竖屏锁定
 
