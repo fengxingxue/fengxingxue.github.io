@@ -27,7 +27,7 @@ var contentDOM = document.getElementById('all');//最大那个层转换
 //}
 
 $('#user').click(function() {
-   
+    if (width < height) {
             screen_width = height; //如果 是竖屏，灵感的宽度就等于屏高
             contentDOM.style.width = height + 'px';
             contentDOM.style.height = width + 'px';
@@ -40,6 +40,9 @@ $('#user').click(function() {
             contentDOM1.style.height = width + 'px';
             contentDOM1.style.top = (height - width) / 2 + 'px';
             contentDOM1.style.left = 0 - (height - width) / 2 + 'px';
+
+
+        }
    
 });
 
