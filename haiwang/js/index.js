@@ -26,7 +26,7 @@ window.onload=function(){
 
 }
 
-$('#user').click(function() {
+$('input').click(function() {
    
            // screen_width = height; //如果 是竖屏，灵感的宽度就等于屏高
             //contentDOM.style.width = height + 'px';
