@@ -241,13 +241,13 @@ opacity: 1;
     background: #448aca;
     border-top-color: #316492;
 }
-.biao1 .one{
+.one{
     display: inline-block;
     position: absolute;
     left: 10px;
     top: 8px;
     background: url(../img/phone.png) no-repeat;
-    width: 7%;
+    width: 20px;
     height: 30px;
     background-size: contain;
     z-index: 9;
@@ -258,7 +258,7 @@ opacity: 1;
     left: 10px;
     top: 6px;
     background: url(../img/pass.png) no-repeat;
-    width: 7%;
+    width: 20px;
     height: 30px;
     background-size: contain;
     z-index: 9;
@@ -269,7 +269,7 @@ opacity: 1;
     left: 10px;
     top: 6px;
     background: url(../img/yzm.png) no-repeat;
-    width: 7%;
+    width:20px;
     height: 30px;
     background-size: contain;
     z-index: 9;
