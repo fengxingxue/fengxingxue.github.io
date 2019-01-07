@@ -5,7 +5,7 @@ var contentDOM = document.getElementById('all');//最大那个层转换
     var contentDOM1 = document.getElementById('all1');
 //window.onload=function(){
     
-        if (width < height) {
+     
             screen_width = height; //如果 是竖屏，灵感的宽度就等于屏高
             contentDOM.style.width = height + 'px';
             contentDOM.style.height = width + 'px';
@@ -20,7 +20,7 @@ var contentDOM = document.getElementById('all');//最大那个层转换
             contentDOM1.style.left = 0 - (height - width) / 2 + 'px';
 
 
-        }
+        
 
 
 
@@ -28,10 +28,10 @@ var contentDOM = document.getElementById('all');//最大那个层转换
 
 $('#user').click(function() {
    
-    contentDOM.style.height = width + 'px';
+    contentDOM.style.height = height + 'px';
    
    
-    contentDOM1.style.height = width + 'px';
+    contentDOM1.style.height = height + 'px';
    
 });
 
