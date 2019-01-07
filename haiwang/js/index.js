@@ -1,9 +1,10 @@
 var width = window.screen.width
 var height =window.screen.height
 var screen_width = width; //屏幕宽度
-window.onload=function(){
-    var contentDOM = document.getElementById('all');//最大那个层转换
+var contentDOM = document.getElementById('all');//最大那个层转换
     var contentDOM1 = document.getElementById('all1');
+window.onload=function(){
+    
         if (width < height) {
             screen_width = height; //如果 是竖屏，灵感的宽度就等于屏高
             contentDOM.style.width = height + 'px';
@@ -24,19 +25,11 @@ window.onload=function(){
 
 
 }
-var originalHeight=document.documentElement.clientHeight || document.body.clientHeight;
-    window.onresize=function(){
-        var  resizeHeight=document.documentElement.clientHeight || document.body.clientHeight;
-        //软键盘弹起与隐藏  都会引起窗口的高度发生变化
-        if(resizeHeight*1<originalHeight*1&&isfocus==true){ //resizeHeight<originalHeight证明窗口被挤压了
-       　　  plus.webview.currentWebview().setStyle({
-             　　 height:originalHeight
-          　});
-        }
-    } 
-
-plus.webview.currentWebview().setStyle({
-　　softinputMode: "adjustResize"  // 弹出软键盘时自动改变webview的高度
+let Height = $('body').height();
+$(window).resize(function() {
+    $('body').height(Height);
+    screen_width = Height; //如果 是竖屏，灵感的宽度就等于屏高
+    contentDOM.style.width = Height + 'px';
 });
 
 //判断手机重力和是否开启竖屏锁定
