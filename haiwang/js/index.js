@@ -1,5 +1,5 @@
-var width = document.body.clientWidth; 
-var height =document.body.clientHeight; 
+var width = document.documentElement.clientWidth 
+var height =document.documentElement.clientHeight
 var screen_width = width; //屏幕宽度
 var contentDOM = document.getElementById('all');//最大那个层转换
     var contentDOM1 = document.getElementById('all1');
