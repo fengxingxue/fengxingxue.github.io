@@ -1,0 +1,393 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1" />
+    <title>海王</title>
+    <meta name="viewport" content="width=device-width,initial-scale=1, maximum-scale=1, minimum-scale=1, user-scalable=no" />
+    <meta name="apple-mobile-web-app-capable" content="yes" />
+    <meta name="format-detection" content="telephone=no">
+    <style id="cssAnimation"></style>
+    <style>
+        *{
+            padding: 0;
+            margin: 0;
+            box-sizing: border-box;
+        }
+        .all{
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+        }
+        .chong{
+            width: 60%;
+            position: absolute;
+            left: 20%;
+            top: 2.3%;
+            height: 95%;
+        }
+        .close img{
+            width: 6%;
+            height: 6%;
+            position: absolute;
+            margin-left: 90.5%;
+            top: 9px;
+        }
+        .chong .jiabg{
+            width: 100%;
+            position: absolute;
+        }
+        .cw{
+            width: 11%;
+            position: absolute;
+            left: 44.5%;
+            top: 12px;
+        }
+        .chong2{
+            position: absolute;
+            top: 60px;
+            left: 7%;
+            width:86%;
+        }
+        .chongleft,.chongright{
+            width: 50%;
+            float: left;
+        }
+        .chong2::after{
+            display: table;
+            content: '';
+            clear: both;
+        }
+        .hai{
+            background: #8c97cb;
+            color: #000;
+            width: 50%;
+            margin: auto;
+            padding: 4px 0;
+            text-align: center;
+            border-radius: 15px;
+            font-weight: bold;
+            letter-spacing: 5px;
+        }
+        .hai1 img{
+            width: 100%;
+        }
+        #haibao{
+            position: relative;
+            top: 50px;
+            left: 50px;
+            //animation:ch 5s infinite linear;
+        }
+        @keyframes ch {
+            0% {
+                transform: rotateZ(0deg);
+            }
+            100% {
+                transform: rotateZ(-360deg);
+            }
+        }
+        .chongleft{
+            width: 48%;
+        }
+        .chongright{
+            width: 52%;
+            padding-left: 2%;
+        }
+        .chong h2{
+            color: #ff833e;
+            font-weight: bold;
+        }
+        .chongright p{
+            font-size: 12px;
+            padding-top: 10px;
+
+        }
+        .shi{
+            width: 100%;
+            padding-top: 5%;
+        }
+        .shi::after{
+            display: table;
+            content: '';
+            clear: both;
+
+        }
+        .shi .yu,.shi .xia{
+            width: 50%;
+            float: left;
+            text-align: center;
+            padding: 5px;
+
+        }
+        .shi img{
+            width: 50%;
+        }
+        .shi p{
+            padding-top: 2px;
+            padding-bottom: 4px;
+        }
+        .xia div,.yu div{
+            font-size: 13px;
+            padding: 3px 0;
+            background: #8c97cb;
+            text-align: center;
+            border-radius: 5px;
+        }
+        .jin{
+            background: #8c97cb;
+            width: 40%;
+            text-align: center;
+            padding: 4px 0;
+            border-radius: 20px;
+            margin: 5px auto 0 5%;
+            float:left;
+        }
+        .jin1{
+            background: #8c97cb;
+            width: 40%;
+            text-align: center;
+            float:left;
+            padding: 4px 0;
+            border-radius: 20px;
+            margin: 5px 0px 0 5%;
+        }
+        .hai1{
+            padding-top: 20px;
+        }
+        .tishi{
+            position: absolute;
+            width: 54%;
+            top: 30%;
+            left: 23%;
+            background: url("img/tan.png") no-repeat;
+            background-size: contain;
+            height: 40%;
+            line-height: 40%;
+            padding: 10px;
+            z-index: 999999;
+            font-size:14px;
+            color: #000;
+
+        }
+        .tishi span{
+            font-weight: bold;
+            text-align: center;
+            display: block;
+            /* line-height: 10em; */
+            position: relative;
+            top: 40%;
+            height: 20px;
+
+        }
+        .tishi .tishimg{
+            width: 30px;
+            height: 30px;
+            position: absolute;
+            right: 15px;
+            top: -10px;
+        }
+        @media screen and (max-width:570px) {
+            .chong2 {
+                top: 40px;
+            }
+
+            .chongright p {
+                padding-top: 2px;
+            }
+
+            .shi {
+                padding-top: 2%;
+            }
+
+            .shi .yu, .shi .xia {
+                padding: 2px;
+            }
+
+            .xia div, .yu div {
+                font-size: 12px;
+            }
+        }
+        @media screen and (max-width:750px) {
+            .chong {
+                width: 70%;
+                position: absolute;
+                left: 15%;
+                top: 2.3%;
+                height: 95%;
+            }
+        }
+        @media screen and (max-width: 700px) {
+            .chong {
+                width: 74%;
+                position: absolute;
+                left: 13%;
+                top: 2.3%;
+                height: 95%;
+            }
+        }
+        @keyframes dong {
+            0% {
+                top:80%;
+                opacity: 1;
+            }
+            100% {
+               top:10%;
+                opacity: 0;
+            }
+        }
+
+    </style>
+</head>
+<body>
+<div class="all" id="all">
+    <div class="wan" id="all1">
+    <div class="chong">
+        <img class="jiabg" src="img/chong.png" alt="">
+        <img class="cw" src="img/chong1.png">
+        <div class="close">
+            <img src="img/close.png" alt="">
+        </div>
+        <div class="chong2">
+            <div class="chongleft">
+                 <div class="hai">海豹</div>
+                 <div class="hai1">
+                     <img style="width:50%;" id="haibao" src="img/haibao1.gif" alt="">
+                     <img src="img/tai.png" alt="">
+                 </div>
+            </div>
+            <div class="chongright">
+                <h2>Lv.<span>1</span></h2>
+                <p>
+                    可缩短每个蚌壳1分钟产出时间 最高等级60级
+                    ，每增加一级缩短时间加一分钟，满级后可进化成海豚
+                </p>
+                <div class="shi">
+                     <div class="yu">
+                         <img src="img/yu.png" alt="">
+                         <p>剩余：<span>3</span>条</p>
+                         <div class="weiyu">喂食(剩余<span>3</span>次)</div>
+                     </div>
+                    <div class="xia">
+                        <img src="img/xia.png" alt="">
+                        <p>剩余：<span>3</span>只</p>
+                        <div class="weixia">喂食(剩余<span>3</span>次)</div>
+                    </div>
+                </div>
+                <div class="jin1">携带</div>
+                <div class="jin">进化</div>
+            </div>
+
+        </div>
+        <div class="tishi">
+            <img class="tishimg" src="img/close.png" alt="">
+            <span class="col">宠物吃小虾需要每天吃三次或</span>
+            <span class="pep">宠物吃小鱼需要每天吃一次</span>
+            <span class="pep">宠物吃饱才可以紧急哦！</span>
+        </div>
+    </div>
+    </div>
+</div>
+<script src="js/jquery-3.3.1.js"></script>
+<script src="js/index.js"></script>
+<script>
+    var weiyu=document.querySelector('.weiyu');
+    var weixia=document.querySelector('.weixia');
+    function one(wei){
+        var num=wei.firstElementChild
+        var ff1=wei.previousElementSibling;
+        var ff2=ff1.lastElementChild;
+        if(num.innerHTML>0){
+            document.querySelector('.tishi').style.display='block'
+            var col=document.querySelector('.col')
+            var pep=document.querySelectorAll('.pep')
+            col.innerHTML='成功喂养一次';
+            pep[0].innerHTML='';
+            pep[1].innerHTML='';
+            var tt=setTimeout(function () {
+                document.querySelector('.tishi').style.display='none';
+                num.innerHTML--
+                ff2.innerHTML--
+            },1000)
+        }else if(num.innerHTML==0){
+            document.querySelector('.tishi').style.display='block'
+            var col=document.querySelector('.col')
+            var pep=document.querySelectorAll('.pep')
+            col.innerHTML='今天喂食次数已尽，明天再来吧';
+            pep[0].innerHTML='';
+            pep[1].innerHTML='';
+            var tt=setTimeout(function () {
+                document.querySelector('.tishi').style.display='none';
+                num.innerHTML=0
+            },1000)
+        }
+    }
+    weixia.onclick=function(){
+        one(weixia)
+    }
+    weiyu.onclick=function(){
+        one(weiyu)
+    }
+
+    $('.tishimg').click(function () {
+        $('.tishi').css('display','none')
+    })
+    document.querySelector('.jin').onclick=function(){
+        var wspan=document.querySelector('.weiyu span')
+        var wspan1=document.querySelector('.weixia span')
+        var time = new Date();
+        var time1=time.getDate();
+        var  riqi =Number(sessionStorage.getItem('time'));
+
+        console.log(riqi)
+        console.log(time1)
+        if(riqi == time1){
+            document.querySelector('.tishi').style.display='block'
+            var col=document.querySelector('.col')
+            var pep=document.querySelectorAll('.pep')
+            col.innerHTML='今日已进化，明天再来吧！';
+            pep[0].innerHTML='';
+            pep[1].innerHTML='';
+            var tt=setTimeout(function () {
+                document.querySelector('.tishi').style.display='none';
+            },1000)
+            return false
+        }
+        if(wspan.innerHTML!=3 || wspan1.innerHTML==0){
+            document.querySelector('.tishi').style.display='block'
+            var col=document.querySelector('.col')
+            var pep=document.querySelectorAll('.pep')
+            col.innerHTML='进化成功';
+            pep[0].innerHTML='';
+            pep[1].innerHTML='';
+            sessionStorage.setItem('time', time1);
+            var tt=setTimeout(function () {
+                document.querySelector('.tishi').style.display='none';
+                var dd=document.querySelector('h2 span')
+                dd.innerHTML++
+                console.log(dd)
+                if(dd.innerHTML==60){
+                    dd.innerHTML=1;
+                    document.querySelector('.hai').innerHTML='海豚'
+                    document.querySelector('#haibao').src='img/haitun1.gif'
+                    document.querySelector('.chongright p').innerHTML='宠物满级可多种植一个蚌壳并且时间不延长（宠物满级才可生效）'
+                }
+            },1000)
+        }else{
+            document.querySelector('.tishi').style.display='block'
+            var col=document.querySelector('.col')
+            var pep=document.querySelectorAll('.pep')
+            col.innerHTML='您的宠物还没吃饱哦！';
+            pep[0].innerHTML='';
+            pep[1].innerHTML='';
+            var tt=setTimeout(function () {
+                document.querySelector('.tishi').style.display='none';
+            },1000)
+        }
+
+
+    }
+</script>
+</body>
+</html>

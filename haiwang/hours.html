@@ -14,18 +14,26 @@
             margin: 0;
             box-sizing: border-box;
         }
+        .all{
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+        }
         .home{
             width: 74%;
             position: absolute;
             left: 13%;
             top: 2.3%;
+            height: 95%;
         }
         .close{
 
         }
         .close img{
-            width: 6vw;
-            height: 6vw;
+            width: 6%;
+            height: 6%;
             position: absolute;
             margin-left: 90.5%;
             top: 9px;
@@ -46,24 +54,30 @@
             top: 50px;
             left: 7%;
             width:86%;
-            height: 100%;
+            overflow-x: hidden;
+            overflow-y: scroll;
+            padding-top: 10px;
         }
         .bighome::after{
             display: table;
             content: '';
             clear: both;
         }
+        .bighome::-webkit-scrollbar {
+            display: none;
+        }
+
         .home1 .img{
             width: 100%;
             height: 100%;
         }
         .home1 .img1{
-            width: 81%;
+            width: 98%;
             /* height: 100%; */
             position: absolute;
             z-index: 99;
-            left: 9%;
-            top: 18%;
+            left: 0%;
+            top: 11%;
         }
         .home1 p{
             font-size: 0.1rem;
@@ -71,19 +85,86 @@
             text-overflow:ellipsis;
             white-space: nowrap;
         }
-        .home1 span{
+        .home1 .homespan {
             font-size: 0.1rem;
             display: inline-block;
-            background: url("img/jiesuo.png") no-repeat center center;
-            background-size:contain;
+            background: url(img/jiesuo.png) no-repeat center center;
+            background-size: contain;
             width: 60%;
-            height: 25px;
-            line-height: 20px;
+            height: 45px;
+            line-height: 37px;
+        }
+
+        .tishi{
+            position: absolute;
+            width: 54%;
+            top: 30%;
+            left: 23%;
+            background: url("img/tan.png") no-repeat;
+            background-size: contain;
+            height: 40%;
+            line-height: 40%;
+            padding: 10px;
+            z-index: 999999;
+            font-size:14px;
+            color: #000;
+            display: none;
+        }
+        .tishi span{
+            font-weight: bold;
+            text-align: center;
+            display: block;
+            /* line-height: 10em; */
+            position: relative;
+            top: 40%;
+            height: 20px;
+
+        }
+        .tishi .tishimg{
+            width: 30px;
+            height: 30px;
+            position: absolute;
+            position: absolute;
+            right: 15px;
+            top: -10px;
+        }
+        .tishic{
+            width: 26%;
+            margin: auto;
+            position: relative;
+            top: 44%;
+            left: 12%;
+        }
+        .tishic1{
+            left: 33%;
+        }
+        .tishi1{
+            position: relative;
+            width: 100%;
+            height: 100%;
+        }
+        @media screen and (max-width:600px) {
+            .bighome {
+                position: absolute;
+                top: 50px;
+                left: 7%;
+                width: 86%;
+                overflow-x: hidden;
+                overflow-y: scroll;
+                padding-top: 10px;
+            }
+            .tishi span{
+                top: 34%;
+            }
+            .tishic{
+                top: 31%;
+            }
         }
     </style>
 </head>
 <body>
 <div class="all" id="all">
+    <div class="wan" id="all1">
     <div class="home">
         <img class="jiabg" src="img/jiabg.png" alt="">
             <div class="close">
@@ -94,49 +175,106 @@
                 <img class="img" src="img/wirth.png" alt="">
                 <p>可容纳一个白色蚌壳</p>
                 <p>蚌壳每五个小时产出1颗珍珠</p>
-                <span>正在使用</span>
+                <span  class="homespan">正在使用</span>
             </div>
             <div class="home1">
                 <img class="img"  src="img/orgent.png" alt="">
                 <img class="img1"  src="img/suo.png" alt="">
                 <p>可容纳1个橙蚌壳</p>
-                <p>蚌壳每六小时产出1颗橙色珍珠</p>
-                <span>解锁</span>
+                <p>蚌壳每六小时产出1颗<span>橙</span>色珍珠</p>
+                <span class="homespan">解锁</span>
             </div>
             <div class="home1">
                 <img class="img"  src="img/pick.png" alt="">
                 <img class="img1"  src="img/suo.png" alt="">
                 <p>可容纳1个红色蚌壳</p>
-                <p>蚌壳每六小时产出1颗红色珍珠</p>
-                <span>解锁</span>
+                <p>蚌壳每六小时产出1颗<span>红</span>色珍珠</p>
+                <span class="homespan">解锁</span>
             </div>
             <div class="home1">
                 <img class="img"  src="img/green.png" alt="">
                 <img class="img1"  src="img/suo.png" alt="">
                 <p>可容纳1个青蚌壳</p>
-                <p>蚌壳每八小时产出1颗青色珍珠</p>
-                <span>解锁</span>
+                <p>蚌壳每八小时产出1颗<span>青</span>色珍珠</p>
+                <span class="homespan">解锁</span>
             </div>
             <div class="home1">
                 <img class="img"  src="img/blue.png" alt="">
                 <img class="img1"  src="img/suo.png" alt="">
                 <p>可容纳1个蓝蚌壳</p>
-                <p>蚌壳每九小时产出1颗蓝色珍珠</p>
-                <span>解锁</span>
+                <p>蚌壳每九小时产出1颗<span>蓝</span>色珍珠</p>
+                <span class="homespan">解锁</span>
             </div>
             <div class="home1">
                 <img class="img"  src="img/pinck.png" alt="">
                 <img class="img1"  src="img/suo.png" alt="">
                 <p>可容纳1个紫蚌壳</p>
-                <p>蚌壳每十小时产出1颗紫色珍珠</p>
-                <span>解锁</span>
+                <p>蚌壳每十小时产出1颗<span>紫</span>色珍珠</p>
+                <span class="homespan">解锁</span>
             </div>
         </div>
-    </div>
+        <div class="tishi">
+            <img class="tishimg" src="img/close.png" alt="">
+            <span class="col">需要支付55个白色珍珠或</span>
+            <span class="pep">成功邀请5人即可解锁</span>
+            <div class="tishi1">
+                <img class="tishic" src="img/zhen.png" alt="">
+                <img class="tishic tishic1" src="img/yao.png" alt="">
+            </div>
+        </div>
 
+    </div>
+    </div>
 </div>
 <script src="js/jquery-3.3.1.js"></script>
 <script src="js/index.js"></script>
+<script>
+    var jiabg=document.querySelector('.jiabg')
+    var bighome=document.querySelector('.bighome')
+    bighome.style.height=Number(jiabg.clientHeight-80)+'px';
 
+    var homespan=document.querySelectorAll('.homespan');
+    for(var i=0;i<homespan.length;i++){
+        homespan[i].onclick=function(){
+
+            var ff=this.parentNode;
+            var ff1=ff.previousElementSibling;
+            var ff1=ff1.lastElementChild;
+            console.log(ff1.innerHTML)
+            document.querySelector('.tishi').style.display='block'
+            var ps=this.previousElementSibling;
+            var ps1=ps.querySelector('span');
+            var col=document.querySelector('.col')
+            var pep=document.querySelector('.pep')
+            if(this.innerHTML=='解锁'&&ff1.innerHTML=='正在使用'){
+                $('.tishi1').css('display','block')
+                if(ps1.innerHTML=='橙'){
+                    col.innerHTML='需要支付55个白色珍珠或'
+                    pep.innerHTML='成功邀请5人即可解锁'
+                }else if(ps1.innerHTML=='红'){
+                    col.innerHTML='需要支付55个橙色珍珠或'
+                    pep.innerHTML='成功邀请15人即可解锁'
+                }else if(ps1.innerHTML=='青'){
+                    col.innerHTML='需要支付55个红色珍珠或'
+                    pep.innerHTML='成功邀请30人即可解锁'
+                }else if(ps1.innerHTML=='蓝'){
+                    col.innerHTML='需要支付55个青色珍珠或'
+                    pep.innerHTML='成功邀请90人即可解锁'
+                }else if(ps1.innerHTML=='紫'){
+                    col.innerHTML='需要支付55个青色珍珠或'
+                    pep.innerHTML='成功邀请180人即可解锁'
+                }
+            }else{
+                col.innerHTML='请按照顺序依次解锁'
+                pep.innerHTML=''
+                $('.tishi1').css('display','none')
+            }
+
+        }
+    }
+    $('.tishimg').click(function () {
+        $('.tishi').css('display','none')
+    })
+</script>
 </body>
 </html>

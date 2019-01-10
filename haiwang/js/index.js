@@ -1,11 +1,10 @@
-var width = document.documentElement.clientWidth 
-var height =document.documentElement.clientHeight
+var width = window.screen.width
+var height =window.screen.height
 var screen_width = width; //屏幕宽度
 var contentDOM = document.getElementById('all');//最大那个层转换
-    var contentDOM1 = document.getElementById('all1');
+var contentDOM1 = document.getElementById('all1');
 window.onload=function(){
-    
-     if (width < height) {
+        if (width < height) {
             screen_width = height; //如果 是竖屏，灵感的宽度就等于屏高
             contentDOM.style.width = height + 'px';
             contentDOM.style.height = width + 'px';
@@ -15,34 +14,14 @@ window.onload=function(){
 
             contentDOM1.style.width = height + 'px';
             contentDOM1.style.height = width + 'px';
-            contentDOM1.style.top = (height - width) / 2 + 'px';
-            contentDOM1.style.left = 0 - (height - width) / 2 + 'px';
-
-
+            contentDOM1.style.top = '0px';
+            contentDOM1.style.left =  '0px';
         }
-
-
-
 }
 
 $('input').click(function() {
-   
-           // screen_width = height; //如果 是竖屏，灵感的宽度就等于屏高
-            //contentDOM.style.width = height + 'px';
-            contentDOM.style.height =window.screen.height + 'px';
-            //contentDOM.style.top = (height - width) / 2 + 'px';
-           // contentDOM.style.left = 0 - (height - width) / 2 + 'px';
-           // contentDOM.style.transform = 'rotate(90deg)';
-
-
-          //  contentDOM1.style.width = height + 'px';
-            contentDOM1.style.height = window.screen.height + 'px';
-           // contentDOM1.style.top = (height - width) / 2 + 'px';
-           // contentDOM1.style.left = 0 - (height - width) / 2 + 'px';
-
-
-        
-   
+    contentDOM.style.height =window.screen.height + 'px';
+    contentDOM1.style.height = window.screen.height + 'px';
 });
 
 //判断手机重力和是否开启竖屏锁定
