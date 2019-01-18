@@ -233,7 +233,7 @@ opacity: 1;
 }
 .biao1 label{
     display: block;
-    margin-bottom: 1vh;
+    margin-bottom: 5px;
     width: 100%;
     position: relative;
 }
@@ -397,7 +397,7 @@ input::-webkit-input-placeholder {
         transition: .5s;
     }
     .biao1 label{
-        margin-bottom: 1vh;
+        margin-bottom: 5px;
     }
 }
 @media screen and (max-width:640px) {
