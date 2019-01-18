@@ -90,7 +90,7 @@
         <img class="bg6" src="img/haibao.png" alt="">
         <img class="bg7" src="img/zhenzhu.png" alt="">
         <img class="bg9" src="img/hai.png" alt="">
-        <div class="soda"></div>
+<!--         <div class="soda"></div> -->
         <div class="biao">
             <form action="" method="post" id="myform">
                 <label for="">
@@ -115,7 +115,7 @@
         </div>
         <img class="bg10" src="img/pao.png" alt="">
         <img class="bg11" src="img/pao.png" alt="">
-        <div class="yin"></div>
+        
         <div class="biao1">
             <img class="zh" src="img/zhuce.png" alt="">
             <form action="" method="post">
@@ -148,6 +148,7 @@
                 </div>
             </form>
         </div>
+        <div class="yin"></div>
         <div class="tishi">
             <!--<img class="tishimg" src="img/close.png" alt="">-->
             <span>注册成功</span>
@@ -275,68 +276,68 @@ document.querySelector('.zhu1').onclick=function(){
 
 
 
-    const floatOn = options => {
-        let el = options.el,
-            x = options.x,
-            xIsPos = options.xIsPos || Math.floor(Math.random()),
-            updateX = options.updateX || Math.floor(Math.random()),
-            curTop = parseInt(el.style.top),
-            curLeft = parseInt(el.style.left);
+//     const floatOn = options => {
+//         let el = options.el,
+//             x = options.x,
+//             xIsPos = options.xIsPos || Math.floor(Math.random()),
+//             updateX = options.updateX || Math.floor(Math.random()),
+//             curTop = parseInt(el.style.top),
+//             curLeft = parseInt(el.style.left);
 
-        if (curTop > -50) {
-            el.style.top = `${--curTop}px`;
-        } else {
-            el.style.top = `${innerHeight + 50}px`;
-        }
+//         if (curTop > -50) {
+//             el.style.top = `${--curTop}px`;
+//         } else {
+//             el.style.top = `${innerHeight + 50}px`;
+//         }
 
-        if (updateX) {
-            if (xIsPos) {
-                if (curLeft > x + 10) {
-                    xIsPos = false;
-                } else {
-                    el.style.left = `${curLeft + 1}px`;
-                }
-            } else {
-                if (curLeft < x - 10) {
-                    xIsPos = true;
-                } else {
-                    el.style.left = `${--curLeft}px`;
-                }
-            }
-        }
+//         if (updateX) {
+//             if (xIsPos) {
+//                 if (curLeft > x + 10) {
+//                     xIsPos = false;
+//                 } else {
+//                     el.style.left = `${curLeft + 1}px`;
+//                 }
+//             } else {
+//                 if (curLeft < x - 10) {
+//                     xIsPos = true;
+//                 } else {
+//                     el.style.left = `${--curLeft}px`;
+//                 }
+//             }
+//         }
 
-        updateX = updateX ? false : true;
+//         updateX = updateX ? false : true;
 
-        requestAnimationFrame(
-            floatOn.bind(null, { el: el, x: x, xIsPos: xIsPos, updateX: updateX })
-        );
-    };
+//         requestAnimationFrame(
+//             floatOn.bind(null, { el: el, x: x, xIsPos: xIsPos, updateX: updateX })
+//         );
+//     };
 
-    class Bubble {
-        constructor(target, i) {
-            this.bubble = document.createElement("div");
-            this.bubble.classList.add("bubble");
-            this.x = Math.floor(Math.random() * innerWidth);
-            this.y = Math.floor(Math.random() * innerHeight);
-            this.scale = Math.random();
-            this.pos = Math.round(Math.random());
+//     class Bubble {
+//         constructor(target, i) {
+//             this.bubble = document.createElement("div");
+//             this.bubble.classList.add("bubble");
+//             this.x = Math.floor(Math.random() * innerWidth);
+//             this.y = Math.floor(Math.random() * innerHeight);
+//             this.scale = Math.random();
+//             this.pos = Math.round(Math.random());
 
-            this.bubble.style.top = `${this.y}px`;
-            this.bubble.style.left = `${this.x}px`;
-            this.bubble.style.transform = `translateZ(${
-                this.pos ? "" : "-"
-                }${this.scale.toFixed(2) * 1000}px)`;
+//             this.bubble.style.top = `${this.y}px`;
+//             this.bubble.style.left = `${this.x}px`;
+//             this.bubble.style.transform = `translateZ(${
+//                 this.pos ? "" : "-"
+//                 }${this.scale.toFixed(2) * 1000}px)`;
 
-            setTimeout(() => {
-                target.appendChild(this.bubble);
-            }, i * 50);
-            setTimeout(floatOn.bind(null, { el: this.bubble, x: this.x }), i * 50);
-        }
-    }
+//             setTimeout(() => {
+//                 target.appendChild(this.bubble);
+//             }, i * 50);
+//             setTimeout(floatOn.bind(null, { el: this.bubble, x: this.x }), i * 50);
+//         }
+//     }
 
-    for (let i = 0; i < 10; i++) {
-        new Bubble(document.querySelector(".soda"), i);
-    }
-</script>
+//     for (let i = 0; i < 10; i++) {
+//         new Bubble(document.querySelector(".soda"), i);
+//     }
+// </script>
 </body>
 </html>
