@@ -21,7 +21,7 @@
             width: 100%;
             height: 100%;
         }
-        input{
+        input,button{
             outline:none;
         }
         .auction{
@@ -32,11 +32,11 @@
             height: 95%;
         }
         .close img{
-            width: 6%;
-            height: 6%;
+            width: 8%;
+            height: 8%;
             position: absolute;
-            margin-left: 90.5%;
-            top: 9px;
+            margin-left: 91.5%;
+            top: 12px;
         }
         .auction .jiabg{
             width: 100%;
@@ -114,8 +114,485 @@
                 height: 95%;
             }
         }
+        .auctionlist,.myauction{
+            position: absolute;
+            top: 50px;
+            left: 7%;
+            width: 86%;
+            background: #d7bda2;
+            padding: 10px;
+        }
+        .myauction{
+            display: none;
+        }
+        .auctionLeft{
+            width: 75%;
+            float: left;
+        }
+        .auctionRight{
+            width: 25%;
+            float: left;
+        }
+        .auctionLeft input{
+            background: #a6937c;
+            width: 75%;
+            padding: 4px 0;
+            border-radius: 5px;
+            text-align: center;
+            border: none;
 
+        }
+        input::-webkit-input-placeholder {
+            color: #755531;
+            font-size: 12px;
+        }
+        .auctionLeft button{
+            border: none;
+            background: #a6937c;
+            color: #65523d;
+            padding: 2px 10px;
+            margin-left: 4%;
+            border-radius: 4px;
+        }
+        .auctionRight p{
+            text-align: center;
+            background: #fff;
+            color: #a6937c;
+            padding: 4px 0;
+            width: 60%;
+            margin-left: 40%;
+            font-size: 12px;
+        }
+        .table-head{
+            background-color:#7d6549;
+            color:#3a2207;
+            font-size: 14px;
+            padding: 2px 0;
+            text-align: center;
+            border-radius: 5px;
+        }
 
+        .table-head div{
+            float: left;
+            text-align: center;
+            color: #3a2207;
+            font-weight: bold;
+        }
+        .table-head div:nth-of-type(2)
+        {
+            width: 10%;
+        }
+        .table-head div:nth-of-type(1){
+            width: 25%;
+        }
+        .table-head div:nth-of-type(5){
+            width: 20%;
+        }
+        .table-head div:nth-of-type(3),.table-head div:nth-of-type(6),.table-head div:nth-of-type(4){
+            width: 15%;
+        }
+        .table-body{
+            width:100%;
+            text-align: center;
+            font-size: 12px;
+            overflow-y:scroll;
+        }
+
+        .king2::after,kleft::after,label::after,.table-head::after{
+            display: table;
+            content: '';
+            clear: both;
+        }
+        .table-head1{
+            background: #a6937c;
+            margin: 5px 0;
+            padding: 3px 0;
+            border-radius: 5px;
+        }
+        .table-head1 div{
+            font-weight: 500;
+            color: #3a2207;
+            font-size: 12px;
+            padding: 2px 0;
+        }
+        .shen{
+            background: #fff;
+            width: 65%;
+            margin: auto;
+            display: block;
+            border-radius: 4px;
+            color: #000;
+            padding: 1px 0;
+        }
+        .auctionlist::after,.auctionLeft::after{
+            display: table;
+            clear: both;
+            content: '';
+        }
+        .table-body::-webkit-scrollbar {
+            display: none;
+        }
+        .table-head i{
+            background: #f19ec2;
+            border-radius: 50px;
+            border:solid 1px #fff;
+            width: 15px;
+            height: 15px;
+            position: relative;
+            right: 5px;
+            top: 2px;
+            display: inline-block;
+        }
+        .myauction h4{
+            text-align: center;
+            font-size: 14px;
+            color: #3a2207;
+            margin-bottom: 5px;
+        }
+        .myauction1{
+            background: #a6937c;
+            width: 98%;
+            margin:auto;
+            height: 100%;
+            border-radius: 8px;
+        }
+        .myauctionleft,.myauctionright{
+            float: left;
+            width: 50%;
+            padding: 10px;
+        }
+        .myauction1::after{
+            display: table;
+            content: '';
+            clear: both;
+        }
+        .myauctionleft p{
+            font-size: 12px;
+            color: #3a2207;
+            width: 90%;
+        }
+        .wu{
+            background:#7d6549;
+            padding: 5px 0;
+            width: 90%;
+            border-radius: 8px;
+            font-size: 12px;
+            text-align: center;
+            color: #3a2207;
+            position: relative;
+        }
+        .wu i{
+            background: #f19ec2;
+            width: 18px;
+            height: 18px;
+            border-radius: 18px;
+            display: inline-block;
+            position: absolute;
+            left: 15%;
+        }
+        .shu,.qi,.mai{
+            background:#7d6549;
+            padding: 5px 10px;
+            width: 90%;
+            border-radius: 8px;
+            font-size: 12px;
+            color: #fff;
+            text-align: left;
+            position: relative;
+        }
+        .shu strong{
+            font-size: 30px;
+            position: absolute;
+            right: 5px;
+            top: -10px;
+            display: block;
+        }
+        .shu strong:nth-of-type(1){
+            right: 40px;
+        }
+        .shu b{
+            position: absolute;
+            right: 30px;
+            top: 0;
+            border-right: solid 1px #3e3224;
+            width: 1px;
+            display: inline-block;
+            height: 100%;
+        }
+        .shu input,.qi input{
+            background: none;
+            width: 60%;
+            color: #fff;
+            border: none;
+        }
+        .qi input{
+            color: #000;
+            width: 65%;
+            margin-right: 10px;
+        }
+        .qi{
+            color: #000;
+            position: relative;
+        }
+        .clic{
+            width:0;
+            height:0;
+            border-width:5px 5px 0;
+            border-style:solid;
+            border-color:#fff transparent transparent;/*灰 透明 透明 */
+            position:absolute;
+            top: 10px;
+        }
+        .qi i{
+            width: 20px;
+            height: 20px;
+            display: inline-block;
+            background: #8f82bc;
+            border-radius: 20px;
+            position: absolute;
+            top: 3px;
+            right: 8px;
+        }
+        .qiu{
+            position: absolute;
+            right: -30px;
+            top: 25px;
+            width: 80px;
+            height: 55px;
+            background: #7d6549;
+            padding: 5px;
+            border-radius: 5px;
+            text-align: center;
+            display: none;
+            z-index: 9;
+        }
+        .qiu span{
+            width: 20px;
+            height: 20px;
+            display: inline-block;
+            background: #8f82bc;
+            border-radius: 20px;
+            float: left;
+        }
+        .qiu span:nth-of-type(1),.qiu span:nth-of-type(2),
+        .qiu span:nth-of-type(5),.qiu span:nth-of-type(4){
+            margin-right: 5px;
+        }
+        .qiu span:nth-of-type(1),.qiu span:nth-of-type(2),
+        .qiu span:nth-of-type(3){
+            margin-bottom: 5px;
+        }
+        .qiu::after{
+            display: table;
+            content: '';
+            clear: both;
+        }
+        .qiu span:nth-of-type(1){
+            background: #fff;
+        }
+        .qiu span:nth-of-type(2){
+            background: #f19149;
+        }
+        .qiu span:nth-of-type(3){
+            background: #f19ec2;
+        }
+        .qiu span:nth-of-type(4){
+            background: #6cdbe3;
+        }
+        .qiu span:nth-of-type(5){
+            background: #3f70f9;
+        }
+        .qiu span:nth-of-type(6){
+            background: #8f82bc;
+        }
+        .mai label{
+            width: 50%;
+            text-align: center;
+            float: left;
+            display: inline-block;
+        }
+
+        .mai i{
+            width: 13px;
+            height: 13px;
+            border-radius: 13px;
+            border: solid 1px #fff;
+            background: #d7bda2;
+            display: inline-block;
+            position: relative;
+            top: 2px;
+            right: 2px;
+        }
+        .mai label:nth-of-type(1) i{
+            background: #f19149;
+        }
+        .kai{
+            text-align: center;
+        }
+        .kai span{
+            width: 45%;
+            margin:5px auto 0 auto;
+            background: #7d6549;
+            font-size: 12px;
+            text-align: center;
+            color: #3a2207;
+            padding: 4px 0;
+            border-radius: 5px;
+            display: inline-block;
+            float: left;
+            position: relative;
+            left: 15%;
+        }
+        .kai strong{
+            width: 15px;
+            height: 15px;
+            border-radius: 15px;
+            border: solid 1px #fff;
+            color: #fff;
+            font-size: 12px;
+            font-weight: 100;
+            display: block;
+            float: left;
+            position: relative;
+            left: 18%;
+            top: 10px;
+        }
+
+        .kai div{
+            position: relative;
+            width: 55%;
+            font-size: 12px;
+            display: none;
+        }
+        .kai div img{
+            width: 100%;
+            position: absolute;
+            top: -50px;
+            left: 63%;
+        }
+        .kai div p{
+            width: 100%;
+            position: absolute;
+            top: -44px;
+            left: 63%;
+        }
+        .myauctionright{
+            background: #d7bda2;
+            border-radius: 6px;
+            margin: 15px auto;
+            width: 45%;
+            padding: 10px 2px;
+        }
+        .myauctionright p{
+            font-size: 12px;
+            color: #3a2207;
+            text-align: center;
+        }
+        .bao{
+            background: #7d6549;
+            width: 94%;
+            /* height: 200px; */
+            margin: 5px;
+            overflow-y: scroll;
+            padding: 5px 5px 5px 0;
+        }
+        .bao::-webkit-scrollbar {
+            /*background: #fff;*/
+            border-radius: 10px;
+            width: 11px;
+            padding: 5px 0;
+            margin: 6px 0;
+        }
+
+        .bao::-webkit-scrollbar-thumb{
+            background-color: #685033;
+            border-radius: 10px;
+            padding: 4px;
+            -webkit-box-shadow:inset 0 0 10px rgba(255,255,255,1);
+        }
+        .bao::-webkit-scrollbar-track{
+            margin: 5px 0;
+            background: #fff;
+            border-radius: 10px;
+        }
+        .baox{
+            width: 25%;
+            float: left;
+            text-align: center;
+            margin: 2px 0;
+        }
+        .mai::after,.kai::after,.bao::after{
+            display: table;
+            content: '';
+            clear: both;
+        }
+        .baox span{
+            width: 80%;
+            height: 30px;
+            background: #fff;
+            margin: auto;
+            display: inline-block;
+        }
+        .baox span i{
+            width: 20px;
+            height: 20px;
+            border-radius: 20px;
+            background: #fff;
+            display: block;
+            text-align: center;
+            margin: auto;
+            position: relative;
+            top: 5px;
+        }
+        .baox b{
+            display: none;
+        }
+        .zhen b{
+            border: solid 1px #000;
+            width: 12px;
+            height: 12px;
+            background: #fff;
+            position: relative;
+            right: 5px;
+            top: 0px;
+            display: inline-flex;
+            transform: rotate(32deg);
+        }
+        .pai b,.zui b{
+            display: none;
+        }
+        @media screen and (max-width: 600px) {
+            .table-head{
+                font-size: 12px;
+            }
+            .myauctionleft, .myauctionright{
+                padding: 5px;
+            }
+            .auctionlist, .myauction{
+                padding: 5px 10px;
+            }
+            .wu{
+                padding: 2px 0;
+            }
+            .shu, .qi, .mai{
+                padding: 2px 10px;
+            }
+            .wu i{
+                width: 15px;
+                height: 15px;
+            }
+            .shu strong{
+                top: -12px;
+            }
+            .qi i{
+                width: 16px;
+                height: 16px;
+                top: 2px;
+            }
+            .qiu{
+                top:20px
+            }
+        }
     </style>
 </head>
 <body>
@@ -127,7 +604,164 @@
             <div class="close">
                 <img src="img/close.png" alt="">
             </div>
-
+            <div class="auction1">
+                    <div class="auctionlist">
+                            <div class="auctionLeft">
+                                <input type="text" placeholder="请输入物品名称">
+                                <button>搜索</button>
+                            </div>
+                            <div class="auctionRight">
+                                <p>我要拍卖</p>
+                            </div>
+                        <div style="padding-top:10px;clear: both">
+                            <div class="table-head">
+                                <div>物品名称</div>
+                                <div>数量</div>
+                                <div>起拍价</div>
+                                <div>最高出价</div>
+                                <div>剩余时间</div>
+                                <div>操作</div>
+                            </div>
+                            <div class="table-body">
+                                <div class="table-head table-head1" >
+                                    <div class="zhen"><i></i>粉珍珠</div>
+                                    <div>1</div>
+                                    <div class="pai"><i></i><b>橙色</b>50</div>
+                                    <div class="zui"><i></i><b>橙色</b>100</div>
+                                    <div class="shijian" onclick="one(0,0)"></div>
+                                    <div><span class="shen">出价</span></div>
+                                </div>
+                                <div class="table-head table-head1">
+                                    <div class="zhen"><i></i>橙珍珠</div>
+                                    <div>1</div>
+                                    <div class="pai"><i></i><b>白色</b>50</div>
+                                    <div class="zui"><i></i><b>白色</b>100</div>
+                                    <div class="shijian"  onclick="one(1,1)"></div>
+                                    <div><span class="shen">出价</span></div>
+                                </div>
+                                <div class="table-head table-head1">
+                                    <div class="zhen"><i></i>青珍珠</div>
+                                    <div>1</div>
+                                    <div class="pai"><i></i><b>粉色</b>50</div>
+                                    <div class="zui"><i></i><b>粉色</b>100</div>
+                                    <div class="shijian"  onclick="one(2,0)"></div>
+                                    <div><span class="shen">出价</span></div>
+                                </div>
+                                <div class="table-head table-head1">
+                                    <div class="zhen"><i></i>蓝珍珠</div>
+                                    <div>1</div>
+                                    <div class="pai"><i></i><b>青色</b>50</div>
+                                    <div class="zui"><i></i><b>青色</b>100</div>
+                                    <div class="shijian"  onclick="one(3,1)"></div>
+                                    <div><span class="shen">出价</span></div>
+                                </div>
+                                <div class="table-head table-head1">
+                                    <div class="zhen"><i></i>紫珍珠</div>
+                                    <div>1</div>
+                                    <div class="pai"><i></i><b>蓝色</b>50</div>
+                                    <div class="zui"><i></i><b>蓝色</b>100</div>
+                                    <div class="shijian"  onclick="one(4,0)"></div>
+                                    <div><span class="shen">出价</span></div>
+                                </div>
+                                <div class="table-head table-head1">
+                                    <div class="zhen"><i></i>洗髓丹碎片</div>
+                                    <div>1</div>
+                                    <div class="pai"><i></i><b>橙色</b>50</div>
+                                    <div class="zui"><i></i><b>橙色</b>100</div>
+                                    <div class="shijian"  onclick="one(5,0)"></div>
+                                    <div><span class="shen">出价</span></div>
+                                </div>
+                                <div class="table-head table-head1">
+                                    <div class="zhen"><i></i>粉珍珠</div>
+                                    <div>1</div>
+                                    <div class="pai"><i></i><b>白色</b>50</div>
+                                    <div class="zui"><i></i><b>白色</b>100</div>
+                                    <div class="shijian"  onclick="one(6,0)"></div>
+                                    <div><span class="shen">出价</span></div>
+                                </div>
+                                <div class="table-head table-head1">
+                                    <div class="zhen"><i></i>洗髓丹碎片</div>
+                                    <div>1</div>
+                                    <div class="pai"><i></i><b>粉色</b>50</div>
+                                    <div class="zui"><i></i><b>粉色</b>100</div>
+                                    <div class="shijian"  onclick="one(7,0)"></div>
+                                    <div><span class="shen">出价</span></div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="myauction">
+                                <h4>我要拍卖</h4>
+                                <div class="myauction1">
+                                        <div class="myauctionleft">
+                                             <p>拍卖物品</p>
+                                             <div class="wu">
+                                                 <i></i>
+                                                 粉珍珠
+                                             </div>
+                                             <p>数量</p>
+                                             <div class="shu">
+                                                    <input type="text" value="5" min="1">
+                                                     <strong class="jian">-</strong>
+                                                     <b></b>
+                                                    <strong class="jia">+</strong>
+                                             </div>
+                                            <p>起价</p>
+                                            <div class="qi">
+                                                <input type="text" value="50">
+                                                <span class="clic"></span>
+                                                <i></i>
+                                                <div class="qiu">
+                                                    <span></span>
+                                                    <span></span>
+                                                    <span></span>
+                                                    <span></span>
+                                                    <span></span>
+                                                    <span></span>
+                                                </div>
+                                            </div>
+                                            <p>拍卖时间</p>
+                                            <div class="mai">
+                                                <label for=""><i></i>12小时</label>
+                                                <label for=""><i></i>24小时</label>
+                                            </div>
+                                            <div class="kai">
+                                                <span>开始拍卖</span>
+                                                <strong>?</strong>
+                                                <div>
+                                                    <img src="img/kuang.png" alt="">
+                                                    <p>拍卖行收取起价10%的手续费</p>
+                                                </div>
+                                            </div>
+                                        </div>
+                                        <div class="myauctionright">
+                                            <p>请选择背包中的物品进行拍卖</p>
+                                            <div class="bao">
+                                                    <div class="baox"><span><i></i><b>粉色</b></span></div>
+                                                    <div class="baox"><span><i></i><b>蓝色</b></span></div>
+                                                    <div class="baox"><span><i></i><b>橙色</b></span></div>
+                                                    <div class="baox"><span><i></i><b>青色</b></span></div>
+                                                    <div class="baox"><span><i></i><b>蓝色</b></span></div>
+                                                    <div class="baox"><span><i></i><b>紫色</b></span></div>
+                                                    <div class="baox"><span><i></i></span></div>
+                                                    <div class="baox"><span><i></i></span></div>
+                                                    <div class="baox"><span><i></i></span></div>
+                                                    <div class="baox"><span><i></i></span></div>
+                                                    <div class="baox"><span><i></i></span></div>
+                                                    <div class="baox"><span><i></i></span></div>
+                                                    <div class="baox"><span><i></i></span></div>
+                                                    <div class="baox"><span><i></i></span></div>
+                                                    <div class="baox"><span><i></i></span></div>
+                                                    <div class="baox"><span><i></i></span></div>
+                                                    <div class="baox"><span><i></i></span></div>
+                                                    <div class="baox"><span><i></i></span></div>
+                                                    <div class="baox"><span><i></i></span></div>
+                                                    <div class="baox"><span><i></i></span></div>
+                                            </div>
+                                        </div>
+                                </div>
+                    </div>
+            </div>
             <div class="tishi">
                 <img class="tishimg" src="img/close.png" alt="">
                 <span class="col"></span>
@@ -140,10 +774,239 @@
         </div>
     </div>
 </div>
+<div id="show"></div>
 <script src="js/jquery-3.3.1.js"></script>
 <script src="js/index.js"></script>
 <script>
+    var jiabg=document.querySelector('.jiabg')
+    var bighome=document.querySelector('.table-body')
+    var bao=document.querySelector('.bao')
+    bighome.style.height=Number(jiabg.clientHeight-150)+'px';
+    bao.style.height=Number(jiabg.clientHeight-190)+'px';
+
+
+    function one(pep,hos){
+        var shi;
+        var fen;
+        var miao;
+        // var  riqi =Number(sessionStorage.getItem(pep+'one'));
+        // var  riqi1 =Number(sessionStorage.getItem(pep+'two'));
+        // var  riqi2=Number(sessionStorage.getItem(pep+'three'));
+        // var  six=sessionStorage.getItem(pep+'six');
+        var  riqi =Number(localStorage.getItem(pep+'one'));
+        var  riqi1 =Number(localStorage.getItem(pep+'two'));
+        var  riqi2=Number(localStorage.getItem(pep+'three'));
+        var  six=localStorage.getItem(pep+'six');
+        if(hos==0){
+            if(six==pep+'six'){
+                shi=riqi;
+                fen=riqi1
+                miao=riqi2
+            }else{
+                shi=24;
+                fen=60;
+                miao=60;
+            }
+        }else if(hos==1){
+            if(six==pep+'six'){
+                shi=riqi;
+                fen=riqi1
+                miao=riqi2
+            }else{
+                shi=12;
+                fen=60;
+                miao=60;
+            }
+        }
+        if(shi<=9){
+            shi='0'+shi
+        }
+        if(fen<=9){
+            fen='0'+fen
+        }
+
+        var t=setInterval(function () {
+            miao--
+            if(miao==0){
+                fen=fen-1;
+                miao=60;
+            }
+            if(fen==0){
+                shi=shi-1;
+                fen=60;
+                miao=60;
+            }
+
+            if(miao<=9){
+                miao='0'+miao
+            }
+
+            var shijian=shi+':'+fen+':'+miao
+            var shij=document.querySelectorAll('.shijian');
+            if(shi==0){
+                clearInterval(t);
+                shij[pep].innerHTML='00:00:00'
+            }else{
+                shij[pep].innerHTML=shijian
+            }
+            localStorage.setItem(pep+'one', shi);
+            localStorage.setItem(pep+'two', fen);
+            localStorage.setItem(pep+'three',miao);
+            localStorage.setItem(pep+'six', pep+'six');
+            // sessionStorage.setItem(pep+'one', shi);
+            // sessionStorage.setItem(pep+'two', fen);
+            // sessionStorage.setItem(pep+'three', miao);
+            // sessionStorage.setItem(pep+'six', pep+'six');
+       },1000)
+    }
+   var ss=document.querySelectorAll('.shijian');
+    for(var i=0;i<ss.length;i++){
+        ss[i].click();
+   }
+    
+    $('.auctionRight').click(function () {
+        $('.auctionlist').css('display','none')
+        $('.myauction').css('display','block')
+    })
+
+    var clic=document.querySelector('.clic');
+    var qiu=document.querySelector('.qiu');
+    qiu.style.display='none'
+    clic.onclick=function(){
+        if(qiu.style.display=='none'){
+            qiu.style.display='block'
+        }else if(qiu.style.display=='block'){
+            qiu.style.display='none'
+        }
+    }
+
+    var qius=document.querySelectorAll('.qiu span');
+    var qii=document.querySelector('.qi i');
+    for(var i=0;i<qius.length;i++){
+        qius[i].index=i
+        qius[i].onclick=function(){
+            if(this.index==0){
+                qii.style.background='#fff';
+            }else if(this.index==1){
+                qii.style.background='#f19149';
+            }else if(this.index==2){
+                qii.style.background='#f19ec2';
+            }else if(this.index==3){
+                qii.style.background='#6cdbe3';
+            }else if(this.index==4){
+                qii.style.background='#3f70f9';
+            }else if(this.index==5){
+                qii.style.background='#8f82bc';
+            }
+
+            qiu.style.display='none'
+        }
+    }
+
+    var maii=document.querySelectorAll('.mai i');
+    for(var ii=0;ii<maii.length;ii++){
+        maii[ii].index=ii;
+        maii[ii].onclick=function(){
+            for(var ii=0;ii<maii.length;ii++){
+                maii[ii].style.background='#d7bda2'
+            }
+            maii[this.index].style.background='#f19149'
+        }
+    }
+    document.querySelector('.kai strong').onclick=function(){
+        document.querySelector('.kai div').style.display='block';
+        setTimeout(function () {
+            document.querySelector('.kai div').style.display='none';
+        },3000)
+    }
+
+
+    function bb(one,one1){
+        var baoxi=document.querySelectorAll(one);
+        var baob=document.querySelectorAll(one1);
+        for(var b=0;b<baob.length;b++){
+            if(baob[b].innerHTML=='粉色'){
+                baoxi[b].style.background='#f19ec2'
+            }else if(baob[b].innerHTML=='橙色'){
+                baoxi[b].style.background='#f19149'
+            }else if(baob[b].innerHTML=='青色'){
+                baoxi[b].style.background='#6cdbe3'
+            }else if(baob[b].innerHTML=='蓝色'){
+                baoxi[b].style.background='#3f70f9'
+            }else if(baob[b].innerHTML=='紫色'){
+                baoxi[b].style.background='#8f82bc'
+            }else if(baob[b].innerHTML=='白色'){
+                baoxi[b].style.background='#fff'
+            }
+        }
+    }
+    bb('.baox i','.baox b')
+    bb('.pai i','.pai b')
+    bb('.zui i','.zui b')
+    var baox=document.querySelectorAll('.baox');
+    for(var x=0;x<baox.length;x++){
+        baox[x].index=x;
+        baox[x].onclick=function(){
+            var bf=this.querySelector('b');
+            var wu=document.querySelector('.wu')
+            if(bf.innerHTML=='粉色'){
+                wu.innerHTML='<i></i>粉珍珠'
+                document.querySelector('.wu i').style.background='#f19ec2'
+            }else if(bf.innerHTML=='橙色'){
+                wu.innerHTML='<i></i>橙珍珠'
+                document.querySelector('.wu i').style.background='#f19149'
+            }else if(bf.innerHTML=='青色'){
+                wu.innerHTML='<i></i>青珍珠'
+                document.querySelector('.wu i').style.background='#6cdbe3'
+            }else if(bf.innerHTML=='蓝色'){
+                wu.innerHTML='<i></i>蓝珍珠'
+                document.querySelector('.wu i').style.background='#3f70f9'
+            }else if(bf.innerHTML=='紫色'){
+                wu.innerHTML='<i></i>紫珍珠'
+                document.querySelector('.wu i').style.background='#8f82bc'
+            }
+        }
+    }
+
+    var shuinput=document.querySelector('.shu input');
+    var jian=document.querySelector('.jian');
+    var jia=document.querySelector('.jia');
+
+    jian.onclick=function(){
+        if(shuinput.value==1){
+            shuinput.value=1
+        }else{
+            shuinput.value--
+        }
+    }
+    jia.onclick=function(){
+        shuinput.value++
+    }
+
+
+    var zhen=document.querySelectorAll('.zhen');
+    for(var zh=0;zh<zhen.length;zh++){
+        if(zhen[zh].innerHTML=='<i></i>粉珍珠'){
+            zhen[zh].querySelector('i').style.background='#f19ec2'
+        }else if(zhen[zh].innerHTML=='<i></i>橙珍珠'){
+            zhen[zh].querySelector('i').style.background='#f19149'
+        }else if(zhen[zh].innerHTML=='<i></i>青珍珠'){
+            zhen[zh].querySelector('i').style.background='#6cdbe3'
+        }else if(zhen[zh].innerHTML=='<i></i>蓝珍珠'){
+            zhen[zh].querySelector('i').style.background='#3f70f9'
+        }else if(zhen[zh].innerHTML=='<i></i>紫珍珠'){
+            zhen[zh].querySelector('i').style.background='#8f82bc'
+        }else if(zhen[zh].innerHTML=='<i></i>洗髓丹碎片'){
+            zhen[zh].removeChild(zhen[zh].querySelector('i'))
+            var sui=document.createElement('b');
+            zhen[zh].prepend(sui)
+        }
+    }
+
+
 
 </script>
 </body>
 </html>
+
+<image></image>

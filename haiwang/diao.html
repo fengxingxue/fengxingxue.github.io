@@ -32,11 +32,11 @@
             height: 95%;
         }
         .close img{
-            width: 6%;
-            height: 6%;
+            width: 7%;
+            height: 8%;
             position: absolute;
-            margin-left: 90.5%;
-            top: 9px;
+            margin-left: 92.5%;
+            top: 12px;
         }
         .diao .jiabg{
             width: 100%;
@@ -154,6 +154,84 @@
         .time{
             left: 55%;
         }
+        .yugan{
+            position: absolute;
+            top: 0;
+            left: -150%;
+            width:55%;
+            transition: .5s;
+        }
+        .yugan img:nth-of-type(1){
+            width:74%;
+            left: 14px;
+        }
+        .yugan img:nth-of-type(2){
+            width: 13%;
+            position: absolute;
+            left: 29%;
+            top: 105px;
+        }
+
+        .yugan img:nth-of-type(3){
+            width: 1px;
+            position: absolute;
+            left: 77%;
+            top: 5px;
+            height: 10px;
+        }
+        .yugan img:nth-of-type(4){
+            width: 13px;
+            position: absolute;
+            left: 75%;
+            top: 13px;
+        }
+
+        .tishi{
+            position: absolute;
+            width: 54%;
+            top: 30%;
+            left: 23%;
+            background: url("img/tan.png") no-repeat;
+            background-size: contain;
+            height: 40%;
+            line-height: 40%;
+            padding: 10px;
+            z-index: 999999;
+            font-size:14px;
+            color: #000;
+            display: none;
+
+        }
+        .tishi span{
+            font-weight: bold;
+            text-align: center;
+            display: block;
+            /* line-height: 10em; */
+            position: relative;
+            top: 40%;
+            height: 20px;
+
+        }
+        .tishi .tishimg{
+            width: 30px;
+            height: 30px;
+            position: absolute;
+            right: 3px;
+            top: -10px;
+        }
+        .tishi1{
+            background: #c3a583;
+            width: 30%;
+            position: absolute;
+            bottom: 20px;
+            left: 35%;
+            padding:8px 0;
+            font-size: 12px;
+            text-align: center;
+            margin: auto;
+            z-index: 999;
+            border-radius: 5px;
+        }
     </style>
 </head>
 <body>
@@ -171,6 +249,20 @@
                 <div class="littlexia">小虾拥有：</div>
                 <div class="login">开始垂钓</div>
                 <div class="time">00:00:00</div>
+                <div class="yugan">
+                    <img src="img/yugan.png" alt="">
+                    <img src="img/gu.png" alt="">
+                    <img src="img/yuxian.png" alt="">
+                    <img src="img/gou.png" alt="">
+                </div>
+            </div>
+            <div class="tishi">
+                <img class="tishimg" src="img/close.png" alt="">
+                <span class="col"></span>
+                <span class="pep"></span>
+                <div class="tishi1">
+                    确认
+                </div>
             </div>
         </div>
     </div>
@@ -178,6 +270,127 @@
 <script src="js/jquery-3.3.1.js"></script>
 <script src="js/index.js"></script>
 <script>
+    var login=document.querySelector('.login');
+    var yugan=document.querySelector('.yugan');
+    var time=document.querySelector('.time');
+    var yuganimg=document.querySelectorAll('.yugan img');
+    yuganimg[3].style.top='13px'
+    login.onclick=function(){
+        console.log(yuganimg[3].style.top)
+        if(yuganimg[3].style.top!='13px'){
+            document.querySelector('.tishi').style.display='block'
+            var col=document.querySelector('.col')
+            var pep=document.querySelectorAll('.pep')
+            col.innerHTML='已经开始为您垂钓，';
+            pep.innerHTML='请不要重复垂钓';
+            setTimeout(function () {
+                document.querySelector('.tishi').style.display='none'
+                col.innerHTML='';
+                pep.innerHTML='';
+            },2000)
+        }else if(yuganimg[3].style.top=='13px'){
+            var num=10;
+            yugan.style.left='0';
+            var t=setInterval(function () {
+                yuganimg[2].style.height=num+'px';
+                yuganimg[3].style.top=Number(num+5)+'px';
+                num++
+                if(yuganimg[3].style.top=='134px'){
+                    yuganimg[3].style.opacity='0.5'
+                }
+                if(yuganimg[3].style.top=='140px'){
+                    yuganimg[3].style.opacity='0.3'
+                }
+                if(yuganimg[3].style.top=='144px'){
+                    num=144;
+                    clearInterval(t)
+                    yuganimg[3].style.opacity='0';
+                    var fen=0;
+                    var miao=0;
+                    function RandomNumBoth(Min,Max){
+                        var Range = Max - Min;
+                        var Rand = Math.random();
+                        if(Math.round(Rand * Range)<60){
+                            var num = Min + Math.round(Rand * Range); //四舍五入
+                        }else if(Math.round(Rand * Range)>60){
+                            var num1 = Math.floor(Math.random()*(1 - 59) + 59);
+                            var num = Number(Min+100) + num1;
+                        }
+                        return num;
+                    }
+                    var sui=RandomNumBoth(600,800);
+                    sui='0'+sui
+                    console.log(sui)
+                    var tt=setInterval(function () {
+                        miao++;
+                        if(miao==60){
+                            miao=0;
+                            fen=Number(fen+1);
+                        }
+                        if(miao<=9){
+                            miao='0'+miao;
+                        }
+
+                        time.innerHTML='00:'+'0'+fen+':'+miao;
+                        if(sui=='0'+fen+miao){
+                            clearInterval(tt)
+                            function prizeRand1(oArr1) {
+                                var sum = 0;
+                                var rand = 0;
+                                var result = 0;
+                                for (var i in oArr1) {
+                                    sum += oArr1[i][0];
+                                }
+                                for (var i in oArr1) {
+                                    rand = Math.floor(Math.random()*sum + 1);
+                                    if (oArr1[i][0] >= rand) {
+                                        result = oArr1[i][0];
+                                        break;
+                                    } else {
+                                        sum -= oArr1[i][0];
+                                    }
+                                }
+                                return result;
+                            }
+                            var oArr1 = {'0':[20, ''], '1':[10, ''], '2':[70, '']};
+                            var num3=prizeRand1(oArr1);
+                            console.log(num3)
+                            var nn=139;
+                            var n1=setInterval(function () {
+                                if(num3==20){
+                                    yuganimg[2].style.height=nn+'px';
+                                    yuganimg[3].style.top=Number(nn+5)+'px';
+                                }else if(num3==10){
+                                    yuganimg[2].style.height=nn+'px';
+                                    yuganimg[3].style.top=Number(nn+5)+'px';
+                                    yuganimg[3].src='img/xiaoyu.png'
+                                }else if(num3==70){
+                                    yuganimg[2].style.height=nn+'px';
+                                    yuganimg[3].style.top=Number(nn+5)+'px';
+                                    yuganimg[3].src='img/xiaoxia.png'
+                                }
+                                if(yuganimg[3].style.top=='134px'){
+                                    yuganimg[3].style.opacity='1'
+                                }
+                                if(yuganimg[3].style.top=='140px'){
+                                    yuganimg[3].style.opacity='0.5'
+                                }
+                                nn--;
+                                if(nn==10){
+                                    nn=10
+                                }
+                            },1000)
+
+
+                        }
+                    },1000)
+
+                }
+            },50)
+        }
+    }
+
+
 
 </script>
 </body>

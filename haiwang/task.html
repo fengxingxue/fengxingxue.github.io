@@ -1,0 +1,383 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1" />
+    <title>海王</title>
+    <meta name="viewport" content="width=device-width,initial-scale=1, maximum-scale=1, minimum-scale=1, user-scalable=no" />
+    <meta name="apple-mobile-web-app-capable" content="yes" />
+    <meta name="format-detection" content="telephone=no">
+    <style id="cssAnimation"></style>
+    <style>
+        *{
+            padding: 0;
+            margin: 0;
+            box-sizing: border-box;
+        }
+        .all{
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+        }
+        input,button{
+            outline:none;
+        }
+        .task{
+            width: 60%;
+            position: absolute;
+            left: 20%;
+            top: 2.3%;
+            height: 95%;
+        }
+        .close img{
+            width: 8%;
+            height: 8%;
+            position: absolute;
+            margin-left: 77.5%;
+            top: 15%;
+        }
+        .task .jiabg{
+            width: 81%;
+            margin: auto;
+            position: absolute;
+            left: 8%;
+        }
+        .cw{
+            width: 11%;
+            position: absolute;
+            left: 45%;
+            top: 12px;
+        }
+        .tishi{
+            position: absolute;
+            width: 54%;
+            top: 30%;
+            left: 23%;
+            background: url("img/tan.png") no-repeat;
+            background-size: contain;
+            height: 40%;
+            line-height: 40%;
+            padding: 10px;
+            z-index: 999999;
+            font-size:14px;
+            color: #000;
+            display: none;
+
+        }
+        .tishi span{
+            font-weight: bold;
+            text-align: center;
+            display: block;
+            /* line-height: 10em; */
+            position: relative;
+            top: 40%;
+            height: 20px;
+
+        }
+        .tishi .tishimg{
+            width: 30px;
+            height: 30px;
+            position: absolute;
+            right: 10px;
+            top: -10px;
+        }
+        @media screen and (max-width:570px) {
+
+            .chongright p {
+                padding-top: 2px;
+            }
+
+
+            .shi .yu, .shi .xia {
+                padding: 2px;
+            }
+
+            .xia div, .yu div {
+                font-size: 12px;
+            }
+        }
+        @media screen and (max-width:750px) {
+            .task {
+                width: 70%;
+                position: absolute;
+                left: 15%;
+                top: 2.3%;
+                height: 95%;
+            }
+        }
+        @media screen and (max-width: 700px) {
+            .task {
+                width: 74%;
+                position: absolute;
+                left: 13%;
+                top: 2.3%;
+                height: 95%;
+            }
+        }
+        .task1{
+            width: 61%;
+            margin: auto;
+            border-radius: 8px;
+            position: absolute;
+            top: 47%;
+            left: 17%;
+        }
+
+        .tishi1{
+            background: #c3a583;
+            width: 30%;
+            position: absolute;
+            bottom: 20px;
+            left: 35%;
+            padding:8px 0;
+            font-size: 12px;
+            text-align: center;
+            margin: auto;
+            z-index: 999;
+            border-radius: 5px;
+        }
+        .taskleft{
+            width: 18%;
+            float: left;
+            font-size: 12px;
+            height: 100%;
+            padding-top: 35px;
+        }
+        .taskleft div{
+            height: 50%;
+            background: #448aca;
+            border-top-left-radius: 7px;
+            border-bottom-left-radius: 7px;
+            text-align: center;
+            padding:8px 0;
+        }
+        .taskleft div:nth-of-type(1){
+            margin-bottom: 15px;
+            background: #7ecef4;
+        }
+        .taskright{
+            width: 82%;
+            float: left;
+        }
+        .task1::after{
+            display: table;
+            content: '';
+            clear: both;
+        }
+        .tasktop,.taskbtn{
+            width: 100%;
+            background: #7ecef4;
+            border-radius: 8px;
+            overflow-y:scroll;
+            padding: 5px;
+        }
+        .tasktop::-webkit-scrollbar ,.taskbtn::-webkit-scrollbar {
+            display: none;
+        }
+        .tasktop div,.taskbtn div{
+            background: #88abda;
+            width: 100%;
+            border-radius: 4px;
+            font-size: 12px;
+            padding:15px 3px;
+            position: relative;
+            margin-bottom: 8px;
+        }
+        .tasktop div>p,.taskbtn div>p{
+            display: inline-block;
+        }
+        .tasktop div>span,.taskbtn div>span{
+            background: #fff;
+            width: 40px;
+            text-align: center;
+            display:inline-block;
+            position: absolute;
+            top: 5px;
+            right: 22%;
+            padding: 2px;
+            border-radius: 4px;
+        }
+        .taskbtn div>span{
+            padding: 8px 0;
+            top: 8px;
+        }
+        .tasktop div>strong,.taskbtn div>strong{
+            font-weight: 100;
+            position: absolute;
+            right: 5px;
+            top: 10px;
+            background: #cce198;
+            padding: 4px;
+            border-radius: 4px;
+        }
+        .taskbtn{
+            display: none;
+        }
+        @media screen and (max-width: 750px) {
+            .task .jiabg{
+                width: 84%;
+            }
+        }
+        @media screen and (max-width: 700px) {
+            .task .jiabg{
+                width: 80%;
+            }
+        }
+        @media screen and (max-width: 600px) {
+            .task .jiabg{
+                width: 83%;
+                top: -3%;
+            }
+            .taskleft{
+                width: 20%;
+            }
+                .taskright{
+                width: 80%;
+            }
+            .task1{
+                width: 62%;
+            }
+            .tasktop div, .taskbtn div{
+                padding: 10px 3px 45px;
+            }
+            .taskbtn div>span,.tasktop div>span{
+                top: 30px;
+                right: 29%;
+            }
+            .tasktop div>strong, .taskbtn div>strong{
+                top: 35px;
+            }
+        }
+    </style>
+</head>
+<body>
+<div class="all" id="all">
+    <div class="wan" id="all1">
+        <div class="task">
+            <img class="jiabg" src="img/task.png" alt="">
+            <div class="close">
+                <img src="img/close.png" alt="">
+            </div>
+            <div class="task1">
+                    <div class="taskleft">
+                        <div>邀请好友</div>
+                        <div>累计奖励</div>
+                    </div>
+                    <div class="taskright">
+                        <div class="tasktop">
+                            <div>
+                                <p>成功邀请3位好友加入</p>
+                                <span>洗髓丹碎片</span>
+                                <strong>未达成</strong>
+                            </div>
+                            <div>
+                                <p>成功邀请10位好友加入</p>
+                                <span style="background:rgb(241, 145, 73)">洗髓丹碎片</span>
+                                <strong>未达成</strong>
+                            </div>
+                            <div>
+                                <p>成功邀请50位好友加入</p>
+                                <span style="background:rgb(241, 158, 194)">洗髓丹碎片</span>
+                                <strong>未达成</strong>
+                            </div>
+                            <div>
+                                <p>成功邀请100位好友加入</p>
+                                <span style="background:rgb(108, 219, 227)">洗髓丹碎片</span>
+                                <strong>未达成</strong>
+                            </div>
+                            <div>
+                                <p>成功邀请200位好友加入</p>
+                                <span style="background:rgb(63, 112, 249)">洗髓丹碎片</span>
+                                <strong>未达成</strong>
+                            </div>
+                            <div>
+                                <p>成功邀请500位好友加入</p>
+                                <span style="background:rgb(143, 130, 188)">洗髓丹碎片</span>
+                                <strong>未达成</strong>
+                            </div>
+                            <div>
+                                <p>成功邀请1000位好友加入</p>
+                                <span style="padding: 8px 0;top: 8px;">洗髓丹</span>
+                                <strong>未达成</strong>
+                            </div>
+                        </div>
+                        <div class="taskbtn">
+                            <div>
+                                <p>累计ETH夺宝消费1ETH</p>
+                                <span>洗髓丹</span>
+                                <strong>未达成</strong>
+                            </div>
+                            <div>
+                                <p>累计ETH夺宝消费5ETH</p>
+                                <span>洗髓丹</span>
+                                <strong>未达成</strong>
+                            </div>
+                            <div>
+                                <p>累计ETH夺宝消费10ETH</p>
+                                <span>洗髓丹</span>
+                                <strong>未达成</strong>
+                            </div>
+                            <div>
+                                <p>累计ETH夺宝消费20ETH</p>
+                                <span>洗髓丹</span>
+                                <strong>未达成</strong>
+                            </div>
+                            <div>
+                                <p>累计ETH夺宝消费30ETH</p>
+                                <span>洗髓丹</span>
+                                <strong>未达成</strong>
+                            </div>
+                            <div>
+                                <p>累计ETH夺宝消费50ETH</p>
+                                <span>洗髓丹</span>
+                                <strong>未达成</strong>
+                            </div>
+                        </div>
+                    </div>
+
+            </div>
+            <div class="tishi">
+                <img class="tishimg" src="img/close.png" alt="">
+                <span class="col"></span>
+                <span class="pep"></span>
+                <div class="tishi1">
+                    确认
+                </div>
+
+            </div>
+
+
+        </div>
+    </div>
+</div>
+
+<script src="js/jquery-3.3.1.js"></script>
+<script src="js/index.js"></script>
+<script>
+    var jiabg=document.querySelector('.jiabg')
+    var tasktop=document.querySelector('.tasktop')
+    var taskbtn=document.querySelector('.taskbtn')
+    tasktop.style.height=Number(jiabg.clientHeight-220)+'px';
+    taskbtn.style.height=Number(jiabg.clientHeight-220)+'px';
+    if(window.innerWidth<600){
+        tasktop.style.height=Number(jiabg.clientHeight-190)+'px';
+        taskbtn.style.height=Number(jiabg.clientHeight-190)+'px';
+    }
+    var taskleft=document.querySelectorAll('.taskleft div');
+    var taskright=document.querySelectorAll('.taskright>div');
+    for(var i=0;i<taskleft.length;i++){
+        taskleft[i].index=i;
+        taskleft[i].onclick=function(){
+            for(var i=0;i<taskleft.length;i++){
+                taskleft[i].style.background='#448aca';
+                taskright[i].style.display='none'
+            }
+            taskleft[this.index].style.background='#7ecef4';
+            taskright[this.index].style.display='block'
+        }
+    }
+</script>
+</body>
+</html>

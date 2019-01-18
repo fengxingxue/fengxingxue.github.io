@@ -1,94 +1,115 @@
-
-
+<!DOCTYPE html>
 <html>
 <head>
-    <title>JS实现气泡从水中急速上升效果</title>
-    <style type="text/css">
+    <meta charset="UTF-8">
+    <title></title>
+    <style>
         body {
-            cursor:crosshair;margin:0; padding:0;
-            position:absolute; overflow:hidden;
-            background:#FFF; left:0; top:0;
-            width:100%; height:100%;
+            background-color: #f98033;
         }
+
+        .soda {
+            position: fixed;
+            top: 0;
+            right: 0;
+            bottom: 0;
+            left: 0;
+            perspective: 50vw;
+            transform: translateZ(-99999px);
+            transform-style: preserve-3d;
+        }
+
+        .bubble {
+            position: absolute;
+            width: 50px;
+            height: 50px;
+            border-radius: 50%;
+            background-image: radial-gradient(rgba(255, 255, 255, 0.3) 60%, rgba(255, 255, 255, 1) 80%);
+            transform: translateX(-50%);
+            will-change: top, left;
+        }
+
+        .bubble::after {
+            content: '';
+            position: absolute;
+            top: 20%;
+            right: 25%;
+            width: 33%;
+            height: 33%;
+            border: 3px solid;
+            border-color: rgba(255, 255, 255, 0.8) transparent transparent transparent;
+            border-radius: 50%;
+            transform: rotate(45deg);
+        }
+
     </style>
-    <script type="text/javascript">
-        var object = new Array();
-        nbfm  = 60;
-        var xm = 0;
-        var ym = 9999;
-        var nx = 0;
-        var ny = 0;
-        function movbulb(){
-            with (this) {
-                if(ec < 20){
-                    if(Math.abs(x0 - xm) < 100 && Math.abs(y0 - ym) < 100){
-                        xx = (xm - x0) / 8;
-                        yy = (ym - y0) / 8;
-                        ec++;
-                    }
-                }
-                xx *= 0.99;
-                yy *= 0.99;
-                x0 = Math.round(x0 + Math.cos(y0 / 15) * p) + xx;
-                y0+= yy - v;
-                if(y0 < -h * 2 || x0 < -w * 2 || x0 > nx + w * 2){
-                    y0 = ny + N + h * 2;
-                    x0 = nx/2-100 + Math.random() * 100;
-                    ec = 0;
-                }
-                obj.style.top = y0 - h;
-                obj.style.left = x0 - w;
-            }
-        }
-        function CObj(N,img,w,h){
-            this.obj = document.createElement("img");
-            this.obj.src = img.src;
-            this.obj.style.position = "absolute";
-            this.obj.style.left = -1000;
-            document.body.appendChild(this.obj);
-            this.N = N;
-            this.x0 = 0;
-            this.y0 = -1000;
-            this.v = 1 + Math.round((80 / h) * Math.random());
-            this.p = 1 + Math.round((w / 8) * Math.random());
-            this.xx = 0;
-            this.yy = 0;
-            this.ec = 0;
-            this.w = w;
-            this.h = h;
-            this.movbulb = movbulb;
-        }
-        function resize(){
-            nx = document.body.offsetWidth;
-            ny = document.body.offsetHeight;
-        }
-        onresize = resize;
-        document.onmousemove = function(e){
-            if (window.event) e = window.event;
-            xm = document.body.scrollLeft+(e.x || e.clientX);
-            ym = document.body.scrollTop+(e.y || e.clientY);
-        }
-        function run(){
-            for(i in object)object[i].movbulb();
-            setTimeout(run, 16);
-        }
-        onload = function() {
-            PIC = document.getElementById("bubbles").getElementsByTagName("img");
-            resize();
-            for(nbf=0;nbf<nbfm;nbf++){
-                sf = PIC[nbf%PIC.length];
-                object[nbf] = new CObj(nbf,sf,sf.width/2,sf.height/2);
-            }
-            run();
-        }
-    </script>
 </head>
 <body>
-<div id="bubbles" style="visibility:hidden">
-    <img src="http://bbs.blueidea.com/static/image/smiley/blueidea/smile.gif">
-    <img src="http://bbs.blueidea.com/static/image/smiley/blueidea/biggrin.gif">
-    <img src="http://bbs.blueidea.com/static/image/smiley/blueidea/eek.gif">
-    <img src="http://bbs.blueidea.com/static/image/smiley/blueidea/rolleyes.gif">
-</div>
+<div class="soda"></div>
 </body>
+<script src="js/jquery-3.3.1.js"></script>
+<script>
+    const floatOn = options => {
+        let el = options.el,
+            x = options.x,
+            xIsPos = options.xIsPos || Math.floor(Math.random()),
+            updateX = options.updateX || Math.floor(Math.random()),
+            curTop = parseInt(el.style.top),
+            curLeft = parseInt(el.style.left);
+
+        if (curTop > -50) {
+            el.style.top = `${--curTop}px`;
+        } else {
+            el.style.top = `${innerHeight + 50}px`;
+        }
+
+        if (updateX) {
+            if (xIsPos) {
+                if (curLeft > x + 10) {
+                    xIsPos = false;
+                } else {
+                    el.style.left = `${curLeft + 1}px`;
+                }
+            } else {
+                if (curLeft < x - 10) {
+                    xIsPos = true;
+                } else {
+                    el.style.left = `${--curLeft}px`;
+                }
+            }
+        }
+
+        updateX = updateX ? false : true;
+
+        requestAnimationFrame(
+            floatOn.bind(null, { el: el, x: x, xIsPos: xIsPos, updateX: updateX })
+        );
+    };
+
+    class Bubble {
+        constructor(target, i) {
+            this.bubble = document.createElement("div");
+            this.bubble.classList.add("bubble");
+            this.x = Math.floor(Math.random() * innerWidth);
+            this.y = Math.floor(Math.random() * innerHeight);
+            this.scale = Math.random();
+            this.pos = Math.round(Math.random());
+
+            this.bubble.style.top = `${this.y}px`;
+            this.bubble.style.left = `${this.x}px`;
+            this.bubble.style.transform = `translateZ(${
+                this.pos ? "" : "-"
+                }${this.scale.toFixed(2) * 1000}px)`;
+
+            setTimeout(() => {
+                target.appendChild(this.bubble);
+            }, i * 50);
+            setTimeout(floatOn.bind(null, { el: this.bubble, x: this.x }), i * 50);
+        }
+    }
+
+    for (let i = 0; i < 100; i++) {
+        new Bubble(document.querySelector(".soda"), i);
+    }
+</script>
 </html>
