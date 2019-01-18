@@ -20,8 +20,8 @@ window.onload=function(){
 }
 
 $('input').click(function() {
-    contentDOM.style.height =window.screen.height + 'px';
-    contentDOM1.style.height = window.screen.height + 'px';
+    contentDOM.style.height =Number(window.screen.height-10) + 'px';
+    contentDOM1.style.height = Number(window.screen.height-10) + 'px';
 });
 
 //判断手机重力和是否开启竖屏锁定
