@@ -24,6 +24,67 @@ $('input').click(function() {
     contentDOM1.style.height = Number(window.screen.height-15) + 'px';
 });
 
+
+
+
+
+function CreateNotification(m,n){
+        var NotifyID = n;
+        var Context = plus.android.importClass("android.content.Context");
+        var main = plus.android.runtimeMainActivity();
+        var Noti = plus.android.importClass("android.app.Notification");
+        var NotificationManager = plus.android.importClass("android.app.NotificationManager");
+        var nm = main.getSystemService(Context.NOTIFICATION_SERVICE)
+        var Notification = plus.android.importClass("android.app.Notification");
+        var mNotification = new Notification.Builder(main);
+        var pending=plus.android.importClass("android.app.PendingIntent");
+        var intent=plus.android.importClass("android.content.Intent");
+
+        //mNotification.setOngoing(true);
+        mNotification.setContentTitle("您有一条未读消息");//标题
+        mNotification.setContentText(m);//内容
+        mNotification.setSmallIcon(17301620);//图标
+        mNotification.setTicker("First Time");//通知首次出现在通知栏时的效果
+        mNotification.setNumber(5);//通知集合的数量
+        //var str = dateToStr(new Date());
+        //mNotification.setWhen(str);//通知产生时间
+        //mNotification.setContentIntent();//通知栏点击事件
+        mNotification.setDefaults(Noti.DEFAULT_VIBRATE);//声音、闪灯、震动效果，可叠加
+        mNotification.setPriority(Noti.PRIORITY_DEFAULT);//通知优先级
+        mNotification.flags=Notification.FLAG_ONLY_ALERT_ONCE;//发起通知时震动
+        var mNb = mNotification.build()
+        nm.notify(NotifyID , mNb);
+    }
+
+
+    var i=0;
+
+    //开启连接
+    function startConnection() {
+        hub.on('listen',function (message) {
+
+            $('#_messageList').append('<li>' + message + '</li>');
+            i=i+1;
+            CreateNotification(message,i);
+        });
+
+        listener.start().fail(function () {
+            $('#_messageList').append('<li>打开连接失败!</li>');
+        }).done(function () {
+            $('#_messageList').append('<li>连接已打开...</li>');
+        });
+
+    }
+
+
+
+
+
+
+
+
+
+
 //判断手机重力和是否开启竖屏锁定
 
 // function orientationHandler(event) {
