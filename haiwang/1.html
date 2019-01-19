@@ -1,115 +1,236 @@
-<!DOCTYPE html>
+<!DOCTYPE HTML>
 <html>
-<head>
-    <meta charset="UTF-8">
-    <title></title>
-    <style>
-        body {
-            background-color: #f98033;
-        }
+	<head>
+		<meta charset="utf-8" />
+		<meta name="viewport" content="initial-scale=1.0, maximum-scale=1.0, user-scalable=no" />
+		<meta name="HandheldFriendly" content="true" />
+		<meta name="MobileOptimized" content="320" />
+		<title>Hello H5+</title>
+		<script type="text/javascript">
+			var pushServer = "http://demo.dcloud.net.cn/push/?";
+			var message = null;
+			// 监听plusready事件  
+			document.addEventListener("plusready", function () {
+				message = document.getElementById("message");
+				// 监听点击消息事件
+				plus.push.addEventListener("click", function (msg) {
+					// 判断是从本地创建还是离线推送的消息
+					switch (msg.payload) {
+						case "LocalMSG":
+							outSet("点击本地创建消息启动：");
+							break;
+						default:
+							outSet("点击离线推送消息启动：");
+							break;
+					}
+					// 提示点击的内容
+					plus.nativeUI.alert(msg.content);
+					// 处理其它数据
+					logoutPushMsg(msg);
+				}, false);
+				// 监听在线消息事件
+				plus.push.addEventListener("receive", function (msg) {
+					if (msg.aps) { // Apple APNS message
+						outSet("接收到在线APNS消息：");
+					} else {
+						outSet("接收到在线透传消息：");
+					}
+					logoutPushMsg(msg);
+				}, false);
+			}, false);
 
-        .soda {
-            position: fixed;
-            top: 0;
-            right: 0;
-            bottom: 0;
-            left: 0;
-            perspective: 50vw;
-            transform: translateZ(-99999px);
-            transform-style: preserve-3d;
-        }
+			/**
+			 * 日志输入推送消息内容
+			 */
+			function logoutPushMsg(msg) {
+				console.log("title: " + msg.title);
+				console.log("content: " + msg.content);
+				if (msg.payload) {
+					if (typeof (msg.payload) == "string") {
+						console.log("payload(String): " + msg.payload);
+					} else {
+						console.log("payload(JSON): " + JSON.stringify(msg.payload));
+					}
+				} else {
+					console.log("payload: undefined");
+				}
+				if (msg.aps) {
+					console.log("aps: " + JSON.stringify(msg.aps));
+				}
+			}
 
-        .bubble {
-            position: absolute;
-            width: 50px;
-            height: 50px;
-            border-radius: 50%;
-            background-image: radial-gradient(rgba(255, 255, 255, 0.3) 60%, rgba(255, 255, 255, 1) 80%);
-            transform: translateX(-50%);
-            will-change: top, left;
-        }
+			/**
+			 * 获取本地推送标识信息
+			 */
+			function getPushInfo() {
+				var info = plus.push.getClientInfo();
+				outSet("获取客户端推送标识信息：");
+				console.log("id: " + info.id);
+				console.log("token: " + info.token);
+				console.log("clientid: " + info.clientid);
+				console.log("appid: " + info.appid);
+				console.log("appkey: " + info.appkey);
+			}
+			/**
+			 * 本地创建一条推动消息
+			 */
+			function createLocalPushMsg() {
+				var options = {
+					cover: false
+				};
+				var str = dateToStr(new Date());
+				str += ": 欢迎使用HTML5+创建本地消息！";
+				plus.push.createMessage(str, "LocalMSG", options);
+				outSet("创建本地消息成功！");
+				console.log("请到系统消息中心查看！");
+				if (plus.os.name == "iOS") {
+					console.log('*如果无法创建消息，请到"设置"->"通知"中配置应用在通知中心显示!');
+				}
+			}
+			/**
+			 * 读取所有推送消息
+			 */
+			function listAllPush() {
+				var msgs = null;
+				switch (plus.os.name) {
+					case "Android":
+						msgs = plus.push.getAllMessage();
+						break;
+					default:
+						break;
+				}
+				if (!msgs) {
+					outSet("此平台不支持枚举推送消息列表！");
+					return;
+				}
+				outSet("枚举消息列表（" + msgs.length + "）：");
+				for (var i in msgs) {
+					var msg = msgs[i];
+					console.log(i + ": " + msg.title + " - " + msg.content);
+				}
+			}
+			/**
+			 * 清空所有推动消息
+			 */
+			function clearAllPush() {
+				plus.push.clear();
+				outSet("清空所有推送消息成功！");
+			}
+			/**
+			 * 请求‘简单通知’推送消息
+			 */
+			function requireNotiMsg() {
+				if (navigator.userAgent.indexOf('StreamApp') > 0) {
+					plus.nativeUI.toast('当前环境暂不支持发送推送消息');
+					return;
+				}
+				var inf = plus.push.getClientInfo();
+				var url = pushServer + 'type=noti&appid=' + encodeURIComponent(plus.runtime.appid);
+				inf.id && (url += '&id=' + inf.id);
+				url += ('&cid=' + encodeURIComponent(inf.clientid));
+				if (plus.os.name == 'iOS') {
+					url += ('&token=' + encodeURIComponent(inf.token));
+				}
+				url += ('&title=' + encodeURIComponent('Hello H5+'));
+				url += ('&content=' + encodeURIComponent('欢迎回来体验HTML5 plus应用！'));
+				url += ('&version=' + encodeURIComponent(plus.runtime.version));
+				plus.runtime.openURL(url);
+			}
+			/**
+			 * 请求‘打开网页’推送消息
+			 */
+			function requireLinkMsg() {
+				if (navigator.userAgent.indexOf('StreamApp') > 0) {
+					plus.nativeUI.toast('当前环境暂不支持发送推送消息');
+					return;
+				}
+				var inf = plus.push.getClientInfo();
+				var url = pushServer + "type=link&appid=" + encodeURIComponent(plus.runtime.appid);
+				inf.id && (url += '&id=' + inf.id);
+				url += ('&cid=' + encodeURIComponent(inf.clientid));
+				if (plus.os.name == 'iOS') {
+					url += ('&token=' + encodeURIComponent(inf.token));
+				}
+				url += ('&title=' + encodeURIComponent('HBuilder飞一样的编码'));
+				url += ('&content=' + encodeURIComponent('看HBuilder如何追求代码编写速度的极致！立即去瞧一瞧？'));
+				url += ('&url=' + encodeURIComponent('http://www.dcloud.io/'));
+				url += ('&version=' + encodeURIComponent(plus.runtime.version));
+				plus.runtime.openURL(url);
+			}
+			/**
+			 * 请求‘下载链接’推送消息
+			 */
+			function requireDownMsg() {
+				if (navigator.userAgent.indexOf('StreamApp') > 0) {
+					plus.nativeUI.toast('当前环境暂不支持发送推送消息');
+					return;
+				}
+				if (plus.os.name != "Android") {
+					plus.nativeUI.alert("此平台不支持！");
+					return;
+				}
+				var inf = plus.push.getClientInfo();
+				var url = pushServer + 'type=down&appid=' + encodeURIComponent(plus.runtime.appid);
+				inf.id && (url += '&id=' + inf.id);
+				url += ('&cid=' + encodeURIComponent(inf.clientid));
+				url += ('&title=' + encodeURIComponent('Hello H5+'));
+				url += ('&content=' + encodeURIComponent('新版本发布了！立即下载体验？'));
+				url += ('&ptitle=' + encodeURIComponent('Hello H5+'));
+				url += ('&pcontent=' + encodeURIComponent('1. 优化用户体验;\n2. 修复在Android2.3.x某些设备可能异常退出的问题.'));
+				url += ('&dtitle=' + encodeURIComponent('下载Hello H5+'));
+				url += ('&durl=' + encodeURIComponent('http://www.dcloud.io/helloh5/HelloH5.apk'));
+				url += ('&version=' + encodeURIComponent(plus.runtime.version));
+				plus.runtime.openURL(url);
+			}
+			/**
+			 * 请求‘透传数据’推送消息
+			 */
+			function requireTranMsg() {
+				if (navigator.userAgent.indexOf('StreamApp') > 0) {
+					plus.nativeUI.toast('当前环境暂不支持发送推送消息');
+					return;
+				}
+				var inf = plus.push.getClientInfo();
+				var url = pushServer + 'type=tran&appid=' + encodeURIComponent(plus.runtime.appid);
+				inf.id && (url += '&id=' + inf.id);
+				url += ('&cid=' + encodeURIComponent(inf.clientid));
+				if (plus.os.name == 'iOS') {
+					url += ('&token=' + encodeURIComponent(inf.token));
+				}
+				url += ('&title=' + encodeURIComponent('Hello H5+'));
+				url += ('&content=' + encodeURIComponent('带透传数据推送通知，可通过plus.push API获取数据并进行业务逻辑处理！'));
+				url += ('&payload=' + encodeURIComponent(
+					'{"title":"Hello H5+ Test","content":"test content","payload":"1234567890"}'));
+				url += ('&version=' + encodeURIComponent(plus.runtime.version));
+				plus.runtime.openURL(url);
+			}
 
-        .bubble::after {
-            content: '';
-            position: absolute;
-            top: 20%;
-            right: 25%;
-            width: 33%;
-            height: 33%;
-            border: 3px solid;
-            border-color: rgba(255, 255, 255, 0.8) transparent transparent transparent;
-            border-radius: 50%;
-            transform: rotate(45deg);
-        }
+		</script>
 
-    </style>
-</head>
-<body>
-<div class="soda"></div>
-</body>
-<script src="js/jquery-3.3.1.js"></script>
-<script>
-    const floatOn = options => {
-        let el = options.el,
-            x = options.x,
-            xIsPos = options.xIsPos || Math.floor(Math.random()),
-            updateX = options.updateX || Math.floor(Math.random()),
-            curTop = parseInt(el.style.top),
-            curLeft = parseInt(el.style.left);
-
-        if (curTop > -50) {
-            el.style.top = `${--curTop}px`;
-        } else {
-            el.style.top = `${innerHeight + 50}px`;
-        }
-
-        if (updateX) {
-            if (xIsPos) {
-                if (curLeft > x + 10) {
-                    xIsPos = false;
-                } else {
-                    el.style.left = `${curLeft + 1}px`;
-                }
-            } else {
-                if (curLeft < x - 10) {
-                    xIsPos = true;
-                } else {
-                    el.style.left = `${--curLeft}px`;
-                }
-            }
-        }
-
-        updateX = updateX ? false : true;
-
-        requestAnimationFrame(
-            floatOn.bind(null, { el: el, x: x, xIsPos: xIsPos, updateX: updateX })
-        );
-    };
-
-    class Bubble {
-        constructor(target, i) {
-            this.bubble = document.createElement("div");
-            this.bubble.classList.add("bubble");
-            this.x = Math.floor(Math.random() * innerWidth);
-            this.y = Math.floor(Math.random() * innerHeight);
-            this.scale = Math.random();
-            this.pos = Math.round(Math.random());
-
-            this.bubble.style.top = `${this.y}px`;
-            this.bubble.style.left = `${this.x}px`;
-            this.bubble.style.transform = `translateZ(${
-                this.pos ? "" : "-"
-                }${this.scale.toFixed(2) * 1000}px)`;
-
-            setTimeout(() => {
-                target.appendChild(this.bubble);
-            }, i * 50);
-            setTimeout(floatOn.bind(null, { el: this.bubble, x: this.x }), i * 50);
-        }
-    }
-
-    for (let i = 0; i < 100; i++) {
-        new Bubble(document.querySelector(".soda"), i);
-    }
-</script>
+	</head>
+	<body>
+		<header id="header">
+			<div class="nvbt iback" onclick="back()"></div>
+			<div class="nvtt">Push</div>
+			<div class="nvbt idoc" onclick="openDoc('Push Document','/doc/push.html')"></div>
+		</header>
+		<div id="dcontent" class="dcontent">
+			<div class="button" onclick="requireNotiMsg()">发送"普通通知"消息</div>
+			<div class="button" onclick="requireLinkMsg()">发送"打开网页"消息</div>
+			<div class="button" onclick="requireDownMsg()">发送"下载链接"消息</div>
+			<div class="button" onclick="requireTranMsg()">发送"透传数据"消息</div>
+			<br />
+			<ul id="dlist" class="dlist">
+				<li class="ditem" onclick="getPushInfo()">获取客户端推送标识</li>
+				<li class="ditem" onclick="createLocalPushMsg()">创建本地消息</li>
+				<li class="ditem" onclick="listAllPush()">枚举推送消息</li>
+				<li class="ditem" onclick="clearAllPush()">清空推送消息</li>
+				<!--<li class="ditem" onclick="plus.push.setAutoNotification(false)">关闭自动显示消息</li>
+				<li class="ditem" onclick="plus.push.setAutoNotification(true)">开启自动显示消息</li>-->
+			</ul>
+		</div>
+		<div id="output">
+			Push模块管理推送消息功能，可以实现在线、离线的消息推送，通过plus.push可获取推送消息管理对象。
+		</div>
+	</body>
 </html>
