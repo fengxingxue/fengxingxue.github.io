@@ -17,6 +17,47 @@ window.onload=function(){
             contentDOM1.style.top = '0px';
             contentDOM1.style.left =  '0px';
        }
+     
+     
+     
+      var jiabg=document.querySelector('#all1')
+    if(document.querySelector('.table-body')){
+        var bighome=document.querySelector('.table-body')
+        var bao=document.querySelector('.bao')
+        var recordleft=document.querySelector('.recordleft')
+        var recordright=document.querySelector('.recordright')
+        var recordbtn=document.querySelector('.recordbtn');
+        var recordbtn1=document.querySelector('.recordbtn1');
+        var auction=document.querySelector('.auction');
+        bighome.style.height=Number(jiabg.offsetHeight-175)+'px';
+        bao.style.height=Number(jiabg.offsetHeight-210)+'px';
+        recordleft.style.height=Number(jiabg.offsetHeight-170)+'px';
+        recordright.style.height=Number(jiabg.offsetHeight-170)+'px';
+        recordbtn.style.height=Number(jiabg.offsetHeight-210)+'px';
+        recordbtn1.style.height=Number(jiabg.offsetHeight-210)+'px';
+        if(window.innerHeight<820&&window.innerHeight>750&&window.innerWidth==375){
+            auction.style.width='60%'
+            auction.style.left='20%'
+        }
+        if(window.innerWidth<450){
+            bao.style.height=Number(jiabg.offsetHeight-240)+'px';
+        }
+    }
+
+    if(document.querySelector('.Indianaleft')){
+        var Indianaright=document.querySelector('.Indianaright')
+        var Indiana=document.querySelector('.Indiana')
+        var Indianar=document.querySelector('.Indianar')
+        Indianaright.style.height=Number(jiabg.offsetHeight-80)+'px';
+        Indianar.style.height=Number(jiabg.offsetHeight-120)+'px';
+        if(window.innerHeight<820&&window.innerHeight>750&&window.innerWidth==375){
+            Indiana.style.width='60%'
+            Indiana.style.left='20%'
+        }
+    }
+
+     
+     
 }
 
 $('input').click(function() {
