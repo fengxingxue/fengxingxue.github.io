@@ -7,21 +7,21 @@ window.onload=function(){
      if (width < height) {
             screen_width = height; //如果 是竖屏，灵感的宽度就等于屏高
             contentDOM.style.width = height + 'px';
-            contentDOM.style.height = (width-20) + 'px';
+            contentDOM.style.height = (width-25) + 'px';
             contentDOM.style.top =  '0px';
             contentDOM.style.left = '0px';
             //contentDOM.style.transform = 'rotate(90deg)';
 
             contentDOM1.style.width = height + 'px';
-            contentDOM1.style.height = (width-20)  + 'px';
+            contentDOM1.style.height = (width-25)  + 'px';
             contentDOM1.style.top = '0px';
             contentDOM1.style.left =  '0px';
        }
 }
 
 $('input').click(function() {
-    contentDOM.style.height =Number(window.screen.height-15) + 'px';
-    contentDOM1.style.height = Number(window.screen.height-15) + 'px';
+    contentDOM.style.height =Number(window.screen.height-25) + 'px';
+    contentDOM1.style.height = Number(window.screen.height-25) + 'px';
 });
 
 
