@@ -7,13 +7,13 @@ window.onload=function(){
      if (width < height) {
             screen_width = height; //如果 是竖屏，灵感的宽度就等于屏高
             contentDOM.style.width = height + 'px';
-            contentDOM.style.height = (width-25) + 'px';
+            contentDOM.style.height = (width-27) + 'px';
             contentDOM.style.top =  '0px';
             contentDOM.style.left = '0px';
             //contentDOM.style.transform = 'rotate(90deg)';
 
             contentDOM1.style.width = height + 'px';
-            contentDOM1.style.height = (width-25)  + 'px';
+            contentDOM1.style.height = (width-27)  + 'px';
             contentDOM1.style.top = '0px';
             contentDOM1.style.left =  '0px';
        }
@@ -49,7 +49,7 @@ window.onload=function(){
         var Indiana=document.querySelector('.Indiana')
         var Indianar=document.querySelector('.Indianar')
         Indianaright.style.height=Number(jiabg.offsetHeight-80)+'px';
-        Indianar.style.height=Number(jiabg.offsetHeight-120)+'px';
+        Indianar.style.height=Number(jiabg.offsetHeight-100)+'px';
         if(window.innerHeight<820&&window.innerHeight>750&&window.innerWidth==375){
             Indiana.style.width='60%'
             Indiana.style.left='20%'
@@ -61,8 +61,8 @@ window.onload=function(){
 }
 
 $('input').click(function() {
-    contentDOM.style.height =Number(window.screen.height-25) + 'px';
-    contentDOM1.style.height = Number(window.screen.height-25) + 'px';
+    contentDOM.style.height =Number(window.screen.height-27) + 'px';
+    contentDOM1.style.height = Number(window.screen.height-27) + 'px';
 });
 
 
