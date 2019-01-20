@@ -4,23 +4,23 @@ var screen_width = width; //屏幕宽度
 var contentDOM = document.getElementById('all');//最大那个层转换
 var contentDOM1 = document.getElementById('all1');
 window.onload=function(){
-     if (width < height) {
-            screen_width = height; //如果 是竖屏，灵感的宽度就等于屏高
-            contentDOM.style.width = height + 'px';
-            contentDOM.style.height = (width-27) + 'px';
-            contentDOM.style.top =  '0px';
-            contentDOM.style.left = '0px';
-            //contentDOM.style.transform = 'rotate(90deg)';
+    if (width < height) {
+        screen_width = height; //如果 是竖屏，灵感的宽度就等于屏高
+        contentDOM.style.width = height + 'px';
+        contentDOM.style.height = (width-27) + 'px';
+        contentDOM.style.top =  '0px';
+        contentDOM.style.left = '0px';
+        //contentDOM.style.transform = 'rotate(90deg)';
 
-            contentDOM1.style.width = height + 'px';
-            contentDOM1.style.height = (width-27)  + 'px';
-            contentDOM1.style.top = '0px';
-            contentDOM1.style.left =  '0px';
-       }
-     
-     
-     
-       var jiabg=document.querySelector('#all1')
+        contentDOM1.style.width = height + 'px';
+        contentDOM1.style.height = (width-27)  + 'px';
+        contentDOM1.style.top = '0px';
+        contentDOM1.style.left =  '0px';
+    }
+
+
+
+    var jiabg=document.querySelector('#all1')
     if(document.querySelector('.auction')){
         var bighome=document.querySelector('.auction .table-body')
         var bao=document.querySelector('.bao')
@@ -79,8 +79,8 @@ window.onload=function(){
         kkright.style.height=Number(jiabg.clientHeight-160)+'px';
         kinghome.style.height=Number(jiabg.clientHeight-220)+'px';
     }
-     
-     if(document.querySelector('.Indianaleft')){
+
+    if(document.querySelector('.Indianaleft')){
         var Indianaright=document.querySelector('.Indianaright')
         var Indiana=document.querySelector('.Indiana')
         var Indianar=document.querySelector('.Indianar')
@@ -92,13 +92,21 @@ window.onload=function(){
         }
     }
 
-     
+
+
 }
 
 $('input').click(function() {
     contentDOM.style.height =Number(window.screen.height-27) + 'px';
     contentDOM1.style.height = Number(window.screen.height-27) + 'px';
 });
+
+
+
+
+
+
+
 
 
 
