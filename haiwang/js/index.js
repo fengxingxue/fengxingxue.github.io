@@ -76,7 +76,7 @@ window.onload=function(){
         var kkright=document.querySelector('.kkright')
         var kinghome=document.querySelector('.kinghome')
         tablebody.style.height=Number(jiabg.clientHeight-220)+'px';
-        kkright.style.height=Number(jiabg.clientHeight-160)+'px';
+        kkright.style.height=Number(jiabg.clientHeight-150)+'px';
         kinghome.style.height=Number(jiabg.clientHeight-220)+'px';
     }
 
