@@ -21,12 +21,6 @@
             width: 100%;
             height: 100%;
         }
-        .wan{
-            position: relative;;
-        }
-        .wan, .all {
-            overflow: hidden;
-        }
         input,button{
             outline:none;
         }
@@ -237,7 +231,7 @@
         .Indianatop,.Indianatop1{
             background: #a6937c;
             width: 83%;
-            height: 133px;
+            height: 55%;
             margin: 15px 0;
             border-radius: 8px;
             position: relative;
@@ -510,23 +504,7 @@
 <script src="js/jquery-3.3.1.js"></script>
 <script src="js/index.js"></script>
 <script>
-    var jiabg=document.querySelector('#all1')
-    var Indianaleft=document.querySelector('.Indianaleft')
-    var Indianaright=document.querySelector('.Indianaright')
-    var Indianatop=document.querySelector('.Indianatop')
-    var Indiana=document.querySelector('.Indiana')
-    console.log(jiabg.clientWidth)
-    Indianaleft.style.height=Number(jiabg.offsetHeight-80)+'px';
-    Indianaright.style.height=Number(jiabg.offsetHeight-80)+'px';
-    Indianatop.style.height=Number(jiabg.offsetHeight-195)+'px';
-    if(window.innerWidth<600){
-        Indianatop.style.height=Number(jiabg.offsetHeight-165)+'px';
-    }
 
-    if(window.innerHeight<820&&window.innerHeight>750&&window.innerWidth==375){
-        Indiana.style.width='60%'
-        Indiana.style.left='20%'
-    }
 
     document.querySelector('.tishi2').style.display='none'
     var duo1=document.querySelector('.duo1')
@@ -823,86 +801,34 @@
                if(this.index==0){
                    duospan[d].innerHTML='白'
                    document.querySelector('.Indianabtn').style.display='block'
-                   Indianatop.style.height=Number(jiabg.offsetHeight-270)+'px';
-                   $('.shuxia span').css('margin-bottom','100%')
-                   if(window.innerWidth<400){
-                       $('.shuxia span').css('margin-bottom','80%')
-                       Indianatop.style.height=Number(jiabg.offsetHeight-180)+'px';
-                   }
-                   if(window.innerWidth<330){
-                       $('.shuxia span').css('margin-bottom','80%')
-                       Indianatop.style.height=Number(jiabg.offsetHeight-180)+'px';
-                   }
+                   $('.shuxia span').css('margin-bottom','80%')
+                    $('.Indianatop').css('height','50%')
                    $('#box').css('top','-15%')
                 }else if(this.index==1){
                    duospan[d].innerHTML='橙';
                    document.querySelector('.Indianabtn').style.display='none'
-                   Indianatop.style.height=Number(jiabg.offsetHeight-185)+'px';
-                   $('.shuxia span').css('margin-bottom','200%')
-                   if(window.innerWidth<400){
-                       $('.shuxia span').css('margin-bottom','150%')
-                       Indianatop.style.height=Number(jiabg.offsetHeight-110)+'px';
-                   }
-                   if(window.innerWidth<330){
-                       $('.shuxia span').css('margin-bottom','150%')
-                       Indianatop.style.height=Number(jiabg.offsetHeight-110)+'px';
-                   }
+                   $('.shuxia span').css('margin-bottom','150%')
                    $('#box').css('top','-15%')
+                   $('.Indianatop').css('height','90%')
                }else if(this.index==2){
                     duospan[d].innerHTML='粉';
                    document.querySelector('.Indianabtn').style.display='none'
-                   Indianatop.style.height=Number(jiabg.offsetHeight-185)+'px';
-                   $('.shuxia span').css('margin-bottom','200%')
-                   if(window.innerWidth<400){
-                       $('.shuxia span').css('margin-bottom','150%')
-                       Indianatop.style.height=Number(jiabg.offsetHeight-110)+'px';
-                   }
-                   if(window.innerWidth<330){
-                       $('.shuxia span').css('margin-bottom','150%')
-                       Indianatop.style.height=Number(jiabg.offsetHeight-110)+'px';
-                   }
+                   $('.shuxia span').css('margin-bottom','150%')
                    $('#box').css('top','-15%')
                 }else if(this.index==3){
                    duospan[d].innerHTML='青';
                    document.querySelector('.Indianabtn').style.display='none'
-                   Indianatop.style.height=Number(jiabg.offsetHeight-185)+'px';
-                   $('.shuxia span').css('margin-bottom','200%')
-                   if(window.innerWidth<400){
-                       $('.shuxia span').css('margin-bottom','150%')
-                       Indianatop.style.height=Number(jiabg.offsetHeight-110)+'px';
-                   }
-                   if(window.innerWidth<330){
-                       $('.shuxia span').css('margin-bottom','150%')
-                       Indianatop.style.height=Number(jiabg.offsetHeight-110)+'px';
-                   }
+                   $('.shuxia span').css('margin-bottom','150%')
                    $('#box').css('top','-15%')
                }else if(this.index==4){
                    duospan[d].innerHTML='蓝';
                    document.querySelector('.Indianabtn').style.display='none'
-                   Indianatop.style.height=Number(jiabg.offsetHeight-185)+'px';
-                   $('.shuxia span').css('margin-bottom','200%')
-                   if(window.innerWidth<400){
-                       $('.shuxia span').css('margin-bottom','150%')
-                       Indianatop.style.height=Number(jiabg.offsetHeight-110)+'px';
-                   }
-                   if(window.innerWidth<330){
-                       $('.shuxia span').css('margin-bottom','150%')
-                       Indianatop.style.height=Number(jiabg.offsetHeight-110)+'px';
-                   }
+                   $('.shuxia span').css('margin-bottom','150%')
                    $('#box').css('top','-15%')
                }else if(this.index==5){
                    duospan[d].innerHTML='紫';
                    document.querySelector('.Indianabtn').style.display='none';
-                   Indianatop.style.height=Number(jiabg.offsetHeight-185)+'px';
-                   $('.shuxia span').css('margin-bottom','200%')
-                   if(window.innerWidth<400){
-                       $('.shuxia span').css('margin-bottom','150%')
-                       Indianatop.style.height=Number(jiabg.offsetHeight-110)+'px';
-                   }
-                   if(window.innerWidth<330){
-                       $('.shuxia span').css('margin-bottom','150%')
-                       Indianatop.style.height=Number(jiabg.offsetHeight-110)+'px';
-                   }
+                   $('.shuxia span').css('margin-bottom','150%')
                    $('#box').css('top','-15%')
                }
             }
