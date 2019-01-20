@@ -1,0 +1,1095 @@
+<!DOCTYPE html>
+<html>
+<head lang="en">
+    <meta charset="UTF-8">
+    <meta name="viewport"
+          content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0"/>
+    <title>content</title>
+    <link rel="stylesheet" href="css/content.css"/>
+</head>
+<body>
+<div class="content_wrap">
+    <audio id="music" autoplay  preload="auto" loop="loop"  src="music/Nh.mp3"></audio>
+    <div class="water">
+        <img src="images/water.png" alt=""/>
+    </div>
+    <div class="portrait">
+       <div class="portrait_pic" onclick="show('.user_wrap')">
+            <img src="images/or.png" alt="" style="width: 100%;height: 100%;"/>
+        </div>
+       <div class="portrait_name"><p>昵称：</p></div>
+       <div class="portrait_kingdom"><p>家园名称：</p></div>
+    </div>
+    <div class="content_tr">
+        <ul>
+            <li class="first_charge">
+                <a href="javascript:;"></a>
+            </li>
+            <li><p>11111</p> <a href="javascript:;"></a></li>
+            <li><p>1</p> <a href="javascript:;"></a></li>
+            <li><p>22222</p> </li>
+        </ul>
+    </div>
+    <div style="clear: both"></div>
+    <div class="content_r">
+        <ul>
+            <li class="one">
+                <a href="javascript:Togg('.hidePearl_wrap')"></a>
+                <a href="javascript:playPause()"></a>
+            </li>
+            <li><a href="javascript:sM('.trading_wrap')"></a></li>
+            <li><a href="javascript:;"></a></li>
+            <li><a href="javascript:sM('.barter_wrap')"></a></li>
+            <li><a href="javascript:;"></a></li>
+            <li><a href="javascript:sM('.bag_wrap')"></a></li>
+        </ul>
+    </div>
+    <div class="content_l">
+        <ul>
+            <li><a href="javascript:;"></a></li>
+            <li class="chi"><a href="javascript:;"></a></li>
+            <li><a href="javascript:;"></a></li>
+            <li><a href="javascript:;"></a></li>
+        </ul>
+    </div>
+    <div class="back"></div>
+    <div class="time"></div>
+    <div class="pearl">
+        <div class="light"></div>
+        <img src="images/mussel.png" alt=""/>
+    </div>
+    <div class="user_wrap">
+        <div class="user_data">
+            <div class="close" onclick="hide('.user_wrap')"></div>
+            <div class="title"></div>
+            <div class="user_data_l">
+                <div class="user_merman"></div>
+                <div class="user_pet"></div>
+            </div>
+            <div class="user_data_r">
+                <ul>
+                    <li>昵称：</li>
+                    <li>性别：</li>
+                    <li>手机号：</li>
+                    <li>ETH图标：</li>
+                    <li>王国：</li>
+                    <li>家园级数：</li>
+                </ul>
+            </div>
+        </div>
+    </div>
+    <div class="hidePearl_wrap">
+        <div class="hide_pearl">
+            <ul>
+                <li><p>3213</p><a href="javascript:;"></a></li>
+                <li><p>31</p><a href="javascript:;"></a></li>
+                <li><p>321</p><a href="javascript:;"></a></li>
+                <li><p>31</p><a href="javascript:;"></a></li>
+                <li><p>3213</p><a href="javascript:;"></a></li>
+                <li><p>123</p><a href="javascript:;"></a></li>
+            </ul>
+        </div>
+    </div>
+    <div class="create_wrap">
+        <div class="create_role">
+            <div class="create_title"></div>
+            <div class="user_name">
+                <label>角色名称：</label> <input type="text" placeholder="只能输入文字" class="username"/>
+            </div>
+            <div class="sex_wrap">
+                <i class="sex" id="girl"></i>
+                <i class="pic girl"></i>
+                <i class="sex" id="boy"></i>
+                <i class="pic boy"></i>
+            </div>
+            <div class="enter" id="aaa"><a href="javascript:;" class="enter_btn"></a></divc>
+        </div>
+    </div>
+</div>
+    <div class="trading_wrap">
+        <div class="trading">
+            <div class="trading_close" onclick="hide('.trading_wrap')"></div>
+            <div class="trading_title"></div>
+            <div class="trading_content">
+                <div class="buy_to_sell">
+                    <div class="buy now">买入</div>
+                    <div class="sell">卖出</div>
+                    <div class="record">交易记录</div>
+                </div>
+                <div class="bto">
+                    <div class="buy_son divShow">
+                        <div class="Bsl">
+                            <ul>
+                                <li class="col"><div><span>白</span></div></li>
+                                <li><div><span>橙</span></div></li>
+                                <li><div><span>红</span></div></li>
+                                <li><div><span>青</span></div></li>
+                                <li><div><span>蓝</span></div></li>
+                                <li><div><span>紫</span></div></li>
+                            </ul>
+                        </div>
+                        <div class="Bsr">
+                            <ol>
+                                <li class="liShow">
+                                    <div class="Bsr_l"></div>
+                                    <div class="Bsr_r">
+                                        <div class="price">现价</div>
+                                        <div><input type="number" value="130" class="numPie"/></div>
+                                        <div  class="buy_num"><input type="number" style="width: 76%;padding-right: 24%" class="numIpt" /><span>个</span>
+                                        </div>
+                                        <div class="turnover"><span>交易额</span>  <span style="margin-left: 2vw;" class="numSpn">n</span> <span style="float:right;">ETH</span></div>
+                                        <div class="submit_orders"><input type="button" value="提交订单" class="submit"/>
+                                            <div class="poundage_btn">?</div>
+                                            <div class="poundage"></div>
+                                        </div>
+                                    </div>
+                                </li>
+                                <li>
+                                    <div class="Bsr_l"></div>
+                                    <div class="Bsr_r">
+                                        <div class="price">现价</div>
+                                        <div><input type="number" value="140" class="numPie"/></div>
+                                        <div  class="buy_num"><input type="number" style="width: 76%;padding-right: 24%" class="numIpt" /><span>个</span>
+                                        </div>
+                                        <div class="turnover"><span>交易额</span>  <span style="margin-left: 2vw;" class="numSpn">n</span> <span style="float:right;">ETH</span></div>
+                                        <div class="submit_orders"><input type="button" value="提交订单" class="submit"/>
+                                            <div class="poundage_btn">?</div>
+                                            <div class="poundage"></div>
+                                        </div>
+                                    </div>
+                                </li>
+                                <li>
+                                    <div class="Bsr_l"></div>
+                                    <div class="Bsr_r">
+                                        <div class="price">现价</div>
+                                        <div><input type="number" value="150" class="numPie"/></div>
+                                        <div  class="buy_num"><input type="number" style="width: 76%;padding-right: 24%" class="numIpt" /><span>个</span>
+                                        </div>
+                                        <div class="turnover"><span>交易额</span>  <span style="margin-left: 2vw;" class="numSpn">n</span> <span style="float:right;">ETH</span></div>
+                                        <div class="submit_orders"><input type="button" value="提交订单" class="submit"/>
+                                            <div class="poundage_btn">?</div>
+                                            <div class="poundage"></div>
+                                        </div>
+                                    </div>
+                                </li>
+                                <li>
+                                    <div class="Bsr_l"></div>
+                                    <div class="Bsr_r">
+                                        <div class="price">现价</div>
+                                        <div><input type="number" value="160" class="numPie"/></div>
+                                        <div  class="buy_num"><input type="number" style="width: 76%;padding-right: 24%" class="numIpt" /><span>个</span>
+                                        </div>
+                                        <div class="turnover"><span>交易额</span>  <span style="margin-left: 2vw;" class="numSpn">n</span> <span style="float:right;">ETH</span></div>
+                                        <div class="submit_orders"><input type="button" value="提交订单" class="submit"/>
+                                            <div class="poundage_btn">?</div>
+                                            <div class="poundage"></div>
+                                        </div>
+                                    </div>
+                                </li>
+                                <li>
+                                    <div class="Bsr_l"></div>
+                                    <div class="Bsr_r">
+                                        <div class="price">现价</div>
+                                        <div><input type="number" value="170" class="numPie"/></div>
+                                        <div  class="buy_num"><input type="number" style="width: 76%;padding-right: 24%" class="numIpt" /><span>个</span>
+                                        </div>
+                                        <div class="turnover"><span>交易额</span>  <span style="margin-left: 2vw;" class="numSpn">n</span> <span style="float:right;">ETH</span></div>
+                                        <div class="submit_orders"><input type="button" value="提交订单" class="submit"/>
+                                            <div class="poundage_btn">?</div>
+                                            <div class="poundage"></div>
+                                        </div>
+                                    </div>
+                                </li>
+                                <li>
+                                    <div class="Bsr_l"></div>
+                                    <div class="Bsr_r">
+                                        <div class="price">现价</div>
+                                        <div><input type="number" value="180" class="numPie"/></div>
+                                        <div  class="buy_num"><input type="number" style="width: 76%;padding-right: 24%" class="numIpt" /><span>个</span>
+                                        </div>
+                                        <div class="turnover"><span>交易额</span>  <span style="margin-left: 2vw;" class="numSpn">n</span> <span style="float:right;">ETH</span></div>
+                                        <div class="submit_orders"><input type="button" value="提交订单" class="submit"/>
+                                            <div class="poundage_btn">?</div>
+                                            <div class="poundage"></div>
+                                        </div>
+                                    </div>
+                                </li>
+                            </ol>
+                        </div>
+                    </div>
+                    <div class="sell_son">
+                        <div class="Ssl">
+                            <ul>
+                                <li class="col"><div><span>白</span></div></li>
+                                <li><div><span>橙</span></div></li>
+                                <li><div><span>红</span></div></li>
+                                <li><div><span>青</span></div></li>
+                                <li><div><span>蓝</span></div></li>
+                                <li><div><span>紫</span></div></li>
+                            </ul>
+                        </div>
+                        <div class="Ssr">
+                            <ol>
+                                <li class="liShow">
+                                    <div class="Ssr_l"></div>
+                                    <div class="Ssr_r">
+                                        <div class="price">现价</div>
+                                        <div><input type="number" value="30" class="numPie"/></div>
+                                        <div  class="sell_num"><input type="number" style="width: 76%;padding-right: 24%" class="numIpt" /><span>个</span>
+                                        </div>
+                                        <div class="turnover"><span>交易额</span>  <span style="margin-left: 2vw;" class="numSpn">n</span> <span style="float:right;">ETH</span></div>
+                                        <div class="submit_orders"><input type="button" value="提交订单" class="submit"/>
+                                            <div class="poundage_btn">?</div>
+                                            <div class="poundage"></div>
+                                        </div>
+                                    </div>
+                                </li>
+                                <li>
+                                    <div class="Ssr_l"></div>
+                                    <div class="Ssr_r">
+                                        <div class="price">现价</div>
+                                        <div><input type="number" value="40" class="numPie"/></div>
+                                        <div  class="sell_num"><input type="number" style="width: 76%;padding-right: 24%" class="numIpt" /><span>个</span>
+                                        </div>
+                                        <div class="turnover"><span>交易额</span>  <span style="margin-left: 2vw;" class="numSpn">n</span> <span style="float:right;">ETH</span></div>
+                                        <div class="submit_orders"><input type="button" value="提交订单" class="submit"/>
+                                            <div class="poundage_btn">?</div>
+                                            <div class="poundage"></div>
+                                        </div>
+                                    </div>
+                                </li>
+                                <li>
+                                    <div class="Ssr_l"></div>
+                                    <div class="Ssr_r">
+                                        <div class="price">现价</div>
+                                        <div><input type="number" value="50" class="numPie"/></div>
+                                        <div  class="sell_num"><input type="number" style="width: 76%;padding-right: 24%" class="numIpt" /><span>个</span>
+                                        </div>
+                                        <div class="turnover"><span>交易额</span>  <span style="margin-left: 2vw;" class="numSpn">n</span> <span style="float:right;">ETH</span></div>
+                                        <div class="submit_orders"><input type="button" value="提交订单" class="submit"/>
+                                            <div class="poundage_btn">?</div>
+                                            <div class="poundage"></div>
+                                        </div>
+                                    </div>
+                                </li>
+                                <li>
+                                    <div class="Ssr_l"></div>
+                                    <div class="Ssr_r">
+                                        <div class="price">现价</div>
+                                        <div><input type="number" value="60" class="numPie"/></div>
+                                        <div  class="sell_num"><input type="number" style="width: 76%;padding-right: 24%" class="numIpt" /><span>个</span>
+                                        </div>
+                                        <div class="turnover"><span>交易额</span>  <span style="margin-left: 2vw;" class="numSpn">n</span> <span style="float:right;">ETH</span></div>
+                                        <div class="submit_orders"><input type="button" value="提交订单" class="submit"/>
+                                            <div class="poundage_btn">?</div>
+                                            <div class="poundage"></div>
+                                        </div>
+                                    </div>
+                                </li>
+                                <li>
+                                    <div class="Ssr_l"></div>
+                                    <div class="Ssr_r">
+                                        <div class="price">现价</div>
+                                        <div><input type="number" value="70" class="numPie"/></div>
+                                        <div  class="sell_num"><input type="number" style="width: 76%;padding-right: 24%" class="numIpt" /><span>个</span>
+                                        </div>
+                                        <div class="turnover"><span>交易额</span>  <span style="margin-left: 2vw;" class="numSpn">n</span> <span style="float:right;">ETH</span></div>
+                                        <div class="submit_orders"><input type="button" value="提交订单" class="submit"/>
+                                            <div class="poundage_btn">?</div>
+                                            <div class="poundage"></div>
+                                        </div>
+                                    </div>
+                                </li>
+                                <li>
+                                    <div class="Ssr_l"></div>
+                                    <div class="Ssr_r">
+                                        <div class="price">现价</div>
+                                        <div><input type="number" value="80" class="numPie"/></div>
+                                        <div  class="sell_num"><input type="number" style="width: 76%;padding-right: 24%" class="numIpt" /><span>个</span>
+                                        </div>
+                                        <div class="turnover"><span>交易额</span>  <span style="margin-left: 2vw;" class="numSpn">n</span> <span style="float:right;">ETH</span></div>
+                                        <div class="submit_orders"><input type="button" value="提交订单" class="submit"/>
+                                            <div class="poundage_btn">?</div>
+                                            <div class="poundage"></div>
+                                        </div>
+                                    </div>
+                                </li>
+                            </ol>
+                        </div>
+                    </div>
+                    <div class="record_son">
+                       <div id="Rsc_wrap">
+                         <ul>
+                             <li> 您于 <span>13：00</span> <span>购买</span>了 <span>n</span>个珍珠</li>
+                             <li> 您于 <span>13：00</span> <span>购买</span>了 <span>n</span>个珍珠</li>
+                             <li> 您于 <span>13：00</span> <span>购买</span>了 <span>n</span>个珍珠</li>
+                             <li> 您于 <span>13：00</span> <span>购买</span>了 <span>n</span>个珍珠</li>
+                             <li> 您于 <span>13：00</span> <span>购买</span>了 <span>n</span>个珍珠</li>
+                             <li> 您于 <span>13：00</span> <span>购买</span>了 <span>n</span>个珍珠</li>
+                             <li> 您于 <span>13：00</span> <span>购买</span>了 <span>n</span>个珍珠</li>
+                             <li> 您于 <span>13：00</span> <span>购买</span>了 <span>n</span>个珍珠</li>
+                             <li> 您于 <span>13：00</span> <span>购买</span>了 <span>n</span>个珍珠</li>
+                             <li> 您于 <span>13：00</span> <span>购买</span>了 <span>n</span>个珍珠</li>
+                             <li> 您于 <span>13：00</span> <span>购买</span>了 <span>n</span>个珍珠</li>
+                             <li> 您于 <span>13：00</span> <span>购买</span>了 <span>n</span>个珍珠</li>
+                             <li> 您于 <span>13：00</span> <span>购买</span>了 <span>n</span>个珍珠</li>
+                             <li> 您于 <span>13：00</span> <span>购买</span>了 <span>n</span>个珍珠</li>
+                             <li> 您于 <span>13：00</span> <span>购买</span>了 <span>n</span>个珍珠</li>
+                             <li> 您于 <span>13：00</span> <span>购买</span>了 <span>n</span>个珍珠</li>
+                         </ul>
+                       </div>
+                    </div>
+                </div>
+            </div>
+            <div class="prompt_alert">
+                <div class="prompt_close"><a href="javascript:;" onclick="hide('.prompt_alert')"></a></div>
+                <h3 class="prompt_title">提示</h3>
+                <p class="prompt_text"></p>
+                <div class="sure_wrap">
+                    <input type="button" value="确定" class="sure_btn"/>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="barter_wrap">
+        <div class="barter">
+            <div class="barter_close" onclick="hide('.barter_wrap')"></div>
+            <div class="barter_title"></div>
+            <div class="barter_content">
+                <div class="search">
+                    <input type="text" placeholder="请输入物品名称" class="search_ipt"/>
+                    <input type="button" value="搜索" class="search_btn"/>
+                </div>
+
+                <div class="barter_convert" id="barter_convert">
+                    <ul class="list">
+                        <li class="sshow">
+                            <div class="convert_name">橙蚌</div>
+                            <div class="convert_price">
+                                <p>花费<span class="convert_num">50</span>个<span class="convert_col">紫</span>色</p>
+                                <p>珍珠即可兑换</p>
+                            </div>
+                            <div class="convert_btn">
+                               <button type="button">兑换</button>
+                            </div>
+                        </li>
+                        <li class="sshow">
+                            <div class="convert_name">橙蚌</div>
+                            <div class="convert_price">
+                                <p>花费<span class="convert_num">10</span>个<span class="convert_col">红</span>色</p>
+                                <p>珍珠即可兑换</p>
+                            </div>
+                            <div class="convert_btn">
+                                <button type="button">兑换</button>
+                            </div>
+                        </li>
+                        <li class="sshow">
+                            <div class="convert_name">橙蚌</div>
+                            <div class="convert_price">
+                                <p>花费<span class="convert_num">80</span>个<span class="convert_col">青</span>色</p>
+                                <p>珍珠即可兑换</p>
+                            </div>
+                            <div class="convert_btn">
+                                <button type="button">兑换</button>
+                            </div>
+                        </li>
+                        <li class="sshow">
+                            <div class="convert_name">橙蚌</div>
+                            <div class="convert_price">
+                                <p>花费<span class="convert_num">40</span>个<span class="convert_col">橙</span>色</p>
+                                <p>珍珠即可兑换</p>
+                            </div>
+                            <div class="convert_btn">
+                                <button type="button">兑换</button>
+                            </div>
+                        </li>
+                        <li class="sshow">
+                            <div class="convert_name">橙蚌</div>
+                            <div class="convert_price">
+                                <p>花费<span class="convert_num">30</span>个<span class="convert_col">紫</span>色</p>
+                                <p>珍珠即可兑换</p>
+                            </div>
+                            <div class="convert_btn">
+                                <button type="button">兑换</button>
+                            </div>
+                        </li>
+                        <li class="sshow">
+                            <div class="convert_name">紫蚌</div>
+                            <div class="convert_price">
+                                <p>花费<span class="convert_num">20</span>个<span class="convert_col">蓝</span>色</p>
+                                <p>珍珠即可兑换</p>
+                            </div>
+                            <div class="convert_btn">
+                                <button type="button">兑换</button>
+                            </div>
+                        </li>
+                        <li class="sshow">
+                            <div class="convert_name">绿蚌</div>
+                            <div class="convert_price">
+                                <p>花费<span class="convert_num">9</span>个<span class="convert_col">白</span>色</p>
+                                <p>珍珠即可兑换</p>
+                            </div>
+                            <div class="convert_btn">
+                                <button type="button">兑换</button>
+                            </div>
+                        </li>
+                        <li class="sshow">
+                            <div class="convert_name">紫蚌</div>
+                            <div class="convert_price">
+                                <p>花费<span class="convert_num">10</span>个<span class="convert_col">蓝</span>色</p>
+                                <p>珍珠即可兑换</p>
+                            </div>
+                            <div class="convert_btn">
+                                <button type="button">兑换</button>
+                            </div>
+                        </li>
+                        <span class="empty-item">找不到啊！</span>
+                    </ul>
+                </div>
+                <div class="prompt_alert2">
+                    <div class="prompt_close2"><a href="javascript:;" onclick="hide('.prompt_alert2')"></a></div>
+                    <h3 class="prompt_title2">提示</h3>
+                    <p class="prompt_text2"></p>
+                    <div class="sure_wrap2">
+                        <input type="button" value="确定" class="sure_btn2"/>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="bag_wrap">
+        <div class="bag">
+            <div class="bag_close" onclick="hide('.bag_wrap')"></div>
+            <div class="bag_title"></div>
+            <div class="bag_content">
+                <div class="bag_top">
+                    <div class="aLl col">
+                        <a href="javascript:;" class="aLl_text">全部</a>
+                        <a href="javascript:Togg('.down_div')" class="down_a"></a>
+                        <div class="down_div">
+                            <ul>
+                                <li>珍珠</li>
+                                <li>蚌壳</li>
+                                <li>洗髓丹</li>
+                                <li>宠物食物</li>
+                                <li>神器</li>
+                                <div class="All">全部</div>
+                            </ul>
+                        </div>
+                    </div>
+                    <div>合成</div>
+                    <div>分解</div>
+                </div>
+                <div class="bag_bto divShow">
+                   <div class="bto_c" id="bto_c">
+                       <ul>
+                           <li>白珍珠<a href="javascript:;">10</a></li>
+                           <li>紫珍珠<a href="javascript:;">10</a></li>
+                           <li>青珍珠<a href="javascript:;">10</a></li>
+                           <li>白珍珠碎片<a href="javascript:;">10</a></li>
+                           <li>紫珍珠碎片<a href="javascript:;">10</a></li>
+                           <li>紫珍珠<a href="javascript:;">10</a></li>
+                           <li>紫珍珠<a href="javascript:;">10</a></li>
+                           <li>紫珍珠<a href="javascript:;">10</a></li>
+                           <li>紫珍珠<a href="javascript:;">10</a></li>
+                           <li>紫珍珠<a href="javascript:;">10</a></li>
+                           <li>洗髓丹<a href="javascript:;">10</a></li>
+                           <li>洗髓丹<a href="javascript:;">10</a></li>
+                           <li>鱼<a href="javascript:;">10</a></li>
+                           <li>虾<a href="javascript:;">10</a></li>
+                           <li>神器<a href="javascript:;">10</a></li>
+                           <li>神器<a href="javascript:;">10</a></li>
+                           <li>神器<a href="javascript:;">10</a></li>
+                           <li>神器<a href="javascript:;">10</a></li>
+                           <li>神器<a href="javascript:;">10</a></li>
+                           <li>神器<a href="javascript:;">10</a></li>
+                           <li>神器<a href="javascript:;">10</a></li>
+                           <li>神器<a href="javascript:;">10</a></li>
+                           <li>神器<a href="javascript:;">10</a></li>
+                           <li>神器<a href="javascript:;">10</a></li>
+                           <li>神器<a href="javascript:;">10</a></li>
+                           <li>神器<a href="javascript:;">10</a></li>
+                           <li>神器<a href="javascript:;">10</a></li>
+                           <li>神器<a href="javascript:;">10</a></li>
+                           <li>神器<a href="javascript:;">10</a></li>
+                           <li>神器<a href="javascript:;">10</a></li>
+                           <li>神器<a href="javascript:;">10</a></li>
+                           <li>神器<a href="javascript:;">10</a></li>
+                           <li>神器<a href="javascript:;">10</a></li>
+                           <li>神器<a href="javascript:;">10</a></li>
+                           <li>神器<a href="javascript:;">10</a></li>
+                       </ul>
+                   </div>
+                   <div class="sum">
+                       <span></span>
+                   </div>
+                </div>
+                <div class="bag_bto synthetic">
+                    <div class="synthetic_left" id="synthetic_left">
+                        <ul>
+                            <li>白珍珠<a href="javascript:;">10</a></li>
+                            <li>橙珍珠<a href="javascript:;">10</a></li>
+                            <li>红珍珠<a href="javascript:;">10</a></li>
+                            <li>青珍珠<a href="javascript:;">10</a></li>
+                            <li>蓝珍珠<a href="javascript:;">10</a></li>
+                            <li>紫珍珠<a href="javascript:;">10</a></li>
+                            <li>白珍珠<a href="javascript:;">10</a></li>
+                            <li>白珍珠<a href="javascript:;">10</a></li>
+                            <li>白珍珠<a href="javascript:;">10</a></li>
+                            <li>白珍珠<a href="javascript:;">10</a></li>
+                            <li>白珍珠<a href="javascript:;">10</a></li>
+                            <li>白珍珠<a href="javascript:;">10</a></li>
+                            <li>白珍珠<a href="javascript:;">10</a></li>
+                            <li>白珍珠<a href="javascript:;">10</a></li>
+                            <li>白珍珠<a href="javascript:;">10</a></li>
+                        </ul>
+                    </div>
+                    <div class="synthetic_right">
+                        <div class="synthetic_title">合成</div>
+                        <div class="synthetic_content">
+                            <div class="synthetic_name">紫珍珠</div>
+                            <div></div>
+                            <div class="For">
+                                <div class="for_div">
+                                    <ul>
+                                        <li >白珍珠</li>
+                                        <li>橙珍珠</li>
+                                        <li>红珍珠</li>
+                                        <li>青珍珠</li>
+                                        <li class="col">蓝珍珠</li>
+                                        <li>紫珍珠</li>
+                                    </ul>
+                                </div>
+                                <div class="prev"></div>
+                                <div class="next"></div>
+                            </div>
+                            <div class="s_btnW"><button type="button" class="synthetic_btn">合成 </button></div>
+                        </div>
+                    </div>
+                </div>
+                <div class="bag_bto resolve">
+                    <div class="resolve_left" id="resolve_left">
+                        <ul>
+                            <li>白珍珠<a href="javascript:;">10</a></li>
+                            <li>橙珍珠<a href="javascript:;">10</a></li>
+                            <li>红珍珠<a href="javascript:;">10</a></li>
+                            <li>青珍珠<a href="javascript:;">10</a></li>
+                            <li>蓝珍珠<a href="javascript:;">10</a></li>
+                            <li>紫珍珠<a href="javascript:;">10</a></li>
+                            <li>白珍珠<a href="javascript:;">10</a></li>
+                            <li>白珍珠<a href="javascript:;">10</a></li>
+                            <li>白珍珠<a href="javascript:;">10</a></li>
+                            <li>白珍珠<a href="javascript:;">10</a></li>
+                            <li>白珍珠<a href="javascript:;">10</a></li>
+                            <li>白珍珠<a href="javascript:;">10</a></li>
+                            <li>白珍珠<a href="javascript:;">10</a></li>
+                            <li>白珍珠<a href="javascript:;">10</a></li>
+                            <li>白珍珠<a href="javascript:;">10</a></li>
+                        </ul>
+                    </div>
+                    <div class="resolve_right">
+                        <div class="resolve_title">合成</div>
+                        <div class="resolve_content">
+                            <div class="resolve_name">紫珍珠</div>
+                            <div></div>
+                            <div class="res_For">
+                                <div class="res_for_div">
+                                    <ul>
+                                        <li >白珍珠</li>
+                                        <li>橙珍珠</li>
+                                        <li>红珍珠</li>
+                                        <li>青珍珠</li>
+                                        <li class="col">蓝珍珠</li>
+                                        <li>紫珍珠</li>
+                                    </ul>
+                                </div>
+                                <div class="res_prev"></div>
+                                <div class="res_next"></div>
+                            </div>
+                            <div class="res_btnW"><button type="button" class="resolve_btn">分解 </button></div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+
+
+
+
+
+<!--垂钓池-->
+
+<div class="all" id="all">
+    <div class="wan" id="all1">
+        <div class="diao">
+            <img class="jiabg" src="images/chong.png" alt="">
+            <img class="cw" src="images/shui.png">
+            <div class="close">
+                <img src="images/close.png" alt="">
+            </div>
+            <div class="diao1">
+                <img src="images/fish.png" alt="">
+                <div class="littleyu">小鱼拥有：<span>0</span></div>
+                <div class="littlexia">小虾拥有：<span>0</span></div>
+                <div class="login">开始垂钓</div>
+                <div class="time1">00:00:00</div>
+                <div class="yugan">
+                    <img src="images/yugan.png" alt="">
+                    <img src="images/yuxian.png" alt="">
+                    <img src="images/gou.png" alt="">
+                </div>
+            </div>
+            <div class="tishi">
+                <img class="tishimg" src="images/close.png" alt="">
+                <span class="col"></span>
+                <span class="pep"></span>
+                <div class="tishi1">
+                    确认
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+
+
+</body>
+<script src="js/jquery-1.8.3.min.js"></script>
+<script src="js/index.js"></script>
+<script src="js/iscroll.js"></script>
+<script>
+    document.getElementById("music").volume = 0.1;
+    function show (obj){
+        $(obj).fadeIn()
+    }
+    function hide(obj){
+        $(obj).fadeOut()
+    }
+    function Togg(obj){
+        $(obj).fadeToggle()
+    }
+    $(".sex").click(function(){
+        $(this).addClass("choose").siblings(".sex").removeClass("choose")
+    })
+    var state=0;
+   $(".enter_btn").click(function(){
+       var username=$(".username").val()
+       if($(".sex").hasClass("choose")){
+           state=1;
+       }
+       if(username==""){
+           alert("请填写昵称")
+       }else if(state==0){
+           alert("请选择性别")
+       }else{
+           if($(".choose").attr('id')=="boy"){
+               $(".portrait_pic img").attr("src","images/boy.png")
+           }else if($(".choose").attr('id')=="girl"){
+               $(".portrait_pic img").attr("src","images/girl.png")
+           }
+           $(".portrait_name p").text(username)
+           $(".create_wrap").fadeOut()
+       }
+   })
+
+    $(".numIpt").keyup(function(){
+        var numS=$(this).parent().prev().find(".numPie").val()*$(this).val();
+        $(this).parent().next(".turnover").find(".numSpn").text(numS);
+    })
+
+    function zNb(obj,obj2,target,target2){
+        var index=0;
+        var index2=0;
+        $(obj).click(function(){
+            index2=$(this).index();
+            $(this).addClass(target).siblings().removeClass(target);
+            index=$(this).index();
+            $(obj2).removeClass(target2).eq(index2).addClass(target2);
+        })
+    }
+    zNb(".buy_to_sell div",".bto>div","now","divShow");
+    zNb(".Bsl ul li",".Bsr ol li","col","liShow");
+    zNb(".Ssl ul li",".Ssr ol li","col","liShow");
+    zNb(".bag_top>div",".bag_bto","col","divShow");
+
+    $(".submit").click(function(){
+        var Numpearl=$(this).parent(".submit_orders").prevAll("div").find(".numIpt").val();
+        var Eth=$(this).parent(".submit_orders").prevAll("div").find(".numSpn").text();
+        if(Numpearl!=""&&Eth!="n"){
+            $(".trading .prompt_alert").fadeIn();
+            $(".trading .prompt_alert").find(".prompt_text").text("您确认花费"+Eth+"ETH购买 "+Numpearl+"珍珠？")
+
+        }else{
+            $(".trading .prompt_alert").fadeIn();
+            $(".trading .prompt_alert").find(".prompt_text").text("请输入要购买的数量！")
+        }
+    })
+    $(".poundage_btn").click(function(){
+        $(this).siblings(".poundage").fadeToggle()
+    })
+
+    function Scrolls(obj,target){
+        var obj = new IScroll(target, {
+            scrollbars:false,
+            mouseWheel:true,
+            interactiveScrollbars:true,
+            hideScrollbar:true,
+            click:true,
+            vScrollbar:false,
+        });
+        Scrolls(myScrollc,"#Rsc_wrap");
+        Scrolls(myScrolls,"#bto_c");
+        Scrolls(myScrolla,"#barter_convert");
+        Scrolls(myScrollb,"#synthetic_left");
+    }
+
+
+    $(".TFmusic").click(function(){x
+        console.log($("embed").autostart);
+        if($("embed").autostart=="true"){
+            $("embed").autostart=="false"
+            console.log($("embed").autostart);
+        }else{
+            $("embed").autostart=="true"
+            console.log($("embed").autostart);
+        }
+    })
+    function playPause() {
+        var music = document.getElementById('music');
+        /*var music_btn = document.getElementById('music_btn');*/
+        if (music.paused){
+            music.play();
+          /*  music_btn.src = 'play.gif';*/
+        }
+        else{
+            music.pause();
+           /* music_btn.src = 'pause.gif';*/
+        }
+    }
+
+    function sM(target){
+        if(navigator.userAgent.indexOf("Chrome")>-1){
+            $("body").append('<embed class="music" autoplay="true" hidden="true" loop="false" src="music/sound00.mp3"  />');
+            //自动播放      隐藏音乐图标   循环播放
+            console.log(11);
+        }else if(navigator.userAgent.indexOf("Firefox")>-1){
+            $("body").append('<object width="0" height="0" data="music/sound0'+index+'.mp3" type="">' +
+                    ' <param name="src" value="music/sound00.mp3"/>'+
+                    '<param name="autoplay" value="1"/>'+
+                    '</object>')
+            console.log(22);
+        }else{
+            $("body").append('<embed class="music" autoplay="true" hidden="true" loop="false" src="music/sound00.mp3"  />');
+        }
+        setTimeout(function(){
+            $(".music").remove();
+        },5000);
+        $(target).delay(100).fadeIn()
+    }
+
+    $(".convert_btn button").click(function(){
+        var bArname=$(this).parent().siblings(".convert_name").text();
+        var bArnum=$(this).parent().siblings(".convert_price").find(".convert_num").text();
+        var bArcolor=$(this).parent().siblings(".convert_price").find(".convert_col").text();
+        $(".barter_content .prompt_alert2").fadeIn()
+        $(".barter_content .prompt_alert2").find(".prompt_text2").text("确认花费"+bArnum+"颗"+bArcolor+"珍珠兑换"+bArname+"？")
+    })
+    $(".search_btn").click(function(){
+        var searchTerm = $(".search_ipt").val();
+        var searchSplit = searchTerm.replace(/ /g, "'):containsi('")
+        $.extend($.expr[':'], {
+            'containsi': function(elem, i, match, array)
+            {
+                return (elem.textContent || elem.innerText || '').toLowerCase().indexOf((match[3] || "").toLowerCase()) >= 0;
+            }
+        });
+        $(".list li .convert_name").not(":containsi('" + searchSplit + "')").each(function(e)   {
+            $(this).parent().addClass('hidden').removeClass('sshow');
+            $('.list').addClass('empty');
+        });
+
+        $(".list li .convert_name:containsi('" + searchSplit + "')").each(function(e) {
+            $(this).parent().removeClass('hidden').addClass('sshow');
+            $('.list').removeClass('empty');
+        });
+        $(".search_ipt").on("input",function(){
+            if($(".search_ipt").val()==""){
+               $(".list li").addClass("sshow").removeClass('hidden');
+               $('.list').removeClass('empty');
+            }
+        })
+    })
+    $(".down_div ul li").click(function(){
+        var thisTe=$(this).text();
+        $(".aLl_text").text(thisTe)
+        var tSplit = thisTe.replace(/ /g, "'):containsi('")
+        $.extend($.expr[':'], {
+            'containsi': function(elem, i, match, array)
+            {
+                return (elem.textContent || elem.innerText || '').toLowerCase().indexOf((match[3] || "").toLowerCase()) >= 0;
+            }
+        });
+        $(".bto_c ul li").not(":containsi('" + tSplit + "')").each(function(e)   {
+            $(this).addClass('hid').removeClass("lis");
+        });
+
+        $(".bto_c ul li:containsi('" + tSplit + "')").each(function(e) {
+            $(this).removeClass('hid').addClass('lis');
+        });
+        var jobCount = $('.bto_c ul .lis').length;
+        $('.sum span').text(thisTe +'共 ' + jobCount + ' 个');
+        $(".down_div").slideUp()
+    })
+    $(".down_div ul .All").click(function(){
+        $(".aLl_text").text("全部")
+        $(".bto_c ul li").removeClass("hid");
+        $('.sum span').text("");
+        $(".down_div").slideUp();
+    })
+
+    $(".pearl").click(function(){
+       if($(".pearl img").attr("src")=="images/mussel.png"){
+           $(".pearl img").attr("src","images/mussel2.png");
+           $(".light").hide()
+           function countTime(){
+               var date = new Date();
+               var now = date.getTime();
+               var endDate = new Date("2019-1-16 20:00:00");
+               var end = endDate.getTime();
+               var leftTime = end - now;
+               var d, h, m, s, ms;
+               if(leftTime >= 0) {
+                   h = Math.floor(leftTime / 1000 / 60 / 60);
+                   m = Math.floor(leftTime / 1000 / 60 % 60);
+                   s = Math.floor(leftTime / 1000 % 60);
+                   ms = Math.floor(leftTime % 1000);
+                   if(ms < 100) {
+                       ms = "0" + ms;
+                   }
+                   if(s < 10) {
+                       s = "0" + s;
+                   }
+                   if(m < 10) {
+                       m = "0" + m;
+                   }
+                   if(h < 10) {
+                       h = "0" + h;
+                   }
+               } else {
+                   $(".pearl2").removeClass("pearl2").addClass("pearl");
+                   $(".light").show();
+                   $(".time").text("");
+               }
+               $(".time").text(h + "时"+m + "分"+s + "秒")
+               setTimeout(countTime, 50);
+           }
+           countTime();
+       }else{
+           alert("冷却中")
+       }
+    })
+
+    
+</script>
+<!--垂钓池-->
+<script>
+    var login=document.querySelector('.login');
+    var yugan=document.querySelector('.yugan');
+    var time=document.querySelector('.time1');
+    var yuganimg=document.querySelectorAll('.yugan img');
+    yuganimg[1].style.height='14px';
+    function diaoyu(){
+        yuganimg[2].style.opacity='0';
+        var fen=0;
+        var miao=0;
+        function RandomNumBoth(){
+            var num1 = Math.floor(Math.random()*(1 - 59) + 59);
+            var num2 = Math.floor(Math.random()*(3 - 7) + 7);
+            if(num1<=9){
+                num1='0'+num1;
+            }
+            var num=num2+''+num1
+            return num;
+        }
+        var sui=RandomNumBoth();
+        sui='0'+sui
+        console.log(sui)
+        var tt=setInterval(function () {
+            miao++;
+            if(miao==60){
+                miao=0;
+                fen=Number(fen+1);
+            }
+            if(miao<=9){
+                miao='0'+miao;
+            }
+            time.innerHTML='00:'+'0'+fen+':'+miao;
+            if(sui=='0'+fen+miao){
+                clearInterval(tt)
+                function prizeRand1(oArr1) {
+                    var sum = 0;
+                    var rand = 0;
+                    var result = 0;
+                    for (var i in oArr1) {
+                        sum += oArr1[i][0];
+                    }
+                    for (var i in oArr1) {
+                        rand = Math.floor(Math.random()*sum + 1);
+                        if (oArr1[i][0] >= rand) {
+                            result = oArr1[i][0];
+                            break;
+                        } else {
+                            sum -= oArr1[i][0];
+                        }
+                    }
+                    return result;
+                }
+                var oArr1 = {'0':[20, ''], '1':[10, ''], '2':[70, '']};
+                var num3=prizeRand1(oArr1);
+                console.log(num3)
+                var nn=139;
+                var n1=setInterval(function () {
+                    if(yuganimg[2].style.top=='135px'){
+                        yuganimg[2].style.opacity='0.5'
+                    }
+                    if(yuganimg[2].style.top=='130px'){
+                        yuganimg[2].style.opacity='0.3'
+                    }
+                    if(yuganimg[2].style.top=='120px'){
+                        yuganimg[2].style.opacity='1'
+                    }
+                    if(num3==20){
+                        yuganimg[1].style.height=nn+'px';
+                        yuganimg[2].style.top=Number(nn+5)+'px';
+                        yuganimg[2].src='img/gou.png';
+                        yuganimg[2].style.width='13px';
+                        yuganimg[2].style.left='75%';
+                        // yuganimg[2].style.opacity='1';
+                        if( yuganimg[2].style.top=='4px'){
+                            document.querySelector('.tishi').style.display='block'
+                            var col=document.querySelector('.col')
+                            var pep=document.querySelectorAll('.pep')
+                            col.innerHTML='很遗憾没有钓到小鱼/小虾，';
+                            pep.innerHTML='';
+                            setTimeout(function () {
+                                document.querySelector('.tishi').style.display='none'
+                                col.innerHTML='';
+                                pep.innerHTML='';
+                            },2000)
+                        }
+                    }else if(num3==10){
+                        yuganimg[1].style.height=nn+'px';
+                        yuganimg[2].style.top=Number(nn+5)+'px';
+                        yuganimg[2].src='img/xiaoyu.png';
+                        yuganimg[2].style.left='75%';
+                        yuganimg[2].style.width='25px';
+                        //yuganimg[2].style.opacity='1';
+                        if( yuganimg[1].style.height=='14px'){
+                            document.querySelector('.tishi').style.display='block'
+                            var col=document.querySelector('.col')
+                            var pep=document.querySelectorAll('.pep')
+                            col.innerHTML='恭喜您！钓到小鱼';
+                            pep.innerHTML='';
+                            setTimeout(function () {
+                                document.querySelector('.tishi').style.display='none'
+                                document.querySelector('.littleyu span').innerHTML++;
+                                yuganimg[2].src='images/gou.png';
+                                yuganimg[2].style.width='13px';
+                                yuganimg[2].style.left='75%';
+                                col.innerHTML='';
+                                pep.innerHTML='';
+                            },2000)
+                        }
+                    }else if(num3==70){
+                        yuganimg[1].style.height=nn+'px';
+                        yuganimg[2].style.top=Number(nn-10)+'px';
+                        yuganimg[2].style.left='68%';
+                        yuganimg[2].src='images/xiaoxia.png';
+                        yuganimg[2].style.width='25px';
+                        //yuganimg[2].style.opacity='1';
+                        if( yuganimg[1].style.height=='14px'){
+                            document.querySelector('.tishi').style.display='block'
+                            var col=document.querySelector('.col')
+                            var pep=document.querySelectorAll('.pep')
+                            col.innerHTML='恭喜您！钓到小虾';
+                            pep.innerHTML='';
+                            setTimeout(function () {
+                                document.querySelector('.tishi').style.display='none'
+                                document.querySelector('.littlexia span').innerHTML++;
+                                yuganimg[2].src='images/gou.png';
+                                yuganimg[2].style.width='13px';
+                                yuganimg[2].style.left='75%';
+                                col.innerHTML='';
+                                pep.innerHTML='';
+                            },2000)
+                        }
+                    }
+                    nn--;
+                    if(nn==13){
+                        clearInterval(n1)
+                        nn=13
+                    }
+                },30)
+
+
+            }
+        },1000)
+    }
+    login.onclick=function(){
+        console.log(yuganimg[2].style.top)
+        if(yuganimg[1].style.height!='14px'){
+            document.querySelector('.tishi').style.display='block'
+            var col=document.querySelector('.col')
+            var pep=document.querySelectorAll('.pep')
+            col.innerHTML='已经开始为您垂钓，';
+            pep.innerHTML='请不要重复垂钓';
+            setTimeout(function () {
+                document.querySelector('.tishi').style.display='none'
+                col.innerHTML='';
+                pep.innerHTML='';
+            },2000)
+        }else if(yuganimg[1].style.height=='14px'){
+            var num=10;
+            yugan.style.left='0';
+            var t=setInterval(function () {
+                yuganimg[1].style.height=num+'px';
+                yuganimg[2].style.top=Number(num+5)+'px';
+                num++
+                if(yuganimg[2].style.top=='134px'){
+                    yuganimg[2].style.opacity='0.5'
+                }
+                if(yuganimg[2].style.top=='140px'){
+                    yuganimg[2].style.opacity='0.3'
+                }
+                if(yuganimg[2].style.top=='144px'){
+                    num=144;
+                    clearInterval(t)
+                    diaoyu()
+                }
+                if(window.innerWidth<600){
+                    if(yuganimg[2].style.top=='120px'){
+                        num=144;
+                        clearInterval(t)
+                        diaoyu()
+                    }
+                }
+            },30)
+        }
+    }
+    $('.chi').click(function () {
+        $('.all').css('display','block');
+        $('.all').css('opacity','1');
+    })
+    $('.close').click(function () {
+        $('.all').css('display','none');
+        $('.all').css('opacity','0');
+    })
+
+</script>
+
+
+
+</html>
