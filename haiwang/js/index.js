@@ -91,6 +91,30 @@ window.onload=function(){
             Indiana.style.left='20%'
         }
     }
+    
+    
+    if(document.querySelector('.Rechargetop')){
+        var Rechargetop=document.querySelector('.Rechargetop')
+        var Rechargebtn=document.querySelector('.Rechargebtn')
+        Rechargetop.style.height=Number(jiabg.clientHeight-200)+'px';
+        Rechargebtn.style.height=Number(jiabg.clientHeight-200)+'px';
+        if(window.innerWidth<825){
+            Rechargetop.style.height=Number(jiabg.clientHeight-220)+'px';
+            Rechargebtn.style.height=Number(jiabg.clientHeight-220)+'px';
+        }
+        if(window.innerWidth<815){
+            Rechargetop.style.height=Number(jiabg.clientHeight-200)+'px';
+            Rechargebtn.style.height=Number(jiabg.clientHeight-200)+'px';
+        }
+        if(window.innerWidth<750){
+            Rechargetop.style.height=Number(jiabg.clientHeight-220)+'px';
+            Rechargebtn.style.height=Number(jiabg.clientHeight-220)+'px';
+        }
+        if(window.innerWidth<650){
+            Rechargetop.style.height=Number(jiabg.clientHeight-200)+'px';
+            Rechargebtn.style.height=Number(jiabg.clientHeight-200)+'px';
+        }
+    }
 
 
 
