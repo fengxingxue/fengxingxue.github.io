@@ -3,6 +3,7 @@ var height =window.screen.height
 var screen_width = width; //屏幕宽度
 var contentDOM = document.getElementById('all');//最大那个层转换
 var contentDOM1 = document.getElementById('all1');
+var conten = document.querySelector('.content_wrap');
 window.onload=function(){
     if (width < height) {
         screen_width = height; //如果 是竖屏，灵感的宽度就等于屏高
@@ -135,6 +136,7 @@ window.onload=function(){
 $('input').click(function() {
     contentDOM.style.height =Number(window.screen.height-27) + 'px';
     contentDOM1.style.height = Number(window.screen.height-27) + 'px';
+    conten.style.height = Number(window.screen.height-27) + 'px';
 });
 
 
