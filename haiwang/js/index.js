@@ -115,6 +115,21 @@ window.onload=function(){
             Rechargebtn.style.height=Number(jiabg.clientHeight-200)+'px';
         }
     }
+    
+     if(document.querySelector('.task')){
+        var tasktop=document.querySelector('.tasktop')
+        var taskbtn=document.querySelector('.taskbtn')
+        tasktop.style.height=Number(jiabg.clientHeight-220)+'px';
+        taskbtn.style.height=Number(jiabg.clientHeight-220)+'px';
+        if(window.innerHeight<820&&window.innerHeight>750&&window.innerWidth==375){
+            document.querySelector('.task').style.width='60%'
+            document.querySelector('.task').style.left='22%'
+        }
+        if(window.innerWidth<600){
+            tasktop.style.height=Number(jiabg.clientHeight-190)+'px';
+            taskbtn.style.height=Number(jiabg.clientHeight-190)+'px';
+        }
+    }
 
 
 
