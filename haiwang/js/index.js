@@ -56,6 +56,12 @@ window.onload=function(){
         }
     }
 
+       if(document.querySelector('.chong')){
+        if(window.innerHeight<820&&window.innerHeight>750&&window.innerWidth==375){
+            document.querySelector('.chong').style.width='60%'
+            document.querySelector('.chong').style.left='20%'
+        }
+    }
      
      
 }
