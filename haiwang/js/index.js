@@ -20,9 +20,9 @@ window.onload=function(){
      
      
      
-      var jiabg=document.querySelector('#all1')
-    if(document.querySelector('.table-body')){
-        var bighome=document.querySelector('.table-body')
+       var jiabg=document.querySelector('#all1')
+    if(document.querySelector('.auction')){
+        var bighome=document.querySelector('.auction .table-body')
         var bao=document.querySelector('.bao')
         var recordleft=document.querySelector('.recordleft')
         var recordright=document.querySelector('.recordright')
@@ -43,34 +43,55 @@ window.onload=function(){
             bao.style.height=Number(jiabg.offsetHeight-240)+'px';
         }
     }
+    if(document.querySelector('.chong')){
+        if(window.innerHeight<820&&window.innerHeight>750&&window.innerWidth==375){
+            document.querySelector('.chong').style.width='60%'
+            document.querySelector('.chong').style.left='20%'
+        }
+    }
+    if(document.querySelector('.diao')){
+        if(window.innerHeight<820&&window.innerHeight>750&&window.innerWidth==375){
+            document.querySelector('.diao').style.width='60%'
+            document.querySelector('.diao').style.left='20%'
+        }
+    }
 
-    if(document.querySelector('.Indianaleft')){
+    if(document.querySelector('.home')){
+        if(window.innerHeight<820&&window.innerHeight>750&&window.innerWidth==375){
+            document.querySelector('.home').style.width='60%'
+            document.querySelector('.home').style.left='20%'
+        }
+        var bighome=document.querySelector('.bighome')
+        bighome.style.height=Number(jiabg.clientHeight-120)+'px';
+    }
+
+
+
+    if(document.querySelector('.king')){
+        if(window.innerHeight<820&&window.innerHeight>750&&window.innerWidth==375){
+            document.querySelector('.king').style.width='60%'
+            document.querySelector('.king').style.left='20%'
+        }
+        var tablebody=document.querySelector('.king .table-body')
+        var kkright=document.querySelector('.kkright')
+        var kinghome=document.querySelector('.kinghome')
+        tablebody.style.height=Number(jiabg.clientHeight-220)+'px';
+        kkright.style.height=Number(jiabg.clientHeight-160)+'px';
+        kinghome.style.height=Number(jiabg.clientHeight-220)+'px';
+    }
+     
+     if(document.querySelector('.Indianaleft')){
         var Indianaright=document.querySelector('.Indianaright')
         var Indiana=document.querySelector('.Indiana')
         var Indianar=document.querySelector('.Indianar')
         Indianaright.style.height=Number(jiabg.offsetHeight-80)+'px';
-        Indianar.style.height=Number(jiabg.offsetHeight-110)+'px';
+        Indianar.style.height=Number(jiabg.offsetHeight-100)+'px';
         if(window.innerHeight<820&&window.innerHeight>750&&window.innerWidth==375){
             Indiana.style.width='60%'
             Indiana.style.left='20%'
         }
     }
 
-       if(document.querySelector('.chong')){
-        if(window.innerHeight<820&&window.innerHeight>750&&window.innerWidth==375){
-            document.querySelector('.chong').style.width='60%'
-            document.querySelector('.chong').style.left='20%'
-        }
-    }
-     
-     
-     if(document.querySelector('.diao')){
-        if(window.innerHeight<820&&window.innerHeight>750&&window.innerWidth==375){
-            document.querySelector('.diao').style.width='60%'
-            document.querySelector('.diao').style.left='20%'
-        }
-    }
-     
      
 }
 
