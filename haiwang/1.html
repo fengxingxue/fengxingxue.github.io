@@ -21,15 +21,15 @@
             width: 100%;
             height: 100%;
         }
-        .home{
+        input{
+            outline:none;
+        }
+        .king{
             width: 60%;
             position: absolute;
             left: 20%;
             top: 2.3%;
             height: 95%;
-        }
-        .close{
-
         }
         .close img{
             width: 7%;
@@ -38,63 +38,16 @@
             margin-left: 92.5%;
             top: 12px;
         }
-        .home .jiabg{
+        .king .jiabg{
             width: 100%;
             position: absolute;
         }
-        .home1{
-            width: 33%;
-            float: left;
-            padding:2px 5px;
-            text-align: center;
-            position: relative;
-        }
-        .bighome{
+        .cw{
+            width: 11%;
             position: absolute;
-            top: 50px;
-            left: 7%;
-            width:86%;
-            overflow-x: hidden;
-            overflow-y: scroll;
-            padding-top: 10px;
+            left: 44.5%;
+            top: 12px;
         }
-        .bighome::after{
-            display: table;
-            content: '';
-            clear: both;
-        }
-        .bighome::-webkit-scrollbar {
-            display: none;
-        }
-
-        .home1 .img{
-            width: 100%;
-            height: 100%;
-        }
-        .home1 .img1{
-            width: 98%;
-            /* height: 100%; */
-            position: absolute;
-            z-index: 99;
-            left: 0%;
-            top: 11%;
-        }
-        .home1 p{
-            font-size: 0.1rem;
-            overflow: hidden;
-            text-overflow:ellipsis;
-            white-space: nowrap;
-        }
-        .home1 .homespan {
-            font-size: 0.1rem;
-            display: inline-block;
-            background: url(img/jiesuo.png) no-repeat center center;
-            background-size: contain;
-            width: 60%;
-            height: 45px;
-            line-height: 37px;
-        }
-
         .tishi{
             position: absolute;
             width: 54%;
@@ -102,13 +55,14 @@
             left: 23%;
             background: url("img/tan.png") no-repeat;
             background-size: contain;
-            height: 43%;
+            height: 44%;
             line-height: 40%;
             padding: 10px;
             z-index: 999999;
             font-size:14px;
             color: #000;
             display: none;
+
         }
         .tishi span{
             font-weight: bold;
@@ -124,40 +78,356 @@
             width: 30px;
             height: 30px;
             position: absolute;
-            position: absolute;
-            right: 15px;
+            right: 3px;
             top: -10px;
         }
-        .tishic{
-            width: 26%;
-            margin: auto;
-            position: relative;
-            top: 44%;
-            left: 12%;
+        @media screen and (max-width:570px) {
+            .chong2 {
+                top: 40px;
+            }
+
+            .chongright p {
+                padding-top: 2px;
+            }
+
+            .shi {
+                padding-top: 2%;
+            }
+
+            .shi .yu, .shi .xia {
+                padding: 2px;
+            }
+
+            .xia div, .yu div {
+                font-size: 12px;
+            }
         }
-        .tishic1{
-            left: 33%;
+        @media screen and (max-width:750px) {
+            .king {
+                width: 70%;
+                position: absolute;
+                left: 15%;
+                top: 2.3%;
+                height: 95%;
+            }
         }
-        .tishi1{
-            position: relative;
+        @media screen and (max-width: 700px) {
+            .king {
+                width: 74%;
+                position: absolute;
+                left: 13%;
+                top: 2.3%;
+                height: 95%;
+            }
+        }
+
+        .king1{
+            position: absolute;
+            top: 60px;
+            left: 7%;
+            width: 86%;
+        }
+
+        .kleft,.kright{
+            float: left;
+            background: #d7bda2;
+            padding: 4px 10px;
+            font-size: 14px;
+            color: #3a2207;
+            border-bottom-left-radius: 6px;
+            border-top-left-radius: 6px;
+            border-top-right-radius: 6px;
+        }
+        .kright{
+            margin-left: 10px;
+            background: #c3a583;
+        }
+        .king3{
+            background: #d7bda2;
             width: 100%;
             height: 100%;
+            padding: 6px;
+            /*overflow-x: hidden;*/
+            /*overflow-y: scroll;*/
         }
-        @media screen and (max-width:600px) {
-            .bighome {
-                position: absolute;
-                top: 50px;
-                left: 7%;
-                width: 86%;
-                overflow-x: hidden;
-                overflow-y: scroll;
-                padding-top: 10px;
-            }
+        .kkleft{
+            padding-top: 4px;
+        }
+        .kkleft input{
+            background: #c3a583;
+            text-align: center;
+            width: 82%;
+            float: left;
+            margin-right: 3%;
+            border: none;
+            padding: 4px 0;
+            border-radius: 5px;
+        }
+        .kkleft button{
+            width: 15%;
+            float: left;
+            background:url("img/fang.png") no-repeat center left #c3a583;
+            background-position-x: 6px;
+            text-align: right;
+            padding: 2px 5px 2px 0;
+            border-radius: 4px;
+            border: none;
+            font-size: 14px;
+            color: #3a2207;
+        }
+
+
+        .table-head{
+            background-color:#c3a583;
+            color:#3a2207;
+            font-size: 14px;
+            padding: 2px 0;
+            text-align: center;
+        }
+
+        .table-head div{
+            float: left;
+            text-align: center;
+            color: #3a2207;
+            font-weight: bold;
+        }
+        .table-head div:nth-of-type(1),.table-head div:nth-of-type(4)
+        {
+            width: 10%;
+        }
+        .table-head div:nth-of-type(2){
+            width: 35%;
+        }
+        .table-head div:nth-of-type(5),.table-head div:nth-of-type(3),.table-head div:nth-of-type(6){
+            width: 15%;
+        }
+        .table-body{
+            width:100%;
+            text-align: center;
+            font-size: 12px;
+            overflow-y:scroll;
+        }
+
+        .king2::after,kleft::after,label::after,.table-head::after{
+            display: table;
+            content: '';
+            clear: both;
+        }
+        .table-head1{
+            background: #efdabb;
+            border: solid 1px #c3a583;
+            margin: 5px 0;
+            padding: 4px 0;
+        }
+        .table-head1 div{
+            font-weight: 100;
+            color: #3a2207;
+            font-size: 12px;
+            padding: 2px 0;
+        }
+        .table-head1 div:nth-of-type(1),.table-head1 div:nth-of-type(4){
+            font-weight: bold;
+        }
+        .shen{
+            background: #f19149;
+            width: 65%;
+            margin: auto;
+            display: block;
+            border: solid 1px #000;
+            border-radius: 4px;
+            color: #3a2207;
+        }
+        .tishi1,.tishi2{
+            background: #c3a583;
+            width: 30%;
+            position: absolute;
+            bottom: 20px;
+            left: 35%;
+            padding:8px 0;
+            font-size: 12px;
+            text-align: center;
+            margin: auto;
+            z-index: 999;
+            border-radius: 5px;
+        }
+
+        .kkright{
+            display: none;
+            padding-top: 4px;
+        }
+        .chuang{
+            width: 30%;
+            position: absolute;
+            left: 35%;
+            top: 40%;
+        }
+        .tishi label{
+            display: inline-block;
+            width: 90%;
+            margin: auto;
+            position: absolute;
+            left: 5%;
+            text-align: center;
+        }
+        .tishi label::after{
+            display: table;
+            content: '';
+            clear: bottom;
+        }
+        .tishi label span{
+            float: left;
+            position: relative;
+            top:7px;
+        }
+        .tishi label input{
+            background: #c3a583;
+            border: none;
+            padding: 3px 0;
+            text-align: center;
+            border-radius: 4px;
+        }
+        .mypp{
+            text-align: center;
+            font-size: 12px;
+            position: absolute;
+            bottom: 19px;
+            /* padding-left: 11%; */
+            color: #a58f73;
+            letter-spacing: 0px;
+            width: 94%;
+        }
+        .kingleft{
+            width: 60%;
+            float: left;
+            display: none;
+        }
+        .kingright{
+            width: 40%;
+            float: left;
+            display: none;
+        }
+
+        .kingt{
+            width: 90%;
+            margin: auto;
+            background: #c3a583;
+            color: #3a2207;
+            font-weight: bold;
+            font-size:14px;
+            text-align: center;
+            padding: 2px 0;
+            border-radius: 4px;
+            margin-bottom: 5px;
+        }
+        .kingt span,.kinghome1 span{
+            display: inline-block;
+            width: 49%;
+            float: left;
+        }
+
+        .kingt strong{
+            position: relative;
+            left: 34%;
+        }
+        .kinghome{
+            overflow-y: scroll;
+        }
+        .kinghome1{
+
+            background: #efdabb;
+            border: solid 1px #c3a583;
+            margin: 4px auto;
+            padding: 1px 0;
+            width: 90%;
+            color: #3a2207;
+            font-size: 14px;
+            text-align: center;
+
+        }
+        .kkright::after,.kingt::after,.kinghome1::after{
+            display: table;
+            content: '';
+            clear: both;
+        }
+        .kkleft input::-webkit-input-placeholder {
+            color: #926c42;
+            font-size: 12px;
+
+        }
+        .table-body::-webkit-scrollbar ,.kinghome::-webkit-scrollbar {
+            display: none;
+        }
+        .kingname{
+            color: #3a2207;
+            font-weight: bold;
+            font-size: 13px;
+        }
+        .kingname p{
+            float: left;
+            width: 50%;
+            text-align: center;
+        }
+        .kingname span{
+            width:50%;
+            display: inline-block;
+            background: #c3a583;
+            border-radius: 5px;
+            text-align: center;
+            padding: 2px 0;
+            font-size: 12px;
+            margin-bottom: 10px;
+        }
+        .kingname::after{
+            display: table;
+            content: '';
+            clear: both;
+        }
+        .sheng,.tui{
+            float: left;
+            background: #c3a583;
+            color: #3a2207;
+            font-weight: bold;
+            font-size: 13px;
+            padding: 2px 10px;
+            border-radius: 5px;
+            text-align: center;
+            margin-top: 5px;
+        }
+        .sheng{
+            margin-left: 10%;
+        }
+        .tui{
+            margin-left: 20%;
+        }
+        @media screen and (max-width: 650px) {
             .tishi span{
-                top: 34%;
+                font-size: 12px;
             }
-            .tishic{
-                top: 31%;
+            .tishi label input{
+                width: 60%;
+            }
+            .tishi label{
+                top: 29%;
+            }
+            .mypp{
+                letter-spacing: -1px;
+                width: 89%;
+            }
+            .kingname span{
+                margin-bottom: 4px;
+            }
+            .kingname{
+                font-size: 12px;
+            }
+            .kingname p{
+                width: 56%;
+            }
+            .kingname span{
+                width: 44%;
+            }
+            .sheng, .tui{
+                font-size: 12px;
+                margin-top: 0;
             }
         }
     </style>
@@ -165,113 +435,350 @@
 <body>
 <div class="all" id="all">
     <div class="wan" id="all1">
-    <div class="home">
-        <img class="jiabg" src="img/jiabg.png" alt="">
+        <div class="king">
+            <img class="jiabg" src="img/chong.png" alt="">
+            <img class="cw" src="img/king.png">
             <div class="close">
                 <img src="img/close.png" alt="">
             </div>
-        <div class="bighome">
-            <div class="home1">
-                <img class="img" src="img/wirth.png" alt="">
-                <p>可容纳一个白色蚌壳</p>
-                <p>蚌壳每五个小时产出1颗珍珠</p>
-                <span  class="homespan">正在使用</span>
-            </div>
-            <div class="home1">
-                <img class="img"  src="img/orgent.png" alt="">
-                <img class="img1"  src="img/suo.png" alt="">
-                <p>可容纳1个橙蚌壳</p>
-                <p>蚌壳每六小时产出1颗<span>橙</span>色珍珠</p>
-                <span class="homespan">解锁</span>
-            </div>
-            <div class="home1">
-                <img class="img"  src="img/pick.png" alt="">
-                <img class="img1"  src="img/suo.png" alt="">
-                <p>可容纳1个红色蚌壳</p>
-                <p>蚌壳每六小时产出1颗<span>红</span>色珍珠</p>
-                <span class="homespan">解锁</span>
-            </div>
-            <div class="home1">
-                <img class="img"  src="img/green.png" alt="">
-                <img class="img1"  src="img/suo.png" alt="">
-                <p>可容纳1个青蚌壳</p>
-                <p>蚌壳每八小时产出1颗<span>青</span>色珍珠</p>
-                <span class="homespan">解锁</span>
-            </div>
-            <div class="home1">
-                <img class="img"  src="img/blue.png" alt="">
-                <img class="img1"  src="img/suo.png" alt="">
-                <p>可容纳1个蓝蚌壳</p>
-                <p>蚌壳每九小时产出1颗<span>蓝</span>色珍珠</p>
-                <span class="homespan">解锁</span>
-            </div>
-            <div class="home1">
-                <img class="img"  src="img/pinck.png" alt="">
-                <img class="img1"  src="img/suo.png" alt="">
-                <p>可容纳1个紫蚌壳</p>
-                <p>蚌壳每十小时产出1颗<span>紫</span>色珍珠</p>
-                <span class="homespan">解锁</span>
-            </div>
-        </div>
-        <div class="tishi">
-            <img class="tishimg" src="img/close.png" alt="">
-            <span class="col">需要支付55个白色珍珠或</span>
-            <span class="pep">成功邀请5人即可解锁</span>
-            <div class="tishi1">
-                <img class="tishic" src="img/zhen.png" alt="">
-                <img class="tishic tishic1" src="img/yao.png" alt="">
-            </div>
-        </div>
+            <div class="king1">
+                    <div class="king2">
+                        <div class="kleft">排行榜</div>
+                        <div class="kright">我的王国</div>
+                    </div>
+                    <div class="king3">
+                        <div class="kkleft">
+                            <label for="">
+                                <input type="text" placeholder="请输入国王名称">
+                                <button>搜索</button>
+                            </label>
+                            <div style="padding-top:6px">
+                                     <div class="table-head">
+                                         <div>排名</div>
+                                         <div>王国名称</div>
+                                         <div>人数</div>
+                                         <div>等级</div>
+                                         <div>国王</div>
+                                         <div>可操作</div>
+                                     </div>
+                                     <div class="table-body">
+                                         <div class="table-head table-head1">
+                                             <div>1</div>
+                                             <div>呵呵呵</div>
+                                             <div>5/200</div>
+                                             <div>1</div>
+                                             <div>哈哈1</div>
+                                             <div><span class="shen">申请</span></div>
+                                         </div>
+                                         <div class="table-head table-head1">
+                                             <div>2</div>
+                                             <div>呵呵呵</div>
+                                             <div>5/200</div>
+                                             <div>1</div>
+                                             <div>哈哈2</div>
+                                             <div><span class="shen">申请</span></div>
+                                         </div>
+                                         <div class="table-head table-head1">
+                                             <div>3</div>
+                                             <div>呵呵呵</div>
+                                             <div>5/200</div>
+                                             <div>1</div>
+                                             <div>哈哈3</div>
+                                             <div><span class="shen">申请</span></div>
+                                         </div>
+                                         <div class="table-head table-head1">
+                                             <div>4</div>
+                                             <div>呵呵呵</div>
+                                             <div>5/200</div>
+                                             <div>1</div>
+                                             <div>哈哈4</div>
+                                             <div><span class="shen">申请</span></div>
+                                         </div>
+                                         <div class="table-head table-head1">
+                                             <div>5</div>
+                                             <div>呵呵呵</div>
+                                             <div>5/200</div>
+                                             <div>1</div>
+                                             <div>哈哈5</div>
+                                             <div><span class="shen">申请</span></div>
+                                         </div>
+                                         <div class="table-head table-head1">
+                                         <div>6</div>
+                                         <div>呵呵呵</div>
+                                         <div>5/200</div>
+                                         <div>1</div>
+                                         <div>哈哈6</div>
+                                             <div><span class="shen">申请</span></div>
+                                     </div>
+                                         <div class="table-head table-head1">
+                                             <div>7</div>
+                                             <div>呵呵呵</div>
+                                             <div>5/200</div>
+                                             <div>1</div>
+                                             <div>哈哈7</div>
+                                             <div><span class="shen">申请</span></div>
+                                         </div>
 
-    </div>
+                                    </div>
+                                </div>
+                        </div>
+                        <div class="kkright">
+                            <img class="chuang" src="img/king1.png" alt="">
+                            <div class="kingleft">
+                                    <div class="kingt">成员列表</div>
+                                    <div class="kingt">
+                                         <span>昵称 <strong>|</strong></span>
+                                         <span>家园等级</span>
+                                    </div>
+                                <div class="kinghome">
+                                    <div class="kinghome1">
+                                        <span>嘿嘿嘿</span>
+                                        <span>LV.1</span>
+                                    </div>
+                                    <div class="kinghome1">
+                                        <span>嘿嘿嘿</span>
+                                        <span>LV.1</span>
+                                    </div>
+                                    <div class="kinghome1">
+                                        <span>嘿嘿嘿</span>
+                                        <span>LV.1</span>
+                                    </div>
+                                    <div class="kinghome1">
+                                        <span>嘿嘿嘿</span>
+                                        <span>LV.1</span>
+                                    </div>
+                                    <div class="kinghome1">
+                                        <span>嘿嘿嘿</span>
+                                        <span>LV.1</span>
+                                    </div>
+                                    <div class="kinghome1">
+                                        <span>嘿嘿嘿</span>
+                                        <span>LV.1</span>
+                                    </div>
+                                    <div class="kinghome1">
+                                        <span>嘿嘿嘿</span>
+                                        <span>LV.1</span>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="kingright">
+                                <div class="kingname">
+                                    <p>王国名称：</p>
+                                    <span>哈哈哒</span>
+                                </div>
+                                <div class="kingname">
+                                    <p>所获得ETH：</p>
+                                    <span>200</span>
+                                </div>
+                                <div class="kingname">
+                                    <p>国王：</p>
+                                    <span>哈哈哒</span>
+                                </div>
+                                <div class="kingname">
+                                    <p>等级：</p>
+                                    <span>1</span>
+                                </div>
+                                <div class="kingname">
+                                    <p>人数：</p>
+                                    <span>5</span>
+                                </div>
+                                <div class="sheng">升级</div>
+                                <div class="tui">退出</div>
+                            </div>
+                        </div>
+                    </div>
+            </div>
+            <div class="tishi">
+                <img class="tishimg" src="img/close.png" alt="">
+                <span class="col"></span>
+                <span class="pep"></span>
+                <div class="tishi1">
+                        确认
+                </div>
+            </div>
+
+        </div>
     </div>
 </div>
 <script src="js/jquery-3.3.1.js"></script>
 <script src="js/index.js"></script>
 <script>
 
-    var homespan=document.querySelectorAll('.homespan');
-    for(var i=0;i<homespan.length;i++){
-        homespan[i].onclick=function(){
 
-            var ff=this.parentNode;
-            var ff1=ff.previousElementSibling;
-            var ff1=ff1.lastElementChild;
-            console.log(ff1.innerHTML)
+    var shen=document.querySelectorAll('.shen');
+    var ww;
+    var ss;
+    for(var i=0;i<shen.length;i++){
+        shen[i].onclick=function(){
+            var kk=this.parentNode;
+            var kk1=kk.previousElementSibling;
+            ww=kk1
             document.querySelector('.tishi').style.display='block'
-            var ps=this.previousElementSibling;
-            var ps1=ps.querySelector('span');
             var col=document.querySelector('.col')
             var pep=document.querySelector('.pep')
-            if(this.innerHTML=='解锁'&&ff1.innerHTML=='正在使用'){
-                $('.tishi1').css('display','block')
-                if(ps1.innerHTML=='橙'){
-                    col.innerHTML='需要支付55个白色珍珠或'
-                    pep.innerHTML='成功邀请5人即可解锁'
-                }else if(ps1.innerHTML=='红'){
-                    col.innerHTML='需要支付55个橙色珍珠或'
-                    pep.innerHTML='成功邀请15人即可解锁'
-                }else if(ps1.innerHTML=='青'){
-                    col.innerHTML='需要支付55个红色珍珠或'
-                    pep.innerHTML='成功邀请30人即可解锁'
-                }else if(ps1.innerHTML=='蓝'){
-                    col.innerHTML='需要支付55个青色珍珠或'
-                    pep.innerHTML='成功邀请90人即可解锁'
-                }else if(ps1.innerHTML=='紫'){
-                    col.innerHTML='需要支付55个青色珍珠或'
-                    pep.innerHTML='成功邀请180人即可解锁'
-                }
-            }else{
-                col.innerHTML='请按照顺序依次解锁'
-                pep.innerHTML=''
-                $('.tishi1').css('display','none')
-            }
-
+            col.innerHTML='加入'+kk1.innerHTML+'王国需要支付500个珍珠';
+            pep.innerHTML='确认加入？';
+            var mys=document.createElement('span')
+            document.querySelector('.tishi').appendChild(mys)
         }
     }
-    $('.tishimg').click(function () {
-        $('.tishi').css('display','none')
+    $('.tishi1').click(function () {
+        if(document.querySelector('.tishi label')){
+            if(document.querySelector('.tishi input').value==''){
+                var zz=document.querySelector('.tishi');
+                zz.style.background='url(img/tan.png) no-repeat'
+                zz.style.backgroundSize='contain';
+                var myp=document.querySelector('.tishi label')
+                var myp1=document.querySelector('.tishi p')
+                document.querySelector('.tishi').removeChild(myp)
+                document.querySelector('.tishi').removeChild(myp1)
+                document.querySelector('.tishi1').style.bottom='20px'
+                var col=document.querySelector('.col')
+                var pep=document.querySelector('.pep')
+                col.innerHTML='王国名称不能为空';
+                pep.innerHTML='';
+                var tt=setTimeout(function () {
+                    var col=document.querySelector('.col')
+                    var pep=document.querySelector('.pep')
+                    var zz=document.querySelector('.tishi');
+                    zz.style.background='url(img/tan1.png) no-repeat'
+                    zz.style.backgroundSize='contain';
+                    col.innerHTML='';
+                    pep.innerHTML='';
+                    var myp=document.createElement('label')
+                    var myspan=document.createElement('span')
+                    var myinput=document.createElement('input')
+                    var myp1=document.createElement('p')
+                    myspan.innerHTML='王国名称:';
+                    myinput.placeholder='请输入文字';
+                    myp1.innerHTML='需要消耗2000白珍珠，或其他等价珍珠。'
+                    myp1.className='mypp'
+                    zz.appendChild(myp)
+                    zz.appendChild(myp1)
+                    myp.appendChild(myspan)
+                    myp.appendChild(myinput)
+                    document.querySelector('.tishi1').style.bottom='40px'
+                },1000)
+            }else{
+                var zz=document.querySelector('.tishi');
+                zz.style.background='url(img/tan.png) no-repeat'
+                zz.style.backgroundSize='contain';
+                var myp=document.querySelector('.tishi label')
+                var myp1=document.querySelector('.tishi p')
+                document.querySelector('.tishi').removeChild(myp)
+                document.querySelector('.tishi').removeChild(myp1)
+                document.querySelector('.tishi1').style.bottom='20px'
+                var col=document.querySelector('.col')
+                var pep=document.querySelector('.pep')
+                col.innerHTML='创建王国成功';
+                pep.innerHTML='';
+                var tt=setTimeout(function () {
+                    var col=document.querySelector('.col')
+                    var pep=document.querySelector('.pep')
+                    col.innerHTML='';
+                    pep.innerHTML='';
+                    zz.style.display='none';
+                    document.querySelector('.chuang').style.display='none'
+                    document.querySelector('.kingleft').style.display='block'
+                    document.querySelector('.kingright').style.display='block'
+                },1000)
+            }
+        }
+        if(document.querySelectorAll('.tishi span').length==3){
+            var col=document.querySelector('.col')
+            var pep=document.querySelector('.pep')
+            col.innerHTML='恭喜！您已经加入'+ww.innerHTML+'王国';
+            pep.innerHTML='';
+            var tt=setTimeout(function () {
+                document.querySelector('.tishi').style.display='none';
+                col.innerHTML='';
+                pep.innerHTML='';
+                document.querySelector('.tishi').removeChild(document.querySelectorAll('.tishi span')[2])
+            },2000)
+        }
     })
+
+
+    $('.tishimg').click(function () {
+        $('.tishi').css('display','none');
+        ss=0
+        if(document.querySelector('.tishi1')){
+            document.querySelector('.tishi1').style.bottom='20px'
+        }
+        var mys=document.querySelectorAll('.tishi span');
+        if(mys.length==3){
+            document.querySelector('.tishi').removeChild(mys[2])
+        }
+        var zz=document.querySelector('.tishi');
+        zz.style.background='url(img/tan.png) no-repeat'
+        zz.style.backgroundSize='contain';
+        if(document.querySelector('.tishi label')){
+            var myp=document.querySelector('.tishi label')
+            var myp1=document.querySelector('.tishi p')
+            document.querySelector('.tishi').removeChild(myp)
+            document.querySelector('.tishi').removeChild(myp1)
+        }
+
+    })
+    $('.kleft').click(function () {
+        $('.kkleft').css('display','block')
+        $('.kkright').css('display','none')
+        $(this).css('background','#d7bda2')
+        $('.kright').css('background','#c3a583')
+    })
+    $('.kright').click(function () {
+        $('.kkright').css('display','block')
+        $('.kkleft').css('display','none')
+        $(this).css('background','#d7bda2')
+        $('.kleft').css('background','#c3a583')
+    })
+    document.querySelector('.chuang').onclick=function(){
+        document.querySelector('.tishi1').style.bottom='40px'
+        var zz=document.querySelector('.tishi');
+        zz.style.background='url(img/tan1.png) no-repeat'
+        zz.style.backgroundSize='contain';
+        zz.style.display='block'
+        var col=document.querySelector('.col')
+        var pep=document.querySelector('.pep')
+        col.innerHTML='';
+        pep.innerHTML='';
+        var myp=document.createElement('label')
+        var myspan=document.createElement('span')
+        var myinput=document.createElement('input')
+        var myp1=document.createElement('p')
+        myspan.innerHTML='王国名称:';
+        myinput.placeholder='请输入文字';
+        myp1.innerHTML='需要消耗2000白珍珠，或其他等价珍珠。'
+        myp1.className='mypp'
+        zz.appendChild(myp)
+        zz.appendChild(myp1)
+        myp.appendChild(myspan)
+        myp.appendChild(myinput)
+    }
+
+    document.querySelector('.tui').onclick=function(){
+        document.querySelector('.tishi').style.display='block'
+        document.querySelector('.tishi1').style.display='none'
+        var col=document.querySelector('.col')
+        var pep=document.querySelector('.pep')
+        col.innerHTML='抱歉! 您是国王不得退出';
+        pep.innerHTML='您建立的王国';
+        var tt=setTimeout(function () {
+            document.querySelector('.tishi1').style.display='block'
+            document.querySelector('.tishi').style.display='none'
+            col.innerHTML='';
+            pep.innerHTML='';
+        },2000)
+    }
+    document.querySelector('.sheng').onclick=function(){
+        ss=1
+        document.querySelector('.tishi').style.display='block'
+        var col=document.querySelector('.col')
+        var pep=document.querySelector('.pep')
+        col.innerHTML='升级王国需要支付2000个珍珠';
+        pep.innerHTML='确定升级？';
+    }
+    
 </script>
 </body>
 </html>
