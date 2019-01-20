@@ -49,7 +49,7 @@ window.onload=function(){
         var Indiana=document.querySelector('.Indiana')
         var Indianar=document.querySelector('.Indianar')
         Indianaright.style.height=Number(jiabg.offsetHeight-80)+'px';
-        Indianar.style.height=Number(jiabg.offsetHeight-100)+'px';
+        Indianar.style.height=Number(jiabg.offsetHeight-110)+'px';
         if(window.innerHeight<820&&window.innerHeight>750&&window.innerWidth==375){
             Indiana.style.width='60%'
             Indiana.style.left='20%'
