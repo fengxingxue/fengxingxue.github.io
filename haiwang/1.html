@@ -24,7 +24,7 @@
         input,button{
             outline:none;
         }
-        .Recharge{
+        .task{
             width: 60%;
             position: absolute;
             left: 20%;
@@ -38,7 +38,7 @@
             margin-left: 77.5%;
             top: 15%;
         }
-        .Recharge .jiabg{
+        .task .jiabg{
             width: 81%;
             margin: auto;
             position: absolute;
@@ -99,7 +99,7 @@
             }
         }
         @media screen and (max-width:750px) {
-            .Recharge {
+            .task {
                 width: 70%;
                 position: absolute;
                 left: 15%;
@@ -108,15 +108,15 @@
             }
         }
         @media screen and (max-width: 700px) {
-            .Recharge {
-                width: 57%;
+            .task {
+                width: 74%;
                 position: absolute;
                 left: 13%;
                 top: 2.3%;
                 height: 95%;
             }
         }
-        .Recharge1{
+        .task1{
             width: 61%;
             margin: auto;
             border-radius: 8px;
@@ -138,14 +138,14 @@
             z-index: 999;
             border-radius: 5px;
         }
-        .Rechargeleft{
+        .taskleft{
             width: 18%;
             float: left;
             font-size: 12px;
             height: 100%;
             padding-top: 35px;
         }
-        .Rechargeleft div{
+        .taskleft div{
             height: 50%;
             background: #448aca;
             border-top-left-radius: 7px;
@@ -153,342 +153,189 @@
             text-align: center;
             padding:8px 0;
         }
-        .Rechargeleft div:nth-of-type(1){
+        .taskleft div:nth-of-type(1){
             margin-bottom: 15px;
             background: #7ecef4;
         }
-        .Rechargeright{
+        .taskright{
             width: 82%;
             float: left;
         }
-        .Recharge1::after{
+        .task1::after{
             display: table;
             content: '';
             clear: both;
         }
-        .Rechargetop,.Rechargebtn{
+        .tasktop,.taskbtn{
             width: 100%;
             background: #7ecef4;
             border-radius: 8px;
+            overflow-y:scroll;
             padding: 5px;
         }
-
-
-        .Rechargebtn{
+        .tasktop::-webkit-scrollbar ,.taskbtn::-webkit-scrollbar {
             display: none;
-            font-size: 12px;
-            padding: 10px;
         }
-
-        .Rechargebtn label{
-            display: block;
-            padding-bottom: 4px;
-        }
-        .Rechargebtn span{
-            width:25%;
-            display: inline-block;
-            font-weight:800;
-        }
-        .Rechargebtn label:nth-of-type(4) span{
-            letter-spacing: 4px;
-        }
-        .Rechargebtn input{
-            width:70%;
-            background: #3b88c2;
-            border: none;
-            border-radius: 5px;
-            padding: 3px 8px;
-            color: #fff;
-        }
-        .Rechargebtn label:nth-of-type(4) input{
-            width:30%
-        }
-        input::-webkit-input-placeholder {
-            color: #85b8df;
-            font-size: 12px;
-        }
-        .Rechargebtn strong{
-            background: #3b88c2;
-            padding: 5px 8px;
-            border-radius: 5px;
-            color: #fff;
-            position: absolute;
-            right: 10px;
-        }
-        .sq,.tj{
-            background: #3b88c2;
-            padding: 5px 7px;
-            border-radius: 5px;
-            color: #fff;
-            /*width: 30%;*/
-            text-align: center;
-            float: left;
-            margin-top: 5px;
-        }
-        .wen,.wen1{
-            float: left;
-            width: 17px;
-            height: 17px;
-            padding-left: 4px;
-            line-height: 17px;
-            border-radius: 17px;
-            color: #fff;
-            border: solid 1px #fff;
-            font-size: 12px;
-            margin: 9px 7px 0 42%;
-            position: absolute;
-            bottom: 11px;
-        }
-        .wen1{
-            margin:26px 7px 0 32%;;
-        }
-        .sq{
-            margin-left: 28%;
-            margin-right: 20px;
-            
-        }
-        .chuwen,.chuwen1{
-            position: absolute;
-            top: -75px;
-            left: -5px;
+        .tasktop div,.taskbtn div{
+            background: #88abda;
             width: 100%;
-        }
-        .chuwen1{
-            left: -12px;
-            top: -52px;
-        }
-        .chuwen img,.chuwen1 img{
-            position: absolute;
-            width: 100%;
-        }
-        .chuwen p,.chuwen1 p{
+            border-radius: 4px;
             font-size: 12px;
-            color: #000;
-            width: 100%;
+            padding:15px 3px;
             position: relative;
-            padding: 5px 0 0 5px;
+            margin-bottom: 8px;
         }
-        .chuwen1 img,.chuwen1 p{
-            width: 86%;
+        .tasktop div>p,.taskbtn div>p{
+            display: inline-block;
         }
-        .chuwen p:nth-of-type(1),.chuwen1 p:nth-of-type(1){
-            padding-left: 25px;
-        }
-        .chuwen1 p{
-            text-align: left;
-        }
-        .Rechargetop .er{
-            width: 60px;
-            height: 60px;
-            background: #938481;
-            margin:0 auto 8px auto;
-            font-size: 12px;
+        .tasktop div>span,.taskbtn div>span{
+            background: #fff;
+            width: 40px;
             text-align: center;
-            line-height: 70px;
-        }
-        .Rechargetop>p{
-           font-size: 12px;
-            text-align: center;
-            font-weight: 800;
-        }
-        .Rechargetop .copy,.Rechargetop .jilv{
-            background: #938481;
-            width: 30%;
-            border: solid 1px #000;
-            font-size: 12px;
-            text-align: center;
-            float: left;
-            padding: 2px 0;
-            border-radius: 8px;
+            display:inline-block;
             position: absolute;
-            bottom: 10px;
+            top: 5px;
+            right: 22%;
+            padding: 2px;
+            border-radius: 4px;
         }
-        .Rechargetop .jilv{
+        .taskbtn div>span{
+            padding: 8px 0;
+            top: 8px;
+        }
+        .tasktop div>strong,.taskbtn div>strong{
+            font-weight: 100;
+            position: absolute;
             right: 5px;
+            top: 10px;
+            background: #cce198;
+            padding: 4px;
+            border-radius: 4px;
         }
-        @media screen and (max-width: 800px) {
-            .sq, .tj{
-                margin-top: 15px;
-            }
+        .taskbtn{
+            display: none;
         }
         @media screen and (max-width: 750px) {
-            .Recharge .jiabg{
+            .task .jiabg{
                 width: 84%;
-            }
-            .wen{
-                bottom: 26px;
             }
         }
         @media screen and (max-width: 700px) {
-            .Recharge .jiabg{
+            .task .jiabg{
                 width: 80%;
-            }
-            .Rechargebtn input{
-                padding: 3px 8px;
-            }
-            .sq, .tj{
-                margin-top: 2px;
-            }
-            .Rechargebtn strong{
-                padding: 3px 8px;
-            }
-        }
-        @media screen and (max-width: 650px) {
-            .Rechargebtn label:nth-of-type(4) span{
-                letter-spacing: 3px;
-            }
-            .wen{
-                bottom: 11px;
-            }
-            .chuwen1{
-                width: 88%;
             }
         }
         @media screen and (max-width: 600px) {
-            .Recharge .jiabg{
+            .task .jiabg{
                 width: 83%;
                 top: -3%;
             }
-            .Rechargeleft{
+            .taskleft{
                 width: 20%;
             }
-            .Rechargeright{
+                .taskright{
                 width: 80%;
             }
-            .Recharge1{
+            .task1{
                 width: 62%;
             }
-            .Rechargetop .er{
-                width: 50px;
-                height: 50px;
-                line-height: 50px;
+            .tasktop div, .taskbtn div{
+                padding: 15px 3px 15px;
             }
-            .chuwen1 img, .chuwen1 p{
-                width: 98%;
+            .taskbtn div>span,.tasktop div>span{
+                top: 5px;
+                right: 22%;
             }
-            .chuwen1 {
-                left: 2px;
-                top: -68px;
+            .tasktop div>strong, .taskbtn div>strong{
+                top: 12px;
             }
-            .Rechargebtn span{
-                width: 28%;
-            }
-            .Rechargebtn label:nth-of-type(4) span{
-                letter-spacing: 1px;
-            }
-            .Rechargebtn strong{
-                padding: 3px;
-            }
-            .Rechargebtn input{
-                padding: 4px 8px;
-            }
-            .sq, .tj{
-                padding: 2px 5px;
-            }
-            .wen{
-                margin-left: 41%;
-                bottom: 8px;
-            }
-            .chuwen{
-                width: 108%;
-            }
-            .chuwen{
-                top: -91px;
-                left: -15px;
-            }
-
-
         }
-        .tj{
-            position: absolute;
-            right: 10px;
-        }
-
     </style>
 </head>
 <body>
 <div class="all" id="all">
     <div class="wan" id="all1">
-        <div class="Recharge">
-            <img class="jiabg" src="img/cz.png" alt="">
+        <div class="task">
+            <img class="jiabg" src="img/task.png" alt="">
             <div class="close">
                 <img src="img/close.png" alt="">
             </div>
-            <div class="Recharge1">
-                <div class="Rechargeleft">
-                    <div>ETH充值</div>
-                    <div>ETH提币</div>
-                </div>
-                <div class="Rechargeright">
-                    <div class="Rechargetop">
-                            <div class="er">二维码</div>
-                            <p>ETH充值地址:</p>
-                            <p>...............</p>
-                            <div class="copy">复制地址</div>
-                            <div class="wen1">
-                                <span>?</span>
+            <div class="task1">
+                    <div class="taskleft">
+                        <div>邀请好友</div>
+                        <div>累计奖励</div>
+                    </div>
+                    <div class="taskright">
+                        <div class="tasktop">
+                            <div>
+                                <p>成功邀请3位好友加入</p>
+                                <span>洗髓丹碎片</span>
+                                <strong>未达成</strong>
                             </div>
-                        <div class="chuwen1">
-                            <img src="img/ti.png" alt="">
-                            <p>
-                                温馨提示：
-                            </p>
-                            <p>
-                                1、切勿向此地址转入非ETH资产，否则会发生丢失
-                            </p>
-                            <p>
-                                2、转入大额前，可先尝试转入小金额以保无误。
-                            </p>
-                            <p>
-                                3、最低充值0.01ETH,低于此金额将不被处理。
-                            </p>
+                            <div>
+                                <p>成功邀请10位好友加入</p>
+                                <span style="background:rgb(241, 145, 73)">洗髓丹碎片</span>
+                                <strong>未达成</strong>
+                            </div>
+                            <div>
+                                <p>成功邀请50位好友加入</p>
+                                <span style="background:rgb(241, 158, 194)">洗髓丹碎片</span>
+                                <strong>未达成</strong>
+                            </div>
+                            <div>
+                                <p>成功邀请100位好友加入</p>
+                                <span style="background:rgb(108, 219, 227)">洗髓丹碎片</span>
+                                <strong>未达成</strong>
+                            </div>
+                            <div>
+                                <p>成功邀请200位好友加入</p>
+                                <span style="background:rgb(63, 112, 249)">洗髓丹碎片</span>
+                                <strong>未达成</strong>
+                            </div>
+                            <div>
+                                <p>成功邀请500位好友加入</p>
+                                <span style="background:rgb(143, 130, 188)">洗髓丹碎片</span>
+                                <strong>未达成</strong>
+                            </div>
+                            <div>
+                                <p>成功邀请1000位好友加入</p>
+                                <span style="padding: 8px 0;top: 8px;">洗髓丹</span>
+                                <strong>未达成</strong>
+                            </div>
                         </div>
-                            <div class="jilv">充值记录</div>
-                    </div>
-                    <div class="Rechargebtn">
-                        <form action="">
-                            <label for="">
-                                <span>接受地址:</span>
-                                <input type="text" placeholder="输入正确的ETH地址">
-                            </label>
-                            <label for="">
-                                <span>提币数量:</span>
-                                <input type="text" placeholder="ETH余额">
-                            </label>
-                            <label for="">
-                                <span>支付密码:</span>
-                                <input type="text" placeholder="密码">
-                            </label>
-                            <label for="">
-                                <span>验证码:</span>
-                                <input type="text" placeholder="验证码">
-                                <strong>获取验证码</strong>
-                            </label>
-                            <div class="sq">提交申请</div>
-                            <div class="wen">
-                                <span>?</span>
+                        <div class="taskbtn">
+                            <div>
+                                <p>累计ETH夺宝消费1ETH</p>
+                                <span>洗髓丹</span>
+                                <strong>未达成</strong>
                             </div>
-                            <div class="chuwen">
-                                <img src="img/ti.png" alt="">
-                                <p>
-                                    温馨提示：
-                                </p>
-                                <p>
-                                    1、请确认您的接受地址，一旦出错，将无法找回。
-                                </p>
-                                <p>
-                                    2、最低提现0.1个ETH,提现0.1~0.5个(不含)手续费6%，0.5~2个(不含)手续费4%，2~3个(不含)
-                                    手续费2%，3个及以上手续费1%。
-                                </p>
-                                <p>
-                                    3、提交申请后，我们会在2个工作日(不含节假日)内审核，审核通过后会尽快
-                                    为你广播转账至网络。
-                                </p>
+                            <div>
+                                <p>累计ETH夺宝消费5ETH</p>
+                                <span>洗髓丹</span>
+                                <strong>未达成</strong>
                             </div>
-                            <div class="tj">提币记录</div>
-                        </form>
+                            <div>
+                                <p>累计ETH夺宝消费10ETH</p>
+                                <span>洗髓丹</span>
+                                <strong>未达成</strong>
+                            </div>
+                            <div>
+                                <p>累计ETH夺宝消费20ETH</p>
+                                <span>洗髓丹</span>
+                                <strong>未达成</strong>
+                            </div>
+                            <div>
+                                <p>累计ETH夺宝消费30ETH</p>
+                                <span>洗髓丹</span>
+                                <strong>未达成</strong>
+                            </div>
+                            <div>
+                                <p>累计ETH夺宝消费50ETH</p>
+                                <span>洗髓丹</span>
+                                <strong>未达成</strong>
+                            </div>
+                        </div>
                     </div>
-                </div>
 
             </div>
             <div class="tishi">
@@ -510,41 +357,18 @@
 <script src="js/index.js"></script>
 <script>
 
-    var Rechargeleft=document.querySelectorAll('.Rechargeleft div');
-    var wenspan=document.querySelector('.wen span');
-    var wen1span=document.querySelector('.wen1 span');
-    var Rechargeright=document.querySelectorAll('.Rechargeright>div');
-    for(var i=0;i<Rechargeleft.length;i++){
-        Rechargeleft[i].index=i;
-        Rechargeleft[i].onclick=function(){
-            for(var i=0;i<Rechargeleft.length;i++){
-                Rechargeleft[i].style.background='#448aca';
-                Rechargeright[i].style.display='none'
+    var taskleft=document.querySelectorAll('.taskleft div');
+    var taskright=document.querySelectorAll('.taskright>div');
+    for(var i=0;i<taskleft.length;i++){
+        taskleft[i].index=i;
+        taskleft[i].onclick=function(){
+            for(var i=0;i<taskleft.length;i++){
+                taskleft[i].style.background='#448aca';
+                taskright[i].style.display='none'
             }
-            Rechargeleft[this.index].style.background='#7ecef4';
-            Rechargeright[this.index].style.display='block';
-            if(document.querySelector('.Rechargebtn').style.display=='block'){
-                setTimeout(function () {
-                    document.querySelector('.chuwen').style.display='none'
-                },4000)
-            }
+            taskleft[this.index].style.background='#7ecef4';
+            taskright[this.index].style.display='block'
         }
-    }
-wenspan.onclick=function(){
-    document.querySelector('.chuwen').style.display='block'
-    setTimeout(function () {
-        document.querySelector('.chuwen').style.display='none'
-    },4000)
-}
-    setTimeout(function () {
-        document.querySelector('.chuwen1').style.display='none'
-    },4000)
-
-    wen1span.onclick=function(){
-        document.querySelector('.chuwen1').style.display='block'
-        setTimeout(function () {
-            document.querySelector('.chuwen1').style.display='none'
-        },4000)
     }
 </script>
 </body>
