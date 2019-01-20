@@ -64,7 +64,7 @@
             display: none;
         }
         .tishii{
-            width: 66%;
+            width: 70%;
             height: 53%;
             left: 15%;
             top: 25%;
@@ -730,22 +730,22 @@
             content: '';
             clear: both;
         }
-/*          @media screen and (max-width: 800px) {
+        @media screen and (max-width: 800px) {
             .tishii{
                 height: 50%;
             }
         }
         @media screen and (max-width: 700px) {
-             .tishii{
+            .tishii{
                 height: 53%;
-            } 
-        }  */
+            }
+        }
         @media screen and (max-width:650px) {
             .recorddiv span{
                 padding: 2px 3px;
             }
             .recorddiv p{
-                width: 50%;
+                width: 53%;
             }
             .tishi span{
                 top: 33%;
@@ -767,12 +767,12 @@
                 width: 75%;
                 left: 12.5%;
             }
-/*             .tishii{
+            .tishii{
                 height: 55%;
             }
             .tishi{
                 width: 50%;
-            } */
+            }
         }
     </style>
 </head>
@@ -1256,4 +1256,197 @@
                         var pep=document.querySelector('.pep')
                         col.innerHTML='';
                         pep.innerHTML='';
-                    
+                    },3000)
+                }else if(this.index==0){
+                    qii.style.background='#fff';
+                }else if(this.index==1) {
+                    qii.style.background = '#f19149';
+                }else if(this.index==2){
+                    qii.style.background='#f19ec2';
+                }else if(this.index==3){
+                        qii.style.background='#6cdbe3';
+                    }
+            }
+
+            if(wui=='紫珍珠'){
+                if(this.index==5){
+                    qii.style.background='#fff';
+                    document.querySelector('.tishi').style.display='block'
+                    var col=document.querySelector('.col')
+                    var pep=document.querySelector('.pep')
+                    col.innerHTML='低等级珍珠不能';
+                    pep.innerHTML='拍卖高等级珍珠';
+                    setTimeout(function () {
+                        document.querySelector('.tishi').style.display='none'
+                        var col=document.querySelector('.col')
+                        var pep=document.querySelector('.pep')
+                        col.innerHTML='';
+                        pep.innerHTML='';
+                    },3000)
+                }else if(this.index==0){
+                    qii.style.background='#fff';
+                }else if(this.index==1) {
+                    qii.style.background = '#f19149';
+                }else if(this.index==2){
+                    qii.style.background='#f19ec2';
+                }else if(this.index==3){
+                    qii.style.background='#6cdbe3';
+                }else if(this.index==4){
+                        qii.style.background='#3f70f9';
+                    }
+            }
+            // if(this.index==0){
+            //     qii.style.background='#fff';
+            // }else if(this.index==1){
+            //     qii.style.background='#f19149';
+            // }else if(this.index==2){
+            //     qii.style.background='#f19ec2';
+            // }else if(this.index==3){
+            //     qii.style.background='#6cdbe3';
+            // }else if(this.index==4){
+            //     qii.style.background='#3f70f9';
+            // }else if(this.index==5){
+            //     qii.style.background='#8f82bc';
+            // }
+
+            qiu.style.display='none'
+        }
+    }
+
+    var maii=document.querySelectorAll('.mai i');
+    for(var ii=0;ii<maii.length;ii++){
+        maii[ii].index=ii;
+        maii[ii].onclick=function(){
+            for(var ii=0;ii<maii.length;ii++){
+                maii[ii].style.background='#d7bda2'
+            }
+            maii[this.index].style.background='#f19149'
+        }
+    }
+    document.querySelector('.kai strong').onclick=function(){
+        document.querySelector('.kai div').style.display='block';
+        setTimeout(function () {
+            document.querySelector('.kai div').style.display='none';
+        },3000)
+    }
+
+
+    function bb(one,one1){
+        var baoxi=document.querySelectorAll(one);
+        var baob=document.querySelectorAll(one1);
+        for(var b=0;b<baob.length;b++){
+            if(baob[b].innerHTML=='粉色'){
+                baoxi[b].style.background='#f19ec2'
+            }else if(baob[b].innerHTML=='橙色'){
+                baoxi[b].style.background='#f19149'
+            }else if(baob[b].innerHTML=='青色'){
+                baoxi[b].style.background='#6cdbe3'
+            }else if(baob[b].innerHTML=='蓝色'){
+                baoxi[b].style.background='#3f70f9'
+            }else if(baob[b].innerHTML=='紫色'){
+                baoxi[b].style.background='#8f82bc'
+            }else if(baob[b].innerHTML=='白色'){
+                baoxi[b].style.background='#fff'
+            }
+        }
+    }
+    bb('.baox i','.baox b')
+    bb('.pai i','.pai b')
+    bb('.zui i','.zui b')
+    var baox=document.querySelectorAll('.baox');
+    for(var x=0;x<baox.length;x++){
+        baox[x].index=x;
+        baox[x].onclick=function(){
+            var bf=this.querySelector('b');
+            var wu=document.querySelector('.wu')
+            document.querySelector('.qi i').style.background='#fff'
+            if(bf.innerHTML=='粉色'){
+                wu.innerHTML='<i></i>粉珍珠'
+                document.querySelector('.wu i').style.background='#f19ec2'
+            }else if(bf.innerHTML=='橙色'){
+                wu.innerHTML='<i></i>橙珍珠'
+                document.querySelector('.wu i').style.background='#f19149'
+            }else if(bf.innerHTML=='青色'){
+                wu.innerHTML='<i></i>青珍珠'
+                document.querySelector('.wu i').style.background='#6cdbe3'
+            }else if(bf.innerHTML=='蓝色'){
+                wu.innerHTML='<i></i>蓝珍珠'
+                document.querySelector('.wu i').style.background='#3f70f9'
+            }else if(bf.innerHTML=='紫色'){
+                wu.innerHTML='<i></i>紫珍珠'
+                document.querySelector('.wu i').style.background='#8f82bc'
+            }
+        }
+    }
+
+    var shuinput=document.querySelector('.shu input');
+    var jian=document.querySelector('.jian');
+    var jia=document.querySelector('.jia');
+
+    jian.onclick=function(){
+        if(shuinput.value==1){
+            shuinput.value=1
+        }else{
+            shuinput.value--
+        }
+    }
+    jia.onclick=function(){
+        shuinput.value++
+    }
+
+
+    var zhen=document.querySelectorAll('.zhen');
+    for(var zh=0;zh<zhen.length;zh++){
+        if(zhen[zh].innerHTML=='<i></i>粉珍珠'){
+            zhen[zh].querySelector('i').style.background='#f19ec2'
+        }else if(zhen[zh].innerHTML=='<i></i>橙珍珠'){
+            zhen[zh].querySelector('i').style.background='#f19149'
+        }else if(zhen[zh].innerHTML=='<i></i>青珍珠'){
+            zhen[zh].querySelector('i').style.background='#6cdbe3'
+        }else if(zhen[zh].innerHTML=='<i></i>蓝珍珠'){
+            zhen[zh].querySelector('i').style.background='#3f70f9'
+        }else if(zhen[zh].innerHTML=='<i></i>紫珍珠'){
+            zhen[zh].querySelector('i').style.background='#8f82bc'
+        }else if(zhen[zh].innerHTML=='<i></i>洗髓丹碎片'){
+            zhen[zh].removeChild(zhen[zh].querySelector('i'))
+            var sui=document.createElement('b');
+            zhen[zh].prepend(sui)
+        }
+    }
+
+$('.tishimg').click(function () {
+    $('.tishi').css('display','none')
+})
+
+    $('.tishimgi').click(function () {
+        $('.tishii').css('display','none')
+    })
+    $('.tishi1').click(function () {
+        $('.tishii').css('display','none')
+    })
+    $('.tishi2').click(function () {
+        $('.tishi').css('display','none')
+    })
+
+    var recorddiv=document.querySelectorAll('.recorddiv');
+    for(var r=0;r<recorddiv.length;r++){
+        var re=recorddiv[r].querySelectorAll('span')[1];
+        var re1=recorddiv[r].querySelectorAll('span')[0];
+        re.onclick=function(){
+            $('.tishii').css('display','block')
+        }
+        re1.onclick=function(){
+            document.querySelector('.tishi').style.display='block'
+            var col=document.querySelector('.col')
+            var pep=document.querySelector('.pep')
+            col.innerHTML='撤回此订单将不在进行拍卖，';
+            pep.innerHTML='确认撤回？';
+        }
+    }
+
+
+
+</script>
+</body>
+</html>
+
