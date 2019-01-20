@@ -64,6 +64,14 @@ window.onload=function(){
     }
      
      
+     if(document.querySelector('.diao')){
+        if(window.innerHeight<820&&window.innerHeight>750&&window.innerWidth==375){
+            document.querySelector('.diao').style.width='60%'
+            document.querySelector('.diao').style.left='20%'
+        }
+    }
+     
+     
 }
 
 $('input').click(function() {
