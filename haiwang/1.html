@@ -21,16 +21,15 @@
             width: 100%;
             height: 100%;
         }
-       
-        input{
-            outline:none;
-        }
-        .diao{
-            width: 60%;
+        .home{
+            width: 74%;
             position: absolute;
-            left: 20%;
+            left: 13%;
             top: 2.3%;
             height: 95%;
+        }
+        .close{
+
         }
         .close img{
             width: 7%;
@@ -39,16 +38,63 @@
             margin-left: 92.5%;
             top: 12px;
         }
-        .diao .jiabg{
+        .home .jiabg{
             width: 100%;
             position: absolute;
         }
-        .cw{
-            width: 11%;
-            position: absolute;
-            left: 45%;
-            top: 12px;
+        .home1{
+            width: 33%;
+            float: left;
+            padding:2px 5px;
+            text-align: center;
+            position: relative;
         }
+        .bighome{
+            position: absolute;
+            top: 50px;
+            left: 7%;
+            width:86%;
+            overflow-x: hidden;
+            overflow-y: scroll;
+            padding-top: 10px;
+        }
+        .bighome::after{
+            display: table;
+            content: '';
+            clear: both;
+        }
+        .bighome::-webkit-scrollbar {
+            display: none;
+        }
+
+        .home1 .img{
+            width: 100%;
+            height: 100%;
+        }
+        .home1 .img1{
+            width: 98%;
+            /* height: 100%; */
+            position: absolute;
+            z-index: 99;
+            left: 0%;
+            top: 11%;
+        }
+        .home1 p{
+            font-size: 0.1rem;
+            overflow: hidden;
+            text-overflow:ellipsis;
+            white-space: nowrap;
+        }
+        .home1 .homespan {
+            font-size: 0.1rem;
+            display: inline-block;
+            background: url(img/jiesuo.png) no-repeat center center;
+            background-size: contain;
+            width: 60%;
+            height: 45px;
+            line-height: 37px;
+        }
+
         .tishi{
             position: absolute;
             width: 54%;
@@ -63,7 +109,6 @@
             font-size:14px;
             color: #000;
             display: none;
-
         }
         .tishi span{
             font-weight: bold;
@@ -79,163 +124,40 @@
             width: 30px;
             height: 30px;
             position: absolute;
-            right: 3px;
+            position: absolute;
+            right: 15px;
             top: -10px;
         }
-        @media screen and (max-width:570px) {
-            .diao {
-                top: 40px;
-            }
-
-            .chongright p {
-                padding-top: 2px;
-            }
-
-            .shi {
-                padding-top: 2%;
-            }
-
-            .shi .yu, .shi .xia {
-                padding: 2px;
-            }
-
-            .xia div, .yu div {
-                font-size: 12px;
-            }
-        }
-        @media screen and (max-width:750px) {
-            .diao {
-                width: 70%;
-                position: absolute;
-                left: 15%;
-                top: 2.3%;
-                height: 95%;
-            }
-        }
-        @media screen and (max-width: 700px) {
-            .diao {
-                width: 74%;
-                position: absolute;
-                left: 13%;
-                top: 2.3%;
-                height: 95%;
-            }
-        }
-        .diao1{
-            position: absolute;
-            top: 60px;
-            left: 7%;
-            width: 86%;
-            height: 70%;
-        }
-        .diao1 img{
-            width: 74%;
-            position: absolute;
-            left: 13%;
+        .tishic{
+            width: 26%;
             margin: auto;
-        }
-        .littleyu,.littlexia{
-            position: absolute;
-            right: 12%;
-            bottom: 60px;
-            font-size: 12px;
-        }
-        .littlexia{
-            bottom: 40px;
-        }
-        .login,.time{
-            background: #f19149;
-            font-size: 14px;
-            position: absolute;
-            bottom: 3px;
-            left: 20%;
-            padding: 3px 10px;
-            border-radius: 5px;
-        }
-        .time{
-            left: 55%;
-        }
-        .yugan{
-            position: absolute;
-            top: 0;
-            left: -150%;
-            width:55%;
-            transition: .5s;
-        }
-        .yugan img:nth-of-type(1){
-            width:74%;
-            left: 14px;
-        }
-        /*.yugan img:nth-of-type(2){*/
-            /*width: 13%;*/
-            /*position: absolute;*/
-            /*left: 29%;*/
-            /*top: 105px;*/
-        /*}*/
-
-        .yugan img:nth-of-type(2){
-            width: 1px;
-            position: absolute;
-            left: 77%;
-            top: 5px;
-            height: 10px;
-        }
-        .yugan img:nth-of-type(3){
-            width: 13px;
-            position: absolute;
-            left: 75%;
-            top: 13px;
-        }
-
-        .tishi{
-            position: absolute;
-            width: 54%;
-            top: 30%;
-            left: 23%;
-            background: url("img/tan.png") no-repeat;
-            background-size: contain;
-            height: 44%;
-            line-height: 40%;
-            padding: 10px;
-            z-index: 999999;
-            font-size:14px;
-            color: #000;
-            display: none;
-
-        }
-        .tishi span{
-            font-weight: bold;
-            text-align: center;
-            display: block;
-            /* line-height: 10em; */
             position: relative;
-            top: 40%;
-            height: 20px;
-
+            top: 44%;
+            left: 12%;
         }
-        .tishi .tishimg{
-            width: 30px;
-            height: 30px;
-            position: absolute;
-            right: 3px;
-            top: -10px;
+        .tishic1{
+            left: 33%;
         }
         .tishi1{
-            background: #c3a583;
-            width: 30%;
-            position: absolute;
-            bottom: 20px;
-            left: 35%;
-            padding:8px 0;
-            font-size: 12px;
-            text-align: center;
-            margin: auto;
-            z-index: 999;
-            border-radius: 5px;
+            position: relative;
+            width: 100%;
+            height: 100%;
         }
-        @media screen and (max-width: 600px) {
-            .yugan img:nth-of-type(2){
-                left: 79%;
+        @media screen and (max-width:600px) {
+            .bighome {
+                position: absolute;
+                top: 50px;
+                left: 7%;
+                width: 86%;
+                overflow-x: hidden;
+                overflow-y: scroll;
+                padding-top: 10px;
+            }
+            .tishi span{
+                top: 34%;
+            }
+            .tishic{
+                top: 31%;
             }
         }
     </style>
@@ -243,221 +165,113 @@
 <body>
 <div class="all" id="all">
     <div class="wan" id="all1">
-        <div class="diao">
-            <img class="jiabg" src="img/chong.png" alt="">
-            <img class="cw" src="img/shui.png">
+    <div class="home">
+        <img class="jiabg" src="img/jiabg.png" alt="">
             <div class="close">
                 <img src="img/close.png" alt="">
             </div>
-            <div class="diao1">
-                <img src="img/fish.png" alt="">
-                <div class="littleyu">小鱼拥有：<span>0</span></div>
-                <div class="littlexia">小虾拥有：<span>0</span></div>
-                <div class="login">开始垂钓</div>
-                <div class="time">00:00:00</div>
-                <div class="yugan">
-                    <img src="img/yugan.png" alt="">
-                    <img src="img/yuxian.png" alt="">
-                    <img src="img/gou.png" alt="">
-                </div>
+        <div class="bighome">
+            <div class="home1">
+                <img class="img" src="img/wirth.png" alt="">
+                <p>可容纳一个白色蚌壳</p>
+                <p>蚌壳每五个小时产出1颗珍珠</p>
+                <span  class="homespan">正在使用</span>
             </div>
-            <div class="tishi">
-                <img class="tishimg" src="img/close.png" alt="">
-                <span class="col"></span>
-                <span class="pep"></span>
-                <div class="tishi1">
-                    确认
-                </div>
+            <div class="home1">
+                <img class="img"  src="img/orgent.png" alt="">
+                <img class="img1"  src="img/suo.png" alt="">
+                <p>可容纳1个橙蚌壳</p>
+                <p>蚌壳每六小时产出1颗<span>橙</span>色珍珠</p>
+                <span class="homespan">解锁</span>
+            </div>
+            <div class="home1">
+                <img class="img"  src="img/pick.png" alt="">
+                <img class="img1"  src="img/suo.png" alt="">
+                <p>可容纳1个红色蚌壳</p>
+                <p>蚌壳每六小时产出1颗<span>红</span>色珍珠</p>
+                <span class="homespan">解锁</span>
+            </div>
+            <div class="home1">
+                <img class="img"  src="img/green.png" alt="">
+                <img class="img1"  src="img/suo.png" alt="">
+                <p>可容纳1个青蚌壳</p>
+                <p>蚌壳每八小时产出1颗<span>青</span>色珍珠</p>
+                <span class="homespan">解锁</span>
+            </div>
+            <div class="home1">
+                <img class="img"  src="img/blue.png" alt="">
+                <img class="img1"  src="img/suo.png" alt="">
+                <p>可容纳1个蓝蚌壳</p>
+                <p>蚌壳每九小时产出1颗<span>蓝</span>色珍珠</p>
+                <span class="homespan">解锁</span>
+            </div>
+            <div class="home1">
+                <img class="img"  src="img/pinck.png" alt="">
+                <img class="img1"  src="img/suo.png" alt="">
+                <p>可容纳1个紫蚌壳</p>
+                <p>蚌壳每十小时产出1颗<span>紫</span>色珍珠</p>
+                <span class="homespan">解锁</span>
             </div>
         </div>
+        <div class="tishi">
+            <img class="tishimg" src="img/close.png" alt="">
+            <span class="col">需要支付55个白色珍珠或</span>
+            <span class="pep">成功邀请5人即可解锁</span>
+            <div class="tishi1">
+                <img class="tishic" src="img/zhen.png" alt="">
+                <img class="tishic tishic1" src="img/yao.png" alt="">
+            </div>
+        </div>
+
+    </div>
     </div>
 </div>
 <script src="js/jquery-3.3.1.js"></script>
 <script src="js/index.js"></script>
 <script>
-    var login=document.querySelector('.login');
-    var yugan=document.querySelector('.yugan');
-    var time=document.querySelector('.time');
-    var yuganimg=document.querySelectorAll('.yugan img');
-    yuganimg[1].style.height='14px';
-    function diaoyu(){
-        yuganimg[2].style.opacity='0';
-        var fen=0;
-        var miao=0;
-        function RandomNumBoth(){
-            var num1 = Math.floor(Math.random()*(1 - 59) + 59);
-            var num2 = Math.floor(Math.random()*(3 - 7) + 7);
-            if(num1<=9){
-                num1='0'+num1;
-            }
-            var num=num2+''+num1
-            return num;
-        }
-        var sui=RandomNumBoth();
-        sui='0'+sui
-        console.log(sui)
-        var tt=setInterval(function () {
-            miao++;
-            if(miao==60){
-                miao=0;
-                fen=Number(fen+1);
-            }
-            if(miao<=9){
-                miao='0'+miao;
-            }
-            time.innerHTML='00:'+'0'+fen+':'+miao;
-            if(sui=='0'+fen+miao){
-                clearInterval(tt)
-                function prizeRand1(oArr1) {
-                    var sum = 0;
-                    var rand = 0;
-                    var result = 0;
-                    for (var i in oArr1) {
-                        sum += oArr1[i][0];
-                    }
-                    for (var i in oArr1) {
-                        rand = Math.floor(Math.random()*sum + 1);
-                        if (oArr1[i][0] >= rand) {
-                            result = oArr1[i][0];
-                            break;
-                        } else {
-                            sum -= oArr1[i][0];
-                        }
-                    }
-                    return result;
-                }
-                var oArr1 = {'0':[20, ''], '1':[10, ''], '2':[70, '']};
-                var num3=prizeRand1(oArr1);
-                console.log(num3)
-                var nn=139;
-                var n1=setInterval(function () {
-                    if(yuganimg[2].style.top=='135px'){
-                        yuganimg[2].style.opacity='0.5'
-                    }
-                    if(yuganimg[2].style.top=='130px'){
-                        yuganimg[2].style.opacity='0.3'
-                    }
-                    if(yuganimg[2].style.top=='120px'){
-                        yuganimg[2].style.opacity='1'
-                    }
-                    if(num3==20){
-                        yuganimg[1].style.height=nn+'px';
-                        yuganimg[2].style.top=Number(nn+5)+'px';
-                        yuganimg[2].src='img/gou.png';
-                        yuganimg[2].style.width='13px';
-                        yuganimg[2].style.left='75%';
-                       // yuganimg[2].style.opacity='1';
-                        if( yuganimg[2].style.top=='4px'){
-                            document.querySelector('.tishi').style.display='block'
-                            var col=document.querySelector('.col')
-                            var pep=document.querySelectorAll('.pep')
-                            col.innerHTML='很遗憾没有钓到小鱼/小虾，';
-                            pep.innerHTML='';
-                            setTimeout(function () {
-                                document.querySelector('.tishi').style.display='none'
-                                col.innerHTML='';
-                                pep.innerHTML='';
-                            },2000)
-                        }
-                    }else if(num3==10){
-                        yuganimg[1].style.height=nn+'px';
-                        yuganimg[2].style.top=Number(nn+5)+'px';
-                        yuganimg[2].src='img/xiaoyu.png';
-                        yuganimg[2].style.left='75%';
-                        yuganimg[2].style.width='25px';
-                        //yuganimg[2].style.opacity='1';
-                        if( yuganimg[1].style.height=='14px'){
-                            document.querySelector('.tishi').style.display='block'
-                            var col=document.querySelector('.col')
-                            var pep=document.querySelectorAll('.pep')
-                            col.innerHTML='恭喜您！钓到小鱼';
-                            pep.innerHTML='';
-                            setTimeout(function () {
-                                document.querySelector('.tishi').style.display='none'
-                                document.querySelector('.littleyu span').innerHTML++;
-                                yuganimg[2].src='img/gou.png';
-                                yuganimg[2].style.width='13px';
-                                yuganimg[2].style.left='75%';
-                                col.innerHTML='';
-                                pep.innerHTML='';
-                            },2000)
-                        }
-                    }else if(num3==70){
-                        yuganimg[1].style.height=nn+'px';
-                        yuganimg[2].style.top=Number(nn-10)+'px';
-                        yuganimg[2].style.left='68%';
-                        yuganimg[2].src='img/xiaoxia.png';
-                        yuganimg[2].style.width='25px';
-                        //yuganimg[2].style.opacity='1';
-                        if( yuganimg[1].style.height=='14px'){
-                            document.querySelector('.tishi').style.display='block'
-                            var col=document.querySelector('.col')
-                            var pep=document.querySelectorAll('.pep')
-                            col.innerHTML='恭喜您！钓到小虾';
-                            pep.innerHTML='';
-                            setTimeout(function () {
-                                document.querySelector('.tishi').style.display='none'
-                                document.querySelector('.littlexia span').innerHTML++;
-                                yuganimg[2].src='img/gou.png';
-                                yuganimg[2].style.width='13px';
-                                yuganimg[2].style.left='75%';
-                                col.innerHTML='';
-                                pep.innerHTML='';
-                            },2000)
-                        }
-                    }
-                    nn--;
-                    if(nn==13){
-                        clearInterval(n1)
-                        nn=13
-                    }
-                },30)
 
+    var homespan=document.querySelectorAll('.homespan');
+    for(var i=0;i<homespan.length;i++){
+        homespan[i].onclick=function(){
 
-            }
-        },1000)
-    }
-    login.onclick=function(){
-        console.log(yuganimg[2].style.top)
-        if(yuganimg[1].style.height!='14px'){
+            var ff=this.parentNode;
+            var ff1=ff.previousElementSibling;
+            var ff1=ff1.lastElementChild;
+            console.log(ff1.innerHTML)
             document.querySelector('.tishi').style.display='block'
+            var ps=this.previousElementSibling;
+            var ps1=ps.querySelector('span');
             var col=document.querySelector('.col')
-            var pep=document.querySelectorAll('.pep')
-            col.innerHTML='已经开始为您垂钓，';
-            pep.innerHTML='请不要重复垂钓';
-            setTimeout(function () {
-                document.querySelector('.tishi').style.display='none'
-                col.innerHTML='';
-                pep.innerHTML='';
-            },2000)
-        }else if(yuganimg[1].style.height=='14px'){
-            var num=10;
-            yugan.style.left='0';
-            var t=setInterval(function () {
-                yuganimg[1].style.height=num+'px';
-                yuganimg[2].style.top=Number(num+5)+'px';
-                num++
-                if(yuganimg[2].style.top=='134px'){
-                    yuganimg[2].style.opacity='0.5'
+            var pep=document.querySelector('.pep')
+            if(this.innerHTML=='解锁'&&ff1.innerHTML=='正在使用'){
+                $('.tishi1').css('display','block')
+                if(ps1.innerHTML=='橙'){
+                    col.innerHTML='需要支付55个白色珍珠或'
+                    pep.innerHTML='成功邀请5人即可解锁'
+                }else if(ps1.innerHTML=='红'){
+                    col.innerHTML='需要支付55个橙色珍珠或'
+                    pep.innerHTML='成功邀请15人即可解锁'
+                }else if(ps1.innerHTML=='青'){
+                    col.innerHTML='需要支付55个红色珍珠或'
+                    pep.innerHTML='成功邀请30人即可解锁'
+                }else if(ps1.innerHTML=='蓝'){
+                    col.innerHTML='需要支付55个青色珍珠或'
+                    pep.innerHTML='成功邀请90人即可解锁'
+                }else if(ps1.innerHTML=='紫'){
+                    col.innerHTML='需要支付55个青色珍珠或'
+                    pep.innerHTML='成功邀请180人即可解锁'
                 }
-                if(yuganimg[2].style.top=='140px'){
-                    yuganimg[2].style.opacity='0.3'
-                }
-                if(yuganimg[2].style.top=='144px'){
-                    num=144;
-                    clearInterval(t)
-                    diaoyu()
-                }
-                if(window.innerWidth<600){
-                    if(yuganimg[2].style.top=='120px'){
-                        num=144;
-                        clearInterval(t)
-                        diaoyu()
-                    }
-                }
-            },30)
+            }else{
+                col.innerHTML='请按照顺序依次解锁'
+                pep.innerHTML=''
+                $('.tishi1').css('display','none')
+            }
+
         }
     }
+    $('.tishimg').click(function () {
+        $('.tishi').css('display','none')
+    })
 </script>
 </body>
 </html>
