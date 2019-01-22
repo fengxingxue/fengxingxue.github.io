@@ -4,6 +4,23 @@ var screen_width = width; //屏幕宽度
 var contentDOM = document.getElementById('all');//最大那个层转换
 var contentDOM1 = document.getElementById('all1');
 window.onload=function(){
+
+    if(width>height){
+        screen_width = width; //如果 是竖屏，灵感的宽度就等于屏高
+        contentDOM.style.width = width + 'px';
+        contentDOM.style.height = (height-40) + 'px';
+        contentDOM.style.top =  '0px';
+        contentDOM.style.left = '0px';
+        //contentDOM.style.transform = 'rotate(90deg)';
+
+        contentDOM1.style.width = width + 'px';
+        contentDOM1.style.height = (height-40)  + 'px';
+        contentDOM1.style.top = '0px';
+        contentDOM1.style.left =  '0px';
+
+    }
+
+
     if (width < height) {
         screen_width = height; //如果 是竖屏，灵感的宽度就等于屏高
         contentDOM.style.width = height + 'px';
@@ -20,6 +37,7 @@ window.onload=function(){
 
 
 
+
     var jiabg=document.querySelector('#all1')
     if(document.querySelector('.auction')){
         var bighome=document.querySelector('.auction .table-body')
@@ -29,35 +47,41 @@ window.onload=function(){
         var recordbtn=document.querySelector('.recordbtn');
         var recordbtn1=document.querySelector('.recordbtn1');
         var auction=document.querySelector('.auction');
-        bighome.style.height=Number(jiabg.offsetHeight-175)+'px';
+        bighome.style.height=Number(jiabg.offsetHeight-180)+'px';
         bao.style.height=Number(jiabg.offsetHeight-210)+'px';
         recordleft.style.height=Number(jiabg.offsetHeight-170)+'px';
         recordright.style.height=Number(jiabg.offsetHeight-170)+'px';
         recordbtn.style.height=Number(jiabg.offsetHeight-210)+'px';
         recordbtn1.style.height=Number(jiabg.offsetHeight-210)+'px';
-        if(window.innerHeight<820&&window.innerHeight>750&&window.innerWidth==375){
-            auction.style.width='60%'
-            auction.style.left='20%'
+        if(window.innerHeight==812||window.innerWidth==812){
+            if(window.innerWidth==375 || window.innerHeight==375){
+                auction.style.width='60%'
+                auction.style.left='20%'
+            }
         }
-        if(window.innerWidth<450){
-            bao.style.height=Number(jiabg.offsetHeight-240)+'px';
+        if(window.innerWidth<411||window.innerHeight<411){
+            bao.style.height=Number(jiabg.offsetHeight-220)+'px';
+            bighome.style.height=Number(jiabg.offsetHeight-150)+'px';
         }
     }
+
+
+
     if(document.querySelector('.chong')){
-        if(window.innerHeight<820&&window.innerHeight>750&&window.innerWidth==375){
+        if(window.innerHeight<820&&window.innerHeight>750&&window.innerWidth==375|| window.innerHeight==375){
             document.querySelector('.chong').style.width='60%'
             document.querySelector('.chong').style.left='20%'
         }
     }
     if(document.querySelector('.diao')){
-        if(window.innerHeight<820&&window.innerHeight>750&&window.innerWidth==375){
+        if(window.innerHeight<820&&window.innerHeight>750&&window.innerWidth==375|| window.innerHeight==375){
             document.querySelector('.diao').style.width='60%'
             document.querySelector('.diao').style.left='20%'
         }
     }
 
     if(document.querySelector('.home')){
-        if(window.innerHeight<820&&window.innerHeight>750&&window.innerWidth==375){
+        if(window.innerHeight<820&&window.innerHeight>750&&window.innerWidth==375|| window.innerHeight==375){
             document.querySelector('.home').style.width='60%'
             document.querySelector('.home').style.left='20%'
         }
@@ -68,7 +92,7 @@ window.onload=function(){
 
 
     if(document.querySelector('.king')){
-        if(window.innerHeight<820&&window.innerHeight>750&&window.innerWidth==375){
+        if(window.innerHeight<820&&window.innerHeight>750&&window.innerWidth==375|| window.innerHeight==375){
             document.querySelector('.king').style.width='60%'
             document.querySelector('.king').style.left='20%'
         }
@@ -76,7 +100,7 @@ window.onload=function(){
         var kkright=document.querySelector('.kkright')
         var kinghome=document.querySelector('.kinghome')
         tablebody.style.height=Number(jiabg.clientHeight-220)+'px';
-        kkright.style.height=Number(jiabg.clientHeight-150)+'px';
+        kkright.style.height=Number(jiabg.clientHeight-160)+'px';
         kinghome.style.height=Number(jiabg.clientHeight-220)+'px';
     }
 
@@ -84,46 +108,58 @@ window.onload=function(){
         var Indianaright=document.querySelector('.Indianaright')
         var Indiana=document.querySelector('.Indiana')
         var Indianar=document.querySelector('.Indianar')
+        var duo=document.querySelectorAll('.duo')
+        var Indianatop=document.querySelector('.Indianatop')
         Indianaright.style.height=Number(jiabg.offsetHeight-80)+'px';
         Indianar.style.height=Number(jiabg.offsetHeight-100)+'px';
-        if(window.innerHeight<820&&window.innerHeight>750&&window.innerWidth==375){
+        if(window.innerHeight<820&&window.innerHeight>750&&window.innerWidth==375|| window.innerHeight==375){
             Indiana.style.width='60%'
             Indiana.style.left='20%'
+            for(var i=0;i<duo.length;i++){
+                duo[i].style.margin='3% 4px'
+            }
+            Indianatop.style.margin='12% 0'
+        }
+        if(window.innerHeight<820&&window.innerHeight>750&&window.innerWidth==414|| window.innerHeight==414){
+            Indianar.style.height=Number(jiabg.offsetHeight-130)+'px';
+            for(var i=0;i<duo.length;i++){
+                duo[i].style.margin='4% 4px'
+            }
         }
     }
-    
-    
-    if(document.querySelector('.Rechargetop')){
+
+    if(document.querySelector('.Recharge')){
         var Rechargetop=document.querySelector('.Rechargetop')
         var Rechargebtn=document.querySelector('.Rechargebtn')
-        Rechargetop.style.height=Number(jiabg.clientHeight-200)+'px';
-        Rechargebtn.style.height=Number(jiabg.clientHeight-200)+'px';
-        if(window.innerWidth<825){
-            Rechargetop.style.height=Number(jiabg.clientHeight-220)+'px';
-            Rechargebtn.style.height=Number(jiabg.clientHeight-220)+'px';
+        var Recharge1=document.querySelector('.Recharge1')
+        Rechargetop.style.height=Number(jiabg.clientHeight-230)+'px';
+        Rechargebtn.style.height=Number(jiabg.clientHeight-230)+'px';
+        if(window.innerHeight<820&&window.innerHeight>750&&window.innerWidth==375|| window.innerHeight==375){
+            Rechargetop.style.height=Number(jiabg.clientHeight-170)+'px';
+            Rechargebtn.style.height=Number(jiabg.clientHeight-170)+'px';
+            Recharge1.style.top='45%';
         }
-        if(window.innerWidth<815){
-            Rechargetop.style.height=Number(jiabg.clientHeight-200)+'px';
-            Rechargebtn.style.height=Number(jiabg.clientHeight-200)+'px';
-        }
-        if(window.innerWidth<750){
-            Rechargetop.style.height=Number(jiabg.clientHeight-220)+'px';
-            Rechargebtn.style.height=Number(jiabg.clientHeight-220)+'px';
-        }
-        if(window.innerWidth<650){
-            Rechargetop.style.height=Number(jiabg.clientHeight-200)+'px';
-            Rechargebtn.style.height=Number(jiabg.clientHeight-200)+'px';
-        }
+        // if(window.innerWidth<815){
+        //     Rechargetop.style.height=Number(jiabg.clientHeight-200)+'px';
+        //     Rechargebtn.style.height=Number(jiabg.clientHeight-200)+'px';
+        // }
+        // if(window.innerWidth<750){
+        //     Rechargetop.style.height=Number(jiabg.clientHeight-220)+'px';
+        //     Rechargebtn.style.height=Number(jiabg.clientHeight-220)+'px';
+        // }
+        // if(window.innerWidth<650){
+        //     Rechargetop.style.height=Number(jiabg.clientHeight-200)+'px';
+        //     Rechargebtn.style.height=Number(jiabg.clientHeight-200)+'px';
+        // }
     }
-    
-     if(document.querySelector('.task')){
+    if(document.querySelector('.task')){
         var tasktop=document.querySelector('.tasktop')
         var taskbtn=document.querySelector('.taskbtn')
         tasktop.style.height=Number(jiabg.clientHeight-220)+'px';
         taskbtn.style.height=Number(jiabg.clientHeight-220)+'px';
-        if(window.innerHeight<820&&window.innerHeight>750&&window.innerWidth==375){
-            document.querySelector('.task').style.width='57%'
-            document.querySelector('.task').style.left='21.5%'
+        if(window.innerHeight<820&&window.innerHeight>750&&window.innerWidth==375|| window.innerHeight==375){
+            document.querySelector('.task').style.width='60%'
+            document.querySelector('.task').style.left='22.5%'
         }
         if(window.innerWidth<600){
             tasktop.style.height=Number(jiabg.clientHeight-190)+'px';
