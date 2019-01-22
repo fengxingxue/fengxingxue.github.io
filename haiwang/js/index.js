@@ -134,7 +134,7 @@ window.onload=function(){
         var Recharge1=document.querySelector('.Recharge1')
         Rechargetop.style.height=Number(jiabg.clientHeight-230)+'px';
         Rechargebtn.style.height=Number(jiabg.clientHeight-230)+'px';
-        if(window.innerHeight<820&&window.innerHeight>750&&window.innerWidth==375|| window.innerHeight==375){
+        if(window.innerHeight<820||window.innerHeight>750||window.innerWidth==375|| window.innerHeight==375){
             Rechargetop.style.height=Number(jiabg.clientHeight-170)+'px';
             Rechargebtn.style.height=Number(jiabg.clientHeight-170)+'px';
             Recharge1.style.top='45%';
