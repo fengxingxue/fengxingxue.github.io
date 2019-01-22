@@ -122,8 +122,8 @@ window.onload=function(){
         tasktop.style.height=Number(jiabg.clientHeight-220)+'px';
         taskbtn.style.height=Number(jiabg.clientHeight-220)+'px';
         if(window.innerHeight<820&&window.innerHeight>750&&window.innerWidth==375){
-            document.querySelector('.task').style.width='60%'
-            document.querySelector('.task').style.left='22%'
+            document.querySelector('.task').style.width='57%'
+            document.querySelector('.task').style.left='21.5%'
         }
         if(window.innerWidth<600){
             tasktop.style.height=Number(jiabg.clientHeight-190)+'px';
