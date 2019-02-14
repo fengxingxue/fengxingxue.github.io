@@ -1,0 +1,462 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1" />
+    <title>海王</title>
+    <meta name="viewport" content="width=device-width,initial-scale=1, maximum-scale=1, minimum-scale=1, user-scalable=no" />
+    <meta name="apple-mobile-web-app-capable" content="yes" />
+    <meta name="format-detection" content="telephone=no">
+    <style id="cssAnimation"></style>
+    <style>
+        *{
+            padding: 0;
+            margin: 0;
+            box-sizing: border-box;
+        }
+        .all{
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+        }
+        .kefu{
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+        }
+        .kefubg{
+            width: 100%;
+            height: 100%;
+            position: absolute;
+            top:0;
+            left: 0;
+        }
+        .kefunei{
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+        }
+        .kefufan{
+            position: absolute;
+            top: 3%;
+            left: 3%;
+        }
+        .kefn{
+            position: absolute;
+            left: 6%;
+            top: 20%;
+            width: 15%;
+        }
+        .kefudui{
+            position: absolute;
+            right: 0;
+            top: 16%;
+            width: 75%;
+            height: 67%;
+            overflow: scroll;
+        }
+        .kefudui::-webkit-scrollbar {
+            display: none;
+        }
+        .youxiren,.kefuren{
+            padding-right: 3%;
+            text-align: right;
+            width: 100%;
+            margin-bottom: 5%;
+        }
+        .kefuren{
+            text-align: left;
+            padding:0 0 0 3%;
+        }
+        .youxiren>img,.kefuren>img{
+            width: 10%;
+            position: relative;
+            right: 0;
+            float: right;
+            margin-left: 5%;
+        }
+        .kefuren>img{
+            float: left;
+            margin-left: 0;
+            margin-right: 5%;
+        }
+        .youxiren>p,.kefuren>p{
+            border:solid 1px #07518c;
+            background: #55b2e5;
+            color: #fff;
+            font-size: 1rem;
+            padding: 5px 10px;
+            border-radius: 4px;
+            float: right;
+            display: block;
+            margin-top: 10px;
+            max-width: 50%;
+            text-align: left;
+            word-wrap: break-word;
+            word-break: break-all;
+        }
+        .kefuren>p{
+            float: left;
+            background: #034c86;
+            border: solid 1px #00a0e9;
+            word-wrap: break-word;
+            word-break: break-all;
+        }
+        .youxiren>span{
+            display:block;
+            float: right;
+            position: relative;
+            top: 17px;
+            left: -1px;
+            border-width:10px 0 10px 10px;
+            border-style:solid;
+            border-color:transparent transparent transparent #07518c;/*透明 透明 透明 黄*/
+        }
+        .youxiren>span span{
+            display: inline-block;
+            position: absolute;
+            left: -10px;
+            top: -8px;
+            border-width:8px 0 8px 8px;
+            border-style:solid;
+            border-color:transparent transparent transparent #5ebced;/*透明 透明 透明 黄*/
+        }
+        .kefuren>span{
+            display: block;
+            float: left;
+            position: relative;
+            top: 17px;
+            left: 1px;
+            border-width:10px 10px 10px 0;
+            border-style: solid;
+            border-color:transparent #00a0e9 transparent transparent;
+        }
+        .kefuren>span span{
+            border-width:8px 8px 8px 0;
+            border-style:solid;
+            display: block;
+            position: absolute;
+            left: 2px;
+            top: -8px;
+            border-color:transparent #07518c transparent transparent;
+        }
+        .youxiren::after,.kefuren::after{
+            display: table;
+            content: '';
+             clear: both;
+        }
+        .kefuinput{
+            position: absolute;
+            left: 37%;
+            bottom: 0;
+            height: 16%;
+            width: 60%;
+        }
+        .kefuinput input{
+            background: #034c86;
+            border: solid 1px #00a0e9;
+            padding: 5px 10px;
+            color: #7690b0;
+            height: 70%;
+                margin-top: 2%;
+            width: 75%;
+            outline:none;
+        }
+
+        .kefuinput button{
+            background: #034c86;
+            border: solid 1px #00a0e9;
+            padding: 5px 25px;
+            border-radius: 5px;
+            color: #fff;
+            height: 70%;
+            outline:none;
+        }
+        .kefuinput input::-webkit-input-placeholder {
+            color: #7690b0;
+            font-size: 12px;
+        }
+        .tishi{
+            position: absolute;
+            width: 44%;
+            top: 30%;
+            left: 33%;
+            background: url(img/tan.png) no-repeat;
+            background-size: contain;
+            height: 44%;
+            line-height: 40%;
+            padding: 10px;
+            z-index: 999999;
+            font-size: 14px;
+            color: #000;
+             display: none;
+
+        }
+        .tishi span{
+            font-weight: bold;
+            text-align: center;
+            display: block;
+            /* line-height: 10em; */
+            position: relative;
+            top: 40%;
+            height: 20px;
+
+        }
+        .tishi .tishimg{
+            width: 30px;
+            height: 30px;
+            position: absolute;
+            right: 3px;
+            top: -10px;
+        }
+        .tishi1{
+            background: url(img/queren1.png) no-repeat center center;
+            width: 30%;
+            position: absolute;
+            bottom: 20px;
+            left: 35%;
+            padding: 9px 0 15px;
+            font-size: 12px;
+            text-align: center;
+            margin: auto;
+            z-index: 999;
+            border-radius: 5px;
+            background-size: contain;
+        }
+        @media screen and (max-width: 330px) {
+            .kefuinput input{
+                width: 70%;
+            }
+        }
+        @media screen and (max-height: 330px) {
+            .kefuinput input{
+                width: 70%;
+            }
+        }
+        .glass-container {
+            bottom: 0rem;
+            height: 7rem;
+            left: -10%;
+            position: absolute;
+            width: 25rem;
+        }
+        .bubble {
+            -webkit-animation: bubble 5s infinite, disappear 5s ease-in infinite, sideways 1s ease-in-out infinite alternate;
+            animation: bubble 5s infinite, disappear 5s ease-in infinite, sideways 1s ease-in-out infinite alternate;
+            background: radial-gradient(ellipse, rgba(255, 0, 0, 0) 20%, #FDFEFE);
+            border: 3px solid #FDFEFE;
+            border-radius: 50%;
+            position: absolute;
+            z-index: 4;
+        }
+        .bubble.-bubble1 {
+            height: 1rem;
+            left: 10rem;
+            top: 4rem;
+            width: 1rem;
+        }
+        .bubble.-bubble2 {
+            -webkit-animation-delay: 1s;
+            animation-delay: 1s;
+            height: 1rem;
+            left: 14rem;
+            top: 3rem;
+            width: 1rem;
+        }
+        .bubble.-bubble3 {
+            -webkit-animation-delay: 0.5s;
+            animation-delay: 0.5s;
+            height: 0.5rem;
+            left: 12rem;
+            top: 2rem;
+            width: 0.5rem;
+        }
+        .bubble.-bubble4 {
+            -webkit-animation-delay: 0.75s;
+            animation-delay: 0.75s;
+            height: 0.7rem;
+            left: 9rem;
+            top: 1rem;
+            width: 0.7rem;
+        }
+        .bubble.-bubble5 {
+            -webkit-animation-delay: 0.45s;
+            animation-delay: 0.45s;
+            height: 0.5rem;
+            left: 8rem;
+            top: 3.5rem;
+            width: 0.5rem;
+        }
+        @-webkit-keyframes bubble {
+            0% {
+                -webkit-transform: translateY(0);
+                transform: translateY(0);
+            }
+            100% {
+                -webkit-transform: translateY(-7rem);
+                transform: translateY(-7rem);
+            }
+        }
+
+        @keyframes bubble {
+            0% {
+                -webkit-transform: translateY(0);
+                transform: translateY(0);
+            }
+            100% {
+                -webkit-transform: translateY(-7rem);
+                transform: translateY(-7rem);
+            }
+        }
+        @-webkit-keyframes disappear {
+            0% {
+                opacity: 1;
+            }
+            100% {
+                opacity: 0;
+            }
+        }
+        @keyframes disappear {
+            0% {
+                opacity: 1;
+            }
+            100% {
+                opacity: 0;
+            }
+        }
+        @-webkit-keyframes sideways {
+            0% {
+                margin-left: 0px;
+            }
+            100% {
+                margin-left: 10px;
+            }
+        }
+        @keyframes sideways {
+            0% {
+                margin-left: 0px;
+            }
+            100% {
+                margin-left: 10px;
+            }
+        }
+
+    </style>
+</head>
+<body>
+<div class="all" id="all">
+    <div class="wan" id="all1">
+        <div class="kefu">
+            <img class="kefubg" src="img/kefu.png" alt="">
+            <div class="kefunei">
+                <img src="img/fan.png" alt="" class="kefufan">
+                <img src="img/kefun.png" alt="" class="kefn">
+                <div class="glass-container">
+                    <div class="bubble -bubble1"></div>
+                    <div class="bubble -bubble2"></div>
+                    <div class="bubble -bubble3"></div>
+                    <div class="bubble -bubble4"></div>
+                    <div class="bubble -bubble5"></div>
+                </div>
+                <div class="kefudui">
+                    <div class="youxiren">
+                        <img src="img/kefunan.png" alt="">
+                        <span> <span></span></span>
+
+                        <p>
+                            问题 问题 问题 问题 问题 问题 问题 问题 问题 问题 问题 问题 问题 问题
+                            问题 问题 问题 问题 问题 问题 问题 问题 问题 问题 问题 问题 问题 问题
+                        </p>
+
+                    </div>
+                    <div class="kefuren">
+                        <img src="img/kefuren.png" alt="">
+                        <span> <span></span></span>
+
+                        <p>
+                            答案 答案 答案 答案 答案 答案 答案 答案 答案 答案 答案 答案 答案 答案 答案
+                            答案答案答案 答案 答案 答案 答案 答案 答案 答案 答案 答案 答案 答案 答案 答案
+                        </p>
+                    </div>
+                </div>
+                <div class="kefuinput">
+                    <form action="" id="kfform"><input id="wenti" type="text" placeholder="请点击输入您的问题"></form>
+                    <button id="fasong">发 送</button>
+                </div>
+            </div>
+            <div class="tishi">
+                <img class="tishimg" src="img/close.png" alt="">
+                <span class="col"></span>
+                <div class="tishi1">
+                    确认
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+<script src="js/jquery-3.3.1.js"></script>
+<script src="js/index.js"></script>
+<script>
+var fasong=document.querySelector('#fasong');
+var wenti=document.querySelector('#wenti');
+var ketishi=document.querySelector('.kefu .tishi');
+var kecol=document.querySelector('.kefu .col');
+var kefudui=document.querySelector('.kefudui');
+setTimeout(function () {
+    document.querySelector('.kefudui').scrollTop =document.querySelector('.kefudui').scrollHeight;
+},100)
+function mykk(){
+    var mydiv=document.createElement('div');
+    mydiv.className='youxiren';
+    var myimg=document.createElement('img');
+    var myp=document.createElement('p');
+    var myspan=document.createElement('span');
+    var myspan1=document.createElement('span');
+    myimg.src='img/kefunan.png';
+    myp.innerHTML=wenti.value;
+    kefudui.append(mydiv);
+    mydiv.append(myimg)
+    mydiv.append(myspan)
+    myspan.append(myspan1)
+    mydiv.append(myp)
+    wenti.value=''
+    document.querySelector('.kefudui').scrollTop =document.querySelector('.kefudui').scrollHeight;
+}
+fasong.onclick=function(){
+    if(wenti.value==''){
+        console.log('ss')
+        ketishi.style.display='block';
+        kecol.innerHTML='问题不能为空';
+    }else{
+        mykk()
+    }
+}
+
+$('#wenti').bind('keyup', function(event) {
+    if (event.keyCode == "13") {
+        mykk()
+    }
+});
+var oForm =  document.querySelector('#kfform');
+oForm.onsubmit = function(){
+    // $scope.searchOrder();
+    mykk()
+};
+
+$('.kefu .tishi1').click(function () {
+    ketishi.style.display='none';
+    kecol.innerHTML='';
+})
+$('.kefu .tishimg').click(function () {
+    ketishi.style.display='none';
+    kecol.innerHTML='';
+})
+</script>
+</body>
+</html>
