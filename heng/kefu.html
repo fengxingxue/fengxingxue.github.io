@@ -14,12 +14,23 @@
             margin: 0;
             box-sizing: border-box;
         }
+        @font-face
+        {
+            font-family: myFirstFont;
+            src: url('js/X-宋体.ttf'),
+            url('js/X-宋体.eot'); /* IE9+ */
+            font-weight:bold;
+        }
+        body{
+            font-family:myFirstFont;
+        }
         .all{
             position: absolute;
             top: 0;
             left: 0;
             width: 100%;
             height: 100%;
+            transition: .5s;
         }
         .kefu{
             position: absolute;
@@ -27,6 +38,7 @@
             left: 0;
             width: 100%;
             height: 100%;
+            transition: .5s;
         }
         .kefubg{
             width: 100%;
@@ -162,7 +174,7 @@
             background: #034c86;
             border: solid 1px #00a0e9;
             padding: 5px 10px;
-            color: #7690b0;
+            color: #fff;
             height: 70%;
                 margin-top: 2%;
             width: 75%;
@@ -346,7 +358,12 @@
                 margin-left: 10px;
             }
         }
-
+        .youxitime{
+            font-size: 12px;
+            width: 100%;
+            text-align: center;
+            color:#94bddd;
+        }
     </style>
 </head>
 <body>
@@ -375,6 +392,7 @@
                         </p>
 
                     </div>
+                    <div class="youxitime">2019-2-14 15:16</div>
                     <div class="kefuren">
                         <img src="img/kefuren.png" alt="">
                         <span> <span></span></span>
@@ -386,8 +404,8 @@
                     </div>
                 </div>
                 <div class="kefuinput">
-                    <form action="" id="kfform"><input id="wenti" type="text" placeholder="请点击输入您的问题"></form>
-                    <button id="fasong">发 送</button>
+                        <input id="wenti" type="text" placeholder="请点击输入您的问题">
+                        <button id="fasong" type="button">发 送</button>
                 </div>
             </div>
             <div class="tishi">
@@ -412,51 +430,104 @@ setTimeout(function () {
     document.querySelector('.kefudui').scrollTop =document.querySelector('.kefudui').scrollHeight;
 },100)
 function mykk(){
-    var mydiv=document.createElement('div');
-    mydiv.className='youxiren';
-    var myimg=document.createElement('img');
-    var myp=document.createElement('p');
-    var myspan=document.createElement('span');
-    var myspan1=document.createElement('span');
-    myimg.src='img/kefunan.png';
-    myp.innerHTML=wenti.value;
-    kefudui.append(mydiv);
-    mydiv.append(myimg)
-    mydiv.append(myspan)
-    myspan.append(myspan1)
-    mydiv.append(myp)
-    wenti.value=''
-    document.querySelector('.kefudui').scrollTop =document.querySelector('.kefudui').scrollHeight;
-}
-fasong.onclick=function(){
     if(wenti.value==''){
         console.log('ss')
         ketishi.style.display='block';
         kecol.innerHTML='问题不能为空';
+        wenti.disabled='disabled'
     }else{
-        mykk()
+        var myDate = new Date();
+        var nowTime = myDate.toLocaleString();
+        var mydiv=document.createElement('div');
+        mydiv.className='youxiren';
+        var myimg=document.createElement('img');
+        var myp=document.createElement('p');
+        var myspan=document.createElement('span');
+        var myspan1=document.createElement('span');
+
+
+        var date1= localStorage.getItem('kefutime');  //开始时间
+        var date2 = new Date();    //结束时间
+        var date3 = date2.getTime() - new Date(date1).getTime();   //时间差的毫秒数
+        var days=Math.floor(date3/(24*3600*1000))
+        var leave1=date3%(24*3600*1000)    //计算天数后剩余的毫秒数
+        var hours=Math.floor(leave1/(3600*1000))
+        var leave2=leave1%(3600*1000)        //计算小时数后剩余的毫秒数
+        var minutes=Math.floor(leave2/(60*1000))
+        console.log(minutes)
+        if(minutes>=5){
+            var mytime=document.createElement('div');
+            mytime.className='youxitime'
+            mytime.innerHTML=nowTime;
+            kefudui.append(mytime);
+        }
+
+
+        myimg.src='img/kefunan.png';
+        myp.innerHTML=wenti.value;
+        kefudui.append(mydiv);
+        mydiv.append(myimg)
+        mydiv.append(myspan)
+        myspan.append(myspan1)
+        mydiv.append(myp)
+        wenti.value=''
+        document.querySelector('.kefudui').scrollTop =document.querySelector('.kefudui').scrollHeight;
+
+
+
+
+
+
+
+
+        var nian=myDate.getFullYear();
+        var yue=myDate.getMonth()+1;
+        var ri=myDate.getDate();
+        var shi=myDate.getHours();
+        var fen=myDate.getMinutes();
+        var miao=myDate.getSeconds();
+        if(yue<10){
+            yue='0'+yue
+        }
+        if(ri<10){
+            ri='0'+ri
+        }
+        if(shi<10){
+            shi='0'+shi;
+        }
+        if(fen<10){
+            fen='0'+fen
+        }
+        if(miao<10){
+            miao='0'+miao
+        }
+        localStorage.setItem('kefutime', nian+'/'+yue+'/'+ri+' '+ shi+':'+fen+':'+miao);
     }
 }
-
+fasong.onclick=function(){
+    mykk()
+}
 $('#wenti').bind('keyup', function(event) {
     if (event.keyCode == "13") {
         mykk()
     }
 });
-var oForm =  document.querySelector('#kfform');
-oForm.onsubmit = function(){
-    // $scope.searchOrder();
-    mykk()
-};
-
 $('.kefu .tishi1').click(function () {
     ketishi.style.display='none';
     kecol.innerHTML='';
+    wenti.disabled='';
+    wenti.focus();
 })
 $('.kefu .tishimg').click(function () {
     ketishi.style.display='none';
     kecol.innerHTML='';
+    wenti.disabled='';
+    wenti.focus();
 })
+ $('.kefufan').click(function () {
+     $('.kefu').css('opacity','0')
+     $('.all').css('opacity','0')
+ })
 </script>
 </body>
 </html>
