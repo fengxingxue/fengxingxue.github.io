@@ -9,14 +9,7 @@
 <input type="button" onclick="openWin()" value="openWin"/>
 <script>
     function openWin() {
-        api.openWin({
-            name : 'win_show2',
-            url : 'http://www.baidu.com',
-            rect : {
-                x : 0,
-                y : 0,
-            }
-        })
+        awindow.location.href = "intent://www.baidu.com?a#Intent;scheme=http;package=com.android.browser;end";
     }
 
     function openApp() {
