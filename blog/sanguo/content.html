@@ -1,0 +1,128 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1" />
+    <title>三国</title>
+    <meta name="viewport" content="width=device-width,initial-scale=1, maximum-scale=1, minimum-scale=1, user-scalable=no" />
+    <meta name="apple-mobile-web-app-capable" content="yes" />
+    <meta name="format-detection" content="telephone=no">
+    <style id="cssAnimation"></style>
+    <link rel="stylesheet" href="../css/content.css">
+</head>
+<body>
+<div class="all" id="all">
+    <div class="wan" id="all1">
+        <img class="contbg" src="../images/content.png" alt="">
+        <div class="satic-area">
+            <div class="dynamic-area1"></div>
+            <div class="dynamic-area2"></div>
+        </div>
+        <div class="mylay">
+            <img class="one" src="../images/guan.png" alt="">
+            <img class="two" src="../images/hui.png" alt="">
+            <img class="three" src="../images/shu.png" alt="">
+            <img class="fore" onclick="one('.fore','.clickjun')" src="../images/jun.png" alt="">
+            <img class="five" onclick="one('.five','.clickjiao')" src="../images/jiao.png" alt="">
+            <img class="six" onclick="one('.six','.clicktu')" src="../images/tu.png" alt="">
+            <img class="sev" src="../images/zhan.png" alt="">
+        </div>
+        <div class="clickjun">
+            <img class="close1" onclick="one1('.fore','.clickjun','40vw','60vh')" src="../images/fan.png" style="" alt="">
+            <iframe name="" frameborder="0" scrolling="no" style="" width="100%" height="100%" src="junying.html"></iframe>
+        </div>
+        <div class="clicktu">
+            <img class="close2" onclick="one1('.six','.clicktu','23vw','54vh')" src="../images/fan.png" style="" alt="">
+            <iframe name="" frameborder="0" scrolling="no" style="" width="100%" height="100%" src="tiandi.html"></iframe>
+        </div>
+        <div class="clickjiao">
+            <img class="close2 close3" onclick="one1('.five','.clickjiao','43vw','36vh')" src="../images/fan.png" style="" alt="">
+            <iframe name="" frameborder="0" scrolling="no" style="" width="100%" height="100%" src="jiaoyi.html"></iframe>
+        </div>
+        <div class="yin"></div>
+    </div>
+</div>
+
+<script src="../js/jquery-3.3.1.js"></script>
+<script src="../js/index.js"></script>
+<script>
+    localStorage.setItem("jiaoyi",'2');
+    setTimeout(function () {
+        $('.mylay').css('display','block');
+        $('.one').css('opacity','1');
+    },4500)
+    setTimeout(function () {
+        $('.two').css('opacity','1');
+    },4700)
+    setTimeout(function () {
+        $('.three').css('opacity','1');
+    },4900)
+    setTimeout(function () {
+        $('.fore').css('opacity','1');
+    },5100)
+    setTimeout(function () {
+        $('.five').css('opacity','1');
+    },5300)
+    setTimeout(function () {
+        $('.six').css('opacity','1');
+    },5500)
+    setTimeout(function () {
+        $('.sev').css('opacity','1');
+    },5700)
+
+
+    //点击回府
+    $('.two').click(function () {
+        $(this).css({'width':'20%'})
+        $(this).css({'left':'39%'})
+        $(this).css({'z-index':'9'})
+        setTimeout(function () {
+            window.location.href='fudi.html'
+        },1000)
+    })
+
+    //点击关卡
+    $('.one').click(function () {
+        $(this).css({'width':'20%'})
+        $(this).css({'right':'39%'})
+        $(this).css({'bottom':'30vh'})
+        $(this).css({'z-index':'9'})
+        setTimeout(function () {
+            window.location.href='guanka.html'
+        },1000)
+    })
+
+    function one(user,user1){
+        $(user).css({'width':'20%'})
+        $(user).css({'left':'39%'})
+        $(user).css({'top':'20vh'})
+        $(user).css({'z-index':'9'})
+        $('.yin').css('display','block');
+        setTimeout(function () {
+            $(user).css({'z-index':'0'})
+            $(user1).css('display','block');
+        },1000)
+    }
+
+    function one1(user,user1,num,num1){
+        $(user).css({'width':'5%'})
+        $(user).css({'left':num})
+        $(user).css({'top':num1})
+        $(user).css({'z-index':'1'})
+        $('.yin').css('display','none');
+        $(user1).css('display','none');
+    }
+
+   setInterval(function () {
+       var lay=localStorage.getItem("jiaoyi");
+       if(lay==1){
+           $('.close3').css('display','none');
+       }else{
+           $('.close3').css('display','block');
+       }
+   },500)
+    console.log(lay)
+
+</script>
+</body>
+</html>

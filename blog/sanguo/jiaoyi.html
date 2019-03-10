@@ -1,0 +1,136 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1" />
+    <title>三国</title>
+    <meta name="viewport" content="width=device-width,initial-scale=1, maximum-scale=1, minimum-scale=1, user-scalable=no" />
+    <meta name="apple-mobile-web-app-capable" content="yes" />
+    <meta name="format-detection" content="telephone=no">
+    <style id="cssAnimation"></style>
+    <link rel="stylesheet" href="../css/jiaoyi.css">
+</head>
+<body>
+<div class="all" id="all">
+    <div class="wan" id="all1">
+        <div class="jiaoyi">
+            <img src="../images/wq.png" alt="">
+            <div class="fan"><img src="../images/fan.png" alt=""></div>
+            <h4>交 易</h4>
+            <div class="jiao">
+                    <h2>价 钱</h2>
+                <form action="">
+                    <label for="">
+                        <input id="jinbi" min="0" type="number" value="000">
+                        <span>金币</span>
+                    </label>
+                    <label for="">
+                        <input id="eth" min="0" type="number" value="000">
+                        <span>ETH</span>
+                    </label>
+                </form>
+                <div class="jiao1">交易额 <span>100</span></div>
+                <div class="queren">确认</div>
+                <div class="jilu">交易记录</div>
+                <div class="zhu">
+                    <span>注 意</span>
+                </div>
+            </div>
+
+
+            <div class="myjiao">
+                    <div class="myjiaoleft">
+                        <div class="yi">已完成</div>
+                        <div class="wei">未完成</div>
+                    </div>
+                    <div class="myjiaoright">
+                        <div class="myjiaotop">
+                            <ul>
+                                <li>您成功交易了5ETH</li>
+                                <li>您成功交易了5ETH</li>
+                                <li>您成功交易了5ETH</li>
+                                <li>您成功交易了5ETH</li>
+                                <li>您成功交易了5ETH</li>
+                                <li>您成功交易了5ETH</li>
+                            </ul>
+                        </div>
+                        <div class="myjiaobtn">
+                            <ul>
+                                <li>您没成功交易了5ETH</li>
+                                <li>您没成功交易了5ETH</li>
+                                <li>您没成功交易了5ETH</li>
+                                <li>您没成功交易了5ETH</li>
+                                <li>您没成功交易了5ETH</li>
+                                <li>您没成功交易了5ETH</li>
+                            </ul>
+                        </div>
+                    </div>
+            </div>
+
+
+
+        </div>
+
+        <div class="tan"></div>
+        <div class="yin"></div>
+    </div>
+</div>
+
+<script src="../js/jquery-3.3.1.js"></script>
+<script src="../js/index.js"></script>
+<script>
+
+    //弹框
+    function tan(message) {
+        $('.tan').css('display','block');
+        $('.yin').css('display','block');
+        document.querySelector('.tan').innerHTML=message;
+        setTimeout(function () {
+            $('.tan').css('display','none');
+            $('.yin').css('display','none');
+            document.querySelector('.tan').innerHTML='';
+        },2500)
+    }
+
+
+    function one(user,user1,user2,user3){
+        $(user).css('background','url("../images/yijing.png") no-repeat')
+        $(user).css('background-size','100% 100%')
+        $(user1).css('background','url(../images/wei.png) no-repeat')
+        $(user1).css('background-size','100% 100%')
+        $(user2).css('display','none')
+        $(user3).css('display','block')
+    }
+    //点击记录未完成
+    $('.wei').click(function () {
+        one('.wei','.yi','.myjiaotop','.myjiaobtn')
+    })
+    //点击记录完成
+    $('.yi').click(function () {
+        one('.yi','.wei','.myjiaobtn','.myjiaotop')
+    })
+
+    //点击交易记录
+    $('.jilu').click(function () {
+        localStorage.setItem("jiaoyi",'1');
+        $('.fan').css('display','block');
+        $('.jiaoyi>h4').html('交 易 记 录');
+        $('.jiao').css('display','none');
+        $('.myjiao').css('display','block');
+    })
+    //交易记录点击返回
+    $('.fan').click(function () {
+        localStorage.setItem("jiaoyi",'2');
+        $('.fan').css('display','none');
+        $('.jiaoyi>h4').html('交 易');
+        $('.jiao').css('display','block');
+        $('.myjiao').css('display','none');
+    })
+
+    //点击确认交易
+    $('.queren').click(function () {
+
+    })
+</script>
+</body>
+</html>

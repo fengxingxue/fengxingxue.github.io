@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1" />
+    <title>三国</title>
+    <meta name="viewport" content="width=device-width,initial-scale=1, maximum-scale=1, minimum-scale=1, user-scalable=no" />
+    <meta name="apple-mobile-web-app-capable" content="yes" />
+    <meta name="format-detection" content="telephone=no">
+    <style id="cssAnimation"></style>
+    <link rel="stylesheet" href="../css/tiandi.css">
+</head>
+<body>
+<div class="all" id="all">
+    <div class="wan" id="all1">
+        <div class="tiandi">
+            <img src="../images/wq.png" alt="">
+            <!--<div class="fan"><img src="../images/fan.png" alt=""></div>-->
+            <h4>田 地</h4>
+            <div class="tian">
+                <img src="../images/tianti.png" alt="">
+                <div class="mu">
+                    <p>政治值:<span>1000</span></p>
+                    <p>可收割粮草:<span>1000</span></p>
+                </div>
+            </div>
+            <div class="zhao">收割</div>
+        </div>
+        <div class="tan"></div>
+        <div class="yin"></div>
+    </div>
+</div>
+
+<script src="../js/jquery-3.3.1.js"></script>
+<script src="../js/index.js"></script>
+<script>
+    function tan(message) {
+        $('.tan').css('display','block');
+        $('.yin').css('display','block');
+        document.querySelector('.tan').innerHTML=message;
+        setTimeout(function () {
+            $('.tan').css('display','none');
+            $('.yin').css('display','none');
+            document.querySelector('.tan').innerHTML='';
+        },2500)
+    }
+
+    $('.zhao').click(function () {
+        tan('收割完成')
+    })
+
+
+</script>
+</body>
+</html>

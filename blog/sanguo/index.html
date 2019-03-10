@@ -1,0 +1,263 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1" />
+    <title>三国</title>
+    <meta name="viewport" content="width=device-width,initial-scale=1, maximum-scale=1, minimum-scale=1, user-scalable=no" />
+    <meta name="apple-mobile-web-app-capable" content="yes" />
+    <meta name="format-detection" content="telephone=no">
+    <style id="cssAnimation"></style>
+    <link rel="stylesheet" href="../css/index.css">
+</head>
+<body>
+<div class="all" id="all">
+    <div class="wan" id="all1">
+        <img class="mybg" src="../images/indexbg.png" alt="">
+        <div class="deng">
+            <form action="">
+                <label for="">
+                    <span class="user"></span>
+                    <input type="number" id="user" placeholder="用户名">
+                </label>
+                <label for="">
+                    <span class="pass"></span>
+                    <input type="password" id="pass" placeholder="密码">
+                </label>
+                <div class="denglv">登陆</div>
+                <label for="">
+                    <p class="zhu">注册</p>
+                    <p class="wang">忘记密码</p>
+                </label>
+                <label class="xieyi" for="">
+                    <img id="tong" src="../images/dui.png" class="tt" alt="">
+                    <span>已阅读并同意《用户协议》</span>
+                </label>
+            </form>
+        </div>
+        <div class="zhuce">
+            <form action="">
+                <label for="">
+                    <span></span>
+                    <input type="number" id="user1" placeholder="输入手机账号">
+                </label>
+                <label for="">
+                    <span></span>
+                    <input type="password" id="pass1" placeholder="密码">
+                </label>
+                <label for="">
+                    <span></span>
+                    <input type="number" id="apass" placeholder="请输入支付密码">
+                </label>
+                <label for="">
+                    <span></span>
+                    <input type="text" id="apass1" placeholder="请输入邀请码">
+                </label>
+                <label for="">
+                    <span></span>
+                    <input id="yzm" style="width: 14vw;float: left" type="number" placeholder="验证码">
+                    <p id="myyzm">获取验证码</p>
+                </label>
+                <img class="zhuce1" src="../images/zhu1.png" alt="">
+            </form>
+        </div>
+        <div class="nicheng">
+                <h3>昵称</h3>
+                <input id="ni" type="text" placeholder="请输入昵称">
+                <button id="que" type="button">确定</button>
+        </div>
+        <div class="wjmm">
+            <form action="">
+                <label for="">
+                    <span>手机号</span>
+                    <input id="user2" type="number" placeholder="请输入您的手机号">
+                </label>
+                <label for="">
+                    <span>验证码</span>
+                    <input id="yzm1" style="width: 19vw;float: left" type="text" placeholder="请输入验证码">
+                    <p id="myyzm1">获取验证码</p>
+                </label>
+                <label for="">
+                    <span>新密码</span>
+                    <input id="newpass" type="password" placeholder="请输入新密码">
+                </label>
+                <label for="">
+                    <span>确认密码</span>
+                    <input id="newpass1" type="password" placeholder="请再次输入新密码">
+                </label>
+                <p class="wjq">确定</p>
+            </form>
+        </div>
+        <div class="tan">
+
+        </div>
+        <div class="yin"></div>
+    </div>
+</div>
+
+<script src="../js/jquery-3.3.1.js"></script>
+<script src="../js/index.js"></script>
+<script>
+
+        function tan(message){
+            $('.tan').css('display','block');
+            $('.tan').html(message);
+            setTimeout(function () {
+                $('.tan').css('display','none');
+                $('.tan').html('');
+            },2000)
+        }
+
+    //勾选用户协议
+    document.querySelector('#tong').onclick=function () {
+        if(this.className=='tt'){
+            this.src="../images/dui1.png";
+            this.className='t1'
+        }else if(this.className=='t1'){
+            this.src="../images/dui.png";
+            this.className='tt'
+        }
+    }
+
+    //主页面点击注册按钮
+    $('.zhu').click(function(){
+        $('.deng').css('opacity','0');
+        $('.zhuce').css({'opacity':'1','z-index':'99'});
+        $('.yin').css('display','block');
+    })
+
+
+    //昵称确认安妮
+    $('#que').click(function () {
+        if($('#ni').val()==''){
+            tan('请填写昵称')
+        }else{
+            console.log('aa')
+            window.location.href='content.html'
+        }
+    })
+
+
+
+    //点击空白处回到登陆页面
+    $('.yin').click(function(){
+        $('.deng').css('opacity','1');
+        $('.zhuce').css({'opacity':'0','z-index':'0'});
+        $('.wjmm').css({'opacity':'-2','z-index':'0'});
+        $('.yin').css('display','none');
+    })
+
+
+
+    //登陆按钮
+    $('.denglv').click(function(){
+        if($('#user').val()==''){
+            tan('填写用户名')
+        }else if($('#pass').val()==''){
+            tan('填写密码')
+        }else if($('#tong').className=='t1'){
+            tan('勾选用户协议')
+        }else{
+            $('.deng').css('opacity','0');
+            $('.nicheng').css({'opacity':'1','z-index':'99'});
+        }
+    })
+
+
+
+
+
+
+    //主页面点击忘记密码
+    $('.wang').click(function () {
+        $('.deng').css('opacity','0');
+        $('.wjmm').css({'opacity':'1','z-index':'99'});
+        $('.yin').css('display','block');
+    })
+
+
+
+    //注册确定按钮
+    $('.zhuce1').click(function () {
+        if($('#user1').val()==''){
+            tan('填写手机号')
+        }else if($('#pass1').val()==''){
+            tan('请填写密码')
+        }else if($('#apass').val()==''){
+            tan('请填写支付密码')
+        }else if($('#apass1').val()==''){
+            tan('请填写邀请码')
+        }else if($('#zym').val()==''){
+            tan('请填写验证码')
+        }else{
+            $('.deng').css('opacity','1');
+            $('.zhuce').css({'opacity':'0','z-index':'0'});
+            $('.yin').css('display','none');
+        }
+    })
+
+    //忘记密码确定按钮
+    $('.wjq').click(function () {
+        if($('#user2').val()==''){
+            tan('请输入手机号')
+        }else if($('#yzm1').val()==''){
+            tan('请输入验证码')
+        }else if($('#newpass').val()==''){
+            tan('请输入密码')
+        }else if($('#newpass1').val()==''||$('#newpass').val()!=$('#newpass1').val()){
+            tan('请确认输入密码')
+        }else{
+            $('.deng').css('opacity','1');
+            $('.wjmm').css({'opacity':'-2','z-index':'0'});
+            $('.yin').css('display','none');
+        }
+    })
+
+
+
+    //注册发送验证码
+    $('#myyzm').click(function () {
+        var s=60;
+        if($('#user1').val()==''){
+            tan('手机号不能为空')
+        }else{
+            if(document.querySelector('#myyzm').innerHTML!='获取验证码'){
+
+            }else if(document.querySelector('#myyzm').innerHTML=='获取验证码'){
+                var t=setInterval(function () {
+                    document.querySelector('#myyzm').innerHTML=s+'s';
+                    s--
+                    if(s==0){
+                        document.querySelector('#myyzm').innerHTML='获取验证码'
+                        clearInterval(t)
+                    }
+                },1000)
+            }
+        }
+    })
+
+
+//忘记密码发送验证码
+    $('#myyzm1').click(function () {
+        var s=60;
+        if($('#user2').val()==''){
+            tan('手机号不能为空')
+        }else{
+            if(document.querySelector('#myyzm1').innerHTML!='获取验证码'){
+
+            }else if(document.querySelector('#myyzm1').innerHTML=='获取验证码'){
+                var t=setInterval(function () {
+                    document.querySelector('#myyzm1').innerHTML=s+'s';
+                    s--
+                    if(s==0){
+                        document.querySelector('#myyzm1').innerHTML='获取验证码'
+                        clearInterval(t)
+                    }
+                },1000)
+            }
+        }
+    })
+
+</script>
+</body>
+</html>
