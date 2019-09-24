@@ -1,0 +1,153 @@
+<!--index.wxml-->
+
+    <view class="lay" wx-if="{{isplay==true}}" bindtap='play'>
+      <image class='lay2' animation="{{animationData}}" src="../../images/22.png"></image>
+      <image class='lay1' src="../../images/yin.gif"></image>
+    </view>
+    <view class="lay" wx-if="{{isplay==false}}" bindtap='stop'>
+        <image class='lay2' src="../../images/22.png" ></image> 
+    </view>
+  <swiper class="swiper" indicator-dots="true" autoplay=""  vertical="false" indicator-color="#5f4e71" indicator-active-color="#63195b" bindchange="swiperChange">   
+    <block>  
+        <swiper-item class="one"> 
+           <image class='one1' src='../../images/20.jpg'></image>
+            <image class='one2' mode="widthFix" src='../../images/10.png'></image>
+            <image class='one3' mode="widthFix" src='../../images/liu.gif'></image>
+            <image class='one4' animation="{{animationData}}" mode="widthFix" src='../../images/3.png'></image>
+            <image class='one5' animation="{{animationData}}" mode="widthFix" src='../../images/3.png'></image>
+            <image class='one6' mode="widthFix" src='../../images/9.png'></image>
+            <image class='one7' mode="widthFix" src='../../images/12.png'></image>
+             <image class='one8' animation="{{animationData1}}" mode="widthFix" src='../../images/7.png'></image>
+              <image class='one9' animation="{{animationData2}}" mode="widthFix" src='../../images/4.png'></image>
+               <image class='one10' animation="{{animationData2}}" mode="widthFix" src='../../images/4.png'></image>
+                <image class='one11' mode="widthFix" src='../../images/17.png'></image>
+                 <image class='one12' mode="widthFix" src='../../images/11.png'></image>
+             <image class='one13' animation="{{animationData3}}"  mode="widthFix" src='../../images/2.png'></image>
+             <view class='llay' animation="{{animationData4}}">
+              <image class='one14'  mode="widthFix" src='../../images/13.png'></image>
+              <image class='one15' mode="widthFix" src='../../images/6.gif'></image>
+              <image class='one16' mode="widthFix" src='../../images/23.png'></image>
+              <image class='one17'  mode="widthFix" src='../../images/1.gif'></image>
+             </view>
+             <image class='one18' animation="{{animationData5}}"  mode="widthFix" src='../../images/jian.png'></image>
+        </swiper-item> 
+
+
+        <swiper-item class="two"> 
+           <image class='two1' src='../../images/20.jpg'></image>
+            <image class='two3' mode="widthFix" src='../../images/liu.gif'></image>
+             <image class='two4' animation="{{animationData}}" mode="widthFix" src='../../images/3.png'></image>
+            <image class='two5' animation="{{animationData}}" mode="widthFix" src='../../images/3.png'></image>
+            <image class='two6' animation="{{animationData6}}"  mode="widthFix" src='../../images/16.png'></image>
+            <view class='two7' animation="{{animationData7}}">公司介绍</view>
+            <view class='two9'>
+                  <image class='two8'   mode="" src='../../images/8.png'></image>
+                  <view class='two10' animation="{{animationData8}}">
+                    <view>
+                   1、 全息互动是一家新生代互联网企业、最新锐的在线播客经纪公司。
+                  </view>
+                  <view>
+                    2、 以网红视频内容生产为基础，发展网红直播、达人创意短视频、音乐红人经纪、电商社交化营销、品牌整合营销等粉丝经济开发为一体的生态业务体系
+                  </view>
+                  <view>
+                     3、 运营部也拥有素质优秀、专业运营的团队，能根据各大平台不同的用户观看直播进行一个整体分析，从而达成良好运营合作
+                  </view>
+                  <view>
+                     4、 全息互动将在传媒业深度互联网化的大背景下，在网络传媒和互联网演艺领域获得长足的发展。
+                  </view>
+                  <view>
+                  5、公司将努力建设成为国内顶尖的互联网传媒企业，建立健全遍布整个华中及华东地区的互联网传媒人才网络，通过在企业内部建立合理的竞争机制，使企业内部人才充满创新的源动力。
+                  </view>
+                  <view>
+                    6、公司未来将致力于艺人培训与包装、网剧的制片拍摄与发行之上。
+                  </view>
+                  <view>
+                    7、在全民娱乐的大背景下，让更多的人得到展示自己才华的机遇，让更多平凡人的星梦之路从理想照进现实。
+期待你成为下一个巨星
+                  </view>
+                  </view>
+            </view>
+             
+           <image class='one18' animation="{{animationData5}}"  mode="widthFix" src='../../images/jian.png'></image>
+           
+           
+        </swiper-item>
+
+
+        <swiper-item class="three"> 
+           <image class='three1' src='../../images/20.jpg'></image>
+            <image class='two3' mode="widthFix" src='../../images/liu.gif'></image>
+             <image class='three4' animation="{{animationData}}" mode="widthFix" src='../../images/3.png'></image>
+            <image class='three5' animation="{{animationData}}" mode="widthFix" src='../../images/3.png'></image>
+            <image class='three66' animation="{{animationData9}}"  mode="widthFix" src='../../images/16.png'></image>
+            <image class='three6' animation="{{animationData12}}"  mode="" src='../../images/19.png'></image>
+            <image class='three7' animation="{{animationData12}}"  mode="" src='../../images/19.png'></image>
+            <view class='two7' animation="{{animationData10}}">网络主播</view>
+            <view class='three9' animation="{{animationData13}}" >
+                  <image class='three8'  mode="" src='../../images/21.png'></image>
+                  <view class='three10' animation="{{animationData11}}">
+                    <view>
+                   1、 网络主播是指在互联网上的个人直播间中，进行策划、编辑、录制、制作、观众互动等一系列工作的一类网络主持人。
+                  </view>
+                  <view>
+                    2、 时下网络主播是年轻群体中最火爆的新型职业之一。
+                  </view>
+                  <view>
+                     3、 网络主播是一个综合能力很强的职业，一个优秀的网络主播一个人常常要面对线上数万人、几十万人甚至上百万人的观众，并且实时与线上观众交流互动.
+                  </view>
+                 
+                  </view>
+            </view>
+             <image class='three14' animation="{{animationData14}}"  mode="widthFix" src='../../images/1.png'></image>
+           <image class='one18' animation="{{animationData5}}"  mode="widthFix" src='../../images/jian.png'></image>
+        </swiper-item>
+
+
+
+
+        <swiper-item class="fore"> 
+           <image class='fore1' src='../../images/20.jpg'></image>
+            <image class='two3' mode="widthFix" src='../../images/liu.gif'></image>
+             <image class='fore4' animation="{{animationData}}" mode="widthFix" src='../../images/3.png'></image>
+            <image class='fore5' animation="{{animationData}}" mode="widthFix" src='../../images/3.png'></image>
+            <image class='fore6' animation="{{lay}}" mode="widthFix" src='../../images/2.png'></image>
+            <view class='fore7' animation="{{lay1}}">网红时代</view>
+            <view class='fore9' animation="{{lay2}}" >
+                  <image class='three8'  mode="" src='../../images/123.png'></image>
+                  <view class='fore10' animation="{{lay3}}">
+                    <view>
+                   1、 网红时代“人生没有彩排，每天都是直播”。
+                  </view>
+                  <view>
+                    2、 随着抖音、火山、快手等一系列全民直播形式的APP出现，中国已经进入了全民直播时代。
+                  </view>
+                  <view>
+                     3、 拿起手机，随时随地开播，分享你的精彩生活，已经成为时下很多年轻人的休闲娱乐方式。
+                  </view>
+                  <view>  
+                    4、全息互动打破传统-保姆式经纪人服务为每一位心存音乐、演绎梦想的年轻人提供帮助，通过网络直播的展示形式，逐步将艺人培养成适应时代需要的分享型职业艺人，你负责杨帆，我们负责远航，除了直播你什么都不用管！
+                  </view>
+                 
+                  </view>
+            </view>
+           <image class='one18' animation="{{animationData5}}"  mode="widthFix" src='../../images/jian.png'></image>
+        </swiper-item>
+        <swiper-item class="five"> 
+           <image class='five1' src='../../images/20.jpg'></image>
+           <image class='one2' mode="widthFix" src='../../images/10.png'></image>
+            <image class='two3' mode="widthFix" src='../../images/liu.gif'></image>
+            <image class='fore5' animation="{{animationData}}" mode="widthFix" src='../../images/3.png'></image>
+            <image class='five4' mode="widthFix" src='../../images/ti.gif'></image>
+            <view class='five2'>
+                   <image class='five3'  mode="" src='../../images/123.png'></image>
+                  <view class='laylay'>
+                      <view class='zhang1'>账户余额 : <text>￥{{message}}</text> </view>
+                      <input placeholder='请输入提现金额' value='{{inputValue}}' type='digit' bindinput="money"/>
+                      <view class='que' bindtap='dianzi'>确认提现</view>
+                      <view class='wen'>温馨提示： <text>提现将自动提现到微信零钱</text></view>
+                  </view>
+            </view>
+           <image class='one18' animation="{{animationData5}}"  mode="widthFix" src='../../images/jian.png'></image>
+        </swiper-item>    
+    </block>   
+ </swiper>

@@ -1,0 +1,472 @@
+/**index.wxss**/
+.userinfo {
+  position: fixed;
+  height: 100%;
+  width: 100%;
+  display:flex;
+  flex-direction:column;
+  align-items:center;/*垂直居中*/
+  justify-content: center;/*水平居中*/
+}
+.swiper { 
+  position: fixed;
+  top: 0;
+  left: 0;
+  height: 100%;
+  width: 100%;
+  display:flex;
+  flex-direction:column;
+  align-items:center;/*垂直居中*/
+  justify-content: center;/*水平居中*/
+  }
+.one1,.two1,.three1,.fore1,.five1{
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+}
+.lay{
+  position: fixed;
+  width: 2rem;
+  height: 2rem;
+  top: 0.5rem;
+  right:0.5rem;
+  z-index: 99;
+}
+.lay2{
+  width: 100%;
+  height:100%;
+  position: absolute;
+  top: 0;
+  left: 0;
+}
+.lay1{
+  width: 140%;
+  height:140%;
+  position: absolute;
+  top: -0.5rem;
+  left: -0.5rem;
+}
+.chu{
+  display: block;
+}
+.yin{
+  display: none;
+}
+.one2{
+  z-index: 9;
+  position: absolute;
+  top:18%;
+  left: 7%;
+  width: 90%;
+  transform: rotate(-200deg);
+}
+.one3{
+  z-index: 9;
+  position: absolute;
+  top:0%;
+  left: 0%;
+  width: 100%;
+}
+.one4{
+  z-index: 9;
+  position: absolute;
+  bottom:12%;
+  right: -1.1rem;
+  width: 18%;
+}
+.one5{
+  z-index: 9;
+  position: absolute;
+  bottom:25%;
+  left: -2.1rem;
+  width: 18%;
+}
+.one6{
+  z-index: 9;
+  position: absolute;
+  bottom:18%;
+  left: -1rem;
+  width: 114%;
+}
+.one7{
+  z-index: 991;
+  position: absolute;
+  top:48%;
+  left: 4rem;
+  width: 5%;
+}
+.one8{
+  z-index: 99;
+  position: absolute;
+  bottom:-9.6rem;
+  left: 25%;
+  width: 50%;
+}
+.one9{
+  z-index: 990;
+  position: absolute;
+  bottom:-15rem;
+  left: 74%;
+  width: 8%;
+}
+.one10{
+  z-index: 990;
+  position: absolute;
+  bottom:-15rem;
+  left: 16%;
+  width: 8%;
+}
+.one11{
+  z-index: 991;
+  position: absolute;
+  top:74%;
+  right: 18%;
+  width: 3.5%;
+}
+.one12{
+  z-index: 991;
+  position: absolute;
+  top:48%;
+  left: 2.5rem;
+  width: 30%;
+}
+.one13{
+  z-index: 99;
+  position: absolute;
+  top:28%;
+  left: 30rem;
+  width: 130%;
+}
+.one14{
+  z-index: 992;
+  position: absolute;
+  top:31%;
+  left: 0%;
+  width: 100%;
+}
+.one15{
+  z-index: 992;
+  position: absolute;
+  top:32%;
+  left: 0%;
+  width: 100%;
+}
+.one16{
+  z-index: 992;
+  position: absolute;
+  top:30px;
+  left: 11.5%;
+  width: 77%;
+}
+.one17{
+  z-index: 992;
+  position: absolute;
+  top:-10px;
+  left: -5%;
+  width: 110%;
+}
+.llay{
+  position: absolute;
+  width: 100%;
+  left:0%;
+  top: -100%;
+}
+.one18{
+  z-index: 992;
+  position: absolute;
+  bottom:2%;
+  left: 45%;
+  width: 10%;
+  opacity: 1
+}
+
+.two3{
+  z-index: 9;
+  position: absolute;
+  top:5%;
+  left: 0%;
+  width: 100%;
+}
+.two4{
+  z-index: 9;
+  position: absolute;
+  top:25%;
+  left: 5rem;
+  width: 18%;
+}
+.two5{
+  z-index: 9;
+  position: absolute;
+  top:72%;
+  left:2%;
+  width: 18%;
+}
+.two6{
+  z-index: 99;
+  position: absolute;
+  top:-17%;
+  left:10%;
+  width: 80%;
+}
+.two7{
+  z-index: 990;
+  position: absolute;
+  top:-20%;
+  left:10%;
+  width: 80%;
+  color:#fff;
+  font-size: 1.5rem;
+  text-align: center;
+}
+.two9{
+  z-index: 9;
+  position: absolute;
+  top:25%;
+  left:6%;
+  width: 90%;
+  height: 50vh;
+  color:#fff;
+  font-size: 1.5rem;
+  text-align: center;
+  padding-top: 10%;
+}
+.two8{
+  width: 100%;
+  height: 100%;
+  position: absolute;
+  top: 0;
+  left: 0;
+}
+.two10{
+  z-index: 9;
+  position: relative;
+  top:0%;
+  left:0%;
+  width: 100%;
+  height: 95%;
+  overflow: scroll;
+  color:#fff;
+  opacity: 0;
+}
+.two10 view{
+  position: relative;
+  top: 0%;
+  left: 7%;
+  font-size: 0.6rem;
+  width: 80%;
+  margin-bottom: 3%;
+  text-align: left;
+}
+.three4{
+  z-index: 9;
+  position: absolute;
+  top:25%;
+  right: -2rem;
+  width: 18%;
+}
+.three5{
+  z-index: 9;
+  position: absolute;
+  top:65%;
+  left:2%;
+  width: 18%;
+}
+.three9{
+  z-index: 9;
+  position: absolute;
+  top:200%;
+  left:10%;
+  width: 80%;
+  height: 50vh;
+  color:#fff;
+  font-size: 1.5rem;
+  text-align: center;
+  padding-top: 20%;
+}
+.three8{
+  width: 100%;
+  height: 100%;
+  position: absolute;
+  top: 0;
+  left: 0;
+}
+.three10{
+  z-index: 9;
+  position: relative;
+  top:0%;
+  left:0%;
+  width: 100%;
+  height: 95%;
+  color:#fff;
+  opacity: 0;
+}
+.three10 view{
+  position: relative;
+  top: 0%;
+  left: 15%;
+  font-size: 0.8rem;
+  width: 70%;
+  margin-bottom: 6%;
+  text-align: left;
+}
+.three7,.three6{
+  z-index:9;
+position:absolute;
+bottom:-200%;
+left:74%;
+width:8%;
+height: 75vh;
+}
+.three6{
+ left: 14%;
+}
+.three66{
+   z-index: 990;
+  position: absolute;
+  top:-17%;
+  left:5%;
+  width:90%;
+}
+.three14{
+  z-index:99;
+  position:absolute;
+  top:22%;
+  left:200%;
+  width:86%;
+}
+.fore4{
+  z-index: 9;
+  position: absolute;
+  top:8%;
+  left: 40%;
+  width: 18%;
+}
+.fore5{
+  z-index: 9;
+  position: absolute;
+  top:82%;
+  right:-1rem;
+  width: 18%;
+}
+.fore6{
+  z-index: 991;
+  position: absolute;
+  top:13%;
+  left:200%;
+  width: 100%;
+  transform: rotate(25deg);
+}
+.fore7{
+  z-index: 991;
+  position: absolute;
+  top:-21%;
+  left:10%;
+  width: 80%;
+  color:#fff;
+  font-size: 1.5rem;
+  text-align: center;
+  transform: rotate(15deg);
+}
+.fore9{
+  z-index: 9;
+  position: absolute;
+  top:200%;
+  left:5%;
+  width: 90%;
+  height: 46vh;
+  color:#fff;
+  font-size: 1rem;
+  text-align: center;
+  padding-top: 15%;
+}
+.fore10{
+  z-index: 9;
+  position: relative;
+  top:0%;
+  left:0%;
+  width: 100%;
+  height: 90%;
+  color:#fff;
+  overflow: scroll;
+  opacity: 0;
+}
+.fore10 view{
+  position: relative;
+  top: 0%;
+  left: 15%;
+  font-size: 0.7rem;
+  width: 70%;
+  margin-bottom: 6%;
+  text-align: left;
+}
+.five2{
+  z-index: 9;
+  position: absolute;
+  top:12%;
+  left:7%;
+  width: 86%;
+  height: 75vh;
+  color:#fff;
+  font-size: 1rem;
+  text-align: center;
+}
+.five3{
+  z-index: 9;
+  position: relative;
+  top:0%;
+  left:0%;
+  width: 100%;
+  height: 95%;
+  color:#fff;
+}
+.five4{
+  z-index: 9;
+  position: relative;
+  top:20%;
+  left:15%;
+  width: 70%;
+  height: 95%;
+}
+.laylay{
+ z-index:9;
+position:absolute;
+top:40%;
+left:15%;
+width:70%;
+height:95%;
+font-size:0.8rem;
+text-align:left;
+
+}
+.zhang1{
+  font-size: 1rem;
+}
+.zhang1 text{
+  color: #ff8533;
+}
+.laylay input{
+  background: #fff;
+  width: 90%;
+  margin:1rem auto;
+  border-radius: 5px;
+  padding: 4px 8px;
+  color: #333;
+}
+.que{
+  background: #ff8533;
+  width: 90%;
+  margin:1rem auto;
+  border-radius: 5px;
+  padding: 6px 8px;
+  color: #fff;
+  text-align: center;
+}
+.wen{
+  font-size: 0.7rem;
+}
+.wen text{
+   color: #ff8533;
+   font-size: 0.65rem;
+}
